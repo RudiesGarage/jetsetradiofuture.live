@@ -80,9 +80,9 @@ background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.5));
 @font-face 
 {
 font-family: 'lightfont';
-src: url('/web/20201227214243im_/https://jetsetradio.live/media/fonts/lightfont.eot');                                    /* IE9 Compat Modes */
-src: url('/web/20201227214243im_/https://jetsetradio.live/media/fonts/lightfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
-     url('/web/20201227214243im_/https://jetsetradio.live/media/fonts/lightfont.ttf')  format('truetype');                /* Safari, Android, iOS */
+src: url('media/fonts/lightfont.eot');                                    /* IE9 Compat Modes */
+src: url('media/fonts/lightfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('media/fonts/lightfont.ttf')  format('truetype');                /* Safari, Android, iOS */
 
 font-weight:normal;
 font-style:normal;
@@ -94,9 +94,9 @@ white-space:pre;
 @font-face 
 {
 font-family: 'regularfont';
-src: url('/web/20201227214243im_/https://jetsetradio.live/media/fonts/regularfont.eot');                                    /* IE9 Compat Modes */
-src: url('/web/20201227214243im_/https://jetsetradio.live/media/fonts/regularfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
-     url('/web/20201227214243im_/https://jetsetradio.live/media/fonts/regularfont.ttf')  format('truetype');                /* Safari, Android, iOS */
+src: url('media/fonts/regularfont.eot');                                    /* IE9 Compat Modes */
+src: url('media/fonts/regularfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('media/fonts/regularfont.ttf')  format('truetype');                /* Safari, Android, iOS */
 
 font-weight:normal;
 font-style:normal;
