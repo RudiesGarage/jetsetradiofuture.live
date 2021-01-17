@@ -1,5 +1,5 @@
 
-if(systemMonth == "June" || systemMonth == "July" || systemMonth == "August"){
+//if(systemMonth == "June" || systemMonth == "July" || systemMonth == "August"){
 
 
 //Choose a name for the station
@@ -113,7 +113,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Yukari Fresh 
 
 
 
-}
+//}
 
 
 
