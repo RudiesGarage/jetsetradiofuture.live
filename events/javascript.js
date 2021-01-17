@@ -143,7 +143,7 @@ function loadEvents()
 	{
 	console.log("Loading EVENTS..."),eventsxhttp=new XMLHttpRequest,randomCacheNumber=Math.floor(999999999*Math.random()+1),eventsxhttp.open("GET","events/events.xml?"+randomCacheNumber,!0),eventsxhttp.send(),eventsxhttp.onreadystatechange=function()
 		{
-		4==eventsxhttp.readyState&&void 0!==eventsxhttp.responseXML&&(eventsXMLDocument=eventsxhttp.responseXML,eventType=eventsXMLDocument.getElementsByTagName("eventType")[0].childNodes[0].nodeValue,eventVar1=eventsXMLDocument.getElementsByTagName("eventVar1")[0].childNodes[0].nodeValue,eventVar2=eventsXMLDocument.getElementsByTagName("eventVar2")[0].childNodes[0].nodeValue,newEventID=eventType+eventVar1+eventVar2,newEventID!==lastEventID&&(console.log("DETECTED EVENT: "+eventType),checkEvents(),lastEventID=eventType+eventVar1+eventVar2))
+		//4==eventsxhttp.readyState&&void 0!==eventsxhttp.responseXML&&(eventsXMLDocument=eventsxhttp.responseXML,eventType=eventsXMLDocument.getElementsByTagName("eventType")[0].childNodes[0].nodeValue,eventVar1=eventsXMLDocument.getElementsByTagName("eventVar1")[0].childNodes[0].nodeValue,eventVar2=eventsXMLDocument.getElementsByTagName("eventVar2")[0].childNodes[0].nodeValue,newEventID=eventType+eventVar1+eventVar2,newEventID!==lastEventID&&(console.log("DETECTED EVENT: "+eventType),checkEvents(),lastEventID=eventType+eventVar1+eventVar2))
 	}
 }
 function checkEvents()
