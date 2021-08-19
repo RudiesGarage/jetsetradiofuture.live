@@ -81,7 +81,7 @@ background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.5));
 {
 font-family: 'lightfont';
 src: url('media/fonts/lightfont.eot');                                    /* IE9 Compat Modes */
-src: url('media/fonts/lightfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+src: url('media/fonts/lightfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
      url('media/fonts/lightfont.ttf')  format('truetype');                /* Safari, Android, iOS */
 
 font-weight:normal;
@@ -95,7 +95,7 @@ white-space:pre;
 {
 font-family: 'regularfont';
 src: url('media/fonts/regularfont.eot');                                    /* IE9 Compat Modes */
-src: url('media/fonts/regularfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+src: url('media/fonts/regularfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
      url('media/fonts/regularfont.ttf')  format('truetype');                /* Safari, Android, iOS */
 
 font-weight:normal;
@@ -891,24 +891,3 @@ animation: slideshowAnimationTimeline3 12s -4.2s linear infinite;
 
 
 
-/*
-     FILE ARCHIVED ON 21:42:43 Dec 27, 2020 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 00:22:34 Jan 16, 2021.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  exclusion.robots.policy: 0.249
-  RedisCDXSource: 0.582
-  LoadShardBlock: 27.26 (3)
-  captures_list: 47.379
-  PetaboxLoader3.resolve: 70.665
-  esindex: 0.01
-  exclusion.robots: 0.26
-  load_resource: 140.776 (2)
-  CDXLines.iter: 14.988 (3)
-  PetaboxLoader3.datanode: 67.05 (5)
-*/

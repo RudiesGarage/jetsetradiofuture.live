@@ -52,19 +52,23 @@ function radioSwitch()
 }
 function informationSizeAndPosition()
 	{
-	var t="information",e=6.68;
+	var t="information";
 	document.getElementById(t).style.height=Math.round(.07*stageHeight)+"px",document.getElementById(t).style.width=stageWidth+"px",document.getElementById(t).style.left="0px",document.getElementById(t).style.top=stageHeight-parseInt(document.getElementById("information").style.height)+"px",50<parseInt(document.getElementById(t).style.height)&&(document.getElementById(t).style.height="50px",document.getElementById(t).style.width=stageWidth+"px",document.getElementById(t).style.left="0px",document.getElementById(t).style.top=stageHeight-parseInt(document.getElementById("information").style.height)+"px"),document.getElementById(t).style.top=stageHeight-2*parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.overflow="visible";
-	t="informationIcon",e=1;
-	document.getElementById(t).style.height=parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.width=Math.round(parseInt(document.getElementById(t).style.height)*e)+"px",document.getElementById(t).style.left="0px",document.getElementById(t).style.top="0px";
-	t="informationIconColor",e=1;
+	t="informationIcon";
+	document.getElementById(t).style.height=parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.width=Math.round(+parseInt(document.getElementById(t).style.height))+"px",document.getElementById(t).style.left="0px",document.getElementById(t).style.top="0px";
+	t="informationIconColor";
 	document.getElementById(t).style.height=parseInt(document.getElementById("informationIcon").style.height)+"px",document.getElementById(t).style.width=parseInt(document.getElementById("informationIcon").style.width)+"px",document.getElementById(t).style.left="0px",document.getElementById(t).style.top="0px",document.getElementById(t).style.visibility="hidden";
-	t="programInformationText",e=20;
-	document.getElementById(t).style.height=Math.round(.7*parseInt(document.getElementById("information").style.height))+"px",document.getElementById(t).style.width=parseInt(document.getElementById("information").style.width)-1.25*parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.left=parseInt(document.getElementById("informationIcon").style.width)+Math.round(.051*parseInt(document.getElementById("information").style.height))+"px",document.getElementById(t).style.top=Math.round(.16*parseInt(document.getElementById("information").style.height))+"px",document.getElementById(t).style.fontFamily="lightfont",document.getElementById(t).style.fontSize=Math.round(.7*parseInt(document.getElementById("programInformationText").style.height))+"px",document.getElementById(t).style.color="#FFFFFF",document.getElementById(t).style.textAlign="left",document.getElementById(t).style.lineHeight="1.2",document.getElementById(t).style.whiteSpace="nowrap",document.getElementById(t).style.textTransform="uppercase";
-	t="loadingTrackCircle",e=59/110;
+	t="programInformationText";
+	document.getElementById(t).style.height=Math.round(.7*parseInt(document.getElementById("information").style.height))+"px",document.getElementById(t).style.width=parseInt(document.getElementById("information").style.width)-2.05*parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.left=parseInt(document.getElementById("informationIcon").style.width)+Math.round(.051*parseInt(document.getElementById("information").style.height))+"px",document.getElementById(t).style.top=Math.round(.22*parseInt(document.getElementById("information").style.height))+"px",document.getElementById(t).style.fontFamily="lightfont",document.getElementById(t).style.fontSize=Math.round(.6*parseInt(document.getElementById("programInformationText").style.height))+"px",document.getElementById(t).style.color="#FFFFFF",document.getElementById(t).style.textAlign="left",document.getElementById(t).style.lineHeight="1.2",document.getElementById(t).style.whiteSpace="nowrap",document.getElementById(t).style.textTransform="uppercase";
+	t="loadingTrackCircle";
 	document.getElementById(t).style.height=parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.width=parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.left=.07*parseInt(document.getElementById(t).style.width)+"px",document.getElementById(t).style.top="0px";
-	t="progressBar",e=6.68;
+	t="nextTrackButton2";
+	document.getElementById(t).style.height=parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.width=parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.left=stageWidth-1.07*parseInt(document.getElementById(t).style.width)+"px",document.getElementById(t).style.top="0px";
+	t="progressBar";
 	document.getElementById(t).style.height=Math.round(.09*parseInt(document.getElementById("information").style.height))+"px",document.getElementById(t).style.width="0px",document.getElementById(t).style.left="0px",document.getElementById(t).style.top=0-parseInt(document.getElementById(t).style.height)+"px";
-	t="informationBackground",e=6.68;
+	t="progressBarBackground";
+	document.getElementById(t).style.height=parseInt(document.getElementById("progressBar").style.height)+"px",document.getElementById(t).style.width=stageWidth+"px",document.getElementById(t).style.left="0px",document.getElementById(t).style.top=parseInt(document.getElementById("progressBar").style.top)+"px";
+	t="informationBackground";
 	document.getElementById(t).style.height=parseInt(document.getElementById("information").style.height)+"px",document.getElementById(t).style.width=parseInt(document.getElementById("information").style.width)+"px",document.getElementById(t).style.left="0px",document.getElementById(t).style.top="0px",document.getElementById(t).style.backgroundColor="#000000",document.getElementById(t).style.opacity=.5
 }
 function showInformation()
@@ -85,8 +89,7 @@ function updateProgressBar()
 }
 function defineInformationButtons()
 	{
-	var t="informationIcon";
-	document.getElementById(t).ontouchstart=function(t)
+	document.getElementById("informationIcon").ontouchstart=function(t)
 		{
 		document.getElementById("informationIcon").style.opacity=.3,remoteSwitch(),setTimeout(function()
 			{
@@ -94,7 +97,7 @@ function defineInformationButtons()
 		}
 		,250),t.preventDefault()
 	}
-	,document.getElementById(t).onmousedown=function(t)
+	,document.getElementById("informationIcon").onmousedown=function(t)
 		{
 		document.getElementById("informationIcon").style.opacity=.3,remoteSwitch(),setTimeout(function()
 			{
@@ -102,8 +105,7 @@ function defineInformationButtons()
 		}
 		,250)
 	};
-	t="informationBackground";
-	document.getElementById(t).ontouchstart=function(t)
+	document.getElementById("informationBackground").ontouchstart=function(t)
 		{
 		document.getElementById("informationIcon").style.opacity=.3,remoteSwitch(),setTimeout(function()
 			{
@@ -111,13 +113,30 @@ function defineInformationButtons()
 		}
 		,250),t.preventDefault()
 	}
-	,document.getElementById(t).onmousedown=function(t)
+	,document.getElementById("informationBackground").onmousedown=function(t)
 		{
 		document.getElementById("informationIcon").style.opacity=.3,remoteSwitch(),setTimeout(function()
 			{
 			document.getElementById("informationIcon").style.opacity=1
 		}
 		,250)
+	};
+	var t="nextTrackButton2";
+	document.getElementById(t).ontouchstart=function(t)
+		{
+		document.getElementById("nextTrackButton2").style.opacity=.3,setTimeout(function()
+			{
+			document.getElementById("nextTrackButton2").style.opacity=1
+		}
+		,250),skipTrack(),t.preventDefault()
+	}
+	,document.getElementById(t).onmousedown=function(t)
+		{
+		document.getElementById("nextTrackButton2").style.opacity=.3,setTimeout(function()
+			{
+			document.getElementById("nextTrackButton2").style.opacity=1
+		}
+		,250),skipTrack()
 	}
 }
 function radioRuntime()
@@ -136,4 +155,5 @@ stationsArray=new Array,bumpsArray=new Array,selectedStationNum=0,trackPos=-1,bu
 	{
 	0==shuffle_switch?playAudioPlayer():1==shuffle_switch&&gotoNextStation()
 }
-,!1),flagSongRequests=!0,staticSwitch=!1,document.getElementById("loadingTrackCircle").style.visibility="hidden",document.getElementById("progressBar").style.backgroundColor="#FFE222",allRuntimeFunctionsList[allRuntimeFunctionsList.length]=radioRuntime;
+,!1),flagSongRequests=!0,staticSwitch=!1,document.getElementById("loadingTrackCircle").style.visibility="hidden",document.getElementById("progressBar").style.backgroundColor="#000000",document.getElementById("progressBarBackground").style.backgroundColor="#FFFFFF",allRuntimeFunctionsList[allRuntimeFunctionsList.length]=radioRuntime;
+
