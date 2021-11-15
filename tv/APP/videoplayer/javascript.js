@@ -9,11 +9,13 @@ function previewScreenSizeAndPosition() {
     e = "previewWallpaper", t = 1280 / 720;
     document.getElementById(e).style.height = parseInt(document.getElementById("previewScreen").style.height) + "px", document.getElementById(e).style.width = Math.round(parseInt(document.getElementById("previewWallpaper").style.height) * t) + "px", document.getElementById(e).style.left = Math.round(parseInt(document.getElementById("previewScreen").style.width) / 2) - Math.round(parseInt(document.getElementById("previewWallpaper").style.width) / 2) + "px", document.getElementById(e).style.top = "0px", parseInt(document.getElementById("previewWallpaper").style.width) < parseInt(document.getElementById("previewScreen").style.width) && (document.getElementById(e).style.width = parseInt(document.getElementById("previewScreen").style.width) + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById("previewWallpaper").style.width) / t) + "px", document.getElementById(e).style.left = "0px", document.getElementById(e).style.top = Math.round(parseInt(document.getElementById("previewScreen").style.height) / 2) - Math.round(parseInt(document.getElementById("previewWallpaper").style.height) / 2) + "px")
 }
+
 function hidePreviewScreen() {
     document.getElementById("previewWallpaper").style.pointerEvents = "none", document.getElementById("playButton").style.visibility = "hidden", document.getElementById("loadingCircle").style.opacity = 1, document.getElementById("remote").style.visibility = "visible", document.getElementById("zoomButton").style.visibility = "visible", document.getElementById("previewScreen").style.opacity = 0, setTimeout(function() {
         document.getElementById("previewScreen").style.visibility = "hidden"
     }, 777), playVideoPlayer(), displayChannelNumber()
 }
+
 function definePlayButton() {
     var e = "previewWallpaper";
     "ontouchmove" in document.documentElement ? document.getElementById(e).ontouchstart = function(e) {
@@ -22,6 +24,7 @@ function definePlayButton() {
         hidePreviewScreen(), e.preventDefault()
     }
 }
+
 function videoPlayerSizeAndPosition() {
     var e = "videoFrame";
     document.getElementById(e).style.height = stageHeight + "px", document.getElementById(e).style.width = stageWidth + "px", document.getElementById(e).style.left = "0px", document.getElementById(e).style.top = "0px";
@@ -29,6 +32,7 @@ function videoPlayerSizeAndPosition() {
         t = 1280 / 720;
     "fullscreen" == screenLayout && (document.getElementById(e).style.height = stageHeight + "px", document.getElementById(e).style.width = Math.round(parseInt(document.getElementById("videoPlayer").style.height) * t) + "px", document.getElementById(e).style.left = -(parseInt(document.getElementById("videoPlayer").style.width) - stageWidth) / 2 + "px", document.getElementById(e).style.top = -(parseInt(document.getElementById("videoPlayer").style.height) - stageHeight) / 2 + "px", parseInt(document.getElementById("videoPlayer").style.width) < stageWidth && (document.getElementById(e).style.width = stageWidth + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById("videoPlayer").style.width) / t) + "px", document.getElementById(e).style.left = -(parseInt(document.getElementById("videoPlayer").style.width) - stageWidth) / 2 + "px", document.getElementById(e).style.top = -(parseInt(document.getElementById("videoPlayer").style.height) - stageHeight) / 2 + "px")), "fitframe" == screenLayout && (document.getElementById(e).style.width = stageWidth + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById("videoPlayer").style.width) / t) + "px", document.getElementById(e).style.left = -(parseInt(document.getElementById("videoPlayer").style.width) - stageWidth) / 2 + "px", document.getElementById(e).style.top = -(parseInt(document.getElementById("videoPlayer").style.height) - stageHeight) / 2 + "px")
 }
+
 function playVideoPlayer(e) {
     if (1 == skipFirstTime ? skipFirstTime = !1 : changeStaticColor(), document.getElementById("videoFrame").style.opacity = 0, 1 == selectedChannel && (mediaPosition1++, mediaPosition1 >= totalFiles1 && (mediaPosition1 = 0)), 2 == selectedChannel && (mediaPosition2++, mediaPosition2 >= totalFiles2 && (mediaPosition2 = 0)), 3 == selectedChannel && (mediaPosition3++, mediaPosition3 >= totalFiles3 && (mediaPosition3 = 0)), 4 == selectedChannel && (mediaPosition4++, mediaPosition4 >= totalFiles4 && (mediaPosition4 = 0)), 5 == selectedChannel && (mediaPosition5++, mediaPosition5 >= totalFiles5 && (mediaPosition5 = 0)), 6 == selectedChannel && (mediaPosition6++, mediaPosition6 >= totalFiles6 && (mediaPosition6 = 0)), 7 == selectedChannel && (mediaPosition7++, mediaPosition7 >= totalFiles7 && (mediaPosition7 = 0)), 8 == selectedChannel && (mediaPosition8++, mediaPosition8 >= totalFiles8 && (mediaPosition8 = 0)), 9 == selectedChannel && (mediaPosition9++, mediaPosition9 >= totalFiles9 && (mediaPosition9 = 0)), lastDuration = 0, 1 == searchForContinue && 1 == selectedChannel) {
         for (console.log("Searching CH1"), s = 0; s < filesListArray1.length; s++) filesListArray1[s] == localStorage.ch1LastVideo && (console.log("FOUND: " + localStorage.ch1LastDuration), mediaPosition1 = s, lastDuration = localStorage.ch1LastDuration);
@@ -66,23 +70,7 @@ function playVideoPlayer(e) {
         for (console.log("Searching CH9"), s = 0; s < filesListArray9.length; s++) filesListArray9[s] == localStorage.ch9LastVideo && (console.log("FOUND: " + localStorage.ch9LastDuration), mediaPosition9 = s, lastDuration = localStorage.ch9LastDuration);
         searchForContinue = !1
     }
-    1 == loadPinnedVideo ? (document.getElementById("videoPlayerMP4").src = "videoplayer/pinned/pinned.mp4", loadPinnedVideo = !1) : 1 == loadSpecificVideo ? (document.getElementById("videoPlayerMP4").src = e, loadSpecificVideo = !1) : (1 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "videoplayer/ch1/" + filesListArray1[mediaPosition1] + ".mp4"), 2 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "videoplayer/ch2/" + filesListArray2[mediaPosition2] + ".mp4"), 3 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "videoplayer/ch3/" + filesListArray3[mediaPosition3] + ".mp4"), 4 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "videoplayer/ch4/" + filesListArray4[mediaPosition4] + ".mp4"), 5 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "videoplayer/ch5/" + filesListArray5[mediaPosition5] + ".mp4"), 6 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "videoplayer/ch6/" + filesListArray6[mediaPosition6] + ".mp4"), 7 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "videoplayer/ch7/" + filesListArray7[mediaPosition7] + ".mp4"), 8 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "videoplayer/ch8/" + filesListArray8[mediaPosition8] + ".mp4"), 9 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "videoplayer/ch9/" + filesListArray9[mediaPosition9] + ".mp4")), console.log("LOADING");
-
-console.log(document.getElementById("videoPlayerMP4").src)
-document.getElementById("videoPlayer").load()
-fetch("").then(response => response.blob())
-    .then(blob => {
-      document.getElementById("videoPlayerMP4").srcObject = blob;
-      return document.getElementById("videoPlayer").play()
-    })
-    .then(_ => {
- console.log("done");
-      // Video playback started ;)
-    })
-    .catch(e => {
- console.log(e);
-      // Video playback failed ;(
-    })
+    1 == loadPinnedVideo && (lastDuration = 0), 1 == loadPinnedVideo ? (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/pinned/pinned.mp4", loadPinnedVideo = !1) : 1 == loadSpecificVideo ? (document.getElementById("videoPlayerMP4").src = e, loadSpecificVideo = !1) : (1 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/ch1/" + filesListArray1[mediaPosition1] + ".mp4"), 2 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/ch2/" + filesListArray2[mediaPosition2] + ".mp4"), 3 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/ch3/" + filesListArray3[mediaPosition3] + ".mp4"), 4 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/ch4/" + filesListArray4[mediaPosition4] + ".mp4"), 5 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/ch5/" + filesListArray5[mediaPosition5] + ".mp4"), 6 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/ch6/" + filesListArray6[mediaPosition6] + ".mp4"), 7 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/ch7/" + filesListArray7[mediaPosition7] + ".mp4"), 8 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/ch8/" + filesListArray8[mediaPosition8] + ".mp4"), 9 == selectedChannel && (document.getElementById("videoPlayerMP4").src = "https://jetsetradio.live/tv/APP/videoplayer/ch9/" + filesListArray9[mediaPosition9] + ".mp4")), console.log("LOADING"), document.getElementById("videoPlayer").load(), document.getElementById("videoPlayer").play()
 }
 
 
@@ -96,6 +84,7 @@ function defineVideoButton() {
         playVideoPlayer(), e.preventDefault()
     }
 }
+
 function remoteSizeAndPosition() {
     var e = "remote",
         t = .52;
@@ -134,15 +123,19 @@ function displayChannelNumber() {
         document.getElementById("channel1Graphic").style.opacity = 0, document.getElementById("channel2Graphic").style.opacity = 0, document.getElementById("channel3Graphic").style.opacity = 0, document.getElementById("channel4Graphic").style.opacity = 0, document.getElementById("channel5Graphic").style.opacity = 0, document.getElementById("channel6Graphic").style.opacity = 0, document.getElementById("channel7Graphic").style.opacity = 0, document.getElementById("channel8Graphic").style.opacity = 0, document.getElementById("channel9Graphic").style.opacity = 0
     }, 2e3)
 }
+
 function gotoNextChannel() {
     selectedChannel++, 9 < selectedChannel && (selectedChannel = 1), displayChannelNumber(), searchForContinue = !0, playVideoPlayer()
 }
+
 function gotoPrevChannel() {
     selectedChannel--, selectedChannel < 1 && (selectedChannel = 9), displayChannelNumber(), searchForContinue = !0, playVideoPlayer()
 }
+
 function swapScreenLayout() {
     "fullscreen" == screenLayout ? (screenLayout = "fitframe", videoPlayerSizeAndPosition()) : "fitframe" == screenLayout && (screenLayout = "fullscreen", videoPlayerSizeAndPosition())
 }
+
 function defineRemoteButtons() {
     var e = "nextChannelButton";
     "ontouchmove" in document.documentElement ? (document.getElementById(e).ontouchstart = function(e) {
@@ -171,6 +164,7 @@ function defineRemoteButtons() {
         swapScreenLayout(), e.preventDefault()
     }
 }
+
 function videoplayerRuntime() {
     allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length] = previewScreenSizeAndPosition, allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length - 1](), definePlayButton(), allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length] = videoPlayerSizeAndPosition, allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length - 1](), defineVideoButton(), allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length] = remoteSizeAndPosition, allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length - 1](), defineRemoteButtons()
 }

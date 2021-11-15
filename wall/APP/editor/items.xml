@@ -2,15 +2,6 @@
 <data>
   <item>
     <item>
-      <image>http://localhost:3000/wall/APP/editor/library/11.png</image>
-      <size>0.3</size>
-      <xPos>0.34986945169712796</xPos>
-      <yPos>0.43271461716937354</yPos>
-      <rotation>0</rotation>
-    </item>
-  </item>
-  <item>
-    <item>
       <image>http://localhost:3000/wall/APP/editor/library/42.png</image>
       <size>0.3</size>
       <xPos>0.34986945169712796</xPos>
@@ -51,6 +42,15 @@
       <size>0.3</size>
       <xPos>0.2924281984334204</xPos>
       <yPos>0.10440835266821345</yPos>
+      <rotation>0</rotation>
+    </item>
+  </item>
+  <item>
+    <item>
+      <image>http://localhost:3000/wall/APP/editor/library/63.png</image>
+      <size>0.2</size>
+      <xPos>0.4007832898172324</xPos>
+      <yPos>0.5997679814385151</yPos>
       <rotation>0</rotation>
     </item>
   </item>

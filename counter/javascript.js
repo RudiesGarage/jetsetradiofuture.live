@@ -3,11 +3,11 @@ function xmlString(e) {
 }
 
 function saveCounterXML() {
-    // chatpassword = queryValue("p"), counterPostMessage = "chatpassword=" + chatpassword;
-    // var e = new XMLHttpRequest;
-    // e.open("POST", "counter/counter.php", !0), e.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), e.send(counterPostMessage), e.onreadystatechange = function() {
-    //     4 == e.readyState && loadCounterXML()
-    // }
+    chatpassword = queryValue("p"), counterPostMessage = { "chatpassword": chatpassword };
+    var e = new XMLHttpRequest;
+    e.open("POST", "counter/counter.php", !0), e.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), e.send(JSON.stringify(counterPostMessage)), e.onreadystatechange = function() {
+        4 == e.readyState && loadCounterXML()
+    }
 }
 
 function loadCounterXML() {
