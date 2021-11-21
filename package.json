@@ -2,7 +2,7 @@
     "name": "jetsetradiofuture",
     "version": "1.0.0",
     "description": "jetsetradio future site",
-    "main": "app.js",
+    "main": "server.js",
     "dependencies": {
         "body-parser": "^1.19.0",
         "cookie-parser": "^1.4.5",
@@ -28,7 +28,8 @@
         "uglify-js": "^3.4.8"
     },
     "scripts": {
-        "start": "node bin/server.js",
+        "dev": "export NODE_ENV=dev&& node bin/server.js",
+        "prod": "export NODE_ENV=prod&& node bin/server.js",
         "clean": "node clean-css.js"
     },
     "repository": {

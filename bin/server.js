@@ -20,8 +20,8 @@ const builder = new xml2js.Builder();
 const config = require('./config.js'); //Load Env Vars
 console.log(`NODE_ENV=${config.NODE_ENV}`);
 
-let baseURL = "http://" + config.HOST + ":" + config.PORT; //"http://localhost:3000";
-let localPath = config.JSRF_PATH; //"/home/dem/www/jetsetradiofuture";
+let baseURL = "http://" + config.HOST + ":" + config.PORT;
+let localPath = config.JSRF_PATH;
 
 // Create a server object
 http.createServer(function(req, res) {
