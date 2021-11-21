@@ -16,9 +16,12 @@ const DOMPurify = createDOMPurify(window);
 
 const builder = new xml2js.Builder();
 
-//TODO make sure these paths are changed and set as environement vars
-let baseURL = "http://localhost:3000";
-let localPath = "/home/dem/www/jetsetradiofuture";
+
+const config = require('./config.js'); //Load Env Vars
+console.log(`NODE_ENV=${config.NODE_ENV}`);
+
+let baseURL = "http://" + config.HOST + ":" + config.PORT; //"http://localhost:3000";
+let localPath = config.JSRF_PATH; //"/home/dem/www/jetsetradiofuture";
 
 // Create a server object
 http.createServer(function(req, res) {
@@ -272,8 +275,8 @@ http.createServer(function(req, res) {
     }
 
 
-}).listen(3000, function() {
+}).listen(config.PORT, function() {
 
     // The server object listens on port 3000
-    console.log("server start at port 3000");
+    console.log(`APP LISTENING ON http://${config.HOST}:${config.PORT}`);
 });
