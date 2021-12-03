@@ -61,17 +61,18 @@
     <!--============================================ RADIO =================================================-->
 
     <audio id="staticPlayer" class="objectSettings touchableOff" style="z-index:104;" preload="auto">
-<source id="staticPlayerMP3" src="" type="audio/mpeg">
-</audio>
+        <source id="staticPlayerMP3" src="" type="audio/mpeg">
+    </audio>
 
     <audio id="audioPlayer" class="objectSettings touchableOff" style="z-index:104;" preload="auto">
-<source id="audioPlayerMP3" src="" type="audio/mpeg">
-</audio>
+        <source id="audioPlayerMP3" src="" type="audio/mpeg">
+    </audio>
 
     <div id="information" class="objectSettings touchableOff" style="z-index:300;">
 
         <img id="informationIcon" class="objectSettings touchableOn" style="z-index:305;cursor:pointer;" src="radio/images/stationsButton.png">
-        <div id="informationIconColor" class="objectSettings touchableOff" style="background-color:#fff;z-index:304;"></div>
+        <div id="informationIconColor" class="objectSettings touchableOff" style="background-color:#fff;z-index:304;">
+        </div>
 
         <font id="programInformationText" class="objectSettings touchableOff" style="z-index:300;"></font>
         <div id="progressBar" class="objectSettings touchableOff" style="z-index:300;"></div>
@@ -90,6 +91,7 @@
     <script type="application/javascript" src="radio/javascript.js"></script>
     <!--Bumps -->
     <script type="application/javascript" src="radio/stations/bumps/~list.js"></script>
+    <script type="application/javascript" src="radio/stations/live/~list.js"></script>
 
     <!--Game OSTs Remixes -->
     <script type="application/javascript" src="radio/stations/classic/~list.js"></script>
@@ -279,11 +281,13 @@
 
         <div id="canCount" class="objectSettings touchableOff" style="z-index: 401; height: 83.25px; width: 125px; left: 0px; top: -99.6px;">
             <img id="canIcon" class="objectSettings touchableOn" style="z-index: 401; height: 83px; width: 83px; left: 0px; top: 0px;" src="editor/images/canIcon.png">
-            <font id="canCountText" class="objectSettings touchableOff" style="z-index: 402; height: 27px; width: 125px; left: 61px; top: 40px; font-family: jetsetfont; font-size: 24px; color: rgb(255, 0, 0); text-align: left; line-height: 1.1; white-space: nowrap; text-transform: uppercase; -webkit-text-stroke: 1px black;">5</font>
+            <font id="canCountText" class="objectSettings touchableOff" style="z-index: 402; height: 27px; width: 125px; left: 61px; top: 40px; font-family: jetsetfont; font-size: 24px; color: rgb(255, 0, 0); text-align: left; line-height: 1.1; white-space: nowrap; text-transform: uppercase; -webkit-text-stroke: 1px black;">
+                5</font>
         </div>
 
     </div>
-    <div id="editorExterior" class="objectSettings touchableOn" style="z-index: 897; height: 862px; width: 475px; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0; transition: all 0s ease-out 0s; visibility: hidden;"></div>
+    <div id="editorExterior" class="objectSettings touchableOn" style="z-index: 897; height: 862px; width: 475px; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0; transition: all 0s ease-out 0s; visibility: hidden;">
+    </div>
 
     <!--===================================-->
     <script type="application/javascript" src="editor/javascript.js"></script>
@@ -311,7 +315,8 @@
         <img id="colorPickerButton" class="objectSettings touchableOn" style="cursor:pointer;z-index:803;" src="chat/images/colorPicker1.png">
 
         <font id="timestampTextField" class="objectSettings touchableOff" style="z-index:895;"></font>
-        <div id="chatTextField" class="touchableOn" style="display:block;overflow:hidden;position:absolute;border:none;resize:none;padding:0px;z-index:801;cursor:default;"></div>
+        <div id="chatTextField" class="touchableOn" style="display:block;overflow:hidden;position:absolute;border:none;resize:none;padding:0px;z-index:801;cursor:default;">
+        </div>
         <input id="messageTextField" name=”notASearchField” autocomplete="off" style="display:block;overflow:hidden;position:absolute;border:none;resize:none;padding:0px;outline:none;outline-width:0;z-index:801;"></input>
         <img id="sendButton" class="objectSettings touchableOn" style="cursor:pointer;z-index:804;" src="chat/images/sendButton.png">
 
@@ -395,7 +400,8 @@
         <img id="wallpaperImageBottomClone" class="objectSettings touchableOff" style="z-index:102;" src="radio/stations/classic/images/wallpaper.jpg">
     </div>
 
-    <div id="chameleonWallpaper" class="objectSettings touchableOff" style="background-color:#000000;z-index:100;"></div>
+    <div id="chameleonWallpaper" class="objectSettings touchableOff" style="background-color:#000000;z-index:100;">
+    </div>
 
 
     <!--====================================-->

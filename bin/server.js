@@ -7,6 +7,7 @@ const xml2js = require('xml2js');
 var validUrl = require('valid-url');
 const isImageUrl = require('is-image-url');
 
+const got = require('got');
 const createDOMPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
 
@@ -16,15 +17,19 @@ const DOMPurify = createDOMPurify(window);
 
 const builder = new xml2js.Builder();
 
-
 const config = require('./config.js'); //Load Env Vars
 console.log(`NODE_ENV=${config.NODE_ENV}`);
 
 let baseURL = "http://" + config.HOST + ":" + config.PORT;
 let localPath = config.JSRF_PATH;
+const crypto = require('crypto');
+const cron = require('node-cron');
 
 // Create a server object
 http.createServer(function(req, res) {
+    // Get the requester IP
+    var user_ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || null;
+    const data_p = crypto.createHash('sha256').update(user_ip).digest('hex');
 
     // Get the url and parse
     const myUrl = new URL(req.url, baseURL);
@@ -47,7 +52,10 @@ http.createServer(function(req, res) {
             pathname = "/index.html";
             mimeType = mime.contentType(path.extname(pathname));
         }
-        if (pathname == "/chat/serverTime.php") {
+        if (pathname == "/radio/stations/live/Jet%20Set%20Radio%20Live.mp3") {
+            got.stream("https://admin.jsrf.live/radio/8000/radio.mp3").pipe(res);
+
+        } else if (pathname == "/chat/serverTime.php") {
             res.writeHead(200, "text/xml;charset=UTF-8");
             // => 'text/plain'     
             let date_ob = new Date(); //in seconds
@@ -84,7 +92,7 @@ http.createServer(function(req, res) {
                     month: 'long',
                     day: 'numeric'
                 }) +
-                "</serverFormattedDate><serverTime>" + seconds + "</serverTime></data>");
+                "</serverFormattedDate><serverTime>" + Date.now() + "</serverTime></data>");
             return res.end();
         } else {
             fs.readFile(localPath + decodeURI(pathname), function(err, data) {
@@ -107,8 +115,8 @@ http.createServer(function(req, res) {
             req.on('end', () => {
                 try {
                     var msg = JSON.parse(body);
-                    //console.log(msg);
-                    let date_ob = new Date();
+                    /*
+                    //let user_ip = RequestIp.getClientIp(req);
                     // read XML file
                     // why was this not made with sockets?
                     fs.readFile(localPath + "/counter/listeners.xml", "utf-8", (err, data) => {
@@ -121,9 +129,11 @@ http.createServer(function(req, res) {
                             if (err) {
                                 throw err;
                             }
-
                             // add new message
-                            result.data.user.push({ ip: "", timestamp: date_ob.getSeconds() });
+                            result.data.user.push({
+                                ip: data_p,
+                                timestamp: Date.now()
+                            });
 
                             const xml = builder.buildObject(result);
                             // write updated XML string to a file
@@ -136,6 +146,7 @@ http.createServer(function(req, res) {
 
                         });
                     });
+                    */
                 } catch (e) {
                     console.log(e);
                 } finally {
@@ -164,8 +175,10 @@ http.createServer(function(req, res) {
                     //if the url is a valid image then set image template
                     if (isImageUrl(msg.chatmessage)) {
                         msg.chatmessage = "<br/><a href=\"" + msg.chatmessage + "\" target=\"_blank\" rel=\"noopener\" style=\"color:#00bfc1;\"><img src=\"" + msg.chatmessage + "\" class=\"imageController\" style=\"position:relative;height:25%;z-index:899;image-rendering:optimizeSpeed;image-rendering:-moz-crisp-edges;image-rendering:-o-crisp-edges;image-rendering:-webkit-optimize-contrast;image-rendering:pixelated;image-rendering:optimize-contrast;-ms-interpolation-mode:nearest-neighbor;\" onerror=\"this.src=\'" + baseURL + "/media/404.gif\'\"></a>";
+                    } else if (validUrl.isUri(msg.chatmessage)) {
+                        msg.chatmessage = "<a href=\"" + msg.chatmessage + "\" target=\"_blank\" rel=\"noopener\" style=\"color:#00bfc1;\">" + msg.chatmessage + "</a>";
                     }
-                    let ts = Math.floor(Date.now() / 1000); //in seconds
+                    let ts = Date.now(); //in seconds
                     msg = { username: msg.username, text: msg.chatmessage, ip: 0, timestamp: ts, color: msg.color };
 
                     // read XML file
@@ -279,4 +292,19 @@ http.createServer(function(req, res) {
 
     // The server object listens on port 3000
     console.log(`APP LISTENING ON http://${config.HOST}:${config.PORT}`);
+});
+
+
+// Schedule tasks to be run on the server.
+cron.schedule('* * * * *', function() {
+    console.log('running a task every minute');
+    // Copying sample_file.txt to a different name
+    fs.copyFile(localPath + "/counter/listeners_temp.xml", localPath + "/counter/listeners.xml", (err) => {
+        if (err) {
+            console.log("Oops! An Error Occured:", err);
+        } else {
+            // Printing the current file name after executing the function
+            console.log("File Contents of async_copied_file:");
+        }
+    });
 });

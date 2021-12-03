@@ -208,7 +208,7 @@ function loadChatXML() {
 var continuousChatLoading, continuousServerDateLoading, continuousRunTime, serverTime = Math.round((new Date).getTime() / 1e3);
 
 function runTime() {
-    timeSinceLastMessage = (serverTime += 1) - lastTimestampValue, formattedTime = Math.floor(timeSinceLastMessage / 60), 0 < lastTimestampValue ? 0 < formattedTime ? document.getElementById("timestampTextField").innerHTML = loadingInsert + formattedTime + " min ago" : document.getElementById("timestampTextField").innerHTML = loadingInsert + "< 1 min ago" : document.getElementById("timestampTextField").innerHTML = "LAST MESSAGE: "
+    timeSinceLastMessage = (serverTime += 1) - lastTimestampValue, formattedTime = Math.floor(timeSinceLastMessage / 60000), 0 < lastTimestampValue ? 0 < formattedTime ? document.getElementById("timestampTextField").innerHTML = loadingInsert + formattedTime + " min ago" : document.getElementById("timestampTextField").innerHTML = loadingInsert + "< 1 min ago" : document.getElementById("timestampTextField").innerHTML = "LAST MESSAGE: "
 }
 
 function retrieveServerDate() {

@@ -1,66 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <data>
   <message>
-    <username>p</username>
-    <text>!#ffffff p&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
-    <username>p</username>
-    <text>&amp;lt;font style='color:#!#&amp;lt;font style='color:#ffffff;'&amp;gt;;'&amp;gt; p&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
-    <username>p</username>
-    <text>&amp;lt;font style='color:#!#ffffff;'&amp;gt; p&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
-    <username>p</username>
-    <text>!#&amp;lt;font style='color:#ffffff;'&amp;gt; p&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
-    <username>p</username>
-    <text>&amp;lt;font style='color:#!#ffffff;'&amp;gt; p&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
-    <username>p</username>
-    <text>!#&amp;lt;font style='color:#ffffff;'&amp;gt; p&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
-    <username>p</username>
-    <text>&amp;lt;font style='color:!#ffffff;'&amp;gt; p&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
-    <username>p</username>
-    <text>&amp;lt;font style='color:!#ffffff;'&amp;gt; &lt;script&gt;alert(1);&lt;/script&gt;&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
-    <username>p</username>
-    <text>&amp;lt;font style='color:!#ffffff;'&amp;gt; &lt;/font&gt;&lt;script&gt;alert(0)&lt;/script&gt;&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
-    <username>fadsa</username>
-    <text>&amp;lt;font style='color:!#ffffff;'&amp;gt; p&amp;lt;/font&amp;gt;</text>
-    <ip>0</ip>
-    <timestamp>0</timestamp>
-  </message>
-  <message>
     <username>fadsa</username>
     <text> p</text>
     <ip>0</ip>
@@ -286,6 +226,76 @@
     <text>&lt;br/&gt;&lt;a href="https://391146.smushcdn.com/620010/wp-content/uploads/2018/12/bash_output.jpg?lossy=1&amp;strip=1&amp;webp=1" target="_blank" rel="noopener" style="color:#00bfc1;"&gt;&lt;img src="https://391146.smushcdn.com/620010/wp-content/uploads/2018/12/bash_output.jpg?lossy=1&amp;strip=1&amp;webp=1" class="imageController" style="position:relative;height:25%;z-index:899;image-rendering:optimizeSpeed;image-rendering:-moz-crisp-edges;image-rendering:-o-crisp-edges;image-rendering:-webkit-optimize-contrast;image-rendering:pixelated;image-rendering:optimize-contrast;-ms-interpolation-mode:nearest-neighbor;" onerror="this.src='http://localhost:3000/media/404.gif'"&gt;&lt;/a&gt;</text>
     <ip>0</ip>
     <timestamp>1637526704</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>test</username>
+    <text>llo</text>
+    <ip>0</ip>
+    <timestamp>1638553268817</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>test</username>
+    <text>!dance</text>
+    <ip>0</ip>
+    <timestamp>1638553272703</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>test</username>
+    <text>tets</text>
+    <ip>0</ip>
+    <timestamp>1638554632980</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>test</username>
+    <text>t</text>
+    <ip>0</ip>
+    <timestamp>1638554788373</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>test</username>
+    <text>"https://jetsetradio.live"</text>
+    <ip>0</ip>
+    <timestamp>1638555081942</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>test</username>
+    <text>/""</text>
+    <ip>0</ip>
+    <timestamp>1638555085607</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>test</username>
+    <text>https://jetsetradio.live</text>
+    <ip>0</ip>
+    <timestamp>1638555092713</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>http://</username>
+    <text>You have JOINED the chat!!!</text>
+    <ip>0</ip>
+    <timestamp>1638555342659</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>http://</username>
+    <text>&lt;br/&gt;&lt;a href="https://google.com" target="_blank" rel="noopener" style="color:#00bfc1;"&gt;https://google.com&lt;/a&gt;</text>
+    <ip>0</ip>
+    <timestamp>1638555353467</timestamp>
+    <color>!#ffffff </color>
+  </message>
+  <message>
+    <username>http://</username>
+    <text>https://helloworld.com okay?</text>
+    <ip>0</ip>
+    <timestamp>1638555397875</timestamp>
     <color>!#ffffff </color>
   </message>
 </data>
