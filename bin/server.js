@@ -249,8 +249,10 @@ http.createServer(function(req, res) {
 
                                 // print JSON object
                                 //console.log(JSON.stringify(result, null, 4));
-                                //Remove old image
-                                delete result.data.item[0];
+                                //Remove old image if 12 or more images are on the wall 
+                                while (result.data.item.length >= 12) {
+                                    result.data.item.shift(); //remove first element
+                                }
 
                                 // add new message
                                 result.data.item.push(msg);
@@ -280,7 +282,6 @@ http.createServer(function(req, res) {
 
 
             });
-            // //TODO update  /wall/APP/editor/items.xml
 
         } else {
             console.log("UNKOWN POST HANDLE");
