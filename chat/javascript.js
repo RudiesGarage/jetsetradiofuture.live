@@ -171,7 +171,8 @@ var chatDefault = savedUsername = !1,
 function loadChatXML() {
     1 == navigator.onLine && (xmlDocument = "", chatLoadRequest = new XMLHttpRequest, randomCacheNumber = Math.floor(999999999 * Math.random() + 1), chatLoadRequest.open("GET", "chat/messages.xml?" + randomCacheNumber, !0), chatLoadRequest.send(), console.log("Chat Messages - Loading..."), 0 == navigator.onLine && chatLoadRequest.abort(), chatLoadRequest.onreadystatechange = function() {
         if (4 == chatLoadRequest.readyState && void 0 !== chatLoadRequest.responseXML && null !== chatLoadRequest.responseXML) {
-            console.log("Chat Messages - LOADED!"), loadingInsert = "<regularText>LAST MESSAGE</regularText><transparentText>: </transparentText>", setTimeout(function() {
+            console.log("Chat Messages - LOADED!");
+            loadingInsert = "<regularText>LAST MESSAGE</regularText><transparentText>: </transparentText>", setTimeout(function() {
                 loadingInsert = "<regularText>LAST MESSAGE: </regularText>"
             }, 1e3);
             var e = chatLoadRequest.responseXML;
@@ -208,7 +209,17 @@ function loadChatXML() {
 var continuousChatLoading, continuousServerDateLoading, continuousRunTime, serverTime = Math.round((new Date).getTime() / 1e3);
 
 function runTime() {
-    timeSinceLastMessage = (serverTime += 1) - lastTimestampValue, formattedTime = Math.floor(timeSinceLastMessage / 60000), 0 < lastTimestampValue ? 0 < formattedTime ? document.getElementById("timestampTextField").innerHTML = loadingInsert + formattedTime + " min ago" : document.getElementById("timestampTextField").innerHTML = loadingInsert + "< 1 min ago" : document.getElementById("timestampTextField").innerHTML = "LAST MESSAGE: "
+    timeSinceLastMessage = (serverTime += 1) - lastTimestampValue, formattedTime = Math.floor(timeSinceLastMessage / 60000);
+    if (0 < lastTimestampValue && 0 < formattedTime) {
+        if (formattedTime > 60) {
+            document.getElementById("timestampTextField").innerHTML = loadingInsert + "60+ min ago";
+        } else {
+            document.getElementById("timestampTextField").innerHTML = loadingInsert + formattedTime + " min ago";
+
+        }
+    } else {
+        document.getElementById("timestampTextField").innerHTML = loadingInsert + "< 1 min ago";
+    }
 }
 
 function retrieveServerDate() {
