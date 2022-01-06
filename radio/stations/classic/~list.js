@@ -10,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "B.B. Rights - Funky Radio";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Castle Logical - Mischievous Boy";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Deavid Soul - Dunny Boy Williamson Show";
@@ -36,6 +37,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Mix Master Mi
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Reps - Bout The City";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Richard Jacques - Everybody Jump Around";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Toronto - Electric Tooth Brush";
-
-
-

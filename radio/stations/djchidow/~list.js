@@ -10,10 +10,13 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Chidow - Aisle 10 (Skrew Knows How We Do A Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Chidow - Aisle 10, Moody's Shuffle, Humming The Bassline";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Chidow - Chosen One (Tripper's Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Chidow - Chosen One (Trippers Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Chidow - Cosmic Mic Rockin'";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Chidow - Cosmic Mic Rockin";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Chidow - Electric Toothbrush (Millennium Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Chidow - Firestarting Lunatic";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Chidow - Fly Like a Butterfly (dB Remix)";

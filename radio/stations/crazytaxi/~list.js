@@ -10,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Bad Religion - Empty Causes";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Bad Religion - Hear It";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Bad Religion - Inner Logic";
@@ -33,8 +34,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Offspring
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Offspring - Walla Walla";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Offspring - Want You Bad";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Offspring - Way Down The Line";
-
-
-
-
-

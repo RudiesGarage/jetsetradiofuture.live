@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "retroremix";
 
@@ -9,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "A Skillz - ABC (Jackson Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Alvin Robinson - Fever (ProleteR tribute)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Basement Jaxx - Do Your Thing";
@@ -45,10 +47,12 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ray Charles -
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ray Charles - Hit The Road Jack (ProleteR Tribute)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ray Charles - I Got A Woman (Father Funk Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shahar Varshal - I Want To Break The Wall";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Skeewiff Vs Shawn Lee Vs Nancy Sinatra - I Got Soul Boots Made For Walkin";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Steve Miller Band - Fly Like An Eagle (Psymbionic Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Stevie Wonder & Edwin Starr - Superstition War";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Doors - Break On Through (DJ Swamp Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Doors - Roadhouse Blues (Fender Bender Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Doors - Soul Kitchen (Dj Inko Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Doors vs C2C - Captain (Raymon Lazer Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Flying Lizards - Money";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Tom Jones & The Cardigans - Burning Down The House (Scissorkicks Remix)";

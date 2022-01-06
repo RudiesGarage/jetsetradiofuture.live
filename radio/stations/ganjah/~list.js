@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "ganjah";
 
@@ -9,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Aidonia - Fi di Jockey";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Alborosie - Kingston Town";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Barrington Levy - Black Roses";
@@ -97,5 +99,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Vybz Kartel -
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Will Smith - Switch (Elephant Man Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "ZIggy Marley - All Day All Night (Feat. The Melody Makers)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ziggy Marley - Beach In Hawaii";
-
-

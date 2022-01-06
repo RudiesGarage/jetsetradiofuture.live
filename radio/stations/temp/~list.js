@@ -1,6 +1,6 @@
 
 //Choose a name for the station
-stationName = "live";
+stationName = "temp";
 
 //Add it to the array of stations
 stationsArray[stationsArray.length] = stationName;
@@ -11,4 +11,4 @@ this[stationName+"_tracks"] = new Array();
 
 //TRACKS
 
-this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jet Set Radio Live";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Time To Wake Up";

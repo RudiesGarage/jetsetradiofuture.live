@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "classical";
 
@@ -9,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Aaron Cox 85 - Classical HipHop";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Beethoven - Fur Elise (Klutch Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Broken Circuit - Hitchcock";
@@ -25,4 +27,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Redman, Metho
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Cut out the FL";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Run (Instrumental)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "XIV Beat - APOCALYPSE (MOZART - LACRIMOSA)";
-

@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "jetmashradio";
 
@@ -9,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "3етт0н - Fucking on the Bowl (Fatboy S. Mix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "3етт0н - Like Rave Like Back";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "3етт0н - Recipe for Perfect Pidor";

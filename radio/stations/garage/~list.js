@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "garage";
 
@@ -9,7 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
-this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Derevolutions - Bad King Kong";
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Aim - Just Passin' Through";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Diode - Good Morning Emotion";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Format - The Turning Point";
@@ -44,6 +45,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Divers
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Fuck Soundcheck";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Fuckajob";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Heaven";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - High Lights";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - I'm Free";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Just Think";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Poorboy Lover Megamix";
@@ -54,14 +56,4 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Uprock
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Same Beat - Ravi Harris & The Prophets";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Scienz of Life - Hot Bananas (Instrumental)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shag - My Mind";
-
-
-
-
-
-
-
-
-
-
-
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Derevolutions - Bad King Kong";

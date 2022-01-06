@@ -10,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Greg Johnson - 31 Back In The Groove (With Vocals)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Greg Johnson - Alien Breakdown";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Greg Johnson - Aqua Jam Unchained";
@@ -41,10 +42,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Greg Johnson 
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Greg Johnson - The Bass Master";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Greg Johnson - Theme Refunkified";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Greg Johnson - This Crazy Planet";
-
-
-
-
-
-
-

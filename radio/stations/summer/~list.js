@@ -1,7 +1,4 @@
 
-//if(systemMonth == "June" || systemMonth == "July" || systemMonth == "August"){
-
-
 //Choose a name for the station
 stationName = "summer";
 
@@ -13,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - Jet Set Classic (Interlude)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "311 - Amber (Supa Dups Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Afterlife - Sunfish";
@@ -58,6 +56,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "GRiZ - A Fine
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "J Boogie - Oceanic Lullaby";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jason Mraz - Im Yours (KIWIK Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jboi Beatz - Beautiful Day (U2 Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jeff Kaale - Mai Tai";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "John Denver - Take Me Home, Country Roads (Surfhouse Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jou Beats - Brasil";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jurassic 5 - Canto De Ossanha";
@@ -103,6 +102,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sugar Rocket 
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Surfaces - Palm Trees";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Derevolutions - Bad King Kong";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Knocks - Classic (feat Powers)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Pharcyde - Ya Mama";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Tim Tim - Rum N Coca Cola";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "TJR - Funky Vodka (Original Mix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ugly Duckling - A Little Samba";
@@ -110,10 +110,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Vinnie Manisc
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Weezer - Island In The Sun (Deep Phase Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "X I X X - Mai tai";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Yukari Fresh - Napoli";
-
-
-
-//}
-
-
-

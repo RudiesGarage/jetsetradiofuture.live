@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "outerspace";
 
@@ -9,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Astrud Gilberto - Fly Me To The Moon (Kaskade Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Beach House - Space Song";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Beastie Boys - Intergalactic (Psymbionic Remix)";

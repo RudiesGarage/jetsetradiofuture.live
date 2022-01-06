@@ -10,6 +10,8 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - Cauldron Rave";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "A Perfect Circle - The Outsider (Apocalypse Mix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "A Perfect Circle - The Outsider";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "All That Remains - Indictment";
@@ -183,6 +185,19 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Prodigy -
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Roots & BT - Tao Of The Machine";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Thy Art Is Murder - Reign of Darkness";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Timothy Steven Clarke - Lush";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Aces High";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Catch That Train";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Crash Flight";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Gangland";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Hangar 18";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Heart Of Darkness";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - In Darkest Night";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Rooftops By Night";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Smoke Screen";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Spidey Vs. Electro";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Spidey Vs. Lizard";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Spidey Vs. Shocker";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Todd Masten - Warehouse 66";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Underground Resistance - The Final Frontier";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "White Zombie - More Human Than Human";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Whitechapel - The Saw Is the Law";

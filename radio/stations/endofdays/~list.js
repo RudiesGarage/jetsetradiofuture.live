@@ -10,7 +10,9 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "13 And God - Soft Atlas";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "A Perfect Circle - The Outsider (Apocalypse Mix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Blockhead - You've Got Maelstrom";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Citizen Cope - Let The Drummer Kick";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Desired - Exolution";
@@ -30,10 +32,9 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ours Samplus 
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ours Samplus - Spell On You";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ours Samplus - Versus";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Poldoore - Honey Don't Cry";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Portugal The Man - Tidal Wave";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RJD2 - Smoke & Mirrors";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shawn Lees Ping Pong Orchestra - Kiss The Sky";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Thievery Corporation - The Richest Man In Babylon";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Virtual Boy - The Tower";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Wax Tailor - Once Upon A Past";
-
-

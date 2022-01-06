@@ -10,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "7Horse - Meth Lab Zoso Sticker";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "AC DC - Back In Black";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "AC DC - Givin the Dog a Bone";
@@ -107,7 +108,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "ZZ Top - Got 
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "ZZ Top - La Grange";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "ZZ Top - Sharp Dressed Man";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "ZZ Top - Tush";
-
-
-
-

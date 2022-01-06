@@ -1,7 +1,4 @@
 
-//if(systemMonth == "October"){
-
-
 //Choose a name for the station
 stationName = "halloween";
 
@@ -13,6 +10,8 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - Cauldron Rave";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "A Nightmare on Elm Street";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "AC DC - Highway to Hell (Deni Knight Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "AC DC - Highway To Hell";
@@ -205,12 +204,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Tim Tailor - 
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Van Halen - Runnin with the Devil";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Warren Zevon - Werewolves of London";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "White Zombie - More Human Than Human";
-
-
-
-
-//}
-
-
-
-

@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "memoriesoftokyoto";
 
@@ -9,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - 24 Hour Party People";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - Ba-da-Ba";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - Benten-cho Boogie";
@@ -26,9 +28,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - Roc
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - Say Somethin";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - Tag Walls, Punch Fascists";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2 Mello - You Like That";
-
-
-
-
-
-

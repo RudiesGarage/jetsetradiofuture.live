@@ -10,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Alice Francis - Shoot Him Down";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Amelia Arsenic - On the Attack";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Amy Winehouse - Back To Black (The Rumble Strips Remix)";
@@ -36,6 +37,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chrome Sparks
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Churchill - Change";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Cibo Matto - Hotel Valentine";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Class Actress - Journal of Ardency";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Coins - On Your Lips feat Dolls";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "CSS - Music Is My Hot Hot Sex";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dan The Automater - Stroker Ace";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Die Antwoord - Cookie Thumper";
@@ -122,5 +124,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Submarine
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "X-Ecutioners - Like This";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Yaeji - Raingurl";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Yummy Tasty Orchid - Britney Spears vs Fergie vs Gwen Stefani";
-
-

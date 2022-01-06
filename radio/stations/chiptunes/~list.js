@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "chiptunes";
 
@@ -9,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Anamanaguchi - Akira";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Anamanaguchi - Bosozoku GF";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Anamanaguchi - Cheap Shop";
@@ -26,6 +28,13 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Anamanaguchi 
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Big Giant Circles - The Glory Days Chip Zeal";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Big Giant Circles - The Glory Days Houston";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Big Giant Circles - The Glory Days Sevcon";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Blipsqueek - Clown Makeup";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Blipsqueek - King of the sky";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Blipsqueek - Midday by Endboss";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Blipsqueek - Sarias Jam";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Blipsqueek - Sticks, Faygo and old school nintendo games";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Blipsqueek - The happy chiptune NERD";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Blipsqueek - Wiley's last battle";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Bossfight - Be Gone Mr. Gawne";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Bossfight - Commando Steve";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Bossfight - Elevatia (meganeko Remix)";
@@ -45,7 +54,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - Bey
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - Can't Stop Us";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - Courtesy";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - Disconnected";
-this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - DiscothÃ©que Rouge, After Hours (Monaco OST Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - Discothéque Rouge, After Hours (Monaco OST Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - Evolution";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - Focus";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - Forged in Stars";
@@ -63,6 +72,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - Wai
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - When They Come For Us";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chipzel - When You Realise";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "CORNBEAST - MEGABLAST";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Cream in all moustache - Hear My Voice (JDDJ3J Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Cyber Shadow - Mekacity Ruins";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Cyber Shadow - The Theme of Shadow";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Danimal - Chronos";
@@ -79,30 +89,47 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Diad - The Be
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Fuckup at Dreamhack2001 (Feat Stalker)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Insert No Coins";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Just Another Paper Intro";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Keygen 11";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Keygen 3 feat Kootie";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Keygen 5";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Keygen 8";
-this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Keygen 11";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Kootie var e du";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Ninjaflood Starts School";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Pampradion Feat. Zabutom";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Rez Cracktro 4";
-this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - SÃ¥ hÃ¤r kan man ocksÃ¥ gÃ¶ra Feat. Zabutom";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Settlers 7 Cracktro";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - Så här kan man också göra Feat. Zabutom";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dubmood - You can do it but not like we do it (Feat Zabutom)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dunderpatrullen - 1up Muncher";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dunderpatrullen - How To Adventure";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dunderpatrullen - Pixie Crust";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dunderpatrullen - Singularity";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Dunderpatrullen - To The Moon (ft. FantomenK)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Fade Runner - Less Cops, More Titties";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Fade Runner - Loop For Your Pleasure";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Fade Runner - Traffic Jam";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Gigandect - 2e1dda";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Gigandect - Nyanshit";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "HarleyLikesMusic -  Infinity Tricks";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "HarleyLikesMusic - Steel City";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "IDecade - Catastrophe";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "IDecade - Denatured";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "IDecade - Kraken";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "IDecade - Mad";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "IDecade - Mahalo";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "IDecade - Traumas";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - A Thousand Leagues Below (Iron Whale) Manami Matsumae";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - Aqua Vitae (Explodatorium)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - Hidden by Night (Lich Yard)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - Rhythmortis (Lobby Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - Spin Ye Bottle (Minigame)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - Stone Cold (3-1 Cold Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - Strike the Earth! (Plains of Passage)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - The Claws of Fate (Mole Knight Battle)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - The Schemer (Tinker Knight Battle)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jake Kaufman - Watch Me Dance";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Je deviens dj en 3 jours - Kaizoku 海賊 (Henry Homesweet Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Je deviens dj en 3 jours - Pas de patates le mardi (Ctrix Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Kawai Sprite - Roses";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Kawai Sprite - Thorns";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Kubbi Cascade";
@@ -110,6 +137,12 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Kubbi Up In M
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "like luke - goodbye! goodbye! goodbye!";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "like luke - precious jewel (Sabrepulse remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "like luke - slam dunk lifestyle (Boaconstructor remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "MASTER BOOT RECORD - CASTLEVANIA 1";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "MASTER BOOT RECORD - CASTLEVANIA 2";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "MASTER BOOT RECORD - DOOM II";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "MASTER BOOT RECORD - DOOM";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "MASTER BOOT RECORD - F-ZERO";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "MASTER BOOT RECORD - MEGA MAN 2";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "MDK & meganeko - Supercharge";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "meganeko - Slime Boy Color";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "meganeko - Space Magic";
@@ -129,7 +162,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Popsicle Theo
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Rainbowdragoneyes - Chipwrecked";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Rainbowdragoneyes - Creatures Ov Deception";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Rainbowdragoneyes - Eur Hawt 200X";
-this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Rainbowdragoneyes - Hej SokoÅ‚y (This Is The Rainbowdragoneyes Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Rainbowdragoneyes - Hej Sokoły (This Is The Rainbowdragoneyes Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Rainbowdragoneyes - JjasonSalazZ";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Rainbowdragoneyes - OVERTHROW (instrumental)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Rainbowdragoneyes - Plunder Or Perish Main Theme";
@@ -139,10 +172,18 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Rainbowdragon
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RoboRob - Is This Chiptune";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sabrepulse - Close To Me";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "SABREPULSE - DARK LIGHTNING";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sabrepulse - Famicom Connection";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sabrepulse - Massive Damage";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sabrepulse - Party Bomb";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sabrepulse - Phalanx";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "SABREPULSE - PHANTOM";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sabrepulse - The Fourth Sequence";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shirobon - 11 J-E-N-O-V-A (FF7 Cover)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shirobon - Army Of The Abyss";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shirobon - Crystals";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shirobon - Cyberstrike ft. Sabrepulse";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shirobon - FOX";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shirobon - Lightspeed Lucy";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Snesei - 4 Ever & Ever";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Snesei - A Geisha's Dream (Naoki Cover)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Snesei - Button Mash";
@@ -169,13 +210,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Xyce - not it
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Xyce - ombres";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Xyce - papillons ft malmen";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Zekk - Zealous Hearts";
-
-
-
-
-
-
-
-
-
-

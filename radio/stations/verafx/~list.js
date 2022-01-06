@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "verafx";
 
@@ -9,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Vera FX - Bubbles (Bonus)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Vera FX - Crazy World (Bonus)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Vera FX - Funk Friday (Bonus)";
@@ -28,16 +30,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "VeraFX - Veng
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "VeraFX - We Own The Streets";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "VeraFX - Whats Blood For";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "VeraFX - Your Love";
-
-
-
-
-
-
-
-
-
-
-
-
-

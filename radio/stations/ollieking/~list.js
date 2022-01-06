@@ -10,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Hideki Naganuma - Boarder 70 (Somethin' Jazzy for Your Mind Mix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Hideki Naganuma - Boarder 70";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Hideki Naganuma - Brother Goes Away";
@@ -20,8 +21,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Hideki Naganu
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Hideki Naganuma - Teknopathetic (e-Pop 'n' Disco 80's Mix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Hideki Naganuma - The Concept of Love (The Concept of Passion Mix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Hideki Naganuma - Too Fast";
-
-
-
-
-

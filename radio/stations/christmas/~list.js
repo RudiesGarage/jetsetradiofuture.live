@@ -1,9 +1,4 @@
 
-//if(systemMonth == "December" && systemDay < 27){
-
-
-
-
 //Choose a name for the station
 stationName = "christmas";
 
@@ -15,8 +10,15 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - A Christmas Movie";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - Christmas Missed Us";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - Christmas Time Is Here Charlie Brown";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - HA SANTA";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - Have Yourself A Very Lofi Christmas";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - Lofi Ukulele Xmas";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - O Tannenbaum (Lofi Edit)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - Xmas Bells 1919";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Andy Williams vs A Shrift - Its The Most Wonderful Time Of The Year";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ariana Grande - Santa Tell Me (Alexa Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Berlin Symphony Orchestra - Dance Of The Sugar Plum Fairy (Red Baron Remix)";
@@ -35,12 +37,14 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Buck Rodgers 
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Buck Rodgers - White Christmas (Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Burl Ives & Darnell Little - Holly Jolly Christmas (Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Busta Rhymes feat Jim Carrey - Grinch";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Celia Cruz - Jingle Bells (Tino Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Charles Brown - Merry Christmas Baby";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chillaz - Clint Frostwood";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chris Rea - Driving Home For Christmas";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Christmas Trap - Rudolph The Red Nosed Reindeer (Trap Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Chuck Berry - Run Rudolph Run";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "City High - Oh Come All Ye Faithful";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Colossus - Charlie Brown Cut Up";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Cooking Soul - MF Grinch";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Cooking Soul - Naughty or Nutz (Feat MF DOOM)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Cooking Soul - Smoke a lil Xmas Tree (Feat MF DOOM)";
@@ -52,9 +56,11 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Riko - Twa
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Soundwave - A Charlie Brown Christmas (Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DMX - Rudolph The Red Nosed Reindeer";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Eazy E - Merry Muthafuckin Xmas";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ella Fitzgerald - What Are You Doing New Years Eve (Mangini vs Pallin Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Etta James - Merry Christmas Baby";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Frank Sinatra - Let It Snow (JustFurKiks Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Gene Autry - Here Comes Santa Claus (Adam Counts Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Green Street - Christmas On Green Street";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Gwen Stefani - Jingle Bells";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Hanson - A Wonderful Christmas Time";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Hanson - All I Want For Christmas";
@@ -70,7 +76,9 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Israel & New 
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Jimmy McGriff - The Christmas Song (TONAL Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "John Popper and BB King - Back Door Santa";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Johnny Lang - Santa Claus Is Back In Town";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Josh One - We Three Kings";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Keljet - Driving Home for Christmas (Remix)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "King Kooba - O Christmas Tree";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Louis Armstrong - Christmas In New Orleans";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Louis Armstrong - What A Wonderful World (The Orb Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Louis Armstrong - Zat You Santa Claus";
@@ -89,6 +97,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Nat King Kole
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Natalie Merchant - Children Go Where I Send Thee";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Nate Dogg & Snoop Doggy Dogg - Santa Claus Goes Straight To The Ghetto";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "No Genre - Tis the Season (feat. Jaque Beatz)";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ours Samplus - Le Cerveau Carre (Carol Of The Bells)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Papik - All I Want For Christmas Is You (feat. Ely Bruna)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Paul McCartney - Wonderful Christmas Time";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "RadioacTiffany - Too Much (The Snow Miser Song Remix)";
@@ -99,6 +108,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Run DMC ft Ma
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sharon Jones & The Dap Kings - Big Bulbs";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sharpshooters - Jingle Bells (Hip Hop Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shemekia Copeland - Stay A Little Longer Santa";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Smashing Pumpkins - Christmas Time";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Soweside - Rockin Around The Christmas Tree (Christmas Trap Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sugar Ray - Little Saint Nick";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Taquite - Have A Holly Jolly Christmas (Eugene The Dreams Shmoney Remix)";
@@ -113,16 +123,10 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Tyler The Cre
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Tyler The Creator - Youre A Mean One, Mr. Grinch";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Tyler, The Creator - Hot Chocolate";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Unknown - Sleigh Ride Remix Christmas Trap Remix";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Vadell Gabriel - Christmas In Tokyo";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Vadell Gabriel - Winter NiGHTS 2K19";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Vadell Gabriel - Winter NiGHTS";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Velma Middleton & Louis Armstrong - Baby Its Cold Outside (Mulato Beat Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "WhatsUpDanny - Young Santa";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Wyclef Jean - Little Drummer Boy (Hot Hot Hot)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "xXDJ L3OXx - Simply Having A Wonderful Christmas Time (Remix)";
-
-
-
-
-
-//}
-

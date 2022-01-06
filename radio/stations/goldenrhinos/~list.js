@@ -10,8 +10,9 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
-this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2Pac - Haily Mary (Instrumental)";
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "20Syl - Ongoing Thing";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "2Pac - Haily Mary (Instrumental)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "50 Cent - Irregular Heartbeat";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Aaron Wheeler - Honeys in the Place";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Aceyalone - Moonlight Skies Ft Goapele";
@@ -154,6 +155,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Kendrick Lama
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Killer Mike - Ready Set Go (Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Koi Child - Black Panda";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "KRS One - MCs Act Like They Dont Know";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "LA Symphony - Call It What You Want";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Lil Sko - Miss White Cocaine";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Logic - Under Pressure";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Lords Of The Underground - Chief Rocka";
@@ -161,12 +163,12 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Lost Sound Di
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Lupe Fiasco - Little Weapon";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Madvillain - All Caps";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Mathematik - Better By The Letter";
-this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Method Man - Is It Me";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Method Man & Redman - Ckeka";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Method Man & Redman - How High (Remix)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Method Man & Redman - Mi Casa";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Method Man & Redman - Well All Rite Cha";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Method Man & Redman - YOU";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Method Man - Is It Me";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Mick Jenkins - Jazz";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ming FS - Kings County";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Ming FS feat Nafis & Karsh Kale - The L";
@@ -266,6 +268,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Will I Am - M
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Xavier Wulf - The Hollow Squad";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Xzibit - LAX";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Zion 1 - Trippin";
-
-
-

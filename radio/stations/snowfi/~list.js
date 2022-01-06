@@ -1,9 +1,4 @@
 
-//if(systemMonth == "December" && systemDay < 27){
-
-
-
-
 //Choose a name for the station
 stationName = "snowfi";
 
@@ -15,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - Christmas Time Is Here Charlie Brown";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - Have Yourself A Very Lofi Christmas";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Akira The Don - Lofi Ukulele Xmas";
@@ -48,12 +44,3 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Snow-fi - Wit
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "UZU - Last Christmas";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Wun Two - Mistletoe";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Yestalgia - Do You Believe In Santa Claus";
-
-
-
-
-
-//}
-
-
-

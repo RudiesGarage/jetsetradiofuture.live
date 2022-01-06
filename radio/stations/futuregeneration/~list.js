@@ -1,3 +1,4 @@
+
 //Choose a name for the station
 stationName = "futuregeneration";
 
@@ -9,6 +10,7 @@ this[stationName+"_tracks"] = new Array();
 
 
 //TRACKS
+
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sashko Naganuma - About To Funk You Up (Funk It Down)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sashko Naganuma - Allison Love";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Sashko Naganuma - Dealer's Delight";
