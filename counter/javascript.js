@@ -3,17 +3,33 @@ function xmlString(e) {
 }
 
 function saveCounterXML() {
+
+
     chatpassword = queryValue("p"), counterPostMessage = { "chatpassword": chatpassword };
     var e = new XMLHttpRequest;
-    e.open("POST", "counter/counter.php", !0), e.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), e.send(JSON.stringify(counterPostMessage)), e.onreadystatechange = function() {
-        4 == e.readyState && loadCounterXML()
+    e.open("POST", "counter/counter.php", !0);
+    e.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    e.responseType = 'json';
+    e.send(JSON.stringify(counterPostMessage));
+    e.onreadystatechange = function() {
+        4 == e.readyState;
     }
+    // the response is {"message": "Hello, world!"}
+	e.onload = function() {
+	  let responseObj = e.response;
+	  console.log(responseObj); // Hello, world!
+	  totalListeners = responseObj.listeners;
+	};
+     
 }
 
 function loadCounterXML() {
+saveCounterXML();
+/*
     randomCacheNumber = Math.floor(999999999 * Math.random() + 1), counterLoadRequest = new XMLHttpRequest, counterLoadRequest.open("GET", "counter/listeners.xml?" + randomCacheNumber, !0), counterLoadRequest.send(), counterLoadRequest.onreadystatechange = function() {
         4 == counterLoadRequest.readyState && (void 0 === counterLoadRequest.responseXML || null === counterLoadRequest.responseXML || (counterXMLDocument = counterLoadRequest.responseXML, void 0 !== counterXMLDocument.getElementsByTagName("user")[0] && (totalListeners = counterXMLDocument.getElementsByTagName("user").length)))
     }
+*/
 }
 
 function dateSizeAndPosition() {

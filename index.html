@@ -2,23 +2,23 @@
 <html lang="en-US">
 
 <head>
-    <title>Jet Set Radio | LIVE</title>
+    <title>Jet Set Radio Future | LIVE</title>
 
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="robots" content="noodp,noydir" />
 
-    <meta name="application-name" content="JetSetRadio.live" />
+    <meta name="application-name" content="JetSetRadioFuture.live" />
     <meta name="Description" content="Yo! You've heard about Jet Set Radio, right? It's only the hottest radio station straight outta Tokyo-to! Tune in. Turn on. Jet Set Radiooo!!!">
-    <meta name="keywords" content="jet set radio, jetsetradio, jetsetradio.live, radio, live, music, professor k, entertainment" />
-    <link rel="canonical" href="https://jetsetradio.live/" />
+    <meta name="keywords" content="jet set radio, jetsetradio, jetsetradio.live, radio, live, music, professor k, djpk" />
+    <link rel="canonical" href="https://jetsetradiofuture.live/" />
     <meta name="robots" content="NOODP">
 
     <meta property="og:title" content="JetSetRadio.live" />
     <meta property="og:description" content="Yo! You've heard about Jet Set Radio, right? It's only the hottest radio station straight outta Tokyo-to! Tune in. Turn on. Jet Set Radiooo!!!" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jetsetradio.live/" />
-    <meta property="og:image" content="https://jetsetradio.live/media/icons/image.jpg" />
+    <meta property="og:url" content="https://jetsetradiofuture.live/" />
+    <meta property="og:image" content="https://jetsetradiofuture.live/media/icons/image.jpg" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -425,9 +425,26 @@
     <!--========================================-->
     <script type="application/javascript" src="preloader/javascript.js"></script>
     <!--========================================-->
+    <script type="text/javascript">
+        const ws = new WebSocket('wss://jetsetradiofuture.live/ws');
 
+        // Browser WebSockets have slightly different syntax than `ws`.
+        // Instead of EventEmitter syntax `on('open')`, you assign a callback
+        // to the `onopen` property.
+        ws.onopen = function() {
+            // document.querySelector('#send').disabled = false;
+
+            // document.querySelector('#send').addEventListener('click', function() {
+            //     ws.send(document.querySelector('#message').value);
+            // });
+        };
+
+        ws.onmessage = function(msg) {
+            // document.querySelector('#messages').innerHTML += `<div>${msg.data}</div>`;
+        };
+    </script>
     <!--=====================================================================================================-->
 
 </body>
 
-</html>%
+</html>

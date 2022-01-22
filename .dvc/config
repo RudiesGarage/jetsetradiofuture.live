@@ -1,0 +1,5 @@
+[core]
+    analytics = false
+    remote = storage
+['remote "storage"']
+    url = s3://jetsetradio-music.us-east-1.linodeobjects.com/radio

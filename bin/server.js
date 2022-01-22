@@ -13,6 +13,27 @@ const { JSDOM } = require('jsdom');
 
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
+const WebSocket = require('ws');
+
+const server = new WebSocket.Server({
+  port: 8080
+});
+
+let sockets = [];
+server.on('connection', function(socket) {
+  sockets.push(socket);
+  console.log("ACTIVE LISTENERS: " + sockets.length);
+
+  // When you receive a message, send that message to every socket.
+  socket.on('message', function(msg) {
+    sockets.forEach(s => s.send(msg));
+  });
+
+  // When a socket closes, or disconnects, remove it from the array.
+  socket.on('close', function() {
+    sockets = sockets.filter(s => s !== socket);
+  });
+});
 
 
 const builder = new xml2js.Builder();
@@ -115,38 +136,10 @@ http.createServer(function(req, res) {
             req.on('end', () => {
                 try {
                     var msg = JSON.parse(body);
-                    /*
-                    //let user_ip = RequestIp.getClientIp(req);
-                    // read XML file
-                    // why was this not made with sockets?
-                    fs.readFile(localPath + "/counter/listeners.xml", "utf-8", (err, data) => {
-                        if (err) {
-                            throw err;
-                        }
-
-                        // convert XML data to JSON object
-                        xml2js.parseString(data, (err, result) => {
-                            if (err) {
-                                throw err;
-                            }
-                            // add new message
-                            result.data.user.push({
-                                ip: data_p,
-                                timestamp: Date.now()
-                            });
-
-                            const xml = builder.buildObject(result);
-                            // write updated XML string to a file
-                            fs.writeFile(localPath + "/counter/listeners.xml", xml, (err) => {
-                                if (err) {
-                                    throw err;
-                                }
-                                console.log(`Updated XML is written to a new file.`);
-                            });
-
-                        });
-                    });
-                    */
+                    console.log(msg);
+                    res.writeHead(200, "text/xml;charset=UTF-8");
+                    const respData = { listeners:sockets.length  }
+                    res.write(JSON.stringify(respData));
                 } catch (e) {
                     console.log(e);
                 } finally {
