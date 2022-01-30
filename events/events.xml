@@ -1,7 +1,5 @@
-<data>
-    <eventType>POPUP</eventType>
-    <eventVar1>
-        https://jetsetradio.live/media/captaink.gif?683259946
-    </eventVar1>
-    <eventVar2>empty</eventVar2>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data><eventType>REQUEST</eventType>
+	<eventVar1>bombrushcyberfunk</eventVar1>
+	<eventVar2>DJ BXTREME - Agua</eventVar2>
 </data>

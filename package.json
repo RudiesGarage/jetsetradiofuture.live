@@ -4,6 +4,7 @@
     "description": "jetsetradio future site",
     "main": "server.js",
     "dependencies": {
+        "@foobar404/wave": "^1.2.7",
         "@supercharge/request-ip": "^1.1.2",
         "body-parser": "^1.19.0",
         "compose": "^0.1.2",
@@ -13,6 +14,7 @@
         "dotenv": "^10.0.0",
         "ejs": "^3.1.6",
         "express": "^4.17.1",
+        "gibberish-detector": "^1.0.0",
         "got": "^11.8.3",
         "http-errors": "^1.8.0",
         "is-image-url": "^1.1.8",
@@ -23,8 +25,10 @@
         "node-cron": "^3.0.0",
         "serve-favicon": "^2.5.0",
         "stacktrace-js": "^2.0.2",
+        "string-similarity": "^4.0.4",
         "stylus": "^0.55.0",
         "valid-url": "^1.0.9",
+        "winston": "^3.4.0",
         "xml2js": "^0.4.23"
     },
     "devDependencies": {

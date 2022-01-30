@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Title of the document</title>
+    <script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.iife.js"></script>
+    <style>
+       body{
+         margin:0;
+       }
+    
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Use another value to see the result */
+        height: 250px;
+        padding: 15px;
+        background-color: #1faadb;
+      }
+      .flex-container > div {
+        width: 15%;
+        height: 100%;
+        border-radius: 3px;
+        background-color: #8ebf42;
+      }
+      .flex-container .one {
+        height: 60%;
+        width: 80vw;
+      }
+      .flex-container .three {
+        height: 40%;
+      }
+      .flex-container .four {
+        height: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="one">
+        <canvas id="output" height="500" width="500"></canvas>
+      </div>
+      <div class="two">
+      
+      </div>
+      
+    </div>
+    <audio id="player" src="/radio/stations/temp/Time To Wake Up.mp3" crossorigin="anonymous" hidden=""></audio>
+    <script>
+		let wave = new Wave();
+		options = {type:"bars"};
+		wave.fromElement("player","output", options);
+   </script>
+  </body>
+</html>

@@ -30,6 +30,7 @@
     <link href="media/icons/appicon.png" rel="apple-touch-icon" />
 
     <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/gh/PiethonCoder/wave.js/wave.js"></script>
 </head>
 
 
@@ -40,9 +41,10 @@
 
 <body style="position:fixed;margin:0;visibility:hidden;-webkit-user-select:none;height:100%;width:100%;" onunload="">
 
-
+<script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.iife.js"></script>
     <!--============================-->
     <script type="application/javascript" src="defaults.js"></script>
+
     <!--============================-->
 
     <!--========================================== TITLE SCREEN =============================================-->
@@ -396,8 +398,11 @@
     <!--====================================-->
 
     <!--============================================== WALLPAPER ============================================-->
-
+  <canvas id="output" height="500" width="500"></canvas>
     <div id="graffitiSoulFrame" class="objectSettings touchableOn" style="z-index:105;">
+         
+     
+
         <img id="graffitiSoul" class="objectSettings touchableOff rotate3dAnimation" style="z-index:105;" src="radio/stations/classic/images/icon.png">
     </div>
 
@@ -426,7 +431,7 @@
     <script type="application/javascript" src="preloader/javascript.js"></script>
     <!--========================================-->
     <script type="text/javascript">
-        const ws = new WebSocket('wss://jetsetradiofuture.live/ws');
+        const ws = new WebSocket('wss://jetsetradiofuture.live/ws/');
 
         // Browser WebSockets have slightly different syntax than `ws`.
         // Instead of EventEmitter syntax `on('open')`, you assign a callback
@@ -444,7 +449,17 @@
         };
     </script>
     <!--=====================================================================================================-->
-
+ <script> 
+		let wave = new Wave();
+		options = {type:"bars"};
+		var audio = document.getElementById("audioPlayer");
+		var canvas = document.getElementById("output");
+		wave.fromElement(audio, canvas, options);
+	      // wave.fromElement("","output", options);
+		wave.playStream();
+               wave.stopStream()
+		console.log(wave);
+   </script>
 </body>
 
 </html>

@@ -1,5 +1,14 @@
 [core]
     analytics = false
-    remote = storage
-['remote "storage"']
-    url = s3://jetsetradio-music.us-east-1.linodeobjects.com/radio
+    remote = s3
+[cache]
+    s3 = s3cache
+['remote "s3"']
+    url = s3://jetsetradio-music/radio
+    endpointurl = https://us-east-1.linodeobjects.com
+    access_key_id = NPULL5BXRR6AHII1Q8KF
+    secret_access_key = Iwm1kpDBaKti9NJyQHQRRXowTB8zwyRftHnKXZcj
+['remote "s3cache"']
+    url = s3://jetsetradio-music.us-east-1.linodeobjects.com
+    access_key_id = NPULL5BXRR6AHII1Q8KF
+    secret_access_key = Iwm1kpDBaKti9NJyQHQRRXowTB8zwyRftHnKXZcj

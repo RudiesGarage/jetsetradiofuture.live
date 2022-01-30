@@ -41,7 +41,7 @@ function dateSizeAndPosition() {
 }
 
 function updateDisplay() {
-    1 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>JetSetRadio</regularText><transparentText>.Live</transparentText>"), 2 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>On Air</regularText><transparentText> Tokyo-to</transparentText>"), 3 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>Listening Now</regularText><transparentText> " + totalListeners + "</transparentText>")
+    1 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>JetSetRadioFuture</regularText><transparentText>.Live</transparentText>"), 2 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>On Air</regularText><transparentText> Tokyo-to</transparentText>"), 3 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>Listening Now</regularText><transparentText> " + totalListeners + "</transparentText>")
 }
 var s1, s2, s3;
 
