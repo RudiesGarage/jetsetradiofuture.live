@@ -57,3 +57,4 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Same Beat - R
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Scienz of Life - Hot Bananas (Instrumental)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Shag - My Mind";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "The Derevolutions - Bad King Kong";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "DJ Jazzy Jeff & The Fresh Prince - Brand New Funk"
