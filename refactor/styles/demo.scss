@@ -1,0 +1,50 @@
+#demo-button-container {
+    position: fixed;
+    left: 46px;
+    bottom: 44px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    transition: 1s;
+}
+
+#demo-button {
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+    padding: 10px 11px;
+    letter-spacing: 0.1em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#demo-button:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+#demo-button:hover:after {
+    text-transform: none;
+    letter-spacing: normal;
+    background: rgba(0,0,0,0.6);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    bottom: 42px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 12px;
+    font-weight: 600;
+    content: "Use a demo song with the visualizer";
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    line-height: 16px;
+    left: 2px;
+    padding: 4px 8px;
+    position: absolute;
+    z-index: 100;
+    width: 106px;
+    word-wrap: break-word;
+    white-space: normal;
+}

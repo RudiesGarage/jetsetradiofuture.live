@@ -1,0 +1,135 @@
+.left-sidebar  {
+    position: fixed;
+    left: 0;
+    bottom: 44px;
+    width: 36px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#left-sidebar {
+    transition: 1s;
+}
+
+.left-sidebar-container {
+    position: relative;
+}
+
+.left-sidebar-container > h3 {
+    transform: rotate(-90deg);
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+    padding: 11px 11px;
+    letter-spacing: 0.1em;
+    left: -64px;
+    bottom: -100px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.left-sidebar-container > h3:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.left-sidebar-container > h3:hover:after {
+    transform: rotate(90deg);
+    text-transform: none;
+    letter-spacing: normal;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    top: 97px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 12px;
+    font-weight: 600;
+    content: "Next visualizer, or use [W] & [S] keys to cycle";
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+    left: 68px;
+    padding: 4px 8px;
+    position: absolute;
+    z-index: 100;
+    width: 130px;
+    text-align: center;
+    line-height: 16px;
+}
+
+.left-sidebar-container > div {
+    height: 36px;
+    width: 36px;
+    transition: 0.2s;
+    position: relative;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.left-sidebar-container > div > span {
+    position: absolute;
+    left: 37%;
+    top: 28%;
+}
+
+.left-sidebar-container > div:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3) !important;
+    cursor: pointer;
+}
+
+.left-sidebar-container > div:hover:after {
+    background: rgba(0,0,0,.6);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    bottom: 5px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 12px;
+    font-weight: 600;
+    content: attr(data);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+    white-space: nowrap; 
+    left: 40px;
+    padding: 4px 8px;
+    position: absolute;
+    z-index: 100;
+    transition: 0.2s;
+}
+
+.active-visualizer {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+.visualizer-option-9 {
+    margin-bottom: 162px;
+}
+
+
+/* 
+
+#microphone {
+    position: fixed;
+    left: 46px;
+    bottom: 44px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    font-size: 22px;
+    padding: 0px 20px;
+    position: absolute;
+}
+
+#microphone-container {
+    position: relative;
+    top: 6px;
+} 
+
+*/

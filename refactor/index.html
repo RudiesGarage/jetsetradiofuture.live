@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.57, minimum-scale=0.57, maximum-scale=0.57">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSRF.live</title>
+    <meta name="description" content="Jet Set Radio">
+    <link href="" rel="stylesheet">
+
+    <link href="./css/all.min.css" rel="stylesheet">
+    <link href="./css/brands.min.css" rel="stylesheet">
+    <link href="./css/fontawesome.min.css" rel="stylesheet">
+    <link href="./css/regular.min.css" rel="stylesheet">
+    <link href="./css/solid.min.css" rel="stylesheet">
+
+    <link href="./styles/style.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC5ElEQVRYR7VXu24aQRS9Z4YKljcCbHD+wE7jwpYifwF9LEVymTSJZH9JIsVNWiuW7J4PQFakpEgDrpBWLiIZbIQU6GMmms3OZnbZ12CgYIWYmXv2zDn3AUr52dnZ2V4sFh3O+RGAXSJ6AaAEgADMAPwCcAvghjHWHQ6HozRHI2lRo9E44JyfAngt1zLGnC1uYN9T/5+Ironok23bP+JixAHINJvNj0T0Xj9YAQg+g4C0oOftdvus1+v9CQMSCqBer+9xzi+EEC/VJhkgiYEYEH3O+clwOBwEQSwB2NraeiWE6BJRMQxxWgYUGO2MudTQ3d3dN/1cHwD55oyxm6jg6u7DriSFJuS2uRSxzoQOINNoNH4C8GiPE08UE1Ei1a6y32q19pUmPADNZvOzElySM8KYCGMgTpi2bX9wzpFf0moAvqcJHFzzDE0cSosqAFfK56Yggu4wyRO2bR+jVqttA7jXN5qCWDVPcM5bEsBbIvoSpNIUxCp5QgjxDtVq9SuAN2EHmIKIYyJCpJeoVCp9IpL+92U69dsUhKEmBiiXy79VVYtKMKYgDDQxQ6lUEnra3BQTkXmiWCx6AMISx6bc4cUqFAqxV7BudwTyxAz5fL4PYC+pmGyCCQADWJbl2TDuCtbNhOuWSwnASURpi8k6mXASUTab3WaM3asKpwNJYydTi+p5gjHWcoqRZVlXRGTUdK6BievRaHTsACgUCgeLxcIrx1HXEceIKRNCiMPHx8d/5dhlwdeQbFgT5w8PD/8bEhdDJpfL+VoyE1ekrR0A+uPxeJ+InDbd15TmcjmnKRVCeB1x2gYjjSaEEHMhxNFkMvHa86W2PJ/PL7Xla9LEHEBnPB5Ht+VKD5IJABdE5BtMknShi1TZzbV3/+np6UR/cxUrdjSzLMsbzZ6RJ6TgztSdB92SOJy6Fj1dIU84w6m0WpxFEwGozW7G7BDRERHtMsa88ZyIZowxbzwnou50Ok01nv8FJ6a4dlA6B3IAAAAASUVORK5CYII="
+        sizes="32x32" id="favicon">
+
+    <script src="./howler.min.js"></script>
+    <script src="./d3.v5.min.js"></script>
+
+    <script src="./index.js"></script>
+
+    <script src="./utitlities.js"></script>
+    <script src="./visualizations/waveform_line.js"></script>
+
+    <script src="./lazyload.min.js"></script>
+</head>
+
+<body id="app">
+
+    <div id="loadingScreen">
+        <div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper">
+            <div style="padding:80vh 0;background-color:#008989">
+                <main>
+                    <div class="pages__Tuner-sc-1g904gw-0 lbdiXO">
+                        <div width="0.5vmin" end="50%" class="pages__Marker-sc-1g904gw-1 cJYyos"></div>
+                        <div width="0.5vmin" end="90%" class="pages__Marker-sc-1g904gw-1 ceylTi"></div>
+                        <div width="1vmin" end="70%" class="pages__Marker-sc-1g904gw-1 ccJFTX"></div>
+                        <div width="1vmin" end="100%" class="pages__Marker-sc-1g904gw-1 dpcYoq"></div>
+                        <div width="1.5vmin" end="60%" class="pages__Marker-sc-1g904gw-1 ePoAse"></div>
+                        <div width="1.5vmin" end="90%" class="pages__Marker-sc-1g904gw-1 CRCLc"></div>
+                        <div width="2vmin" end="80%" class="pages__Marker-sc-1g904gw-1 iihvvr"></div>
+                        <div width="2vmin" end="90%" class="pages__Marker-sc-1g904gw-1 icCsBZ"></div>
+                        <div width="3vmin" end="50%" class="pages__Marker-sc-1g904gw-1 dUebIs"></div>
+                        <h1 class="pages__Text-sc-1g904gw-2 hYdeDx">Now Loading...</h1>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div>
+    </div>
+
+
+    <section id="large-play">
+        <span id="large-play-container">
+            <i class="fas fa-play" id="large-play-icon"></i>
+        </span>
+    </section>
+
+    <section class="personal-links" id="personal-links" style="top: 38px;">
+
+        <div id="personal-links-container">
+            <span data="Change Station">
+                <i class="fas fa-headphones" id="radio-link"> </i>
+            </span>
+            <span data="Chat">
+                <i class="fas fa-comment" id="portfolio-link"> </i>
+            </span>
+            <a href="https://twitter.com/DJ_ProfessorK" target="_blank" data="Twitter profile">
+                <i class="fab fa-twitter" id="twitter-link"></i>
+            </a>
+            <a href="mailto: djpk@djetsetradiofuture.live" data="Send an email">
+                <i class="far fa-envelope" id="email-link"></i>
+            </a>
+            <span data="Keyboard Controls">
+                <i class="fas fa-keyboard" id="keyboard-controls"></i>
+            </span>
+            <a href="https://gamejolt.com/games/JSRFMP/336004" target="_blank" data="JSRFMP">
+                <i class="fa fa-gamepad" id="jsrfmp"></i>
+            </a>
+
+        </div>
+    </section>
+
+    <section id="project-name">
+        <div class="project-title"><span>JSRF</span>.live</div>
+        <div id="track-name" class="project-subtitle"><span>Artist</span> - <span>Title</span></div>
+    </section>
+
+    <footer class="footer-audio-player" id="footer-audio-player">
+        <section class="footer-audio-container">
+            <div class="play-shuffle">
+                <i class="fas fa-retweet" id="play-shuffle"></i>
+            </div>
+            <div class="play-pause">
+                <i class="fas fa-play" id="play-pause"></i>
+            </div>
+            <div class="play-next">
+                <i class="fas fa-forward" id="play-next"></i>
+            </div>
+            <h3 class="gain-title" id="gain-title">
+
+                <i class="fas fa-volume-up " id="vol"></i>
+
+            </h3>
+            <div id="time-progress"></div>
+
+            <div class="playbar-container">
+                <div id="playbar"></div>
+                <div id="playbar-progress" style="width: 0%;"></div>
+            </div>
+            <div id="time-left"></div>
+
+
+        </section>
+    </footer>
+    <audio id="audio"></audio>
+
+    <section id="radio-modal">
+
+
+        <div class="carousel-wrapper">
+            <div class="center-modal-title">
+                Station Select
+            </div>
+            <div class="carousel">
+
+                <!-- Instead of having a huge carousel
+                     group stations together in a grid -->
+
+
+                <div id="new_stations_grid" class="station-grid-wrapper carousel__photo initial">
+                    <img class="station-grid-box" data="olliolliworld" title="Olli Olli World OST" alt="Ollie Ollie World" src="icons/olliolliwolrd_icon.png">
+                    <img class="station-grid-box" data="spacechannel5" title="Space Channel 5 OST" alt="Space Channel 5" src="icons/spacechannel5_icon.png">
+                    <img class="station-grid-box" data="live" title="Live Music DJ's Choice" alt="Live" src="icons/live_icon.png">
+                </div>
+                <div id="vgm_stations_grid" class="station-grid-wrapper carousel__photo">
+                    <img class="station-grid-box" data="classic" title="Jet Set Radio OST" alt="Jet Set Radio Classic" src="icons/classic_icon.png">
+                    <img class="station-grid-box" data="future" title="Jet Set Radio Future" alt="Jet Set Radio Future" src="icons/future_icon.png">
+                    <img class="station-grid-box" data="ollieking" title="Ollie King" alt="Ollie King" src="icons/ollieking_icon.png">
+                    <img class="station-grid-box" data="crazytaxi" title="Crazy Taxi" alt="Crazy Taxi" src="icons/crazytaxi_icon.png">
+                    <img class="station-grid-box" data="toejamandearl" title="Toejam&Earl" alt="Toejam&Earl" src="icons/toejam&earl_icon.png">
+                    <img class="station-grid-box" data="hover" title="Hover" alt="Hover" src="icons/hover_icon.png">
+                    <img class="station-grid-box" data="butterflies" title="Butterflies" alt="Butterflies" src="icons/butterflies_icon.png">
+                    <img class="station-grid-box" data="lethalleagueblaze" title="Leathal League Blaze" alt="Leathal League Blaze" src="icons/leathalleage_icon.png">
+                </div>
+                <div id="rival_stations_grid" class="station-grid-wrapper carousel__photo">
+                    <img class="station-grid-box" data="ggs" title="Classic Hip-Hop" alt="GGS" src="icons/ggs_icon.png">
+                    <img class="station-grid-box" data="noisetanks" itle="Techno-step beats" alt="Noise Tanks" src="icons/noisetanks_icon.png">
+                    <img class="station-grid-box" data="poisonjam" title="Grunge and Sludge" alt="Poison Jam" src="icons/poisonjam_icon.png">
+                    <img class="station-grid-box" data="rapid99" title="CityScape Pop" alt="Rapid 99" src="icons/rapid99_icon.png">
+                    <img class="station-grid-box" data="loveshockers" title="Heartbreak Rock" alt="LoveShockers" src="icons/loveshockers_icon.png">
+                    <img class="station-grid-box" data="immortals" title="Middle Eastern Beats" alt="Immortals" src="icons/immortals_icon.png">
+                    <img class="station-grid-box" data="doomriders" title="Classic Rock" alt="DoomRiders" src="icons/doomriders_icon.png">
+                    <img class="station-grid-box" data="goldenrhinos" title="Hard Rap" alt="GoldenRhinos" src="icons/goldenrhinos_icon.png">
+                    <img class="station-grid-box" data="garage" title="Chillhop Beats" alt="Garage" src="icons/garage_icon.png">
+                </div>
+                <div id="fans_stations_grid" class="station-grid-wrapper carousel__photo" data="Fan Albums">
+                    <img class="station-grid-box" data="ultraremix" title="UltraRemix" alt="UltraRemix" src="icons/ultraremix_icon.png">
+                    <img class="station-grid-box" data="jetmashradio" title="JetMashRadio" alt="JetMashRadio" src="icons/jetmashradio_icon.png">
+                    <img class="station-grid-box" data="siivagunner" title="SiivaGunner" alt="SiivaGunner" src="icons/siivagunner_icon.png">
+                    <img class="station-grid-box" data="memoriesoftokyoto" title="2Mello" alt="2Mello" src="icons/mot_icon.png">
+                    <img class="station-grid-box" data="tokyotofuture" title="2Mello" alt="2Mello" src="icons/tokyotofuture_icon.png">
+                    <img class="station-grid-box" data="futuregeneration" title="Future Generation" alt="Future Generation" src="icons/futuregen_icon.png">
+                    <img class="station-grid-box" data="verafx" title="VeraFX" alt="VeraFX" src="icons/verafx_icon.png">
+                    <img class="station-grid-box" data="djchidow" title="DJ Chidow" alt="DJ Chidow" src="icons/djchidow_icon.png">
+                    <img class="station-grid-box" data="bonifidebloom" title="BonifideBloom" alt="BonifideBloom" src="icons/bonifidebloom_icon.png">
+                </div>
+                <div id="other_stations_grid" class="station-grid-wrapper carousel__photo" data="Others">
+                    <img class="station-grid-box" data="ganjah" title="Ganjah" alt="Pots" src="icons/pots_icon.png">
+                    <img class="station-grid-box" data="lofi" title="Lo-fi" alt="Lo-Fi" src="icons/lofi_icon.png">
+                    <img class="station-grid-box" data="classical" title="Classical Remixes" alt="Classical Remix" src="icons/classical_icon.png">
+                    <img class="station-grid-box" data="revolution" title="Viva la Revolution" alt="Revolution" src="icons/revolution_icon.png">
+                    <img class="station-grid-box" data="endofdays" title="Songs to play at the end of the world" alt="End of Days" src="icons/eod_icon.png">
+                    <img class="station-grid-box" data="chiptunes" title="Chiptunes" alt="Chiptunes" src="icons/chiptunes_icon.png">
+                    <img class="station-grid-box" data="retroremix" title="Retro Songs Remixed" alt="RetroRemix" src="icons/retroremix_icon.png">
+                    <img class="station-grid-box" data="outerspace" title="OuterSpace Music" alt="OuterSpace" src="icons/space_icon.png">
+                </div>
+                <div id="seasonal_stations_grid" class="station-grid-wrapper carousel__photo" data="Seasonal">
+                    <img class="station-grid-box" data="summer" title="Chill Summer Beats" alt="Summer" src="icons/summer_icon.png">
+                    <img class="station-grid-box" data="halloween" title="Spooky Scratchin' " alt="Halloween" src="icons/halloween_icon.png">
+                    <img class="station-grid-box" data="chirstmas" title="Christmas Music" alt="Christmas" src="icons/christmas_icon.png">
+                    <img class="station-grid-box" data="snowfi" title="Lo-Fi Snowday beats" alt="Snow-fi" src="icons/snowfi_icon.png">
+                </div>
+
+
+                <div class="carousel__button--next" data="Next Set"></div>
+                <div class="carousel__button--prev" data="Prev Set"></div>
+
+                <div id="radio-close-modal">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="keyboard-modal">
+
+        <div class="keyboard-modal-container">
+            <!--<img class="grafitti_modal" src="styles/modal_img.png"/>-->
+            <div class="center-modal-title">
+                Keyboard Controls
+            </div>
+            <br>
+            <br>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Key</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Spacebar</td>
+                        <td>Play / Pause Audio</td>
+                    </tr>
+                    <tr>
+                        <td>Left-Arrow</td>
+                        <td>Play Next Song</td>
+                    </tr>
+                    <tr>
+                        <td>S</td>
+                        <td>Disable Visualizer</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="keyboard-close-modal">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
