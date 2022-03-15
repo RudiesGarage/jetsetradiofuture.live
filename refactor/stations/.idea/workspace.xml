@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="74fe8b2f-2ac4-434c-8464-f796ab9bfb18" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/brands.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/fontawesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/regular.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/solid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../d3.v5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../howler.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lazyload.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/bonifidebloom.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/bumps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/butterflies.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/chiptunes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/christmas.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/classic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/classical.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/crazytaxi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/djchidow.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/doomriders.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/elaquent.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/endofdays.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/future.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/futuregeneration.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/ganjah.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/garage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/ggs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/goldenrhinos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/halloween.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/hover.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/immortal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/jetmash.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/leathalleage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/lofi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/loveshockers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/memories.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/noisetanks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/ollieking.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/ollieworld.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/outerspace.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/poisonjam.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/rapid99.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/retroremix.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/revolution.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/siivagunner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/snowfi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/spacechannel5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/summer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/toejam.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/tokyoto.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/ultraremixes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../playlistdata/verafx.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/background_color.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/demo.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/left_sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/personal_links.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/right_sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../utitlities.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../visualizations/bar_graph.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../visualizations/circle_graph.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../visualizations/circle_linear.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../visualizations/full_screen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../visualizations/horizontal_graph.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../visualizations/symetrical_circle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../visualizations/symetrical_line.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../visualizations/waveform_circle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../visualizations/waveform_line.js" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-694201811">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="442" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="442" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/validateSongs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/makeSongLists.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/validateSongs.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="y" value="24" />
+    <option name="width" value="960" />
+    <option name="height" value="993" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="stations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stations" type="462c0819:PsiDirectoryNode" />
+              <item name="crazytaxi" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/Music/s3test/music/staging" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="validateSongs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="stations" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/validateSongs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.validateSongs" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="74fe8b2f-2ac4-434c-8464-f796ab9bfb18" name="Default Changelist" comment="" />
+      <created>1647186074847</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647186074847</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="24" width="960" height="993" extended-state="4" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2603939" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.7305459" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Cargo" order="3" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/validateSongs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/makeSongLists.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
