@@ -312,6 +312,7 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Mix Master Mi
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Mr Mediamanx - Higher Plain of Funk";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Mr Mediamanx - Look at the Funk";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Mr Mediamanx - Menu Music";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Myammee - Birthday Suit";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Mystikal - Smashing the Gas (Get Faster)";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Nanarthur - Space Raiders Song For Dot Wlm";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Nappy Roots - Good Day";
