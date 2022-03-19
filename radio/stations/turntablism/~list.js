@@ -1,6 +1,6 @@
 
 //Choose a name for the station
-stationName = "Turntablism";
+stationName = "turntablism";
 
 //Add it to the array of stations
 stationsArray[stationsArray.length] = stationName;
