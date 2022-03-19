@@ -30,18 +30,10 @@
     <link href="media/icons/appicon.png" rel="apple-touch-icon" />
 
     <link href="styles.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/PiethonCoder/wave.js/wave.js"></script>
 </head>
-
-
-
-
-
-
 
 <body style="position:fixed;margin:0;visibility:hidden;-webkit-user-select:none;height:100%;width:100%;" onunload="">
 
-<script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.iife.js"></script>
     <!--============================-->
     <script type="application/javascript" src="defaults.js"></script>
 
@@ -66,7 +58,7 @@
         <source id="staticPlayerMP3" src="" type="audio/mpeg">
     </audio>
 
-    <audio id="audioPlayer" class="objectSettings touchableOff" style="z-index:104;" preload="auto">
+    <audio id="audioPlayer" class="objectSettings touchableOff" style="z-index:104;" preload="auto" onerror="playAudioPlayer()">
         <source id="audioPlayerMP3" src="" type="audio/mpeg">
     </audio>
 
@@ -96,16 +88,18 @@
     <script type="application/javascript" src="radio/stations/bumps/~list.js"></script>
 
     <!-- New Stations -->
-    <script type="application/javascript" src="radio/stations/lethalleagueblaze/~list.js"></script>
-
+    <script type="application/javascript" src="radio/stations/turntablism/~list.js"></script>
+    <script type="application/javascript" src="radio/stations/olliolliworld/~list.js"></script>
+    <!--<script type="application/javascript" src="radio/stations/undergrindradio/~list.js"></script>
+    -->	
     <!-- Live -->
     <script type="application/javascript" src="radio/stations/live/~list.js"></script>
 
-    <!--Game OSTs Remixes -->
+    <!--Game OSTs -->
     <script type="application/javascript" src="radio/stations/classic/~list.js"></script>
     <script type="application/javascript" src="radio/stations/future/~list.js"></script>
 
-    <!--Gang Themed Stations -->
+    <!--Gang / Ingame Themed Stations -->
     <script type="application/javascript" src="radio/stations/ggs/~list.js"></script>
     <script type="application/javascript" src="radio/stations/noisetanks/~list.js"></script>
     <script type="application/javascript" src="radio/stations/poisonjam/~list.js"></script>
@@ -114,9 +108,9 @@
     <script type="application/javascript" src="radio/stations/immortals/~list.js"></script>
     <script type="application/javascript" src="radio/stations/doomriders/~list.js"></script>
     <script type="application/javascript" src="radio/stations/goldenrhinos/~list.js"></script>
+    <script type="application/javascript" src="radio/stations/garage/~list.js"></script>
 
     <!-- Other -->
-    <script type="application/javascript" src="radio/stations/garage/~list.js"></script>
     <script type="application/javascript" src="radio/stations/ganjah/~list.js"></script>
     <script type="application/javascript" src="radio/stations/lofi/~list.js"></script>
     <script type="application/javascript" src="radio/stations/classical/~list.js"></script>
@@ -140,6 +134,8 @@
     <script type="application/javascript" src="radio/stations/bonafidebloom/~list.js"></script>
 
     <!--Like-Minded Games -->
+    <script type="application/javascript" src="radio/stations/spacechannel5/~list.js"></script>
+    <script type="application/javascript" src="radio/stations/lethalleagueblaze/~list.js"></script>
     <script type="application/javascript" src="radio/stations/hover/~list.js"></script>
     <script type="application/javascript" src="radio/stations/butterflies/~list.js"></script>
     <script type="application/javascript" src="radio/stations/ollieking/~list.js"></script>
@@ -398,10 +394,10 @@
     <!--====================================-->
 
     <!--============================================== WALLPAPER ============================================-->
-  <canvas id="output" height="500" width="500"></canvas>
+    <!--<canvas id="output" height="500" width="500"></canvas> -->
     <div id="graffitiSoulFrame" class="objectSettings touchableOn" style="z-index:105;">
-         
-     
+
+
 
         <img id="graffitiSoul" class="objectSettings touchableOff rotate3dAnimation" style="z-index:105;" src="radio/stations/classic/images/icon.png">
     </div>
@@ -430,36 +426,7 @@
     <!--========================================-->
     <script type="application/javascript" src="preloader/javascript.js"></script>
     <!--========================================-->
-    <script type="text/javascript">
-        const ws = new WebSocket('wss://jetsetradiofuture.live/ws/');
 
-        // Browser WebSockets have slightly different syntax than `ws`.
-        // Instead of EventEmitter syntax `on('open')`, you assign a callback
-        // to the `onopen` property.
-        ws.onopen = function() {
-            // document.querySelector('#send').disabled = false;
-
-            // document.querySelector('#send').addEventListener('click', function() {
-            //     ws.send(document.querySelector('#message').value);
-            // });
-        };
-
-        ws.onmessage = function(msg) {
-            // document.querySelector('#messages').innerHTML += `<div>${msg.data}</div>`;
-        };
-    </script>
-    <!--=====================================================================================================-->
- <script> 
-		let wave = new Wave();
-		options = {type:"bars"};
-		var audio = document.getElementById("audioPlayer");
-		var canvas = document.getElementById("output");
-		wave.fromElement(audio, canvas, options);
-	      // wave.fromElement("","output", options);
-		wave.playStream();
-               wave.stopStream()
-		console.log(wave);
-   </script>
 </body>
 
 </html>
