@@ -91,6 +91,43 @@ button {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    /* CSS COLORS */
+    --primary-color: #54940c;
+    --primary-dark-color: #24590c;
+    --secondary-color: #ecc605;
+    --border-color: #e20f47;
+    --border2-color: #e20f47;
+    --outline-color: #040404;
+    --future-color1: #008282;
+    --future-color2: #00b2b2;
+    --future-color3: #007272;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+/* Site SVG Colors */
+
+#topgraphic_path3 {
+    fill: var(--secondary-color);
+}
+
+#topgraphic_path2 {
+    fill: var(--border2-color);
+}
+
+#topgraphic_path5 {
+    fill: var(--primary-color);
+}
+
+#topgraphic_path4 {
+    fill: var(--border-color);
+}
+
+#topgraphic_path1 {
+    fill: var(--outline-color);
 }
 
 
@@ -195,16 +232,15 @@ a {
 
 #project-name {
     position: fixed;
-    top: 66px;
-    font-size: 2vw;
+    bottom: 20vh;
+    font-size: 2em;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.6);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 .project-title {
     padding-left: 60px;
-    font-size: 2.5vw;
+    font-size: 2.5em;
     white-space: nowrap;
     text-overflow: ellipsis;
     letter-spacing: 0.1em;
@@ -218,7 +254,6 @@ a {
 
 .project-subtitle {
     padding-left: 13vw;
-    line-height: 3vw;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -1225,39 +1260,24 @@ a {
     transition: 1s;
 }
 
-.gain-title {
-    text-transform: uppercase;
-    font-weight: 300;
+.audio-btn {
     color: rgba(255, 255, 255, 0.7);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    border-right: 2px solid rgba(0, 0, 0, 0.4);
-    padding: 10px 11px;
     letter-spacing: 0.1em;
     transition: 0.2s;
     cursor: pointer;
 }
 
-.gain-title:hover {
+.audio-btn:hover {
     color: rgba(255, 255, 255, 0.9);
-    background-color: rgba(0, 0, 0, 0.6);
-    border-right: 2px solid rgba(0, 0, 0, 0.3) !important;
 }
 
-.gain-title:hover:after {
-    text-transform: none;
-    letter-spacing: normal;
-    background: rgba(0, 0, 0, .6);
-    border: 2px solid rgba(0, 0, 0, 0.5);
+.audio-btn:hover:after {
     border-radius: 6px;
     color: rgba(255, 255, 255, 0.9) !important;
     font-size: 12px;
     font-weight: 600;
-    content: "Use [▲] & [▼] keys to adjust volume or [CTRL] + [M] to mute";
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    white-space: nowrap;
     padding: 4px 8px;
     z-index: 100;
-    transition: 0.2s;
 }
 
 .gain-bar-container:hover:after {
@@ -1323,8 +1343,8 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 36px;
-    background-color: rgba(0, 0, 0, 0.4);
+    /* height: 36px; */
+    /* background-color: rgba(0, 0, 0, 0.4); */
     color: #ffffff;
 }
 
@@ -1337,140 +1357,6 @@ footer {
     display: flex;
 }
 
-.play-pause {
-    padding: 7px 20px 0 20px;
-    border-right: solid 2px rgba(0, 0, 0, 0.5);
-    color: rgba(255, 255, 255, 0.6);
-    transition: 0.2s;
-    font-size: 20px;
-}
-
-#play-pause {
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#play-pause:hover {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-#play-pause:hover:after {
-    font-family: 'Open Sans', sans-serif;
-    text-transform: none;
-    letter-spacing: normal;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    bottom: 88px;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 12px;
-    font-weight: 700 !important;
-    content: "Toggle play/pause, or use [CTRL]+[Spacebar]";
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    line-height: 16px;
-    left: 42px;
-    padding: 4px 8px;
-    position: absolute;
-    text-align: center;
-    z-index: 100;
-    width: 120px;
-    transition: text-shadow .1s;
-}
-
-.play-next {
-    padding: 7px 20px 0 20px;
-    border-right: solid 2px rgba(0, 0, 0, 0.5);
-    color: rgba(255, 255, 255, 0.6);
-    transition: 0.2s;
-    font-size: 20px;
-}
-
-#play-next {
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#play-next:hover {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-#play-next:hover:after {
-    font-family: 'Open Sans', sans-serif;
-    text-transform: none;
-    letter-spacing: normal;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    bottom: 88px;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 12px;
-    font-weight: 700 !important;
-    content: "Play Next Song, or use [CTRL]+[N] ";
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    line-height: 16px;
-    left: 42px;
-    padding: 4px 8px;
-    position: absolute;
-    text-align: center;
-    z-index: 100;
-    width: 120px;
-    transition: text-shadow .1s;
-}
-
-.play-shuffle {
-    padding: 7px 20px 0 20px;
-    border-right: solid 2px rgba(0, 0, 0, 0.5);
-    color: rgba(255, 255, 255, 0.6);
-    transition: 0.2s;
-    font-size: 20px;
-}
-
-#play-shuffle {
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#play-shuffle:hover {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-#play-shuffle:hover:after {
-    font-family: 'Open Sans', sans-serif;
-    text-transform: none;
-    letter-spacing: normal;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    bottom: 88px;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 12px;
-    font-weight: 700 !important;
-    content: "Toggle Shuffle, or use [Ctrl]+[S]";
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    line-height: 16px;
-    left: 42px;
-    padding: 4px 8px;
-    position: absolute;
-    text-align: center;
-    z-index: 100;
-    width: 120px;
-    transition: text-shadow .1s;
-}
-
-
-/* #track-name {
-    font-size: 12px;
-    padding: 11px 20px 0 20px;
-    color: rgba(255, 255, 255, 0.7);
-    border-right: solid 2px rgba(0, 0, 0, 0.5);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-    flex: 1;
-    max-width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-} */
-
 #track-name>span:hover {
     transition: 0.2s
 }
@@ -1479,102 +1365,26 @@ footer {
     color: rgba(255, 255, 255, 1);
 }
 
-.playbar-container {
-    flex: 2;
-    position: relative;
-}
-
 #playbar {
-    height: 8px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 30%;
-    transition: 0.2s;
+    height: 100%;
     z-index: 10;
     cursor: pointer;
+    border-top: 1px solid var(--outline-color);
+    background-color: var(--secondary-color);
+    opacity: 0.6;
 }
 
 #playbar-progress {
-    height: 8px;
-    margin: 1px;
-    background-color: rgba(255, 255, 255, 0.4);
+    height: inherit;
+    top: 1px;
+    background-color: var(--secondary-color);
     border-radius: 5px;
     position: absolute;
-    top: 30%;
-    transition: 0.2s;
     cursor: pointer;
 }
 
-#playbar:hover~#playbar-progress {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-#playbar:hover {
-    border: 1px solid rgba(0, 0, 0, 0.8);
-}
-
-.playbar-container:hover:after {
-    text-transform: none;
-    letter-spacing: normal;
-    background: rgba(0, 0, 0, .6);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    bottom: 50px;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 12px;
-    font-weight: 600;
-    content: "Change audio position, or use [◀] & [▶] keys to adjust audio in 5 seconds increments";
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    line-height: 16px;
-    right: 183px;
-    padding: 4px 8px;
-    position: absolute;
-    z-index: 100;
-    width: 260px;
-}
-
-#time-progress {
-    width: 60px;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.8);
-    position: relative;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-#time-progress:hover {
-    color: rgba(255, 255, 255, 1);
-}
-
-#time-progress>span {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 26%;
-}
-
-#time-left {
-    width: 60px;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.8);
-    position: relative;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-    border-right: solid 2px rgba(0, 0, 0, 0.5);
-}
-
-#time-left:hover {
-    color: rgba(255, 255, 255, 1);
-}
-
-#time-left>span {
-    position: absolute;
-    left: 0px;
-    width: 60px;
-    text-align: center;
-    top: 26%;
+#playbar-container {
+    height: 25%;
 }
 
 .full-screen {
@@ -1687,9 +1497,12 @@ footer {
 }
 
 .pages__Marker-sc-1g904gw-1 {
+    position: absolute;
     height: 100%;
     width: 2vmin;
-    background-color: #007272;
+    fill: var(--primary-color);
+    background-color: var(--primary-dark-color);
+    ;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
@@ -1699,12 +1512,12 @@ footer {
 
 .pages__Tuner-sc-1g904gw-0 {
     display: grid;
-    height: 10vh;
+    height: 100%;
     grid-template-columns: 70vw 20vw 10vw;
     grid-template-rows: 1fr;
-    border-top: 0.4vmin solid #00b2b2;
-    border-bottom: 0.4vmin solid #00b2b2;
-    background-color: #008282;
+    border-top: 1px solid var(--outline-color);
+    border-bottom: 1px solid var(--outline-color);
+    background-color: var(--primary-color);
 }
 
 .pages__Text-sc-1g904gw-2 {
@@ -1832,10 +1645,10 @@ footer {
 
 @keyframes iihvvr-animate {
     from {
-        margin-left: 100%;
+        margin-left: 90%;
     }
     to {
-        margin-left: 80%;
+        margin-left: 70%;
     }
 }
 
@@ -1921,20 +1734,4 @@ footer {
 .rotate3dAnimation {
     animation: rotate3dAnimationTimeline 3.5s linear normal infinite;
     -webkit-animation: rotate3dAnimationTimeline 3.5s linear normal infinite;
-}
-
-#topgraphic_path1 {
-    fill: #ecc605;
-}
-
-#topgraphic_path2 {
-    fill: #e20f47;
-}
-
-#topgraphic_path3 {
-    fill: #54940c;
-}
-
-#topgraphic_path4 {
-    fill: #040404;
 }

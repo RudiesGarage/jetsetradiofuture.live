@@ -15,11 +15,8 @@ const app = document.getElementById("app");
 const graffitiSoul = document.getElementById("graffitiSoul");
 const playPause = document.getElementById("play-pause");
 const progressBar = document.getElementById('playbar-progress');
-const timeProgress = document.getElementById('time-progress');
-const timeLeft = document.getElementById('time-left');
 const largePlayIcon = document.getElementById("large-play-icon");
 
-const footerAudioPlayer = document.getElementById("footer-audio-player");
 // const rightGainBar = document.getElementById("right-gain-bar");
 const personalLinks = document.getElementById("personal-links");
 const personalLinksContainer = document.getElementById("personal-links-container");
@@ -158,8 +155,7 @@ const hideElements = () => {
     if (!audio.paused) {
         //backgroundColorHeader.style.opacity = 0;
         //leftSidebar.style.opacity = 0;
-        //rightSidebar.style.opacity = 0;
-        footerAudioPlayer.style.opacity = 0;
+        //rightSidebar.style.opacity = 0; 
         // rightGainBar.style.opacity = 0;
         personalLinksContainer.style.opacity = 0;
         personalLinks.style.paddingRight = "7px";
@@ -176,8 +172,7 @@ const hideElements = () => {
 const showElements = () => {
     // backgroundColorHeader.style.opacity = "";
     //leftSidebar.style.opacity = "";
-    //rightSidebar.style.opacity = "";
-    footerAudioPlayer.style.opacity = "";
+    //rightSidebar.style.opacity = ""; 
     // rightGainBar.style.opacity = "";
     personalLinksContainer.style.opacity = "";
     personalLinks.style.paddingRight = "";
@@ -407,8 +402,6 @@ const nextColor = () => {
 
 const updateDisplayTime = () => {
     progressBar.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
-    timeProgress.innerHTML = `<span>${formatTime(audio.currentTime, audio.duration)}</span>`;
-    timeLeft.innerHTML = `<span>${formatTime(audio.duration - audio.currentTime, audio.duration)}</span>`;
 };
 
 const switchPlayPause = () => {
@@ -591,8 +584,6 @@ setInterval(() => {
     if (audio.src !== "") {
         updateDisplayTime();
     } else {
-        timeProgress.innerHTML = "";
-        timeLeft.innerHTML = "";
         progressBar.style.width = "0%";
     }
 }, 1000);

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.57, minimum-scale=0.57, maximum-scale=0.57">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JetSetRadioFuture.live</title>
+
+    <!-- TODO write an actual description -->
+    <meta name="description" content="Jet Set Radio">
+
+    <!-- TODO shrink Fontawesome to only what is needed -->
+    <link href="./styles/all.min.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="./styles/style.css" rel="stylesheet">
+
+    <!-- TODO set Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="" sizes="32x32" id="favicon">
+</head>
+
+<body id="app" style="background-image: url(wallpaper.gif)">
+    <noscript> JavaScript is needed to listen to Jet Set Radio </noscript>
+    <!-- LOADING SCREEN -->
+    <div id="loadingScreen">
+        <div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper">
+            <div style="padding:80vh 0;background-color:#008989">
+                <main>
+                    <div class="pages__Tuner-sc-1g904gw-0 lbdiXO">
+                        <div width="0.5vmin" end="50%" class="pages__Marker-sc-1g904gw-1 cJYyos"></div>
+                        <div width="0.5vmin" end="90%" class="pages__Marker-sc-1g904gw-1 ceylTi"></div>
+                        <div width="1vmin" end="70%" class="pages__Marker-sc-1g904gw-1 ccJFTX"></div>
+                        <div width="1vmin" end="100%" class="pages__Marker-sc-1g904gw-1 dpcYoq"></div>
+                        <div width="1.5vmin" end="60%" class="pages__Marker-sc-1g904gw-1 ePoAse"></div>
+                        <div width="1.5vmin" end="90%" class="pages__Marker-sc-1g904gw-1 CRCLc"></div>
+                        <div width="2vmin" end="80%" class="pages__Marker-sc-1g904gw-1 iihvvr"></div>
+                        <div width="2vmin" end="90%" class="pages__Marker-sc-1g904gw-1 icCsBZ"></div>
+                        <div width="3vmin" end="50%" class="pages__Marker-sc-1g904gw-1 dUebIs"></div>
+                        <h1 class="pages__Text-sc-1g904gw-2 hYdeDx">Now Loading...</h1>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div>
+    </div>
+    <!-- END LOADING SCREEN -->
+    <main>
+        <!-- Top Graphic SVG -->
+        <svg id="topgraphic" style="min-height: 8.333333%; width:100%; position:absolute; top:0;" preserveAspectRatio="xMidYMin slice" viewBox="0 0 400 29.28257687" xmlns="http://www.w3.org/2000/svg">
+            <g fill-rule="evenodd">
+                <path id="topgraphic_path1"
+                    d="m-0.004492 0.0021485 0.0065193 16.685c0 0.804-0.19303 0.774 7.274 0.914l6.268 0.117c-0.69022 2.2863-5.8807 7.2618-6.183 10.989 3.0057 1.2453 5.1676-1.108 7.517-2.287 6.3449-2.6159 18.482-10.904 23.004-10.749 3.3618 0.63442 7.3017 1.257 10.045 1.928 4.7699 0.87359 28.149 6.8989 29.887 4.0838 0.399-0.746-0.61629-3.4937-2.171-6.7719 0.68012-0.74303 26.903 3.0752 32.561 1.7711 0.44644-3.6411-3.2373-5.8178-4.9494-8.6566 4.8296 0.10559 32.023 3.7411 48.502 5.9148 2.0776 0.48455-2.179 2.5747-3.2124 3.1942-4.1414 1.8036-4.6921 3.4813-2.0688 3.4132 1.872-0.11321 46.259-0.0015 45.123-0.68976 0.32136-0.695-2.4499-2.6387-4.3762-3.8756 7.3733-0.63728 13.57-1.704 21.53-2.4101 0 0.315-1.9752 2.7124-2.5508 3.5315-1.0861 1.5806-3.2624 3.7712-1.1115 3.7582 4.7904-0.52181 31.46-9.098 35.232-8.3828 18.287 4.4378 36.013 10.079 51.227 14.017 3.087 0.803 3.995 0.571 3.995-1.017-2.5581-2.8491-4.7834-4.2668-7.0483-6.4136 6.9984 0.11589 26.136-0.41162 34.211 0.16034-4.4459 3.4372-8.8773 6.5656-6.384 7.2434 14.703-2.2719 29.736-4.2668 41.264-5.8851 0.434-0.08 1.235-0.25525 0.529 0.67675-3.122 4.125-3.4565 6.2164 1.3507 3.8048 5.433-2.7629 16.876-8.5595 21.063-10.553 1.2808-0.58664-2.0715-2.885-2.0216-3.5187 1.1096-0.74842 14.722-0.07463 21.608 0.12111-6e-3 -4.0457-0.0903-7.0262-0.10081-11.072" />
+                <path id="topgraphic_path2"
+                    d="m-0.004492 0.0021485c0.0070644 0.70916 0.0074906 15.633 0.0094256 16.076 3.1359 0.1974 8.0449 0.29231 11.72 0.35354 5.615 0.093 4.5291-0.12216 2.9916 2.1164-1.5882 2.7169-3.3207 5.0245-5.09 7.752-1.093 1.702-0.229 1.824 2.123 0.302 8.4106-4.1239 15.946-8.8815 23.454-12.351 13.731 1.9874 29.411 5.5248 38.697 6.8791 4.1161 1.0906 1.4428-3.7247 0.83135-5.3901-1.192-2.272-1.175-2.282 3.268-1.748 9.472 0.39466 19.674 2.4406 28.223 2.18l0.944-0.196c0.14298-1.525-0.74622-2.8136-1.75-3.716-1.1866-1.5055-2.606-3.0748-3.4842-4.5952-0.484-0.497-0.47875-0.71375 0.35925-0.60775 0.435 0.056 1.504 0.15 2.375 0.211 16.733 1.8509 31.439 4.5661 47.242 6.076 1.9 0.179 2.405 0.361 2.08 0.753-1.943 2.1292-7.8666 4.2794-7.619 5.596 0.20151 0.35268 44.797 0.178 44.797-0.02-1.4834-1.7967-3.9669-2.4143-5.62-3.898 0.069-0.211 0.128-0.221 5.703-0.933 4.8456-0.53518 10.793-1.3104 14.875-1.844 4.137-0.542 4.515-0.448 3.464 0.864-0.88009 1.2203-1.7729 2.5495-2.608 3.661-1.679 2.202-1.6492 2.6397 0.34195 2.2254 11.07-2.6863 21.236-6.3615 31.594-8.6774 0.366-0.07 0.738-0.109 0.826-0.088 0.087 0.022 0.462 0.104 0.833 0.182 18.309 5.1895 35.192 9.3598 51.131 14.054 0.91927 0.25971 1.6747 0.46766 2.5443 0.44934-0.68897-1.0563-1.8509-1.7884-2.6553-2.5013-1.8383-1.583-3.6318-2.7814-5.023-4.65 0.081-0.132 5.481-0.184 19.109-0.184 21.8 0 20.237-0.127 17.952 1.468-2.412 1.8536-6.0741 4.2102-6.6422 5.1497 0.0832 0.36625 0.29443 0.45705 0.62119 0.419 13.781-2.177 28.858-4.286 41.27-6.3407 1.257-0.164 1.485 0.053 0.987 0.936-0.95993 1.6588-2.1386 3.0729-2.8667 4.6448-0.276 0.529-0.0902 0.77064 0.42262 0.47917 7.2-3.843 15.085-6.884 22.38-10.81 0.98093-0.60538-0.53101-1.2286-2.631-3.4666-1.353-1.441 22.705-0.11589 22.839-0.62107 0.27613-1.9128-2.6714-10.173 1e-3 -10.148" />
+                <path id="topgraphic_path3"
+                    d="m-0.004492 0.0021485c0.015544 5.132 0.0045021 10.283 0.0045021 15.415l3.042 0.027c5.683 0.051 13.707 0.305 13.916 0.441 0.381 0.246 0.145 0.706-2.624 5.115-2.487 3.96-2.587 4.167-2.013 4.167 6.188-3.3952 15.713-7.8315 22.54-12.23 12.046 2.3533 27.728 5.6343 39.911 7.315 0.103-0.268-0.341-1.662-1.75-5.489-0.848-2.303-1.0216-2.6761 0.88787-2.5057 10.067 0.96902 23.886 3.1496 31.66 3.1417 3e-3 -1.5666-7.0507-9.8184-5.233-9.795 18.287 2.1803 36.729 5.102 54.33 7.334 2.14 0.239 1.799 0.699-2.334 3.148-3.829 2.269-4.085 2.451-3.951 2.802 0.121 0.313 38.942 0.438 39.434 0.126 0.436-0.276 0.058-0.604-1.921-1.666-3.213-1.725-3.519-2.052-2.103-2.247 9.3127-0.82251 18.672-3.1127 28.075-3.497 0.242 0.15 0.142 0.344-1.121 2.168-3.895 5.626-3.899 5.643-1.111 4.758 9.5772-2.8033 19.693-5.8666 28.114-8.359 2.156-0.637 2.426-0.625 5.424 0.233 13.598 4.0783 32.916 9.9038 47.494 12.955 0-0.174-1.663-1.707-2.829-2.609-4.789-3.702-5.083-3.411 3.471-3.437 3.726-0.012 8.724-0.045 11.108-0.075 28.02-0.35 26.298-0.477 23.25 1.709-1.6997 1.2327-3.3055 2.5402-4.957 3.82-2.193 1.684-1.864 1.828 2.457 1.073 11.91-2.0091 24.604-3.9382 35.449-5.758 2.774-0.491 3.105-0.246 1.993 1.474-2.454 3.794-2.44 4.53 0.058 2.947 15.46-7.9779 17.996-6.8256 16.48-9.763-0.82087-0.83197-1.4596-1.7022-2.188-2.628-0.77-0.966-1.046-0.945 12.656-0.945h12.385c-0.0169-3.923-0.0238-2.5918 0.0152-9.1234" />
+                <path id="topgraphic_path4"
+                    d="m-0.004492 0.0021485c9.9957e-4 3.281 0.004492 6.5619 0.004492 9.8429 6.8419 0.11872 15.98-0.13458 22.5 0.181 0 0.194-1.463 2.538-3.25 5.209-4.193 6.267-4.237 6.744-0.333 3.601 4.3991-3.3997 9.1374-7.0444 13.119-10.044 1.558-1.172 1.974-1.307 2.911-0.944 3.5497 0.86213 23.914 7.7306 25.136 6.3209 0.44852-2.4603 0.49182-5.5702 1.5509-7.4509 0.85-0.355 4.09-0.147 6.866 0.442 10.961 2.025 19.456 2.9592 29.721 4.683 2.263 0.441 2.998 0.076 1.83-0.908-0.338-0.285-1.536-1.381-2.662-2.435-6.719-6.29-6.514-6.012-4.347-5.893 24.062 2.275 47.359 4.7625 69.458 6.85 2.22 0.202 2.203 0.144 0.833 2.876-1.3 2.594-1.237 3.027 0.399 2.759 17.053-2.1984 34.934-4.0675 49.433-5.895 1.407-0.175 1.309-0.413-1.584-3.864-1.382-1.649-1.328-1.716 1.183-1.482 4.0978 0.39106 5.8141 0.5858 9.903 0.998 5.314 0.537 5.602-0.059-2.645 5.479-6.568 4.411-9.355 6.407-9.355 6.701 0 0.245 0.33515 0.18715 2.8292-0.80985 9.3839-3.9952 18.528-7.7274 26.472-11.044 10.748 3.67 21.529 7.2469 32.282 10.902 6.82 2.4265 6.909 2.234 2.004-1.66-5.602-4.447-6.108-4.949-5.212-5.17 0.366-0.09 7.086-0.038 27.375 0.213 11.708 0.144 11.045-9e-3 8.472 1.957-1.888 1.5897-5.2034 3.3895-5.7845 5.0388 11.194-0.31039 28.705-4.7123 41.396-6.1008-1.8448 2.6547-4.393 5.1783-6.055 7.069-1.166 1.326-0.644 1.557 2.472 1.095 9.2252-1.0802 19.107-2.5568 29.056-3.675 2.238-0.249 2.208-0.606-0.279-3.26-5.036-5.374-4.973-5.107-1.277-5.423 6.6502-1.1625 35.562-1.6859 35.583-3.869l0.0152-2.2484" />
+                <path id="topgraphic_path5"
+                    d="m0.10589 7.8046c6.3365 1.4453 18.692 0.00342 24.929 1.0808 0 0.353-0.289 0.793-2.425 3.688-2.367 3.209-1.853 3.049 3.165-0.992 2.8644-1.978 6.0602-6.0756 9.6202-5.154 7.716 2.098 14.323 4.9859 22.845 6.73 1.4998-1.6998 1.2204-4.3418 1.617-7.655 0.192-0.679 0.514-0.764 2.039-0.536 4.7046 0.87489 35.198 6.2308 34.849 5.1067-2.3094-4.1076-6.8908-5.766-9.2407-10.07-30.67-0.017983-46.498-0.012384-87.508-0.0050805 0.068205 2.5394-0.018336 5.4431 0.11 7.8064zm163.35-0.1522c3.991 0.34 4.108 0.53 2.154 3.496-1.173 1.781-1.1254 2.5564 0.40057 2.3824 3.1455-0.62329 44.071-4.616 46.228-5.5688-1.1672-2.0704-3.3397-3.6727-4.6958-5.7576-7e-3 -0.348 0.669-0.591 1.311-0.47 6.4081 0.84258 13.295 1.8405 19.159 2.423 2.423 0 2.353 0.575-0.307 2.505-8.08 5.861-8.213 6.117-1.667 3.206 4.107-1.8349 8.1866-3.5856 11.892-5.279 1.787-0.817 0.559-1.127 16.42 4.141 14.789 4.912 15.652 5.185 15.826 5.011-1.5815-1.9476-4.8895-4.0029-4.263-5.501 1.305-0.236 44.812 0.214 45.064 0.466-0.30336 2.2675-7.3519 4.2124-6.8568 6.1569 11.968-1.1189 25.037-4.3356 36.235-6.3829 5.464-1.014 5.489-0.852 0.654 4.193-3.307 3.451-3.578 3.777-3.336 4.018 8.9498-0.39295 17.724-2.0711 26.576-3.164 2.307-0.283 2.274-0.358-1.958-4.509-4.078-3.999-4.074-3.91-0.17-4.212 12.806-1.3783 25.884-1.4238 37.917-3.193v-1.623h-155.87c-93.4 0-156.76-0.077107-156.66 0.012893" />
+            </g>
+        </svg>
+
+        <!-- 
+        <svg id="btmgraphic" style="min-height: 8.333333%; width:100%; position:absolute; bottom:0;" preserveAspectRatio="xMidYMid slice" viewBox="0 0 400 61.20058565153733" xmlns="http://www.w3.org/2000/svg">
+    <g fill-rule="evenodd"> 
+        <path id="topgraphic_path1" d="m307.06 10.213c-2.8708 0.5426-3.3065 1.5238-0.59675 2.3462 11.607 2.8828 28.947 8.5644 39.704 9.941-0.16345-1.9065-0.82951-2.6771-1.671-4.1695-0.679-0.943-0.55425-1.1518 0.61825-0.95925 2.9283 0.33167 5.1372 0.3008 8.1618 0.51575-2.4805 2.9651-5.6076 5.7983-8.383 8.543-2.897 2.889-3.495 3.412-3.791 3.313-4.6396 0.2013-59.685-8.6552-66.865-9.1062-2.2175-0.36075-1.6495 1.2258-1.3905 1.3858 0.53641 1.0935 0.49195 1.0106 1.1528 2.2472l0.8535 1.7482c-0.61375 0.03005-1.3158-0.09371-1.853-0.198-36.781-4.4431-75.385-9.9764-109.58-14.498-2.767-0.417-3.25-0.214-3.25 1.361-0.15128 1.1218-0.0998 2.1567-0.23456 3.138-0.55067 3.4762 1.0702 2.432-4.4324 3.6758-15.315 3.2553-42.02 6.9053-44.926 7.1931-0.12 0.193-11.209-1.9653-11.694-2.2092-6.9833-0.19901-2.8144-0.07648-7.8596-0.17038-5.5331 0.01759-11.474 0.148-16.77 0.52275-2.128 0-2.0585 1.3594 0.01 2.533 1.5364 0.85234 3.0412 2.005 4.3788 2.8275 0.073 0.118-0.6602 0.11269-1.8622 0.03469-2.0684-0.23005-29.347 0.39423-31.895 0.04106 0.094-0.177 1.286-1.0554 1.5344-1.321 1.2373-1.0616 4.7181-3.4259 4.0976-4.0892-0.327-0.611-1.7327-0.255-4.1576-0.080125-1.4092 0.5161-30.389 3.6819-43.043 5.7321-3.4408 0.48535-3.3168 0.08334-3.3186 1.2061 0 0.509 0.025795 27.94 0.00557 29.45 85.525-0.15247 385.29-0.05922 400 0v-36c-5.2508 0.03119-10.791 0.34299-15.023 0.389l-9.439 0.098c2.3509-7.8289 4.4012-16.046 6.795-23.152 0.59-1.171 0.01-2.078-1.234-1.929-9.8256 1.0765-20.4 4.0691-28.485 4.6825 0.58033-1.6418 2.1071-3.3616 2.2812-4.649-0.72537-1.0355-1.9727-0.46718-3.093-0.3565"/>
+        <path id="topgraphic_path2" d="m348.39 1.5165c-14.382 3.4173-27.545 5.9332-41.053 9.3855-1.672 0.316-1.61 0.268-0.804 0.633 11.844 4.0944 23.883 6.5039 34.721 9.481 4.784 1.315 5.09 1.238 3.583-0.912-0.6977-1.0999-1.3064-2.057-1.971-3.147-0.393-0.462-0.32-0.467 4.319-0.284 7.265 0.287 7.659 0.318 7.769 0.605 0.069 0.178-1.893 2.251-6.467 6.835l-6.566 6.579c-23.674-1.8095-47.611-6.9989-68.581-9.196 0.90839 1.9346 2.179 3.5217 2.997 5.528 0 0.115-0.223 0.14-0.625 0.071-39.199-5.8073-103.15-13.738-113.45-15.109-1.5198-0.28525-1.3168 0.01625-1.5598 4.6822-0.157 3.004-0.0832 2.7532-2.288 3.164-17.843 2.9892-43.526 6.8926-47.183 7.529-0.69946 0.13781-1.019 0.132-2.475-0.191-3.4429-0.73096-6.4153-1.5291-10.25-2.021-8.2742-0.01405-15.204-0.03793-24.316 0.632l-0.4 0.161c1.7064 1.0485 3.189 2.2364 4.974 3.225 1.391 0.706 2.187 1.468 2.012 1.924-0.122 0.319-37.504 0.372-37.701 0.053 2.1802-2.3838 4.7708-3.6548 6.431-5.533l0.417-0.473-12.144 1.4118c-13.536 2.0196-26.681 3.5126-37.35 5.6172-0.51144 0.085937-0.423 0.074-0.423 0.522 0 0.522 0.087495 27.715 0 28.478 43.346 0.14658 310.62-0.0679 400 0v-35.184c-7.4911 0.29104-14.031 0.38321-21.583 0.606-4.509 0.132-4.256 0.379-3.25-3.172 2.3814-7.0266 3.8481-13.316 5.831-19.886 1e-3 -0.12 0.124-0.592 0.273-1.048 0.341-1.042 0.371-1.021-1.203-0.81-10.326 1.097-19.871 3.7869-29.235 4.45 1.2305-2.2739 5.0284-5.8888 1.9902-5.3252"/>
+        <path id="topgraphic_path3" d="m311.42 10.671c-2.764 0.587-2.639 0.775 1.166 1.752 11.131 3.0767 19.533 5.3872 29.207 7.944 2.026 0.6 1.887 0.202-0.881-2.515-1.151-1.129-2.063-2.139-2.028-2.244 0.062-0.188 1.647-0.24 16.246-0.529 6.021-0.12 5.7694-0.35948 2.419 2.634-3.5612 3.4097-6.0411 6.7912-9.6455 10.422-3.986 3.945-3.3895 4.6155-8.628 3.7615-22.627-3.0167-37.396-5.522-57.69-8.3965-3.499-0.525-6.098-0.821-6.242-0.712 1.7886 2.0467 3.4727 3.4741 5.326 5.67 0 0.225-1.609 0.149-2.667-0.127-40.809-4.0754-77.982-11.727-113.94-15.242l-1.362-0.094-0.116 0.529c-0.34901 2.5707-0.15044 5.1477-0.881 7.679-16.313 2.9563-31.753 5.2437-48.888 8.0964-2.945 0.492-1.9493 0.65458-5.4763-0.35042-3.1897-0.92486-5.4486-1.5868-8.6153-2.6146-6.3903-0.17657-12.59 0.48252-16.926 0.59361-3.549 0.088-4.177 0.205-3.167 0.587 0.502 0.19 4.606 3.237 5.097 3.785 0.652 0.726 0.192 0.773-8.889 0.912-13.297 0.204-34.883 0.305-35.024 0.164 1.8401-1.9324 4.7412-3.3685 7.023-5.753-0.088-0.074-1.944 0.114-3.582 0.363-15.518 2.0738-30.571 4.058-43.25 6.225v27.956c7.2905 0.39197 347.85-0.09218 400 0v-33.345c-8.0556 0.17423-16.111 0.35428-24.165 0.603-3.639 0.114-3.718 0.097-3.567-0.722 2.5197-8.414 5.1293-14.844 7.637-23.723-11.967 1.33-21.597 2.7816-32.305 4.055-0.928 0.092-0.62-0.39 1.801-2.817 1.338-1.342 2.432-2.502 2.432-2.579"/>
+        <path id="topgraphic_path4" d="m343.12 5.767c-7.6464 1.2302-15.842 2.8515-22.705 4.151-4.631 0.633-4.601 0.792 0.396 2.08 5.2506 1.3643 10.65 3.7248 15.604 4.207-0.63613-0.66531-1.3366-1.266-2.042-1.849-1.179-0.824-1.065-0.852 4.958-1.197 5.8188-0.35594 11.459-0.65384 17.25-0.985 5.823-0.333 10.491-0.5 10.61-0.381-5.6827 6.8713-12.216 14.171-17.693 20.387-3.668 4.159-4.922 5.383-5.365 5.241-0.212-0.068-0.798-0.188-1.302-0.267-17.442-2.8817-35.121-6.0363-53.583-8.904-0.63368 2.1428-0.27312 5.1544-0.306 7.533-0.032 2.553-0.1 2.706-1.083 2.412-0.357-0.107-0.882-0.195-1.166-0.195-40.485-7.8617-82.913-15.996-118.44-22.667-4.934-1.005-4.352-0.498 4.667 4.066 5.133 2.598 5.131 2.569 0.25 3.433-22.219 3.8423-45.782 8.8934-65.86 12.757-2.9907-2.0836-5.1112-4.2252-8.0192-6.4808l-0.629-0.503-5.288 0.202c-7.916 0.302-8.871 0.368-8.871 0.616 0 0.118 1.669 1.831 3.708 3.806 4.336 4.2 4.23 3.818 1.365 4.949-4.0701 1.3683-7.823 3.6551-11.875 4.816-2.178 0.546-2.104 0.656-2.152-3.196-0.044-3.539 0.12-3.285-2.129-3.315-3.804-0.05-22.128-0.589-25.148-0.739-2.451-0.122-2.611-0.021-1.602 1.007 2.3081 1.9182 4.7227 3.4582 6.383 5.693-9.1955-0.81361-19.251-1.9067-26.883-2.592-2.128-0.185-2.541-0.564-1.505-1.379 1.8976-1.4285 3.8436-3.1574 5.463-4.449 1.012-0.711 0.629-1.031-0.831-0.693-9.6298 1.548-19.804 4.6955-28.705 6.0974-0.775 0.096-0.58888 0.11362-0.58888 0.69762 0 0.664 0.26046 19.275 0 21.041 50.522-0.2212 286.4 0.19563 400 0l0.0442-26.589c1e-3 -0.615 0.60065-0.08-19.298-0.24545-12.257-0.10191-18.762-0.057-18.829-0.167-0.057-0.091 0.213-0.748 0.599-1.458 3.2929-6.2157 6.8805-13.107 9.655-18.375 3.067-5.82 3.7614-7.1444 3.6184-7.2874-9.1648 0.1008-15.757 0.99323-25.122 1.4484-4.3333 0.059761-6.6737 0.6136-9.661 0.276 1.0908-1.1088 1.8955-1.3913 3.077-2.504l0.667-0.587"/>
+        <path id="topgraphic_path5" d="m335.79 8.539c-4.9698 0.45155-8.6052 0.94625-13.081 1.461-3.1973 0.26517-1.996 0.553 0.557 1.342 3.312 0.99595 6.3998 2.051 9.776 2.994 0.29-6e-3 0.084-0.447-0.481-1.026-1.133-1.16-1.059-1.181 5.439-1.572 9.6205-0.5944 18.326-1.3301 28.417-2.055 1.283-0.093 2.568-0.216 2.856-0.275 0.51325-0.12006 0.80091 0.11075 1.233 0.273-7.6226 9.5205-16.031 20.433-24.156 29.236l-1.716-0.012c-17.076-2.8011-33.544-5.468-51.217-8.579-2.954-0.532-2.791-0.793-2.752 4.398 0.033 4.506-0.044 5.088-0.72 5.413-37.008-6.9874-78.607-15.5-114.49-21.566-1.346-0.231-0.65 0.438 2.928 2.815 1.965 1.306 2.065 1.581 0.653 1.793-22.945 4.9627-46.845 9.2451-68.03 13.391-5.451 1.108-5.088 1.088-5.491 0.298-2.3146-2.9597-4.3424-4.242-7.088-6.579-1.6785 0.3498-12.881-0.86728-9.888 0.961 1.5797 1.4974 8.2943 5.6556 7.511 5.837-6.6212 1.7993-13.004 6.5301-19.581 7.746-2.906 0-2.639 0.312-2.639-3.075 0-3.669 0.304-3.373-3.584-3.5-6.5744-0.30666-13.236-0.86952-17.041-1.017-3.111-0.12-3.194-0.056-1.853 1.434 2.294 2.553 3.5604 3.5758 4.103 4.184 0.683 0.78662 0.28447 1.1387-0.324 1.037-11.877-1.3949-20.581-1.99-32.384-3.213-3.301-0.342-3.29-0.507 0.217-3.225 1.701-1.318 1.457-1.908-0.539-1.303-7.5936 1.555-14.875 2.9606-22.428 4.592v20.42h400v-25.838c-13.482-0.44959-26.837 0.48842-40.547 0.191 3.1347-7.4978 9.3836-17.434 13.714-26.873 0-0.133-0.263-0.154-0.875-0.071-14.11 1.1124-16.727 0.68122-32.5 1.356-2.089 0.092999-2.411-0.032-1.442-0.565 0.828-0.455 1.6364-1.0588 1.5344-1.2238"/>
+    </g>
+</svg> -->
+        <!-- End TOP Graphic -->
+
+        <!-- WALLPAPER -->
+        <!-- <section id="wallpaperFrame">
+    <span id="wallpaper-container">
+        <img id="wallpaper"style=" height: 237px; width: 237px;" src="icon.png">
+    </span>
+</section> -->
+        <!-- END WALLPAPER -->
+
+        <!-- Grafitti Soul -->
+        <section id="graffitiSoulFrame" class="objectSettings touchableOn">
+            <span id="graffitiSoul-container">
+                <img id="graffitiSoul" class="objectSettings touchableOff rotate3dAnimation"
+                    style=" height: 237px; width: 237px;" src="icon.png">
+            </span>
+        </section>
+        <!-- END Grafitti Soul -->
+
+        <!-- Large Play Button -->
+        <section id="large-play">
+            <span id="large-play-container">
+                <i class="fas fa-play" id="large-play-icon"></i>
+            </span>
+        </section>
+        <!-- END LARGE PLAY BUTTON -->
+
+        <!-- SIDE BAR -->
+        <section class="personal-links" id="personal-links" style="top: 38px;">
+
+            <div id="personal-links-container">
+                <span data="Change Station">
+                    <i class="fas fa-headphones" id="radio-link"> </i>
+                </span>
+                <span data="Chat">
+                    <i class="fas fa-comment" id="portfolio-link"> </i>
+                </span>
+                <!-- <a href="https://twitter.com/DJ_ProfessorK" target="_blank" data="Twitter profile">
+            <i class="fab fa-twitter" id="twitter-link"></i>
+        </a> -->
+                <!-- <a href="mailto: djpk@djetsetradiofuture.live" data="Send an email">
+            <i class="far fa-envelope" id="email-link"></i>
+        </a> -->
+                <span data="Keyboard Controls">
+                    <i class="fas fa-keyboard" id="keyboard-controls"></i>
+                </span>
+                <a href="https://gamejolt.com/games/JSRFMP/336004" target="_blank" data="JSRFMP">
+                    <i class="fa fa-gamepad" id="jsrfmp"></i>
+                </a>
+            </div>
+        </section>
+        <!-- END SIDE BAR -->
+
+        <!-- PROJECT DATA -->
+        <section id="project-name">
+            <div class="project-title"><span>
+                    <!-- JSRF -->
+                </span>
+                <!-- .live -->
+            </div>
+            <div id="track-name" style="background-size:contain;background-image:url('./styles/dots.png')" class="project-subtitle"><span>
+                    <!-- Artist -->
+                </span>
+                <!-- -  -->
+                <span>
+                    <!-- Title -->
+                </span></div>
+        </section>
+        <!-- END PROJECT DATA -->
+
+
+    </main>
+
+    <footer style=" width: 100%; height:16.66667%; bottom:0; position: absolute;">
+
+        <div id="playbar-container">
+
+            <div id="playbar-progress" style="width: 0%;"></div>
+            <div id="playbar"></div>
+        </div>
+        <!-- Play Controls -->
+        <section style="height:75%; background-color: var(--primary-color);  ">
+
+
+
+
+            <div style="height:100%;display:flex; align-items: center; justify-content:center;">
+
+                <div style="position: absolute;" class="pages__Tuner-sc-1g904gw-0 lbdiXO">
+                    <div width="0.5vmin" end="50%" class="pages__Marker-sc-1g904gw-1 cJYyos"></div>
+                    <div width="0.5vmin" end="90%" class="pages__Marker-sc-1g904gw-1 ceylTi"></div>
+                    <div width="1vmin" end="70%" class="pages__Marker-sc-1g904gw-1 ccJFTX"></div>
+                    <div width="1vmin" end="100%" class="pages__Marker-sc-1g904gw-1 dpcYoq"></div>
+                    <div width="1.5vmin" end="60%" class="pages__Marker-sc-1g904gw-1 ePoAse"></div>
+                    <div width="1.5vmin" end="90%" class="pages__Marker-sc-1g904gw-1 CRCLc"></div>
+                    <div width="2vmin" end="80%" class="pages__Marker-sc-1g904gw-1 iihvvr"></div>
+                    <div width="2vmin" end="90%" class="pages__Marker-sc-1g904gw-1 icCsBZ"></div>
+                    <div width="3vmin" end="50%" class="pages__Marker-sc-1g904gw-1 dUebIs"></div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg" style="width: 45rem !important;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="z-index:100;width: 100%; position: relative;">
+                            <div style="display:flex; justify-content: space-between; align-items: center; margin: 0rem 0.5rem 0.5rem 0.5rem" class="flex justify-between items-center mt-8">
+                                <div id="shuffle-btn" class="audio-btn">
+                                    <svg style="width: 2.5rem; height:2.5rem" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path
+                                        d="M6.59 12.83L4.4 15c-.58.58-1.59 1-2.4 1H0v-2h2c.29 0 .8-.2 1-.41l2.17-2.18 1.42 1.42zM16 4V1l4 4-4 4V6h-2c-.29 0-.8.2-1 .41l-2.17 2.18L9.4 7.17 11.6 5c.58-.58 1.59-1 2.41-1h2zm0 10v-3l4 4-4 4v-3h-2c-.82 0-1.83-.42-2.41-1l-8.6-8.59C2.8 6.21 2.3 6 2 6H0V4h2c.82 0 1.83.42 2.41 1l8.6 8.59c.2.2.7.41.99.41h2z" />
+                                    </svg>
+                                </div>
+                                <div id="prev-btn" class="audio-btn">
+                                    <svg style="width: 2.5rem; height:2.5rem" class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M4 5h3v10H4V5zm12 0v10l-9-5 9-5z" /></svg>
+                                </div>
+                                <div id="play-pause" class="audio-btn">
+                                    <svg style="width: 2.5rem; height:2.5rem" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z" /></svg>
+                                </div>
+                                <div id="play-btn" style="display:none;" class="audio-btn play">
+                                    <svg style="width: 2.5rem; height:2.5rem" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <g transform="translate(0,-492)">
+                                        <path
+                                            d="m10 492c-5.5269 0-10 4.4725-10 10 0 5.527 4.4725 10 10 10 5.527 0 10-4.4725 10-10 0-5.527-4.4725-10-10-10zm3.603 11.11-4.699 2.7151c-0.39641 0.22906-0.8852 0.22945-1.2823 3.5e-4 -0.3968-0.22898-0.64121-0.6523-0.64121-1.1104v-5.4303c0-0.45813 0.24445-0.88141 0.64121-1.1104 0.19828-0.11445 0.41957-0.17168 0.64086-0.17168 0.22148 0 0.44301 0.0574 0.64141 0.17195l4.699 2.7151c0.39644 0.22907 0.64062 0.65219 0.64062 1.1101 0 0.45793-0.24422 0.88101-0.64066 1.1101z"
+                                            stroke-width=".039062" />
+                                    </g>
+                                </svg>
+                                </div>
+                                <div id="next-btn" class="audio-btn">
+                                    <svg style="width: 2.5rem; height:2.5rem" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M13 5h3v10h-3V5zM4 5l9 5-9 5V5z" /></svg>
+                                </div>
+                                <div id="vol-btn" class="audio-btn">
+                                    <svg style="width: 2.5rem; height:2.5rem" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path
+                                        d="M5 4a2 2 0 0 0-2 2v6H0l4 4 4-4H5V6h7l2-2H5zm10 4h-3l4-4 4 4h-3v6a2 2 0 0 1-2 2H6l2-2h7V8z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+    </footer>
+
+
+
+    <!-- <footer class="footer-audio-player" id="footer-audio-player">
+                <section class="footer-audio-container">
+                    <div class="play-shuffle">
+                        <i class="fas fa-retweet" id="play-shuffle"></i>
+                    </div>
+                    <div class="play-pause">
+                        <i class="fas fa-play" id="play-pause"></i>
+                    </div>
+                    <div class="play-next">
+                        <i class="fas fa-forward" id="play-next"></i>
+                    </div>
+                    <h3 class="gain-title" id="gain-title">
+                        <i class="fas fa-volume-up " id="vol"></i>
+                    </h3>
+                    <div id="time-progress"></div>
+
+                    
+                    <div id="time-left"></div>
+
+
+                </section>
+            </footer> -->
+
+    <audio id="audio" crossorigin="anonymous"></audio>
+
+    <!-- Station Select Modal -->
+    <section id="radio-modal">
+        <div class="carousel-wrapper">
+
+            <!-- TODO have this text change on carousel page -->
+            <div class="center-modal-title">
+                Station Select
+            </div>
+
+            <!-- TODO lazy load -->
+            <div class="carousel">
+
+                <!-- Instead of having a huge carousel
+                     group stations together in a gridded carousel -->
+                <div id="new_stations_grid" class="station-grid-wrapper carousel__photo initial" data="Newly Updated">
+                    <!-- <img class="station-grid-box" data="airgear" title="Air Gear OST" alt="Air Gear" src="icons/airgear_icon.png"> -->
+                    <!-- <img class="station-grid-box" data="radirgy" title="Radio Allergy OST" alt="Radio Allergy OST" src="icons/radirgy_icon.png"> -->
+                    <!-- <img class="station-grid-box" data="sonic" title="Sonic DJ Mix" alt="Sonic DJ Mix" src="icons/sonic_icon.png"> -->
+                    <img class="station-grid-box" data="olliolliworld" title="Olli Olli World OST" alt="Ollie Ollie World" src="icons/olliolliwolrd_icon.png">
+                    <img class="station-grid-box" data="spacechannel5" title="Space Channel 5 OST" alt="Space Channel 5" src="icons/spacechannel5_icon.png">
+                    <img class="station-grid-box" data="live" title="Live Music DJ's Choice" alt="Live" src="icons/live_icon.png">
+                </div>
+                <div id="vgm_stations_grid" class="station-grid-wrapper carousel__photo" data="Video Game OSTs">
+                    <img class="station-grid-box" data="classic" title="Jet Set Radio OST" alt="Jet Set Radio Classic" src="icons/classic_icon.png">
+                    <img class="station-grid-box" data="future" title="Jet Set Radio Future" alt="Jet Set Radio Future" src="icons/future_icon.png">
+                    <img class="station-grid-box" data="ollieking" title="Ollie King" alt="Ollie King" src="icons/ollieking_icon.png">
+                    <img class="station-grid-box" data="crazytaxi" title="Crazy Taxi" alt="Crazy Taxi" src="icons/crazytaxi_icon.png">
+                    <img class="station-grid-box" data="toejamandearl" title="Toejam&Earl" alt="Toejam&Earl" src="icons/toejam&earl_icon.png">
+                    <img class="station-grid-box" data="hover" title="Hover" alt="Hover" src="icons/hover_icon.png">
+                    <img class="station-grid-box" data="butterflies" title="Butterflies" alt="Butterflies" src="icons/butterflies_icon.png">
+                    <img class="station-grid-box" data="lethalleagueblaze" title="Leathal League Blaze" alt="Leathal League Blaze" src="icons/leathalleage_icon.png">
+                </div>
+                <div id="rival_stations_grid" class="station-grid-wrapper carousel__photo" data="Gang Playlists">
+                    <img class="station-grid-box" data="ggs" title="Classic Hip-Hop" alt="GGS" src="icons/ggs_icon.png">
+                    <img class="station-grid-box" data="noisetanks" itle="Techno-step beats" alt="Noise Tanks" src="icons/noisetanks_icon.png">
+                    <img class="station-grid-box" data="poisonjam" title="Grunge and Sludge" alt="Poison Jam" src="icons/poisonjam_icon.png">
+                    <img class="station-grid-box" data="rapid99" title="CityScape Pop" alt="Rapid 99" src="icons/rapid99_icon.png">
+                    <img class="station-grid-box" data="loveshockers" title="Heartbreak Rock" alt="LoveShockers" src="icons/loveshockers_icon.png">
+                    <img class="station-grid-box" data="immortals" title="Middle Eastern Beats" alt="Immortals" src="icons/immortals_icon.png">
+                    <img class="station-grid-box" data="doomriders" title="Classic Rock" alt="DoomRiders" src="icons/doomriders_icon.png">
+                    <img class="station-grid-box" data="goldenrhinos" title="Hard Rap" alt="GoldenRhinos" src="icons/goldenrhinos_icon.png">
+                    <img class="station-grid-box" data="garage" title="Chillhop Beats" alt="Garage" src="icons/garage_icon.png">
+                </div>
+                <div id="fans_stations_grid" class="station-grid-wrapper carousel__photo" data="Fan Albums">
+                    <img class="station-grid-box" data="ultraremixes" title="UltraRemix" alt="UltraRemix" src="icons/ultraremix_icon.png">
+                    <img class="station-grid-box" data="jetmashradio" title="JetMashRadio" alt="JetMashRadio" src="icons/jetmashradio_icon.png">
+                    <img class="station-grid-box" data="siivagunner" title="SiivaGunner" alt="SiivaGunner" src="icons/siivagunner_icon.png">
+                    <img class="station-grid-box" data="memoriesoftokyoto" title="2Mello" alt="2Mello" src="icons/mot_icon.png">
+                    <img class="station-grid-box" data="tokyotofuture" title="2Mello" alt="2Mello" src="icons/tokyotofuture_icon.png">
+                    <img class="station-grid-box" data="futuregeneration" title="Future Generation" alt="Future Generation" src="icons/futuregen_icon.png">
+                    <img class="station-grid-box" data="verafx" title="VeraFX" alt="VeraFX" src="icons/verafx_icon.png">
+                    <img class="station-grid-box" data="djchidow" title="DJ Chidow" alt="DJ Chidow" src="icons/djchidow_icon.png">
+                    <img class="station-grid-box" data="bonifidebloom" title="BonifideBloom" alt="BonifideBloom" src="icons/bonifidebloom_icon.png">
+                </div>
+                <div id="other_stations_grid" class="station-grid-wrapper carousel__photo" data="Others">
+                    <img class="station-grid-box" data="ganjah" title="Ganjah" alt="Pots" src="icons/pots_icon.png">
+                    <img class="station-grid-box" data="lofi" title="Lo-fi" alt="Lo-Fi" src="icons/lofi_icon.png">
+                    <img class="station-grid-box" data="classical" title="Classical Remixes" alt="Classical Remix" src="icons/classical_icon.png">
+                    <img class="station-grid-box" data="revolution" title="Viva la Revolution" alt="Revolution" src="icons/revolution_icon.png">
+                    <img class="station-grid-box" data="endofdays" title="Songs to play at the end of the world" alt="End of Days" src="icons/eod_icon.png">
+                    <img class="station-grid-box" data="chiptunes" title="Chiptunes" alt="Chiptunes" src="icons/chiptunes_icon.png">
+                    <img class="station-grid-box" data="retroremix" title="Retro Songs Remixed" alt="RetroRemix" src="icons/retroremix_icon.png">
+                    <img class="station-grid-box" data="outerspace" title="OuterSpace Music" alt="OuterSpace" src="icons/space_icon.png">
+                </div>
+                <div id="seasonal_stations_grid" class="station-grid-wrapper carousel__photo" data="Seasonal">
+                    <img class="station-grid-box" data="summer" title="Chill Summer Beats" alt="Summer" src="icons/summer_icon.png">
+                    <img class="station-grid-box" data="halloween" title="Spooky Scratchin' " alt="Halloween" src="icons/halloween_icon.png">
+                    <img class="station-grid-box" data="christmas" title="Christmas Music" alt="Christmas" src="icons/christmas_icon.png">
+                    <img class="station-grid-box" data="snowfi" title="Lo-Fi Snowday beats" alt="Snow-fi" src="icons/snowfi_icon.png">
+                </div>
+                <div class="carousel__button--next" data="Next Set"></div>
+                <div class="carousel__button--prev" data="Prev Set"></div>
+                <!-- TODO set a large box with  low z-index indstead of smoll X -->
+                <div id="radio-close-modal">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- END RADIO MODAL -->
+
+    <!-- keyboard MODAL -->
+    <section id="keyboard-modal">
+        <div class="keyboard-modal-container">
+            <!-- TODO add style to make it look like original JSR modal -->
+            <!--<img class="grafitti_modal" src="styles/modal_img.png"/>-->
+            <div class="center-modal-title">
+                Keyboard Controls
+            </div>
+            <br /> <br />
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Key</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Spacebar</td>
+                        <td>Play / Pause Audio</td>
+                    </tr>
+                    <tr>
+                        <td>Left-Arrow</td>
+                        <td>Play Next Song</td>
+                    </tr>
+                    <tr>
+                        <td>S</td>
+                        <td>Disable Visualizer</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- TODO set a large box with  low z-index indstead of smoll X -->
+            <div id="keyboard-close-modal">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+    </section>
+    <!-- end keyboard Modal -->
+
+
+    <!-- D3 web viz TODO see if this dependancy can be removed -->
+    <script src="./scripts/d3.v5.min.js"></script>
+    <script src="./scripts/utitlities.js"></script>
+    <script src="./scripts/visualizations/waveform_line.js"></script>
+
+    <!-- Main scripts -->
+    <script src="./scripts/index.js"></script>
+
+
+    <!-- TODO introduce lazy loading on modal data -->
+    <!-- <script src="./scripts/lazyload.min.js"></script> -->
+
+</body>
+
+</html>
