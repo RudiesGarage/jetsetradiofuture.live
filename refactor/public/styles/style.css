@@ -562,6 +562,10 @@ a {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.personal-links svg:hover {
+    fill: rgba(255, 255, 255, 0.8);
+}
+
 #github-link {
     font-size: 25px;
 }

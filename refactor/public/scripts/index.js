@@ -14,6 +14,10 @@ const audio = document.getElementById("audio");
 const app = document.getElementById("app");
 const graffitiSoul = document.getElementById("graffitiSoul");
 const playPause = document.getElementById("play-pause");
+
+const playBtn = document.getElementById("play-btn");
+const pauseBtn = document.getElementById("pause-btn");
+
 const progressBar = document.getElementById('playbar-progress');
 const largePlayIcon = document.getElementById("large-play-icon");
 
@@ -151,37 +155,7 @@ const createContext = () => {
     createVisualizer();
 };
 
-const hideElements = () => {
-    if (!audio.paused) {
-        //backgroundColorHeader.style.opacity = 0;
-        //leftSidebar.style.opacity = 0;
-        //rightSidebar.style.opacity = 0; 
-        // rightGainBar.style.opacity = 0;
-        personalLinksContainer.style.opacity = 0;
-        personalLinks.style.paddingRight = "7px";
-        projectName.style.transition = "1s";
-        projectName.style.opacity = 0;
-        // demoContainer.style.opacity = 0;
-        if (window.innerWidth <= 824) {
-            //infoLink.style.transform = "translate(0, -38px)";
-            personalLinksContainer.style.transform = "translate(0, -38px)";
-        }
-    }
-};
 
-const showElements = () => {
-    // backgroundColorHeader.style.opacity = "";
-    //leftSidebar.style.opacity = "";
-    //rightSidebar.style.opacity = ""; 
-    // rightGainBar.style.opacity = "";
-    personalLinksContainer.style.opacity = "";
-    personalLinks.style.paddingRight = "";
-    projectName.style.opacity = "";
-    projectName.style.transition = "";
-    // demoContainer.style.opacity = "";
-    //infoLink.style.transform = "";
-    personalLinksContainer.style.transform = "";
-};
 /*
     infoLink.onclick = () => {
         informationModal.style.display = "";
@@ -354,15 +328,15 @@ keyboardModal.onclick = e => {
 let timeOut;
 
 document.onmousemove = () => {
-    showElements();
-    clearTimeout(timeOut);
-    timeOut = setTimeout(() => hideElements(), 3000);
+    //showElements();
+    // clearTimeout(timeOut);
+    //timeOut = setTimeout(() => hideElements(), 3000);
 };
 
 document.onclick = () => {
-    showElements();
-    clearTimeout(timeOut);
-    timeOut = setTimeout(() => hideElements(), 3000);
+    // showElements();
+    // clearTimeout(timeOut);
+    // timeOut = setTimeout(() => hideElements(), 3000);
 };
 
 const createVisualizer = () => {
@@ -412,11 +386,15 @@ const switchPlayPause = () => {
         if (audio.paused) {
             audio.play();
             //sound.play();
+            pauseBtn.style.display = "";
+            playBtn.style.display = "none";
             largePlayIcon.style.opacity = "";
             largePlayIcon.style.cursor = "";
         } else {
             audio.pause();
             //sound.pause();
+            pauseBtn.style.display = "none";
+            playBtn.style.display = "";
             largePlayIcon.style.opacity = 1;
             largePlayIcon.style.cursor = "pointer";
         }
@@ -540,23 +518,29 @@ const updateGain = (value) => {
 // };
 
 audio.onpause = () => {
-    playPause.classList.remove("fa-pause");
-    playPause.classList.add("fa-play");
+    pauseBtn.style.display = "none";
+    playBtn.style.display = "";
     largePlayIcon.style.opacity = 1;
     largePlayIcon.style.cursor = "pointer";
-    showElements();
 };
 
 audio.onplay = () => {
     var t = decodeURIComponent(audio.src.substr(audio.src.lastIndexOf('/') + 1, audio.src.lastIndexOf('.') - 1));
     var t = t.substring(0, t.lastIndexOf('.'));
     document.getElementById('track-name').innerHTML = `<span>${t}</span>`;
-    playPause.classList.remove("fa-play");
+
+
+    pauseBtn.style.display = "";
+    playBtn.style.display = "none";
     largePlayIcon.style.opacity = 0;
     largePlayIcon.style.cursor = "";
-    playPause.classList.add("fa-pause");
-    timeOut = setTimeout(() => hideElements(), 3000);
 };
+
+//Check if track name is overflowing
+function isOverflown(element) {
+    return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+}
+
 
 // on end play next song in the playlist
 audio.onended = () => {
