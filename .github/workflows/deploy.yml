@@ -28,7 +28,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
-          script: cd /var/www/html/jetsetradiofuture.live && git pull origin master
+          script: |
+            cd /var/www/html/jetsetradiofuture.live 
+            git pull origin master
             
             
 
