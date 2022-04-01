@@ -20,13 +20,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps: 
       - name: Pull from git
-        uses: garygrossgarten/github-action-ssh@release
+      - uses: actions/checkout@v1
+      - name: Push to server
+        uses: appleboy/ssh-action@master
         with:
-          command: cd /var/www/html/jetsetradiofuture.live && git pull origin master
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
-          privateKey: ${{ secrets.SSHKEY }}
+          key: ${{ secrets.SSHKEY }}
+          script: cd /var/www/html/jetsetradiofuture.live && git pull origin master
             
             
 
