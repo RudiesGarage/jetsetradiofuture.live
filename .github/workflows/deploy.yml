@@ -27,7 +27,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           privateKey: ${{ secrets.SSHKEY }}
-          script: |
             
             
 
