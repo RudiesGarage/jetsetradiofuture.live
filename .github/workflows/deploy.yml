@@ -18,28 +18,16 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      - name: Copy repository contents via scp
-        uses: appleboy/scp-action@master
-        env:
+    steps: 
+      - name: Pull from git
+        uses: appleboy/ssh-action@master
+        with:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
-        with:
-          source: "."
-          target: "/var/www/html/jetsetradiofuture.live/"
-
-      - name: Executing remote command
-        uses: appleboy/ssh-action@master
-        with:
-         host: ${{ secrets.HOST }}
-         USERNAME: ${{ secrets.USERNAME }}
-         PORT: ${{ secrets.PORT }}
-         KEY: ${{ secrets.SSHKEY }}
-         script: ls
+          script: |
+            cd /var/www/html/jetsetradiofuture.live
+            git pull origin master
 
  
