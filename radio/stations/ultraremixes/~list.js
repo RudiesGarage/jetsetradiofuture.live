@@ -157,4 +157,5 @@ this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "Unknown Meta 
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "VeraFX - Devil's Contract";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "VLTG - Real Roller Radio ‘99";
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "WholePunch - Down The Radio";
+this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "World Rejects x DJ Octavio - Reject Platoon x Tidal Rush (Mashup by SFgamer)"
 this[stationName+'_tracks'][this[stationName+'_tracks'].length] = "NeonTwister - Raisin' Me Up x Funky Radio";
