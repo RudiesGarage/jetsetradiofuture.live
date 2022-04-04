@@ -183,7 +183,7 @@
         </section>
     </main>
 
-    <footer style=" width: 100%; height:16.66667%; bottom:0; position: absolute;">
+    <footer style=" width: 100%; height:20%; bottom:0; position: absolute;">
 
         <div id="playbar-container">
 
@@ -211,14 +211,14 @@
                     <div style="display: flex; flex-direction: column;">
                         <div style="z-index:100;width: 100%; position: relative;">
                             <div style="display:flex; justify-content: space-between; align-items: center; margin: 0rem 1.5rem " class="flex justify-between items-center mt-8">
-                                <div class="audio-btn">
-                                    <svg id="shuffle-btn" style="width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <div id="shuffle-btn" class="audio-btn">
+                                    <svg style="width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path
                                         d="M6.59 12.83L4.4 15c-.58.58-1.59 1-2.4 1H0v-2h2c.29 0 .8-.2 1-.41l2.17-2.18 1.42 1.42zM16 4V1l4 4-4 4V6h-2c-.29 0-.8.2-1 .41l-2.17 2.18L9.4 7.17 11.6 5c.58-.58 1.59-1 2.41-1h2zm0 10v-3l4 4-4 4v-3h-2c-.82 0-1.83-.42-2.41-1l-8.6-8.59C2.8 6.21 2.3 6 2 6H0V4h2c.82 0 1.83.42 2.41 1l8.6 8.59c.2.2.7.41.99.41h2z" />
                                     </svg>
                                 </div>
-                                <div class="audio-btn">
-                                    <svg id="prev-btn" style="width: 40px; height:40px" class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <div id="prev-btn" class="audio-btn">
+                                    <svg style="width: 40px; height:40px" class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M4 5h3v10H4V5zm12 0v10l-9-5 9-5z" /></svg>
                                 </div>
                                 <div id="play-pause" class="audio-btn">
@@ -239,13 +239,13 @@
                                 <div style="display:none;" class="audio-btn play">
 
                                 </div>
-                                <div class="audio-btn">
-                                    <svg id="next-btn" style="width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <div id="next-btn" class="audio-btn">
+                                    <svg style="width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M13 5h3v10h-3V5zM4 5l9 5-9 5V5z" /></svg>
                                 </div>
-                                <div class="audio-btn">
+                                <div id="radio-link" class="audio-btn">
 
-                                    <svg id="radio-link" xmlns="http://www.w3.org/2000/svg" style=" width: 2rem; height:2rem" fill="currentColor" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" style=" width: 2rem; height:2rem" fill="currentColor" viewBox="0 0 16 16">
                                         <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
                                 </svg>
                                 </div>
@@ -383,10 +383,10 @@
                         <td>Up/Down Arrow</td>
                         <td>Change the Volume</td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>S</td>
                         <td>Pause Music</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <!-- TODO set a large box with  low z-index indstead of smoll X -->

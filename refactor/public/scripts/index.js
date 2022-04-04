@@ -18,6 +18,10 @@ const playPause = document.getElementById("play-pause");
 const playBtn = document.getElementById("play-btn");
 const pauseBtn = document.getElementById("pause-btn");
 
+const nextBtn = document.getElementById("next-btn");
+
+const prevBtn = document.getElementById("prev-btn");
+
 const progressBar = document.getElementById('playbar-progress');
 const largePlayIcon = document.getElementById("large-play-icon");
 
@@ -28,7 +32,7 @@ const projectName = document.getElementById("project-name");
 const StationCollection = document.getElementsByClassName("station-grid-box");
 
 
-let baseurl = "https://jsrfl.us-east-1.linodeobjects.com/music/artists/";
+let baseurl = "https://jsrfl.us-east-1.linodeobjects.com/music/stations/";
 audio.src = 'https://jsrfl.us-east-1.linodeobjects.com/music/artists/2 Mello/2 Mello - 24 Hour Party People.mp3';
 
 console.log("Currently Playing: " + audio.src);
@@ -42,7 +46,7 @@ function getStationData(stationselected) {
         let xhr = new XMLHttpRequest();
 
         // 2. Configure it: GET-request for the URL /article/.../load
-        xhr.open('GET', '/stations/' + stationselected + '/' + stationselected + '.json');
+        xhr.open('GET', './stations/' + stationselected + '/' + stationselected + '.json');
         xhr.responseType = 'json';
         // 3. Send the request over the network
         xhr.send();
@@ -59,7 +63,7 @@ function getStationData(stationselected) {
         };
 
         xhr.onerror = function() {
-            alert("Request failed");
+            alert("Playlist Request failed");
             reject();
         };
     });
@@ -67,15 +71,18 @@ function getStationData(stationselected) {
 
 // Set Station info locally
 function setStation(stationData) {
+    pauseBtn.style.display = "none";
+    playBtn.style.display = "";
     currentStation = stationData.stationName;
     app.style.backgroundImage = "url(./stations/" + currentStation + "/images/wallpaper.jpg)";
     graffitiSoul.src = "./stations/" + currentStation + "/images/icon.png";
     currentPlaylist = stationData.songList;
     //get random  song index 
     currentSongIndex = currentPlaylist.length * Math.random() | 0;
-    currentHowl = currentPlaylist[currentSongIndex].url;
+    currentHowl = currentPlaylist[currentSongIndex];
     console.log(currentHowl)
-    audio.src = baseurl + currentHowl + '.mp3'
+    audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
+
 }
 
 
@@ -130,8 +137,6 @@ const colorObj = {
         next: "plasmaD3",
     },
 };
-
-const directionArr = ["0deg", "45deg", "90deg", "135deg", "180deg", "225deg", "270deg", "315deg"];
 
 let AudioContext = window.AudioContext || window.webkitAudioContext;
 let contextCreated = false;
@@ -269,6 +274,52 @@ const switchPlayPause = () => {
     }
 };
 
+nextBtn.onclick = () => {
+    if (!contextCreated) {
+        createContext();
+    }
+    currentSongIndex++;
+    if (currentSongIndex > currentPlaylist.length - 1) {
+        currentSongIndex = 0;
+    }
+    currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0];
+    console.log(currentHowl)
+
+    audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
+    var promise = audio.play();
+    if (promise !== undefined) {
+        promise.then(_ => {
+            // play started!
+        }).catch(error => {
+            // play was prevented.
+            // Show a "Play" button so that user can start playback.
+        });
+    }
+
+}
+
+prevBtn.onclick = () => {
+    if (!contextCreated) {
+        createContext();
+    }
+    currentSongIndex--;
+    if (currentSongIndex < 0) {
+        currentSongIndex = currentPlaylist.length - 1;
+    }
+    currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0];
+    console.log(currentHowl)
+    audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
+    var promise = audio.play();
+    if (promise !== undefined) {
+        promise.then(_ => {
+            // play started!
+        }).catch(error => {
+            // play was prevented.
+            // Show a "Play" button so that user can start playback.
+        });
+    }
+}
+
 playPause.onclick = () => {
     switchPlayPause();
 };
@@ -399,9 +450,9 @@ audio.onended = () => {
     if (currentSongIndex > currentPlaylist.length - 1) {
         currentSongIndex = 0;
     }
-    currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0].url;
+    currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0];
     console.log(currentHowl)
-    audio.src = baseurl + currentHowl + '.mp3'
+    audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
     audio.play();
 };
 
@@ -422,42 +473,6 @@ setInterval(() => {
         progressBar.style.width = "0%";
     }
 }, 1000);
-
-// document.getElementById("file-input-label").onclick = () => {
-//     if (!contextCreated) {
-//         createContext();
-//     }
-// };
-
-// document.getElementById("file-input").onchange = function() {
-//     const files = this.files;
-//     if (files.length > 0) {
-//         audio.src = URL.createObjectURL(files[0]);
-//         audio.load();
-//         playPause.classList.remove("fa-pause");
-//         playPause.classList.add("fa-play");
-//         largePlayIcon.style.opacity = 1;
-//         largePlayIcon.style.cursor = "pointer";
-//         document.getElementById('track-name').innerHTML = `<span>${files[0].name.split(".").slice(0, files[0].name.split(".").length - 1).join("")}</span>`;
-//     }
-// };
-/*
-    document.getElementById("demo-button").onclick = function () {
-        if (!contextCreated) {
-            createContext();
-        }
-        if (!audio.src.includes("01%20Keep%20on%20Mixing.m4a")) {
-            audio.src = "./01 Keep on Mixing.m4a";
-            audio.load();
-            playPause.classList.remove("fa-pause");
-            playPause.classList.add("fa-play");
-            largePlayIcon.style.opacity = 1;
-            largePlayIcon.style.cursor = "pointer";
-            document.getElementById('track-name').innerHTML = "<span>01 Keep on Mixing</span>";
-        }
-    };
-*/
-
 
 window.onresize = () => {
     createVisualizer();

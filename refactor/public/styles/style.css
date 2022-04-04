@@ -91,6 +91,9 @@ button {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+}
+
+html {
     /* CSS COLORS */
     --primary-color: #54940c;
     --primary-dark-color: #24590c;
