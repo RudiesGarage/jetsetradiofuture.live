@@ -73,6 +73,19 @@ function getStationData(stationselected) {
 function setStation(stationData) {
     pauseBtn.style.display = "none";
     playBtn.style.display = "";
+    var r = document.querySelector(':root');
+    r.style.setProperty('--primary-color', stationData.colorsObj.colors[0]);
+
+    r.style.setProperty('--primary-dark-color', stationData.colorsObj.colors[1]);
+
+    r.style.setProperty('--secondary-color', stationData.colorsObj.colors[2]);
+
+    r.style.setProperty('--border-color', stationData.colorsObj.colors[3]);
+
+    r.style.setProperty('--border2-color', stationData.colorsObj.colors[4]);
+
+    r.style.setProperty('--outline-color', stationData.colorsObj.colors[5]);
+
     currentStation = stationData.stationName;
     app.style.backgroundImage = "url(./stations/" + currentStation + "/images/wallpaper.jpg)";
     graffitiSoul.src = "./stations/" + currentStation + "/images/icon.png";

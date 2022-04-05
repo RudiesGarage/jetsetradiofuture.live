@@ -93,7 +93,7 @@ button {
     vertical-align: baseline;
 }
 
-html {
+:root {
     /* CSS COLORS */
     --primary-color: #54940c;
     --primary-dark-color: #24590c;
