@@ -19,7 +19,7 @@ const playBtn = document.getElementById("play-btn");
 const pauseBtn = document.getElementById("pause-btn");
 
 const nextBtn = document.getElementById("next-btn");
-
+const shuffleBtn = document.getElementById("shuffle-btn");
 const prevBtn = document.getElementById("prev-btn");
 
 const progressBar = document.getElementById('playbar-progress');
@@ -287,6 +287,32 @@ const switchPlayPause = () => {
     }
 };
 
+function shuffle(array) {
+    let currentIndex = array.length,
+        randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]
+        ];
+    }
+
+    return array;
+}
+
+shuffleBtn.onclick = () => {
+    if (currentPlaylist) {
+        shuffle(currentPlaylist);
+    }
+}
+
 nextBtn.onclick = () => {
     if (!contextCreated) {
         createContext();
@@ -295,7 +321,7 @@ nextBtn.onclick = () => {
     if (currentSongIndex > currentPlaylist.length - 1) {
         currentSongIndex = 0;
     }
-    currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0];
+    currentHowl = currentPlaylist[currentSongIndex];
     console.log(currentHowl)
 
     audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
@@ -319,7 +345,8 @@ prevBtn.onclick = () => {
     if (currentSongIndex < 0) {
         currentSongIndex = currentPlaylist.length - 1;
     }
-    currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0];
+    //currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0];
+    currentHowl = currentPlaylist[currentSongIndex];
     console.log(currentHowl)
     audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
     var promise = audio.play();
@@ -381,26 +408,6 @@ document.onkeydown = (e) => {
             }
         }
     }
-    if (e.keyCode === 65) prevColor();
-    if (e.keyCode === 68) nextColor();
-
-
-    if (e.keyCode === 82) {
-        setRandomColors();
-    }
-
-    if (e.keyCode === 81) {
-        rotateBackgroundLeft();
-    }
-
-    if (e.keyCode === 69) {
-        rotateBackgroundRight();
-    }
-
-    if (e.keyCode === 87) prevVisualizer();
-    if (e.keyCode === 83) nextVisualizer();
-
-    if (e.keyCode === 70) switchFullScreen();
 };
 
 
@@ -463,7 +470,7 @@ audio.onended = () => {
     if (currentSongIndex > currentPlaylist.length - 1) {
         currentSongIndex = 0;
     }
-    currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0];
+    currentHowl = currentPlaylist[currentSongIndex];
     console.log(currentHowl)
     audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
     audio.play();

@@ -917,9 +917,9 @@ a {
     color: #444;
 }
 
-.station-grid-box {
-    background-color: #444;
-    color: #fff;
+.station-grid-image {
+    /* background-color: #444; */
+    /* color: #fff; */
     border-radius: 5px;
     max-width: 150px;
     padding: 20px;
@@ -1780,10 +1780,10 @@ li {
     border-bottom: 1px solid white;
     min-height: 15vh;
     color: rgba(white, .5);
-    background: lightgray;
+    background: #444;
     text-align: center;
     scroll-snap-align: start;
     display: flex;
-    flex-flow: column;
-    justify-content: center;
+    flex-flow: row;
+    justify-content: space-around;
 }
