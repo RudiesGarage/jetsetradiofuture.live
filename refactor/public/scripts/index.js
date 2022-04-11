@@ -87,9 +87,12 @@ function setStation(stationData) {
     r.style.setProperty('--outline-color', stationData.colorsObj.colors[5]);
 
     currentStation = stationData.stationName;
-    app.style.backgroundImage = "url(./stations/" + currentStation + "/images/wallpaper.jpg)";
-    graffitiSoul.src = "./stations/" + currentStation + "/images/icon.png";
+    app.style.backgroundImage = "url(./stations/" + currentStation + "/wallpaper.jpg)";
+    graffitiSoul.src = "./stations/" + currentStation + "/icon.png";
     currentPlaylist = stationData.songList;
+
+    shuffle(currentPlaylist)
+
     //get random  song index 
     currentSongIndex = currentPlaylist.length * Math.random() | 0;
     currentHowl = currentPlaylist[currentSongIndex];
@@ -119,23 +122,20 @@ for (let i = 0; i < StationCollection.length; i++) {
 
 const keyboardModal = document.getElementById('keyboard-modal');
 const radioModal = document.getElementById('radio-modal');
+const chatModal = document.getElementById('chat-modal');
+//const waveformLinearButton = document.getElementById('waveform-linear-button');
 
-const waveformLinearButton = document.getElementById('waveform-linear-button');
-
-const rainbowButton = document.getElementById('rainbow-button');
+//const rainbowButton = document.getElementById('rainbow-button');
 
 let selectedVisualizer = "waveformLinear";
 let selectedColor = "rainbowD3";
 let selectedBackgroundDirection = "45deg";
 
-if (window.innerWidth <= 824) {
-    personalLinks.style.top = "38px";
-}
 
 const visualizerObj = {
 
     waveformLinear: {
-        button: waveformLinearButton,
+        //button: waveformLinearButton,
         visualizer: waveformLinear,
         prev: "fullScreen",
         next: "waveformCircle",
@@ -144,7 +144,7 @@ const visualizerObj = {
 
 const colorObj = {
     rainbowD3: {
-        button: rainbowButton,
+        //button: rainbowButton,
         color: d3.interpolateRainbow,
         prev: "greysD3",
         next: "plasmaD3",
@@ -196,6 +196,9 @@ document.getElementById('radio-link').onclick = () => {
 
 
 
+document.getElementById('chatBtn').onclick = () => {
+    chatModal.style.display = "block";
+};
 
 // Keyboard Controls Modal Control
 document.getElementById('keyboard-controls').onclick = () => {
@@ -209,6 +212,14 @@ document.getElementById('keyboard-close-modal').onclick = () => {
 
 keyboardModal.onclick = e => {
     if (e.target === keyboardModal) keyboardModal.style.display = "";
+};
+
+radioModal.onclick = e => {
+    if (e.target === radioModal) radioModal.style.display = "";
+};
+
+chatModal.onclick = e => {
+    if (e.target === chatModal) chatModal.style.display = "";
 };
 
 let timeOut;
@@ -239,9 +250,9 @@ const createVisualizer = () => {
 
 const switchVisualizer = (newVisualizer) => {
     if (selectedVisualizer !== newVisualizer) {
-        visualizerObj[selectedVisualizer].button.classList.remove("active-visualizer");
+        //visualizerObj[selectedVisualizer].button.classList.remove("active-visualizer");
         selectedVisualizer = newVisualizer;
-        visualizerObj[selectedVisualizer].button.classList.add("active-visualizer");
+        //visualizerObj[selectedVisualizer].button.classList.add("active-visualizer");
         createVisualizer();
     }
 };

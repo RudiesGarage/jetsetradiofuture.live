@@ -18,7 +18,7 @@
     <link rel="icon" type="image/png" href="" sizes="32x32" id="favicon">
 </head>
 
-<body id="app" style="background-image: url(./stations/classic/images/wallpaper.jpg)">
+<body id="app" style="background-image: url(./stations/classic/wallpaper.jpg)">
     <noscript> JavaScript is needed to listen to Jet Set Radio </noscript>
     <!-- LOADING SCREEN -->
     <div id="loadingScreen">
@@ -83,7 +83,7 @@
         <section id="graffitiSoulFrame" class="objectSettings touchableOn">
             <span id="graffitiSoul-container">
                 <img id="graffitiSoul" class="objectSettings touchableOff rotate3dAnimation"
-                    style=" height: 237px; width: 237px;" src="./stations/classic/images/icon.png">
+                    style=" height: 237px; width: 237px;" src="./stations/classic/icon.png">
             </span>
         </section>
         <!-- END Grafitti Soul -->
@@ -91,26 +91,27 @@
         <!-- Large Play Button -->
         <section id="large-play">
             <span id="large-play-container">
-                <svg id="large-play-icon" style=" width: 64px; height:64px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <svg id="large-play-icon" style=" width: 64px; height:64px" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <g transform="translate(0,-492)">
                         <path
                             d="m10 492c-5.5269 0-10 4.4725-10 10 0 5.527 4.4725 10 10 10 5.527 0 10-4.4725 10-10 0-5.527-4.4725-10-10-10zm3.603 11.11-4.699 2.7151c-0.39641 0.22906-0.8852 0.22945-1.2823 3.5e-4 -0.3968-0.22898-0.64121-0.6523-0.64121-1.1104v-5.4303c0-0.45813 0.24445-0.88141 0.64121-1.1104 0.19828-0.11445 0.41957-0.17168 0.64086-0.17168 0.22148 0 0.44301 0.0574 0.64141 0.17195l4.699 2.7151c0.39644 0.22907 0.64062 0.65219 0.64062 1.1101 0 0.45793-0.24422 0.88101-0.64066 1.1101z"
                             stroke-width=".039062" />
                     </g>
-                    
                 </svg>
             </span>
         </section>
         <!-- END LARGE PLAY BUTTON -->
 
         <!-- SIDE BAR -->
-        <section class="personal-links" id="personal-links" style="">
+        <section class="personal-links" id="personal-links">
 
-            <div id="personal-links-container" style=" border: 1px solid #000000; padding:5px;background-color:#008989;align-items: center; flex-direction: column;  justify-content: space-around;  display:flex;">
+            <div id="personal-links-container">
 
-                <svg id="portfolio-link" xmlns="http://www.w3.org/2000/svg" style=" width: 32px; height:32px" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
-                        <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
-                    </svg>
+                <svg id="chatBtn" class="side-link" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z" />
+                </svg>
                 <!-- <a href="https://twitter.com/DJ_ProfessorK" target="_blank" data="Twitter profile">
             <svg id="twitter-link" xmlns="http://www.w3.org/2000/svg" style=" width: 2rem; height:2rem" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
   <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
@@ -119,14 +120,17 @@
                 <!-- <a href="mailto: djpk@djetsetradiofuture.live" data="Send an email">
             <i class="far fa-envelope" id="email-link"></i>
         </a> -->
-                <svg style=" width:32px; height:32px" id="keyboard-controls" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-keyboard-fill" viewBox="0 0 16 16">
-            <path d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm13 .25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8h-.5zM4 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 5 8.75v-.5A.25.25 0 0 0 4.75 8h-.5a.25.25 0 0 0-.25.25zM6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8h-.5zM8 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 9 8.75v-.5A.25.25 0 0 0 8.75 8h-.5a.25.25 0 0 0-.25.25zM13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-1.5zm.75 2.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zM9 6.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5A.25.25 0 0 0 9.75 6h-.5a.25.25 0 0 0-.25.25zM7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6h-.5zM5 6.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 6 6.75v-.5A.25.25 0 0 0 5.75 6h-.5a.25.25 0 0 0-.25.25zM2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6h-1.5zM2 10.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-5.5z"/>
-          </svg>
-                <a href="https://gamejolt.com/games/JSRFMP/336004" target="_blank" data="JSRFMP">
-                    <svg id="jsrfmp" xmlns="http://www.w3.org/2000/svg" style=" width: 32px; height:32px" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
-                        <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/>
-                        <path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z"/>
-                      </svg>
+                <svg class="side-link" id="keyboard-controls" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm13 .25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8h-.5zM4 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 5 8.75v-.5A.25.25 0 0 0 4.75 8h-.5a.25.25 0 0 0-.25.25zM6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8h-.5zM8 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 9 8.75v-.5A.25.25 0 0 0 8.75 8h-.5a.25.25 0 0 0-.25.25zM13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-1.5zm.75 2.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zM9 6.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5A.25.25 0 0 0 9.75 6h-.5a.25.25 0 0 0-.25.25zM7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6h-.5zM5 6.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 6 6.75v-.5A.25.25 0 0 0 5.75 6h-.5a.25.25 0 0 0-.25.25zM2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6h-1.5zM2 10.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-5.5z" />
+                </svg>
+                <a href="https://gamejolt.com/games/JSRFMP/336004" target="_blank">
+                    <svg id="jsrfmp" class="side-link" xmlns="http://www.w3.org/2000/svg" style=" width: 32px; height:32px" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z" />
+                        <path
+                            d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z" />
+                    </svg>
                 </a>
 
 
@@ -142,7 +146,7 @@
                 </span>
                 <!-- .live -->
             </div>
-            <div id="track-name" style="background-size:contain;background-image:url('./styles/dots.png')" class="project-subtitle"><span>
+            <div id="track-name" style="color: rgba(255, 255, 255, 1); background-size:contain;background-image:url('./styles/dots.png')" class="project-subtitle"><span>
                     <!-- Artist -->
                 </span>
                 <!-- -  -->
@@ -171,10 +175,16 @@
 
                     <svg style="position:absolute; width:160px;height:64px;" width="400" height="161.14" version="1.1" viewBox="0, 0, 400,161.14285714285717" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
                         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-                            <path d="m295.11 28.308 10.033-15.655-48.878 21.781 9.3271-16.484-50.966 22.217 6.0074-15.074-37.073 17.295 5.7044-11.935-35.55 14.243 4.649-9.908-42.606 16.309 3.73-10.611-30.815 13.347-0.771-6.808-36.312 19.308-15.722 0.06434-35.883 13.533 0.051181 3.473 37.976 14.838 14.798-0.64556 35.813 17.803-1.7439-7.8037 30.291 14.143-1.835-9.906 42.89 18.719-5.2237-10.802 32.648 13.821-4.0145-12.604l38.469 14.456-5.272-13.222 49.266 20.997-8.4402-15.365 45.536 21.375-6.034-14.147 47.432 25.738-26.879-39.51 40.632-1.065 43.657-38.527-44.825-37.424-40.586-1.176 29.524-42.172" fill="#040404" fill-rule="evenodd"/>
-                            <path d="m289.98 33.499 12.849-18.632-51.727 24.298 12.632-19.403-53.75 25.091 7.975-17.145-40.007 18.307 9.242-13.717-37.233 16.607 6.383-11.971-44.077 17.75 5.196-12.151l-31.795 14.603 1.995-7.636-35.642 19.167-16.108-3e-3 -30.645 11.336 0.077195 3.3204 32.925 12.513h14.931l33.507 16.959-1.879-7.459 30.347 14.235-4.526-12.588 44.479 20.653-8.6-13.266 37.532 16.966-5.786-15.541 39.459 17.712c-0.83659-0.27047 0 0-5.165-14.254l49.236 22.217-9.041-16.732 46.243 22.426-7.531-18.161 50.166 30.833-29.646-39.98 43.024-1.186 41.93-37.293-43.037-35.544-43.976-0.75454 31.301-41.575" fill="#043c1c" fill-rule="evenodd"/>
-                            <path d="m262.33 60.497 17.499-25.593-53.56 26.729 12.729-20.925-49.19 23.879 10.537-18.809-51.321 23.165 11.953-15.258-43.148 17.777c2.8962-3.6648 0 0 10.242-14.295-57.038 26.77 0 0-36.16 16.931 1.1337-4.5094 5.571-8.701 6.904-13.198l-29.351 13.699c2.3723-9.4461 0.64449-2.0053 2.3315-8.066l-18.457 8.884-14.35 0.416-16.436 6.4236 15.729 6.5904 14.766-0.08683 18.748 9.2068-1.3625-7.7338 27.632 13.6-5.549-13.107 36.861 15.865-8.379-11.85 39.66 18.259-8.79-16.011 46.945 20.653-7.578-15.799 48.727 22.254-13.633-18.808 52.431 25.311-14.415-24.244 48.645 29.155c-17.952-24.55 0 0-17.952-24.55l30.271-0.211 30.865-24.911c-295.37-0.448 0 0-295.37-0.448v-7.449l295.7-0.275-31.65-23.741-29.555-0.033 18.596-25.125" fill="#a34c04" fill-rule="evenodd"/>
-                        </svg>
+                        <path
+                            d="m295.11 28.308 10.033-15.655-48.878 21.781 9.3271-16.484-50.966 22.217 6.0074-15.074-37.073 17.295 5.7044-11.935-35.55 14.243 4.649-9.908-42.606 16.309 3.73-10.611-30.815 13.347-0.771-6.808-36.312 19.308-15.722 0.06434-35.883 13.533 0.051181 3.473 37.976 14.838 14.798-0.64556 35.813 17.803-1.7439-7.8037 30.291 14.143-1.835-9.906 42.89 18.719-5.2237-10.802 32.648 13.821-4.0145-12.604l38.469 14.456-5.272-13.222 49.266 20.997-8.4402-15.365 45.536 21.375-6.034-14.147 47.432 25.738-26.879-39.51 40.632-1.065 43.657-38.527-44.825-37.424-40.586-1.176 29.524-42.172"
+                            fill="#040404" fill-rule="evenodd" />
+                        <path
+                            d="m289.98 33.499 12.849-18.632-51.727 24.298 12.632-19.403-53.75 25.091 7.975-17.145-40.007 18.307 9.242-13.717-37.233 16.607 6.383-11.971-44.077 17.75 5.196-12.151l-31.795 14.603 1.995-7.636-35.642 19.167-16.108-3e-3 -30.645 11.336 0.077195 3.3204 32.925 12.513h14.931l33.507 16.959-1.879-7.459 30.347 14.235-4.526-12.588 44.479 20.653-8.6-13.266 37.532 16.966-5.786-15.541 39.459 17.712c-0.83659-0.27047 0 0-5.165-14.254l49.236 22.217-9.041-16.732 46.243 22.426-7.531-18.161 50.166 30.833-29.646-39.98 43.024-1.186 41.93-37.293-43.037-35.544-43.976-0.75454 31.301-41.575"
+                            fill="#043c1c" fill-rule="evenodd" />
+                        <path
+                            d="m262.33 60.497 17.499-25.593-53.56 26.729 12.729-20.925-49.19 23.879 10.537-18.809-51.321 23.165 11.953-15.258-43.148 17.777c2.8962-3.6648 0 0 10.242-14.295-57.038 26.77 0 0-36.16 16.931 1.1337-4.5094 5.571-8.701 6.904-13.198l-29.351 13.699c2.3723-9.4461 0.64449-2.0053 2.3315-8.066l-18.457 8.884-14.35 0.416-16.436 6.4236 15.729 6.5904 14.766-0.08683 18.748 9.2068-1.3625-7.7338 27.632 13.6-5.549-13.107 36.861 15.865-8.379-11.85 39.66 18.259-8.79-16.011 46.945 20.653-7.578-15.799 48.727 22.254-13.633-18.808 52.431 25.311-14.415-24.244 48.645 29.155c-17.952-24.55 0 0-17.952-24.55l30.271-0.211 30.865-24.911c-295.37-0.448 0 0-295.37-0.448v-7.449l295.7-0.275-31.65-23.741-29.555-0.033 18.596-25.125"
+                            fill="#a34c04" fill-rule="evenodd" />
+                    </svg>
                 </div>
 
             </div>
@@ -191,7 +201,7 @@
             <div id="playbar"></div>
         </div>
         <!-- Play Controls -->
-        <section style="height:45%; background-color: var(--primary-color);  ">
+        <section style="height:50%; background-color: var(--primary-color);  ">
 
             <div style="height:100%;display:flex; align-items: center; justify-content:center;">
 
@@ -213,13 +223,13 @@
                             <div style="display:flex; justify-content: space-between; align-items: center; margin: 0rem 1.5rem " class="flex justify-between items-center mt-8">
                                 <div id="shuffle-btn" class="audio-btn">
                                     <svg style="width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path
-                                        d="M6.59 12.83L4.4 15c-.58.58-1.59 1-2.4 1H0v-2h2c.29 0 .8-.2 1-.41l2.17-2.18 1.42 1.42zM16 4V1l4 4-4 4V6h-2c-.29 0-.8.2-1 .41l-2.17 2.18L9.4 7.17 11.6 5c.58-.58 1.59-1 2.41-1h2zm0 10v-3l4 4-4 4v-3h-2c-.82 0-1.83-.42-2.41-1l-8.6-8.59C2.8 6.21 2.3 6 2 6H0V4h2c.82 0 1.83.42 2.41 1l8.6 8.59c.2.2.7.41.99.41h2z" />
+                                        <path
+                                            d="M6.59 12.83L4.4 15c-.58.58-1.59 1-2.4 1H0v-2h2c.29 0 .8-.2 1-.41l2.17-2.18 1.42 1.42zM16 4V1l4 4-4 4V6h-2c-.29 0-.8.2-1 .41l-2.17 2.18L9.4 7.17 11.6 5c.58-.58 1.59-1 2.41-1h2zm0 10v-3l4 4-4 4v-3h-2c-.82 0-1.83-.42-2.41-1l-8.6-8.59C2.8 6.21 2.3 6 2 6H0V4h2c.82 0 1.83.42 2.41 1l8.6 8.59c.2.2.7.41.99.41h2z" />
                                     </svg>
                                 </div>
                                 <div id="prev-btn" class="audio-btn">
                                     <svg style="width: 40px; height:40px" class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path d="M4 5h3v10H4V5zm12 0v10l-9-5 9-5z" /></svg>
+                                        <path d="M4 5h3v10H4V5zm12 0v10l-9-5 9-5z" /></svg>
                                 </div>
                                 <div id="play-pause" class="audio-btn">
                                     <svg id="play-btn" style=" width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -228,26 +238,27 @@
                                                 d="m10 492c-5.5269 0-10 4.4725-10 10 0 5.527 4.4725 10 10 10 5.527 0 10-4.4725 10-10 0-5.527-4.4725-10-10-10zm3.603 11.11-4.699 2.7151c-0.39641 0.22906-0.8852 0.22945-1.2823 3.5e-4 -0.3968-0.22898-0.64121-0.6523-0.64121-1.1104v-5.4303c0-0.45813 0.24445-0.88141 0.64121-1.1104 0.19828-0.11445 0.41957-0.17168 0.64086-0.17168 0.22148 0 0.44301 0.0574 0.64141 0.17195l4.699 2.7151c0.39644 0.22907 0.64062 0.65219 0.64062 1.1101 0 0.45793-0.24422 0.88101-0.64066 1.1101z"
                                                 stroke-width=".039062" />
                                         </g>
-                                        
+
                                     </svg>
                                     <svg id="pause-btn" style="display:none; width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                        
-                                            <path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z" />
-                                        
-                                        </svg>
+
+                                        <path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z" />
+
+                                    </svg>
                                 </div>
                                 <div style="display:none;" class="audio-btn play">
 
                                 </div>
                                 <div id="next-btn" class="audio-btn">
                                     <svg style="width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path d="M13 5h3v10h-3V5zM4 5l9 5-9 5V5z" /></svg>
+                                        <path d="M13 5h3v10h-3V5zM4 5l9 5-9 5V5z" /></svg>
                                 </div>
                                 <div id="radio-link" class="audio-btn">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" style=" width: 2rem; height:2rem" fill="currentColor" viewBox="0 0 16 16">
-                                        <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
-                                </svg>
+                                        <path
+                                            d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                                    </svg>
                                 </div>
 
 
@@ -260,9 +271,9 @@
 
 
         </section>
-        <section style="height:45%; background-color: var(--primary-color);">
+        <section style="height:25%; background-color: var(--primary-color);">
             <marquee>
-                Some footer space to fill...
+                Sonic 2 movie was good
             </marquee>
         </section>
     </footer>
@@ -300,182 +311,206 @@
     <!-- Station Select Modal -->
     <section id="radio-modal">
         <div class="wrapper">
-            <div class="center-modal-title">
-                Station Select
+            <div style="width:80vw; display: flex;align-items: center; flex-direction: row;">
+                <div class="center-modal-title" style="width:70%">
+                    Station Select
+                </div>
+                <div class="center-modal-title" style="width:30%">
+                    Shuffle
+                </div>
             </div>
+
 
             <!-- TODO lazy load -->
             <div class="container">
                 <!-- TODO dynamically make this from a request -->
                 <ul>
+                    <!-- Box example to generate -->
+                    <li class="station-row-box">
+                        <div class="station-grid-box" data="vocaloid">
+                            <img class="station-grid-image" title="vocaloid" alt="vocaloid" src="stations/vocaloid/icon.png">
+                            <div class="stationTitle">Funky Vocaloid Tracks</div>
+
+                        </div>
+                        <div class="stationShuffle">
+                            <input type="checkbox" id="flexCheckDefault" checked="checked">
+                        </div>
+                    </li>
+
+
+                    <li class="station-grid-box" data="splatoon">
+                        <img class="station-grid-image" title="Splatoon Ost" alt="Splatoon Ost" src="stations/splatoon/icon.png">
+                        <div style="display:flex;align-items: center;">Splatoon Ost</div>
+                        <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
+                    </li>
                     <li class="station-grid-box" data="sonic">
-                        <img class="station-grid-image" title="Sonic DJ Mix" alt="Sonic DJ Mix" src="stations/sonic/images/icon.png">
+                        <img class="station-grid-image" title="Sonic DJ Mix" alt="Sonic DJ Mix" src="stations/sonic/icon.png">
                         <div style="display:flex;align-items: center;">Sonic DJ Mix</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="turntablism"><img class="station-grid-image" title="Turntablism" alt="turntablism" src="stations/turntablism/images/icon.png">
+                    <li class="station-grid-box" data="turntablism"><img class="station-grid-image" title="Turntablism" alt="turntablism" src="stations/turntablism/icon.png">
                         <div style="display:flex;align-items: center;">Turntablism</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="olliolliworld"><img class="station-grid-image" title="Olli Olli World OST" alt="Ollie Ollie World" src="icons/olliolliwolrd_icon.png">
+                    <li class="station-grid-box" data="olliolliworld"><img class="station-grid-image" title="Olli Olli World OST" alt="Ollie Ollie World" src="stations/olliolliworld/icon.png">
                         <div style="display:flex;align-items: center;">Olli Olli World OST</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="spacechannel5"><img class="station-grid-image" title="Space Channel 5 OST" alt="Space Channel 5" src="icons/spacechannel5_icon.png">
+                    <li class="station-grid-box" data="spacechannel5"><img class="station-grid-image" title="Space Channel 5 OST" alt="Space Channel 5" src="stations/spacechannel5/icon.png">
 
                         <div style="display:flex;align-items: center;">Space Channel 5 OST</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="classic"><img class="station-grid-image" title="Jet Set Radio OST" alt="Jet Set Radio Classic" src="icons/classic_icon.png">
+                    <li class="station-grid-box" data="classic"><img class="station-grid-image" title="Jet Set Radio OST" alt="Jet Set Radio Classic" src="stations/classic/icon.png">
 
                         <div style="display:flex;align-items: center;">Jet Set Radio OST</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="future"><img class="station-grid-image" title="Jet Set Radio Future" alt="Jet Set Radio Future" src="icons/future_icon.png">
+                    <li class="station-grid-box" data="future"><img class="station-grid-image" title="Jet Set Radio Future" alt="Jet Set Radio Future" src="stations/future/icon.png">
                         <div style="display:flex;align-items: center;">Jet Set Radio Future</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="ollieking"><img class="station-grid-image" title="Ollie King" alt="Ollie King" src="icons/ollieking_icon.png">
+                    <li class="station-grid-box" data="ollieking"><img class="station-grid-image" title="Ollie King" alt="Ollie King" src="stations/ollieking/icon.png">
                         <div style="display:flex;align-items: center;">Ollie King</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="crazytaxi"><img class="station-grid-image" title="Crazy Taxi" alt="Crazy Taxi" src="icons/crazytaxi_icon.png">
+                    <li class="station-grid-box" data="crazytaxi"><img class="station-grid-image" title="Crazy Taxi" alt="Crazy Taxi" src="stations/crazytaxi/icon.png">
                         <div style="display:flex;align-items: center;">Crazy Taxi </div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="toejamandearl"><img class="station-grid-image" title="Toejam&Earl" alt="Toejam&Earl" src="icons/toejam&earl_icon.png">
+                    <li class="station-grid-box" data="toejamandearl"><img class="station-grid-image" title="Toejam&Earl" alt="Toejam&Earl" src="stations/toejamandearl/icon.png">
                         <div style="display:flex;align-items: center;">Toejam&Earl</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="hover"><img class="station-grid-image" title="Hover" alt="Hover" src="icons/hover_icon.png">
+                    <li class="station-grid-box" data="hover"><img class="station-grid-image" title="Hover" alt="Hover" src="stations/hover/icon.png">
                         <div style="display:flex;align-items: center;">Hover</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="butterflies"><img class="station-grid-image" title="Butterflies" alt="Butterflies" src="icons/butterflies_icon.png">
+                    <li class="station-grid-box" data="butterflies"><img class="station-grid-image" title="Butterflies" alt="Butterflies" src="stations/butterflies/icon.png">
                         <div style="display:flex;align-items: center;">Butterflies</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="lethalleagueblaze"><img class="station-grid-image" title="Leathal League Blaze" alt="Leathal League Blaze" src="icons/leathalleage_icon.png">
+                    <li class="station-grid-box" data="lethalleagueblaze"><img class="station-grid-image" title="Leathal League Blaze" alt="Leathal League Blaze" src="stations/lethalleagueblaze/icon.png">
                         <div style="display:flex;align-items: center;">Leathal League Blaze</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="ggs"><img class="station-grid-image" title="Classic Hip-Hop" alt="GGS" src="icons/ggs_icon.png">
+                    <li class="station-grid-box" data="ggs"><img class="station-grid-image" title="Classic Hip-Hop" alt="GGS" src="stations/ggs/icon.png">
                         <div style="display:flex;align-items: center;">GGs</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="noisetanks"><img class="station-grid-image" itle="Techno-step beats" alt="Noise Tanks" src="icons/noisetanks_icon.png">
+                    <li class="station-grid-box" data="noisetanks"><img class="station-grid-image" itle="Techno-step beats" alt="Noise Tanks" src="stations/noisetanks/icon.png">
                         <div style="display:flex;align-items: center;">Noise Tanks</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="poisonjam"><img class="station-grid-image" title="Grunge and Sludge" alt="Poison Jam" src="icons/poisonjam_icon.png">
+                    <li class="station-grid-box" data="poisonjam"><img class="station-grid-image" title="Grunge and Sludge" alt="Poison Jam" src="stations/poisonjam/icon.png">
                         <div style="display:flex;align-items: center;">Poison Jam</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="rapid99"><img class="station-grid-image" title="CityScape Pop" alt="Rapid 99" src="icons/rapid99_icon.png">
+                    <li class="station-grid-box" data="rapid99"><img class="station-grid-image" title="CityScape Pop" alt="Rapid 99" src="stations/rapid99/icon.png">
                         <div style="display:flex;align-items: center;">Rapid 99</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="loveshockers"><img class="station-grid-image" title="Heartbreak Rock" alt="LoveShockers" src="icons/loveshockers_icon.png">
+                    <li class="station-grid-box" data="loveshockers"><img class="station-grid-image" title="Heartbreak Rock" alt="LoveShockers" src="stations/loveshockers/icon.png">
                         <div style="display:flex;align-items: center;">LoveShockers</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="immortals"><img class="station-grid-image" title="Middle Eastern Beats" alt="Immortals" src="icons/immortals_icon.png">
+                    <li class="station-grid-box" data="immortals"><img class="station-grid-image" title="Middle Eastern Beats" alt="Immortals" src="stations/immortals/icon.png">
                         <div style="display:flex;align-items: center;">Immortals</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="doomriders"><img class="station-grid-image" title="Classic Rock" alt="DoomRiders" src="icons/doomriders_icon.png">
+                    <li class="station-grid-box" data="doomriders"><img class="station-grid-image" title="Classic Rock" alt="DoomRiders" src="stations/doomriders/icon.png">
                         <div style="display:flex;align-items: center;">DoomRiders</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="goldenrhinos"><img class="station-grid-image" title="Hard Rap" alt="GoldenRhinos" src="icons/goldenrhinos_icon.png">
+                    <li class="station-grid-box" data="goldenrhinos"><img class="station-grid-image" title="Hard Rap" alt="GoldenRhinos" src="stations/goldenrhinos/icon.png">
                         <div style="display:flex;align-items: center;">GoldenRhinos</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="garage"><img class="station-grid-image" title="Chillhop Beats" alt="Garage" src="icons/garage_icon.png">
+                    <li class="station-grid-box" data="garage"><img class="station-grid-image" title="Chillhop Beats" alt="Garage" src="stations/garage/icon.png">
                         <div style="display:flex;align-items: center;">Garage</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="ultraremixes"><img class="station-grid-image" title="UltraRemix" alt="UltraRemix" src="icons/ultraremix_icon.png">
+                    <li class="station-grid-box" data="ultraremixes"><img class="station-grid-image" title="UltraRemix" alt="UltraRemix" src="stations/ultraremixes/icon.png">
                         <div style="display:flex;align-items: center;">UltraRemix</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="jetmashradio"><img class="station-grid-image" title="JetMashRadio" alt="JetMashRadio" src="icons/jetmashradio_icon.png">
+                    <li class="station-grid-box" data="jetmashradio"><img class="station-grid-image" title="JetMashRadio" alt="JetMashRadio" src="stations/jetmashradio/icon.png">
                         <div style="display:flex;align-items: center;">JetMashRadio</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="siivagunner"><img class="station-grid-image" title="SiivaGunner" alt="SiivaGunner" src="icons/siivagunner_icon.png">
+                    <li class="station-grid-box" data="siivagunner"><img class="station-grid-image" title="SiivaGunner" alt="SiivaGunner" src="stations/siivagunner/icon.png">
                         <div style="display:flex;align-items: center;">SiivaGunner</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="memoriesoftokyoto"><img class="station-grid-image" title="2Mello" alt="2Mello" src="icons/mot_icon.png">
-                        <div style="display:flex;align-items: center;">Sonic DJ Mix</div>
-                        <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
-                    </li>
-                    <li class="station-grid-box" data="tokyotofuture"><img class="station-grid-image" title="2Mello" alt="2Mello" src="icons/tokyotofuture_icon.png">
+                    <li class="station-grid-box" data="memoriesoftokyoto"><img class="station-grid-image" title="2Mello" alt="2Mello" src="stations/memoriesoftokyoto/icon.png">
                         <div style="display:flex;align-items: center;">2Mello</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="futuregeneration"><img class="station-grid-image" title="Future Generation" alt="Future Generation" src="icons/futuregen_icon.png">
+                    <li class="station-grid-box" data="tokyotofuture"><img class="station-grid-image" title="2Mello" alt="2Mello" src="stations/tokyotofuture/icon.png">
+                        <div style="display:flex;align-items: center;">2Mello Future</div>
+                        <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
+                    </li>
+                    <li class="station-grid-box" data="futuregeneration"><img class="station-grid-image" title="Future Generation" alt="Future Generation" src="stations/futuregeneration/icon.png">
                         <div style="display:flex;align-items: center;">Future Generation</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="verafx"><img class="station-grid-image" title="VeraFX" alt="VeraFX" src="icons/verafx_icon.png">
+                    <li class="station-grid-box" data="verafx"><img class="station-grid-image" title="VeraFX" alt="VeraFX" src="stations/verafx/icon.png">
                         <div style="display:flex;align-items: center;">VeraFX</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="djchidow"><img class="station-grid-image" title="DJ Chidow" alt="DJ Chidow" src="icons/djchidow_icon.png">
+                    <li class="station-grid-box" data="djchidow"><img class="station-grid-image" title="DJ Chidow" alt="DJ Chidow" src="stations/djchidow/icon.png">
                         <div style="display:flex;align-items: center;">DJ Chidow</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="bonifidebloom"><img class="station-grid-image" title="BonifideBloom" alt="BonifideBloom" src="icons/bonifidebloom_icon.png">
-                        <div style="display:flex;align-items: center;">BonifideBloom</div>
+                    <li class="station-grid-box" data="bonafidebloom"><img class="station-grid-image" title="BonafideBloom" alt="bonafidebloom" src="stations/bonafidebloom/icon.png">
+                        <div style="display:flex;align-items: center;">BonafideBloom</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="ganjah"><img class="station-grid-image" title="Ganjah" alt="Pots" src="icons/pots_icon.png">
+                    <li class="station-grid-box" data="ganjah"><img class="station-grid-image" title="Ganjah" alt="Pots" src="stations/ganjah/icon.png">
                         <div style="display:flex;align-items: center;">Pots</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="lofi"><img class="station-grid-image" title="Lo-fi" alt="Lo-Fi" src="icons/lofi_icon.png">
+                    <li class="station-grid-box" data="lofi"><img class="station-grid-image" title="Lo-fi" alt="Lo-Fi" src="stations/lofi/icon.png">
                         <div style="display:flex;align-items: center;">Lo-Fi</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="classical"><img class="station-grid-image" title="Classical Remixes" alt="Classical Remix" src="icons/classical_icon.png">
+                    <li class="station-grid-box" data="classical"><img class="station-grid-image" title="Classical Remixes" alt="Classical Remix" src="stations/classical/icon.png">
                         <div style="display:flex;align-items: center;">Classical Remixes</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="revolution"><img class="station-grid-image" title="Viva la Revolution" alt="Revolution" src="icons/revolution_icon.png">
+                    <li class="station-grid-box" data="revolution"><img class="station-grid-image" title="Viva la Revolution" alt="Revolution" src="stations/revolution/icon.png">
                         <div style="display:flex;align-items: center;">Revolution</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="endofdays"><img class="station-grid-image" title="Songs to play at the end of the world" alt="End of Days" src="icons/eod_icon.png">
-                        <div style="display:flex;align-items: center;">Eod</div>
+                    <li class="station-grid-box" data="endofdays"><img class="station-grid-image" title="Songs to play at the end of the world" alt="End of Days" src="stations/endofdays/icon.png">
+                        <div style="display:flex;align-items: center;">End of Days</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="chiptunes"><img class="station-grid-image" title="Chiptunes" alt="Chiptunes" src="icons/chiptunes_icon.png">
+                    <li class="station-grid-box" data="chiptunes"><img class="station-grid-image" title="Chiptunes" alt="Chiptunes" src="stations/chiptunes/icon.png">
                         <div style="display:flex;align-items: center;">Chiptunes</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="retroremix"><img class="station-grid-image" title="Retro Songs Remixed" alt="RetroRemix" src="icons/retroremix_icon.png">
+                    <li class="station-grid-box" data="retroremix"><img class="station-grid-image" title="Retro Songs Remixed" alt="RetroRemix" src="stations/retroremix/icon.png">
                         <div style="display:flex;align-items: center;">RetroRemix</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="outerspace"><img class="station-grid-image" title="OuterSpace Music" alt="OuterSpace" src="icons/space_icon.png">
+                    <li class="station-grid-box" data="outerspace"><img class="station-grid-image" title="OuterSpace Music" alt="OuterSpace" src="stations/outerspace/icon.png">
                         <div style="display:flex;align-items: center;">OuterSpace</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="summer"><img class="station-grid-image" title="Chill Summer Beats" alt="Summer" src="icons/summer_icon.png">
+                    <li class="station-grid-box" data="summer"><img class="station-grid-image" title="Chill Summer Beats" alt="Summer" src="stations/summer/icon.png">
                         <div style="display:flex;align-items: center;">Summer</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="halloween"><img class="station-grid-image" title="Spooky Scratchin' " alt="Halloween" src="icons/halloween_icon.png">
+                    <li class="station-grid-box" data="halloween"><img class="station-grid-image" title="Spooky Scratchin' " alt="Halloween" src="stations/halloween/icon.png">
                         <div style="display:flex;align-items: center;">Halloween</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="christmas"><img class="station-grid-image" title="Christmas Music" alt="Christmas" src="icons/christmas_icon.png">
+                    <li class="station-grid-box" data="christmas"><img class="station-grid-image" title="Christmas Music" alt="Christmas" src="stations/christmas/icon.png">
                         <div style="display:flex;align-items: center;">Christmas</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
-                    <li class="station-grid-box" data="snowfi"><img class="station-grid-image" title="Lo-Fi Snowday beats" alt="Snow-fi" src="icons/snowfi_icon.png">
+                    <li class="station-grid-box" data="snowfi"><img class="station-grid-image" title="Lo-Fi Snowday beats" alt="Snow-fi" src="stations/snowfi/icon.png">
                         <div style="display:flex;align-items: center;">Snow-fi</div>
                         <div style="display:flex;align-items: center;"><input class="" type="checkbox" value="" id="flexCheckDefault"></div>
                     </li>
@@ -485,6 +520,33 @@
     </section>
 
     <!-- END RADIO MODAL -->
+
+    <!-- START CHAT MODAL-->
+    <!-- TODO LAZY LOAD THIS -->
+    <section id="chat-modal">
+        <div class="chat-modal-container">
+            <div class="chat-flex-continer">
+                <div class="chat-history-container">
+                    <div class="chat-message">
+                        <div class="chat-username">USERNAME:</div>
+                        <div class="chat-text">HELLO THERE</div>
+                    </div>
+                    <div class="chat-message">
+                        <div class="chat-username">Coffee:</div>
+                        <div class="chat-text">Test</div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    Message: <input placeholder="Currently Needs more testing">
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- END CHAT MODAL -->
 
     <!-- keyboard MODAL -->
     <section id="keyboard-modal">
