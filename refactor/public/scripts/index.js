@@ -346,7 +346,11 @@ const createVisualizer = () => {
 
         changeAnimationStatus();
         removeVisualizer();
-        visualizerObj[selectedVisualizer].visualizer(analyser, colorObj[selectedColor].color);
+        try {
+            visualizerObj[selectedVisualizer].visualizer(analyser, colorObj[selectedColor].color);
+        } catch (e) {
+            console.log("not supported in this browser")
+        }
         const svg_ = document.getElementById('visualizer-svg');
         svg_.style.width = "100%";
         svg_.style.height = "95vh";
@@ -386,6 +390,7 @@ const switchPlayPause = () => {
     }
     if (context && audio.src !== "") {
         if (audio.paused) {
+            audio.load();
             audio.play();
             //sound.play();
             pauseBtn.style.display = "";
@@ -441,6 +446,7 @@ nextBtn.onclick = () => {
     console.log(currentHowl)
 
     audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
+    audio.load();
     var promise = audio.play();
     if (promise !== undefined) {
         promise.then(_ => {
@@ -465,6 +471,7 @@ prevBtn.onclick = () => {
     currentHowl = currentPlaylist[currentSongIndex];
     console.log(currentHowl)
     audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
+    audio.load();
     var promise = audio.play();
     if (promise !== undefined) {
         promise.then(_ => {
