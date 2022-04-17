@@ -17,6 +17,7 @@ const playPause = document.getElementById("play-pause");
 
 const playBtn = document.getElementById("play-btn");
 const pauseBtn = document.getElementById("pause-btn");
+const songBar = document.getElementById("song-name");
 
 const nextBtn = document.getElementById("next-btn");
 const shuffleBtn = document.getElementById("shuffle-btn");
@@ -29,15 +30,43 @@ const gainBarValue = document.getElementById("gain-bar");
 const personalLinks = document.getElementById("personal-links");
 const personalLinksContainer = document.getElementById("personal-links-container");
 const projectName = document.getElementById("project-name");
-const StationCollection = document.getElementsByClassName("station-grid-box");
 
 
 let baseurl = "https://jsrfl.us-east-1.linodeobjects.com/music/stations/";
-audio.src = 'https://jsrfl.us-east-1.linodeobjects.com/music/artists/2 Mello/2 Mello - 24 Hour Party People.mp3';
+audio.src = './stations/static.mp3';
 
 console.log("Currently Playing: " + audio.src);
 audio.load();
 
+
+function getStationList() {
+    return new Promise((resolve, reject) => {
+        // 1. Create a new XMLHttpRequest object
+        let xhr = new XMLHttpRequest();
+
+        // 2. Configure it: GET-request for the URL /article/.../load
+        xhr.open('GET', './stations/stations.json');
+        xhr.responseType = 'json';
+        // 3. Send the request over the network
+        xhr.send();
+
+        // 4. This will be called after the response is received
+        xhr.onload = function() {
+            if (xhr.status != 200) { // analyze HTTP status of the response
+                alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+            } else { // show the result
+                //alert(`Done, got ${xhr.response.length} bytes`); // response is the server response
+                console.log(xhr.response);
+                resolve(xhr.response);
+            }
+        };
+
+        xhr.onerror = function() {
+            alert("Playlist Request failed");
+            reject();
+        };
+    });
+}
 
 //Load classic station initally
 function getStationData(stationselected) {
@@ -97,8 +126,14 @@ function setStation(stationData) {
     currentSongIndex = currentPlaylist.length * Math.random() | 0;
     currentHowl = currentPlaylist[currentSongIndex];
     console.log(currentHowl)
+    songBar.classList.remove("animation");
+    songBar.style.display = "none";
     audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
 
+    if (!contextCreated) {
+        createContext();
+    }
+    audio.play();
 }
 
 
@@ -107,17 +142,7 @@ getStationData("classic")
     .then((res) => setStation(res))
     .catch((err) => console.log(err));
 
-// Set Load Station function for station elements 
-for (let i = 0; i < StationCollection.length; i++) {
-    StationCollection[i].onclick = function() {
-        radioModal.style.display = "";
-        const stationselected = StationCollection[i].getAttribute("data");
 
-        getStationData(stationselected)
-            .then((res) => setStation(res))
-            .catch((err) => console.log(err));
-    };
-}
 
 
 const keyboardModal = document.getElementById('keyboard-modal');
@@ -188,8 +213,88 @@ const createContext = () => {
     };
 */
 
+let stationListcache;
+
+function loadStationModal(Stationresobj) {
+    if (Stationresobj !== null) {
+        stationListcache = Stationresobj;
+    }
+    const stationListElem = document.getElementById("stationList");
+    //10 is an arbritrary number 
+    if (stationListElem.childElementCount <= 10) {
+        for (stationindx in stationListcache.stations) {
+            const stationobj = stationListcache.stations[stationindx];
+            // Outter div
+            let li = document.createElement('li');
+
+
+            li.classList.add('station-row-box');
+
+            // inner div
+            let div1 = document.createElement('div');
+            div1.classList.add('station-grid-box');
+            div1.setAttribute('data', stationobj.name);
+            // Set Load Station function for station elements 
+            div1.onclick = function() {
+                radioModal.style.display = "";
+                const stationselected = this.getAttribute("data");
+
+                getStationData(stationselected)
+                    .then((res) => setStation(res))
+                    .catch((err) => console.log(err));
+
+            };
+            //icon
+            let stationicon = document.createElement('img');
+            stationicon.classList.add('station-grid-image');
+            stationicon.classList.add('lazy');
+            stationicon.setAttribute('title', stationobj.name);
+            stationicon.setAttribute('alt', stationobj.name);
+            stationicon.setAttribute('data-src', "stations/" + stationobj.name + "/icon.png");
+            //desc
+            let div11 = document.createElement('div');
+            div11.classList.add('stationTitle');
+            div11.innerHTML = stationobj.description;
+            div1.appendChild(stationicon);
+            div1.appendChild(div11);
+            // shuffle div
+            let div2 = document.createElement('div');
+            div2.classList.add('stationShuffle');
+            let shuffinput = document.createElement('input');
+            shuffinput.setAttribute('type', "checkbox");
+            shuffinput.setAttribute('id', "flexCheckDefault");
+            shuffinput.setAttribute('checked', "checked");
+            div2.appendChild(shuffinput);
+
+            li.appendChild(div1);
+            li.appendChild(div2);
+            stationListElem.appendChild(li);
+            //     <li class="station-row-box">
+            //     <div class="station-grid-box" data="vocaloid">
+            //         <img class="station-grid-image lazy" title="vocaloid" alt="vocaloid" data-src="stations/vocaloid/icon.png">
+            //         <div class="stationTitle">Funky Vocaloid Tracks</div>
+
+            //     </div>
+            //     <div class="stationShuffle">
+            //         <input type="checkbox" id="flexCheckDefault" checked="checked">
+            //     </div>
+            // </li>
+        }
+    }
+
+    lazyLoadInstance.update();
+}
 
 document.getElementById('radio-link').onclick = () => {
+    // Load station list data and cache it when needed
+    if (stationListcache === undefined && typeof stationListcache == 'undefined') {
+        getStationList()
+            .then((res) => loadStationModal(res))
+            .catch((err) => console.log(err));
+    } else {
+        loadStationModal(stationListcache);
+    }
+
     radioModal.style.display = "block";
 };
 
@@ -462,7 +567,8 @@ audio.onplay = () => {
     var t = t.substring(0, t.lastIndexOf('.'));
     document.getElementById('track-name').innerHTML = `<span>${t}</span>`;
 
-
+    songBar.classList.add("animation");
+    songBar.style.display = "block";
     pauseBtn.style.display = "";
     playBtn.style.display = "none";
     largePlayIcon.style.opacity = 0;
@@ -485,6 +591,8 @@ audio.onended = () => {
     console.log(currentHowl)
     audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
     audio.play();
+    songBar.classList.remove("animation");
+    songBar.style.display = "none";
 };
 
 document.getElementById("playbar").onclick = (e) => {
@@ -508,7 +616,7 @@ setInterval(() => {
 window.onresize = () => {
     createVisualizer();
     if (window.innerWidth <= 824) {
-        personalLinks.style.top = "38px";
+        // personalLinks.style.top = "38px";
         if (personalLinksContainer.style.opacity === "0") {
             // infoLink.style.transform = "translate(0, -38px)";
             personalLinksContainer.style.transform = "translate(0, -38px)";
@@ -519,3 +627,9 @@ window.onresize = () => {
         personalLinksContainer.style.transform = "";
     }
 };
+
+var lazyLoadInstance = new LazyLoad({
+    // Your custom settings go here
+});
+
+lazyLoadInstance.update();
