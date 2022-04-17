@@ -329,8 +329,8 @@ a {
     background: -ms-linear-gradient(to left, rgba( 255, 255, 255, 0) 0%, rgba(64, 151, 155, 1) 100%);
     background: -o-linear-gradient(to left, rgba( 255, 255, 255, 0) 0%, rgba( 64, 151, 155, 1) 100%);
     background: -webkit-linear-gradient(to left, rgba( 255, 255, 255, 0) 0%, rgba( 64, 151, 155, 1) 100%);
-    -ms-filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#40979b, endColorstr=#40979b);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#00ffffff, endColorstr=#ffffffff);
+    -ms-filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=rgba( 64, 151, 155, 1), endColorstr=rgba( 64, 151, 155, 0.0));
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=rgba( 64, 151, 155, 1), endColorstr=rgba( 64, 151, 155, 0.0));
 }
 
 .song-author {
@@ -922,12 +922,14 @@ a {
 }
 
 .station-row-box {
+    min-height: 150px;
     padding: 0% 10% 0% 10%;
 }
 
 .station-grid-image {
     /* background-color: #444; */
     /* color: #fff; */
+    min-height: 150px;
     border-radius: 5px;
     max-width: 150px;
     max-height: 150px;
