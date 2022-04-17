@@ -28,6 +28,7 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           script: |
             cd /var/www/html/jetsetradiofuture.live
+            git reset --hard HEAD
             git pull origin master
             
             
