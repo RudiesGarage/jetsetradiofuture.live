@@ -1,9 +1,11 @@
 //Do not auto unclock
 Howler.autoUnlock = false;
 
+var currentHowl = null;
+
 // Volume / Gain
 var currentVol = 0.5;
-
+Howler.volume(currentVol);
 // Current playlist (likely shuffled)
 var currentPlaylist = [];
 // currentstation Object
@@ -11,7 +13,7 @@ var currentStationData = {};
 let stationListcache;
 
 // Current Song/Howl
-var currentHowl = "";
+var currentSong = "";
 var currentSongIndex = 0;
 
 // Shuffle state
@@ -137,12 +139,12 @@ function setStation(stationData) {
 
     //get random  song index 
     currentSongIndex = currentPlaylist.length * Math.random() | 0;
-    currentHowl = currentPlaylist[currentSongIndex];
-    console.log(currentHowl)
+    currentSong = currentPlaylist[currentSongIndex];
+    console.log(currentSong)
     songBar.classList.remove("animation");
     songBar.style.display = "none";
     try {
-        setAudioSrc(currentHowl);
+        setAudioSrc(currentSong);
     } catch (e) {
         console.log(e);
     }
@@ -150,7 +152,7 @@ function setStation(stationData) {
     if (!contextCreated) {
         createContext();
     }
-    if (shuffleState == 2) {
+    if (shuffleState == 2 && currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
         audio.play().catch((e) => {
             /* error handler */
             console.log(e);
@@ -445,29 +447,49 @@ const updateDisplayTime = () => {
     progressBar.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
 };
 
+//TODO figure better way to manage static and live states
 const switchPlayPause = () => {
     if (!contextCreated) {
         createContext();
     }
-    if (context && audio.src !== "") {
-        if (audio.paused) {
-            audio.play().catch((e) => {
-                /* error handler */
-                console.log(e);
-            });
-            //sound.play();
-            pauseBtn.style.display = "";
-            playBtn.style.display = "none";
-            largePlayIcon.style.opacity = "";
-            largePlayIcon.style.cursor = "";
-        } else {
-            audio.pause();
-            //sound.pause();
+    if (currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
+        if (context && audio.src !== "") {
+            if (audio.paused) {
+                audio.play().catch((e) => {
+                    /* error handler */
+                    console.log(e);
+                });
+                //sound.play();
+                pauseBtn.style.display = "";
+                playBtn.style.display = "none";
+                largePlayIcon.style.opacity = "";
+                largePlayIcon.style.cursor = "";
+            } else {
+                audio.pause();
+                //sound.pause();
+                pauseBtn.style.display = "none";
+                playBtn.style.display = "";
+                largePlayIcon.style.opacity = 1;
+                largePlayIcon.style.cursor = "pointer";
+            }
+        }
+    } else {
+        if (currentHowl.playing()) {
+            currentHowl.pause();
             pauseBtn.style.display = "none";
             playBtn.style.display = "";
             largePlayIcon.style.opacity = 1;
             largePlayIcon.style.cursor = "pointer";
+        } else {
+            currentHowl.play();
+            pauseBtn.style.display = "";
+            playBtn.style.display = "none";
+            largePlayIcon.style.opacity = "";
+            largePlayIcon.style.cursor = "";
         }
+
+
+
     }
 };
 
@@ -546,34 +568,51 @@ nextBtn.onclick = () => {
     if (!contextCreated) {
         createContext();
     }
-    currentSongIndex++;
-    if (currentSongIndex > currentPlaylist.length - 1) {
-        currentSongIndex = 0;
+
+    if (currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
+        currentSongIndex++;
+        if (currentSongIndex > currentPlaylist.length - 1) {
+            currentSongIndex = 0;
+        }
+        currentSong = currentPlaylist[currentSongIndex];
+
+        setAudioSrc(currentSong);
+
+        audio.load();
+        var promise = audio.play();
+        if (promise !== undefined) {
+            promise.then(_ => {
+                // play started!
+            }).catch(error => {
+                // play was prevented.
+                // Show a "Play" button so that user can start playback.
+            });
+        }
     }
-    currentHowl = currentPlaylist[currentSongIndex];
-    setAudioSrc(currentHowl);
-    audio.load();
-    var promise = audio.play();
-    if (promise !== undefined) {
-        promise.then(_ => {
-            // play started!
-        }).catch(error => {
-            // play was prevented.
-            // Show a "Play" button so that user can start playback.
-        });
-    }
+
 
 
 }
 
 function setAudioSrc(howl) {
-    console.log("NOW PLAYING: " + currentHowl);
+    console.log("NOW PLAYING: " + currentSong);
     console.log(currentStationData);
     if (currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
         audio.src = baseurl + "/" + currentStationData.stationName + "/" + howl + '.mp3';
+        if (currentHowl) {
+            currentHowl.pause();
+            currentHowl = null;
+        }
+
     } else {
         //if live use the url in the stream
-        audio.src = howl;
+        currentHowl = new Howl({
+                src: [howl],
+                html5: true
+            })
+            //currentHowl.play();
+        audio.src = "";
+        //audio.src = howl;
     }
 }
 
@@ -581,25 +620,29 @@ prevBtn.onclick = () => {
     if (!contextCreated) {
         createContext();
     }
-    currentSongIndex--;
-    if (currentSongIndex < 0) {
-        currentSongIndex = currentPlaylist.length - 1;
-    }
-    //currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0];
-    currentHowl = currentPlaylist[currentSongIndex];
-    setAudioSrc(currentHowl);
 
 
-    audio.load();
-    var promise = audio.play();
-    if (promise !== undefined) {
-        promise.then(_ => {
-            // play started!
-        }).catch(error => {
-            // play was prevented.
-            // Show a "Play" button so that user can start playback.
-        });
+    if (currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
+        currentSongIndex--;
+        if (currentSongIndex < 0) {
+            currentSongIndex = currentPlaylist.length - 1;
+        }
+        //currentSong = currentPlaylist[currentPlaylist.length * Math.random() | 0];
+        currentSong = currentPlaylist[currentSongIndex];
+
+        setAudioSrc(currentSong);
+        audio.load();
+        var promise = audio.play();
+        if (promise !== undefined) {
+            promise.then(_ => {
+                // play started!
+            }).catch(error => {
+                // play was prevented.
+                // Show a "Play" button so that user can start playback.
+            });
+        }
     }
+
 }
 
 playPause.onclick = () => {
@@ -663,6 +706,7 @@ const updateGain = (value) => {
     }
     gain.gain.value = value;
     gainBarValue.value = value * 10;
+    Howler.volume(value);
 };
 
 // document.getElementById("gain-bar").onclick = (e) => {
@@ -720,8 +764,8 @@ audio.onended = () => {
     if (currentSongIndex > currentPlaylist.length - 1) {
         currentSongIndex = 0;
     }
-    currentHowl = currentPlaylist[currentSongIndex];
-    setAudioSrc(currentHowl);
+    currentSong = currentPlaylist[currentSongIndex];
+    setAudioSrc(currentSong);
     audio.play().catch((e) => {
         /* error handler */
         console.log(e);
