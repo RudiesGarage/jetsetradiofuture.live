@@ -1,13 +1,27 @@
+//Do not auto unclock
+Howler.autoUnlock = false;
+
 // Volume / Gain
 var currentVol = 0.5;
 
-// Current loaded playlist
+// Current playlist (likely shuffled)
 var currentPlaylist = [];
-var currentStation = "";
+// currentstation Object
+var currentStationData = {};
+let stationListcache;
 
 // Current Song/Howl
 var currentHowl = "";
 var currentSongIndex = 0;
+
+// Shuffle state
+// 0 = linear
+// 1 = playlist shuffle
+// 2 = global shuffle
+var shuffleState = 1;
+
+//list of shuffle station names
+var shuffleStations = [];
 
 const audio = document.getElementById("audio");
 
@@ -27,16 +41,11 @@ const progressBar = document.getElementById('playbar-progress');
 const largePlayIcon = document.getElementById("large-play-icon");
 
 const gainBarValue = document.getElementById("gain-bar");
-const personalLinks = document.getElementById("personal-links");
-const personalLinksContainer = document.getElementById("personal-links-container");
 const projectName = document.getElementById("project-name");
 
 
 let baseurl = "https://jsrfl.us-east-1.linodeobjects.com/music/stations/";
 audio.src = './stations/static.mp3';
-
-console.log("Currently Playing: " + audio.src);
-audio.load();
 
 
 function getStationList() {
@@ -56,6 +65,7 @@ function getStationList() {
                 alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
             } else { // show the result
                 //alert(`Done, got ${xhr.response.length} bytes`); // response is the server response
+                stationListcache = xhr.response;
                 console.log(xhr.response);
                 resolve(xhr.response);
             }
@@ -100,27 +110,30 @@ function getStationData(stationselected) {
 
 // Set Station info locally
 function setStation(stationData) {
+    currentStationData = stationData;
     pauseBtn.style.display = "none";
     playBtn.style.display = "";
     var r = document.querySelector(':root');
-    r.style.setProperty('--primary-color', stationData.colorsObj.colors[0]);
+    r.style.setProperty('--primary-color', currentStationData.colorsObj.colors[0]);
 
-    r.style.setProperty('--primary-dark-color', stationData.colorsObj.colors[1]);
+    r.style.setProperty('--primary-dark-color', currentStationData.colorsObj.colors[1]);
 
-    r.style.setProperty('--secondary-color', stationData.colorsObj.colors[2]);
+    r.style.setProperty('--secondary-color', currentStationData.colorsObj.colors[2]);
 
-    r.style.setProperty('--border-color', stationData.colorsObj.colors[3]);
+    r.style.setProperty('--border-color', currentStationData.colorsObj.colors[3]);
 
-    r.style.setProperty('--border2-color', stationData.colorsObj.colors[4]);
+    r.style.setProperty('--border2-color', currentStationData.colorsObj.colors[4]);
 
-    r.style.setProperty('--outline-color', stationData.colorsObj.colors[5]);
+    r.style.setProperty('--outline-color', currentStationData.colorsObj.colors[5]);
 
-    currentStation = stationData.stationName;
-    app.style.backgroundImage = "url(./stations/" + currentStation + "/wallpaper.jpg)";
-    graffitiSoul.src = "./stations/" + currentStation + "/icon.png";
-    currentPlaylist = stationData.songList;
+    app.style.backgroundImage = "url(./stations/" + currentStationData.stationName + "/wallpaper.jpg)";
+    graffitiSoul.src = "./stations/" + currentStationData.stationName + "/icon.png";
+    currentPlaylist = currentStationData.songList;
 
-    shuffle(currentPlaylist)
+    if (shuffleState != 0) {
+        shuffle(currentPlaylist)
+    }
+
 
     //get random  song index 
     currentSongIndex = currentPlaylist.length * Math.random() | 0;
@@ -128,12 +141,21 @@ function setStation(stationData) {
     console.log(currentHowl)
     songBar.classList.remove("animation");
     songBar.style.display = "none";
-    audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
+    try {
+        setAudioSrc(currentHowl);
+    } catch (e) {
+        console.log(e);
+    }
 
     if (!contextCreated) {
         createContext();
     }
-    audio.play();
+    if (shuffleState == 2) {
+        audio.play().catch((e) => {
+            /* error handler */
+            console.log(e);
+        });;
+    }
 }
 
 
@@ -145,6 +167,7 @@ getStationData("classic")
 
 
 
+const settingsModal = document.getElementById('settings-modal');
 const keyboardModal = document.getElementById('keyboard-modal');
 const radioModal = document.getElementById('radio-modal');
 const chatModal = document.getElementById('chat-modal');
@@ -191,6 +214,7 @@ const createContext = () => {
     analyser.smoothingTimeConstant = 0.8;
     gain = context.createGain();
     let src = context.createMediaElementSource(audio);
+    // console.log(sound._sounds[0]._node)
     src.connect(gain);
     gain.connect(analyser);
     updateGain(currentVol);
@@ -213,7 +237,7 @@ const createContext = () => {
     };
 */
 
-let stationListcache;
+
 
 function loadStationModal(Stationresobj) {
     if (Stationresobj !== null) {
@@ -260,11 +284,19 @@ function loadStationModal(Stationresobj) {
             // shuffle div
             let div2 = document.createElement('div');
             div2.classList.add('stationShuffle');
-            let shuffinput = document.createElement('input');
-            shuffinput.setAttribute('type', "checkbox");
-            shuffinput.setAttribute('id', "flexCheckDefault");
-            shuffinput.setAttribute('checked', "checked");
-            div2.appendChild(shuffinput);
+
+            //shuffle checkbox if not live
+            if (stationobj.isLive === undefined && typeof stationobj.isLive == 'undefined') {
+                let shuffinput = document.createElement('input');
+                shuffinput.setAttribute('type', "checkbox");
+                shuffinput.setAttribute('id', "shuffleCheckBox_" + stationobj.name);
+                shuffinput.setAttribute('data', stationobj.name);
+                shuffinput.setAttribute('checked', "checked");
+                shuffinput.setAttribute('onchange', "updateCheckedState(this)");
+                shuffleStations.push(stationobj.name);
+                div2.appendChild(shuffinput);
+            }
+
 
             li.appendChild(div1);
             li.appendChild(div2);
@@ -284,6 +316,17 @@ function loadStationModal(Stationresobj) {
 
     lazyLoadInstance.update();
 }
+
+function updateCheckedState(checkboxelem) {
+    if (checkboxelem.getAttribute("checked") == "checked") {
+        checkboxelem.setAttribute('checked', "");
+        shuffleStations.pop(checkboxelem.getAttribute('data'));
+    } else {
+        checkboxelem.setAttribute('checked', "checked");
+        shuffleStations.push(checkboxelem.getAttribute('data'));
+    }
+}
+
 
 document.getElementById('radio-link').onclick = () => {
     // Load station list data and cache it when needed
@@ -309,10 +352,16 @@ document.getElementById('chatBtn').onclick = () => {
 document.getElementById('keyboard-controls').onclick = () => {
     keyboardModal.style.display = "block";
 };
-
+document.getElementById('setting-controls').onclick = () => {
+    settingsModal.style.display = "block";
+};
 
 document.getElementById('keyboard-close-modal').onclick = () => {
     keyboardModal.style.display = "";
+};
+
+settingsModal.onclick = e => {
+    if (e.target === settingsModal) settingsModal.style.display = "";
 };
 
 keyboardModal.onclick = e => {
@@ -321,6 +370,18 @@ keyboardModal.onclick = e => {
 
 radioModal.onclick = e => {
     if (e.target === radioModal) radioModal.style.display = "";
+    //Save settings
+    shuffleStations = []
+    for (var i = 0; i < stationListcache.stations.length; i++) {
+        var stationElem = document.getElementById('shuffleCheckBox_' + stationListcache.stations[i].name);
+        if (stationElem) {
+            var ischecked = stationElem.getAttribute("checked");
+            if (ischecked == "checked") {
+                shuffleStations.push(stationListcache.stations[i].name);
+            }
+        }
+
+    }
 };
 
 chatModal.onclick = e => {
@@ -390,8 +451,10 @@ const switchPlayPause = () => {
     }
     if (context && audio.src !== "") {
         if (audio.paused) {
-            audio.load();
-            audio.play();
+            audio.play().catch((e) => {
+                /* error handler */
+                console.log(e);
+            });
             //sound.play();
             pauseBtn.style.display = "";
             playBtn.style.display = "none";
@@ -428,13 +491,58 @@ function shuffle(array) {
     return array;
 }
 
+
+
+function getGlobalShuffle(stopRecursion) {
+    if (stationListcache === undefined && typeof stationListcache == 'undefined' && !stopRecursion) {
+        getStationList()
+            .then((res) => loadStationModal(res))
+            .catch((err) => console.log(err));
+    }
+
+}
+
 shuffleBtn.onclick = () => {
-    if (currentPlaylist) {
-        shuffle(currentPlaylist);
+    //current shuffle state is linear, make shuffle
+    if (shuffleState == 0) {
+        shuffleState++;
+        document.getElementById('shuffle0').style.display = "none";
+        document.getElementById('shuffle1').style.display = "block";
+        if (currentPlaylist) {
+            shuffle(currentPlaylist);
+        }
+    }
+    //current shuffle state is shuffle, make global
+    else if (shuffleState == 1) {
+        shuffleState++;
+        document.getElementById('shuffle1').style.display = "none";
+        document.getElementById('shuffle2').style.display = "block";
+        getGlobalShuffle(false);
+    }
+    //current shuffle state is global, make linear
+    else {
+        shuffleState = 0;
+        document.getElementById('shuffle2').style.display = "none";
+        document.getElementById('shuffle0').style.display = "block";
+        if (currentPlaylist) {
+            //use original order
+            currentPlaylist = currentStationData.songList;
+            //Sort alphabetical
+            //currentPlaylist.sort((a, b) => b.localeCompare(a));
+        }
     }
 }
 
 nextBtn.onclick = () => {
+    //if global shufflestate get next station
+    if (shuffleState == 2 && shuffleStations.length != 0) {
+        var item = shuffleStations[Math.floor(Math.random() * shuffleStations.length)];
+        //load inital settings
+        getStationData(item)
+            .then((res) => setStation(res))
+            .catch((err) => console.log(err));
+    }
+
     if (!contextCreated) {
         createContext();
     }
@@ -443,9 +551,7 @@ nextBtn.onclick = () => {
         currentSongIndex = 0;
     }
     currentHowl = currentPlaylist[currentSongIndex];
-    console.log(currentHowl)
-
-    audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
+    setAudioSrc(currentHowl);
     audio.load();
     var promise = audio.play();
     if (promise !== undefined) {
@@ -457,6 +563,18 @@ nextBtn.onclick = () => {
         });
     }
 
+
+}
+
+function setAudioSrc(howl) {
+    console.log("NOW PLAYING: " + currentHowl);
+    console.log(currentStationData);
+    if (currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
+        audio.src = baseurl + "/" + currentStationData.stationName + "/" + howl + '.mp3';
+    } else {
+        //if live use the url in the stream
+        audio.src = howl;
+    }
 }
 
 prevBtn.onclick = () => {
@@ -469,8 +587,9 @@ prevBtn.onclick = () => {
     }
     //currentHowl = currentPlaylist[currentPlaylist.length * Math.random() | 0];
     currentHowl = currentPlaylist[currentSongIndex];
-    console.log(currentHowl)
-    audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
+    setAudioSrc(currentHowl);
+
+
     audio.load();
     var promise = audio.play();
     if (promise !== undefined) {
@@ -590,14 +709,23 @@ function isOverflown(element) {
 
 // on end play next song in the playlist
 audio.onended = () => {
+    if (shuffleState == 2 && shuffleStations.length != 0) {
+        var item = shuffleStations[Math.floor(Math.random() * shuffleStations.length)];
+        //load inital settings
+        getStationData(item)
+            .then((res) => setStation(res))
+            .catch((err) => console.log(err));
+    }
     currentSongIndex++;
     if (currentSongIndex > currentPlaylist.length - 1) {
         currentSongIndex = 0;
     }
     currentHowl = currentPlaylist[currentSongIndex];
-    console.log(currentHowl)
-    audio.src = baseurl + "/" + currentStation + "/" + currentHowl + '.mp3'
-    audio.play();
+    setAudioSrc(currentHowl);
+    audio.play().catch((e) => {
+        /* error handler */
+        console.log(e);
+    });;
     songBar.classList.remove("animation");
     songBar.style.display = "none";
 };
@@ -622,17 +750,6 @@ setInterval(() => {
 
 window.onresize = () => {
     createVisualizer();
-    if (window.innerWidth <= 824) {
-        // personalLinks.style.top = "38px";
-        if (personalLinksContainer.style.opacity === "0") {
-            // infoLink.style.transform = "translate(0, -38px)";
-            personalLinksContainer.style.transform = "translate(0, -38px)";
-        }
-    } else {
-        personalLinks.style.top = "";
-        //infoLink.style.transform = "";
-        personalLinksContainer.style.transform = "";
-    }
 };
 
 var lazyLoadInstance = new LazyLoad({
@@ -640,3 +757,19 @@ var lazyLoadInstance = new LazyLoad({
 });
 
 lazyLoadInstance.update();
+
+const checkOnlineStatus = async() => {
+    try {
+        const online = await fetch("./stations/classic/icon.png");
+        return online.status >= 200 && online.status < 300; // either true or false
+    } catch (err) {
+        return false; // definitely offline
+    }
+};
+
+setInterval(async() => {
+    const result = await checkOnlineStatus();;
+    console.log(result ? "Online" : "OFFline");
+    // const statusDisplay = document.getElementById("status");
+    //  statusDisplay.textContent = result ? "Online" : "OFFline";
+}, 60000); //every minute

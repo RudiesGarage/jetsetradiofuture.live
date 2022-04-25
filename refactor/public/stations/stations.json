@@ -1,4 +1,5 @@
 {"stations":[
+{"name":"radiosega","wallpaper":"wallpaper.jpg","description":"RadioSega","isLive":"true"},
 {"name":"classic","wallpaper":"wallpaper.jpg","description":"Jet Set Radio Ost"},
 {"name":"future","wallpaper":"wallpaper.jpg","description":"Jet Set Radio Future Ost"},
 {"name":"ultraremixes","wallpaper":"wallpaper.jpg","description":"JetSetRemixes"},
@@ -26,7 +27,7 @@
 {"name":"chiptunes","wallpaper":"wallpaper.jpg","description":"Chiptunes"},
 {"name":"retroremix","wallpaper":"wallpaper.jpg","description":"Retro Remix"},
 {"name":"outerspace","wallpaper":"wallpaper.jpg","description":"Space Music"},
-{"name":"ganjah","wallpaper":"wallpaper.jpg","description":"Regge"},
+{"name":"ganjah","wallpaper":"wallpaper.jpg","description":"Reggae"},
 {"name":"classical","wallpaper":"wallpaper.jpg","description":"Classical"},
 {"name":"vocaloid","wallpaper":"wallpaper.jpg","description":"Vocaloid"},
 {"name":"butterflies","wallpaper":"wallpaper.jpg","description":"Butterflies Ost","supportLink":""},
@@ -41,7 +42,7 @@
 {"name":"splatoon","wallpaper":"wallpaper.jpg","description":"Splatoon Ost","supportLink":""},
 {"name":"bombrushcyberfunk","wallpaper":"wallpaper.jpg","description":"Bomb Rush Cyber Funk Ost","supportLink":""},
 {"name":"summer","wallpaper":"wallpaper.jpg","description":"Summer Vibes"},
-{"name":"halloween","wallpaper":"wallpaper.jpg","description":"Holloween"},
+{"name":"halloween","wallpaper":"wallpaper.jpg","description":"Halloween"},
 {"name":"christmas","wallpaper":"wallpaper.jpg","description":"Christmas"},
 {"name":"snowfi","wallpaper":"wallpaper.jpg","description":"Holiday Lo-Fi"}
 ]}  
