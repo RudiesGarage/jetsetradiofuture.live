@@ -1,1 +1,1 @@
-{ "stationName": "radiosega", "colorsObj": { "colors": ["#54940c", "#24590c", "#ecc605", "#e20f47", "#e20f47", "#040404"] }, "songList": ["http://content.radiosega.net:8006/rs-mpeg.mp3"], "isLive": "true" }
+{ "stationName": "radiosega", "colorsObj": { "colors": ["#54940c", "#24590c", "#ecc605", "#e20f47", "#e20f47", "#040404"] }, "songList": ["https://demo.jetsetradiofuture.live/live/radiosega"], "isLive": "true" }

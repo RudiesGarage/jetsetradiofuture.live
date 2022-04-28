@@ -1,4 +1,5 @@
 {"stations":[
+{"name":"cyberia","wallpaper":"wallpaper.jpg","description":"Cyberia","isLive":"true"},
 {"name":"radiosega","wallpaper":"wallpaper.jpg","description":"RadioSega","isLive":"true"},
 {"name":"classic","wallpaper":"wallpaper.jpg","description":"Jet Set Radio Ost"},
 {"name":"future","wallpaper":"wallpaper.jpg","description":"Jet Set Radio Future Ost"},

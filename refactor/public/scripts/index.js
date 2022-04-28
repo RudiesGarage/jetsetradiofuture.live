@@ -112,6 +112,11 @@ function getStationData(stationselected) {
 
 // Set Station info locally
 function setStation(stationData) {
+
+    if (currentHowl) {
+        currentHowl.pause();
+    }
+
     currentStationData = stationData;
     pauseBtn.style.display = "none";
     playBtn.style.display = "";
