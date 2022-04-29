@@ -1,6 +1,4 @@
 {"stations":[
-{"name":"cyberia","wallpaper":"wallpaper.jpg","description":"Cyberia","isLive":"true"},
-{"name":"radiosega","wallpaper":"wallpaper.jpg","description":"RadioSega","isLive":"true"},
 {"name":"classic","wallpaper":"wallpaper.jpg","description":"Jet Set Radio Ost"},
 {"name":"future","wallpaper":"wallpaper.jpg","description":"Jet Set Radio Future Ost"},
 {"name":"ultraremixes","wallpaper":"wallpaper.jpg","description":"JetSetRemixes"},
@@ -35,8 +33,9 @@
 {"name":"hover","wallpaper":"wallpaper.jpg","description":"Hover Ost","supportLink":""},
 {"name":"olliolliworld","wallpaper":"wallpaper.jpg","description":"Olli Olli World Ost","supportLink":""},
 {"name":"ollieking","wallpaper":"wallpaper.jpg","description":"Ollie King Ost","supportLink":""},
-{"name":"lethalleagueblaze","wallpaper":"wallpaper.jpg","description":"LeathalLeague Ost","supportLink":""},
+{"name":"lethalleagueblaze","wallpaper":"wallpaper.jpg","description":"Leathal League Ost","supportLink":""},
 {"name":"sonic","wallpaper":"wallpaper.jpg","description":"Sonic DJ Mix","supportLink":""},
+{"name":"sonicrush","wallpaper":"wallpaper.jpg","description":"Sonic Rush Series Ost","supportLink":""},
 {"name":"crazytaxi","wallpaper":"wallpaper.jpg","description":"Crazy Taxi Ost","supportLink":""},
 {"name":"spacechannel5","wallpaper":"wallpaper.jpg","description":"Space Channel 5 Ost","supportLink":""},
 {"name":"toejamandearl","wallpaper":"wallpaper.jpg","description":"ToeJam & Earl Ost","supportLink":""},
@@ -45,5 +44,6 @@
 {"name":"summer","wallpaper":"wallpaper.jpg","description":"Summer Vibes"},
 {"name":"halloween","wallpaper":"wallpaper.jpg","description":"Halloween"},
 {"name":"christmas","wallpaper":"wallpaper.jpg","description":"Christmas"},
-{"name":"snowfi","wallpaper":"wallpaper.jpg","description":"Holiday Lo-Fi"}
+{"name":"snowfi","wallpaper":"wallpaper.jpg","description":"Holiday Lo-Fi"},{"name":"cyberia","wallpaper":"wallpaper.jpg","description":"Cyberia","isLive":"true"},
+{"name":"radiosega","wallpaper":"wallpaper.jpg","description":"RadioSega","isLive":"true"}
 ]}  
