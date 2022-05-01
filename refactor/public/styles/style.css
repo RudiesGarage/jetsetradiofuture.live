@@ -131,7 +131,6 @@ body {
 
 #topgraphic {
     min-height: 8.333333%;
-    max-height: 16%;
     width: 100%;
     position: absolute;
     top: -5px;
@@ -184,7 +183,11 @@ table {
 }
 
 a {
-    text-decoration: none !important;
+    text-decoration: none;
+}
+
+#visualizer-svg {
+    z-index: 1;
 }
 
 #app {
@@ -198,20 +201,29 @@ a {
     background-position: center center;
 }
 
+#curtain {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 15%;
+}
+
 
 /* Grafitti soul  */
 
 #graffitiSoulFrame {
     position: absolute;
+    z-index: 2;
     height: 100vh;
     width: 100%;
 }
 
 #graffitiSoul-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -219,6 +231,7 @@ a {
 
 #large-play {
     position: absolute;
+    z-index: 4;
     height: 100vh;
     width: 100%;
 }
@@ -609,16 +622,24 @@ a {
 
 .vol-bar {
     position: absolute;
-    padding-left: 44px;
+    z-index: 100;
     font-size: 2em;
     top: 10%;
-    left: 0;
-    transition: 1s;
+    left: 5%;
+    border: 1px solid #000000;
+    padding: 5px;
+    background-color: rgba(50, 50, 50, 0.6);
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+    height: 36px;
 }
 
 #personal-links {
     position: absolute;
-    right: 44px;
+    z-index: 100;
+    right: 5%;
     top: 10%;
     min-height: 20%;
     max-height: 45%;
@@ -631,7 +652,6 @@ a {
     min-height: 25vh;
     justify-content: space-evenly;
     align-items: center;
-    transition: 1s;
     border: 1px solid #000000;
     padding: 5px;
     background-color: rgba(50, 50, 50, 0.6);
@@ -724,9 +744,9 @@ a {
 
 .center-modal-title {
     text-align: center;
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 36px;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: normal;
 }
 
 #close-modal {
@@ -786,13 +806,11 @@ a {
 
 #radio-modal {
     display: none;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     z-index: 1000;
-    padding-top: 15vh;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 101%;
+    width: 100%;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.6);
@@ -902,26 +920,26 @@ a {
 .station-grid-box {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 80%
+    justify-content: flex-start;
+    width: 60%;
 }
 
 .stationShuffle {
-    width: 20%;
+    min-width: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    /* margin: auto; */
 }
 
 .stationTitle {
-    width: 80%;
-    text-align: center;
+    width: 50%;
+    text-align: left;
 }
 
 .station-row-box {
     min-height: 150px;
-    padding: 0% 10% 0% 10%;
+    padding: 0% 5% 0% 5%;
 }
 
 .station-grid-image {
@@ -1723,18 +1741,16 @@ footer {
     -webkit-animation: rotate3dAnimationTimeline 3.5s linear normal infinite;
 }
 
-.wrapper {
+.radiomodal-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    width: 80vw;
-    margin: 0 10vw;
 }
 
 .container {
     flex-basis: 50%;
     max-height: 80vh;
+    width: 80%;
     min-width: 80vw;
     max-width: 80vw;
     overflow-y: scroll;

@@ -27,7 +27,6 @@ var shuffleStations = [];
 
 const audio = document.getElementById("audio");
 
-const app = document.getElementById("app");
 const graffitiSoul = document.getElementById("graffitiSoul");
 const playPause = document.getElementById("play-pause");
 
@@ -45,6 +44,7 @@ const largePlayIcon = document.getElementById("large-play-icon");
 const gainBarValue = document.getElementById("gain-bar");
 const projectName = document.getElementById("project-name");
 
+const wallpaper = document.getElementById("wallpaper");
 
 let baseurl = "https://jsrfl.us-east-1.linodeobjects.com/music/stations/";
 audio.src = './stations/static.mp3';
@@ -118,6 +118,7 @@ function setStation(stationData) {
     }
 
     currentStationData = stationData;
+    // document.getElementById('wallpaper').src = stationData.wallpaper;
     pauseBtn.style.display = "none";
     playBtn.style.display = "";
     var r = document.querySelector(':root');
@@ -133,8 +134,8 @@ function setStation(stationData) {
 
     r.style.setProperty('--outline-color', currentStationData.colorsObj.colors[5]);
 
-    app.style.backgroundImage = "url(./stations/" + currentStationData.stationName + "/wallpaper.jpg)";
     graffitiSoul.src = "./stations/" + currentStationData.stationName + "/icon.png";
+    wallpaper.src = "./stations/" + currentStationData.stationName + "/wallpaper.jpg";
     currentPlaylist = currentStationData.songList;
 
     if (shuffleState != 0) {
@@ -154,9 +155,7 @@ function setStation(stationData) {
         console.log(e);
     }
 
-    if (!contextCreated) {
-        createContext();
-    }
+
     if (shuffleState == 2 && currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
         audio.play().catch((e) => {
             /* error handler */
@@ -166,10 +165,6 @@ function setStation(stationData) {
 }
 
 
-//load inital settings
-getStationData("classic")
-    .then((res) => setStation(res))
-    .catch((err) => console.log(err));
 
 
 
@@ -303,10 +298,34 @@ function loadStationModal(Stationresobj) {
                 shuffleStations.push(stationobj.name);
                 div2.appendChild(shuffinput);
             }
+            // supportlink div
+            let div3 = document.createElement('div');
+            div3.classList.add('stationShuffle');
+            //add Support link if it exists
+            if (stationobj.supportLink !== undefined && typeof stationobj.supportLink != 'undefined') {
+                let supportLink = document.createElement('a');
+                supportLink.style.color = "#eee";
+                supportLink.style.textDecoration = "underline";
+                // Create the text node for anchor element.
+                var link = document.createTextNode("Link");
 
+
+                // Append the text node to anchor element.
+                supportLink.appendChild(link);
+
+                // Set the title.
+                supportLink.title = "Support the Original Release";
+                supportLink.target = "_blank";
+
+                // Set the href property.
+                supportLink.href = stationobj.supportLink;
+                div3.appendChild(supportLink);
+            }
 
             li.appendChild(div1);
             li.appendChild(div2);
+
+            li.appendChild(div3);
             stationListElem.appendChild(li);
             //     <li class="station-row-box">
             //     <div class="station-grid-box" data="vocaloid">
@@ -345,7 +364,7 @@ document.getElementById('radio-link').onclick = () => {
         loadStationModal(stationListcache);
     }
 
-    radioModal.style.display = "block";
+    radioModal.style.display = "flex";
 };
 
 
@@ -422,6 +441,8 @@ const createVisualizer = () => {
         const svg_ = document.getElementById('visualizer-svg');
         svg_.style.width = "100%";
         svg_.style.height = "95vh";
+        svg_.style.position = "absolute";
+        svg_.style.zIndex = "1";
     }
 };
 
@@ -553,9 +574,9 @@ shuffleBtn.onclick = () => {
         document.getElementById('shuffle0').style.display = "block";
         if (currentPlaylist) {
             //use original order
-            currentPlaylist = currentStationData.songList;
+            // currentPlaylist = currentStationData.songList;
             //Sort alphabetical
-            //currentPlaylist.sort((a, b) => b.localeCompare(a));
+            currentPlaylist.sort((a, b) => b.localeCompare(a));
         }
     }
 }
@@ -795,10 +816,34 @@ setInterval(() => {
     } else {
         progressBar.style.width = "0%";
     }
-}, 1000);
+}, 5000);
 
 window.onresize = () => {
     createVisualizer();
+    var w = window.innerWidth;
+    var fileref = document.createElement("link");
+
+    fileref.rel = "stylesheet";
+    fileref.type = "text/css";
+    if (w < 640 && document.getElementById("mobileCSS") == null) {
+        //Load Mobile CSS
+        fileref.href = "./styles/sm.css";
+        document.getElementsByTagName("head")[0].appendChild(fileref);
+    } else if (w < 768 && document.getElementById("tabletCSS") == null) {
+        //Load Tablet CSS
+        fileref.href = "./styles/md.css";
+        document.getElementsByTagName("head")[0].appendChild(fileref);
+    } else if (w < 1025 && document.getElementById("normalCSS") == null) {
+        //Load "normal" CSS
+        fileref.href = "./styles/lg.css";
+        document.getElementsByTagName("head")[0].appendChild(fileref);
+    } else if (document.getElementById("largeCSS") == null) {
+        //Load Large screen
+        fileref.href = "./styles/xl.css";
+        document.getElementsByTagName("head")[0].appendChild(fileref);
+    }
+
+
 };
 
 var lazyLoadInstance = new LazyLoad({
@@ -807,18 +852,47 @@ var lazyLoadInstance = new LazyLoad({
 
 lazyLoadInstance.update();
 
+
+
+
+
+
 const checkOnlineStatus = async() => {
-    try {
-        const online = await fetch("./stations/classic/icon.png");
-        return online.status >= 200 && online.status < 300; // either true or false
-    } catch (err) {
-        return false; // definitely offline
-    }
+    Offline.check();
 };
 
 setInterval(async() => {
-    const result = await checkOnlineStatus();;
-    console.log(result ? "Online" : "OFFline");
-    // const statusDisplay = document.getElementById("status");
-    //  statusDisplay.textContent = result ? "Online" : "OFFline";
-}, 60000); //every minute
+    await checkOnlineStatus();
+}, 60000); //60000 every minute
+
+Offline.options = { // Should we check the connection status immediatly on page load.
+    checkOnLoad: false,
+
+    // Should we monitor AJAX requests to help decide if we have a connection.
+    interceptRequests: true,
+
+    // Should we automatically retest periodically when the connection is down (set to false to disable).
+    reconnect: {
+        // How many seconds should we wait before rechecking.
+        initialDelay: 3,
+
+        // How long should we wait between retries.
+        delay: (1.5, 1)
+    },
+
+    // Should we store and attempt to remake requests which fail while the connection is down.
+    requests: true,
+
+    // Should we show a snake game while the connection is down to keep the user entertained?
+    // It's not included in the normal build, you should bring in js/snake.js in addition to
+    // offline.min.js.
+    game: false,
+    checks: { xhr: { url: '/styles/dots.png' } }
+}
+
+Offline.on('up', function() {
+    // alert('up');
+});
+Offline.on('down', function() {
+    //alert('down')
+});
