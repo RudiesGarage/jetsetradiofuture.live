@@ -1,16 +1,19 @@
 @media (max-width: 640px) {
     body {
-        background-color:black;
+        background-color: black;
     }
-    .center-modal-title{
-    font-size: 12px;
+    .center-modal-title {
+        font-size: 12px;
     }
-    .station-grid-image{
-    display:none;
+    .station-grid-image {
+        display: none;
     }
-    .stationTitle{
-    width:100%;
-    font-size: 16px;
-    text-align:center;
+    .stationTitle {
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+    }
+    #keyboard-controls {
+        display: none;
     }
 }
