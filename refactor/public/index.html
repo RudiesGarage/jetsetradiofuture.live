@@ -10,7 +10,8 @@
     <meta property="og:locale" content="en_US">
     <meta name="description" content="Jet Set Radio Future, forget all that stuff that Notradamis wrote, the future is one blank slate yo! Tts up for YOU to deside what goes on in it.">
     <meta name="og:description" content="Jet Set Radio Future, forget all that stuff that Notradamis wrote, the future is one blank slate yo! Tts up for YOU to deside what goes on in it.">
-
+    <link rel="prefetch" src="https://demo.jetsetradiofuture.live/"></link>
+    <link rel="prerender" src="https://demo.jetsetradiofuture.live/"></link>
     <link rel="canonical" href="https://jetsetradiofuture.live">
     <meta property="og:url" content="https://jetsetradiofuture.live">
     <meta property="og:site_name" content="Jet Set Radio Future">
@@ -80,7 +81,11 @@
 
     <!-- BACKGROUND -->
     <section id="wallpaperSection">
-        <img id="wallpaper" loading="eager" alt="wallpaper" src="./styles/welcomeImg.png" />
+        <div style="width:100%;height:100%; 
+        display: flex;
+        justify-content: center;">
+            <img id="wallpaper" loading="eager" src="" />
+        </div>
     </section>
     <!-- END BACKGROUND -->
 
@@ -214,26 +219,7 @@
         </section>
         <!-- END SIDE BAR -->
 
-        <!-- SONG DATA -->
-        <section id="song-name">
-            <div class="song-title">
-                <span>Now Playing</span>
-            </div>
-            <div style="display:flex;flex-direction: row;">
-                <div id="track-name" class="song-subtitle">
-                    <span>
-                    <!-- Artist -->
-                </span>
-                    <!-- -  -->
-                    <span>
-                    <!-- Title -->
-                </span>
 
-                </div>
-                <!-- <div class="fadeAway"></div> -->
-            </div>
-        </section>
-        <!-- END SONG DATA -->
 
         <!-- VOLUME DATA -->
         <section class="vol-bar">
@@ -263,18 +249,41 @@
     </main>
 
     <footer id="footer">
+        <div id="footer-container">
 
-        <div id="playbar-container">
+            <!-- SONG DATA -->
+            <section id="song-name">
+                <div class="song-title">
+                    <span style="font-weight: 100; font-size: 18px;">Now Playing</span>
+                </div>
+                <div id="track-container" style="display:flex;flex-direction: row;">
+                    <div id="track-name" class="song-subtitle">
+                        <span>
+                <!-- Artist -->
+            </span>
+                        <!-- -  -->
+                        <span>
+                <!-- Title -->
+            </span>
 
-            <div id="playbar-progress" style="width: 0%;"></div>
-            <div id="playbar"></div>
-        </div>
-        <!-- Play Controls -->
-        <section style="height:50%; background-color: var(--primary-color);  ">
+                    </div>
+                    <!-- <div class="fadeAway"></div> -->
+                </div>
+            </section>
+            <!-- END SONG DATA -->
 
-            <div style="height:100%;display:flex; align-items: center; justify-content:center;">
 
-                <!-- <div style="position: absolute;" class="pages__Tuner-sc-1g904gw-0 lbdiXO">
+            <div id="playbar-container">
+
+                <div id="playbar-progress" style="width: 0%;"></div>
+                <div id="playbar"></div>
+            </div>
+            <!-- Play Controls -->
+            <section style="height:100%; background-color: var(--primary-color);  ">
+
+                <div style="height:100%;display:flex; align-items: center; justify-content:center;">
+
+                    <!-- <div style="position: absolute;" class="pages__Tuner-sc-1g904gw-0 lbdiXO">
                     <div width="0.5vmin" end="50%" class="pages__Marker-sc-1g904gw-1 cJYyos"></div>
                     <div width="0.5vmin" end="90%" class="pages__Marker-sc-1g904gw-1 ceylTi"></div>
                     <div width="1vmin" end="70%" class="pages__Marker-sc-1g904gw-1 ccJFTX"></div>
@@ -286,30 +295,30 @@
                     <div width="3vmin" end="50%" class="pages__Marker-sc-1g904gw-1 dUebIs"></div>
                 </div> -->
 
-                <div class="bg-white shadow-lg rounded-lg" style="width: 45rem !important;">
-                    <div style="display: flex; flex-direction: column;">
-                        <div style="z-index:100;width: 100%; position: relative;">
-                            <div style="display:flex; justify-content: space-between; align-items: center; margin: 0rem 1.5rem " class="flex justify-between items-center mt-8">
-                                <div id="shuffle-btn" class="audio-btn">
-                                    <svg id="shuffle1" style=" width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <div class="bg-white shadow-lg rounded-lg" style="width: 45rem !important;">
+                        <div style="display: flex; flex-direction: column;">
+                            <div style="z-index:100;width: 100%; position: relative;">
+                                <div style="display:flex; justify-content: space-between; align-items: center; margin: 0rem 1.5rem " class="flex justify-between items-center mt-8">
+                                    <div id="shuffle-btn" class="audio-btn">
+                                        <svg id="shuffle1" style=" width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                         <path d="M6.59 12.83L4.4 15c-.58.58-1.59 1-2.4 1H0v-2h2c.29 0 .8-.2 1-.41l2.17-2.18 1.42 1.42zM16 4V1l4 4-4 4V6h-2c-.29 0-.8.2-1 .41l-2.17 2.18L9.4 7.17 11.6 5c.58-.58 1.59-1 2.41-1h2zm0 10v-3l4 4-4 4v-3h-2c-.82 0-1.83-.42-2.41-1l-8.6-8.59C2.8 6.21 2.3 6 2 6H0V4h2c.82 0 1.83.42 2.41 1l8.6 8.59c.2.2.7.41.99.41h2z" />                                
                                     </svg>
-                                    <svg id="shuffle0" style="display:none; width: 40px; height:40px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                        <svg id="shuffle0" style="display:none; width: 40px; height:40px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                                         <path d="m0.0048501 12.033c0 0.2444 0.25611 0.44253 0.57205 0.44253h13.492l-3.6005 2.7844c-0.54001 0.41775 0.27 1.0444 0.81002 0.62662l4.5764-3.5402c0.22408-0.17291 0.22408-0.45371 0-0.62662l-4.5764-3.5402c-0.54001-0.41775-1.35 0.20887-0.81002 0.62662l3.6005 2.7844h-13.492c-0.31593 0-0.57205 0.19813-0.57205 0.44253z" />                                   
                                         <path d="m0.03883 4.5096c0-0.27443 0.25547-0.49689 0.57061-0.49689h13.458l-3.5914-3.1265c-0.53866-0.46907 0.26933-1.1727 0.80798-0.7036l4.5649 3.9751c0.22352 0.19415 0.22352 0.50945 0 0.7036l-4.5649 3.9751c-0.53865 0.46907-1.3466-0.23453-0.80798-0.7036l3.5914-3.1265h-13.458c-0.31514 0-0.57061-0.22247-0.57061-0.49689z"/>                            
                                     </svg>
-                                    <svg id="shuffle2" style="display:none;  width: 40px; height:40px" fill="currentColor" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                                        <svg id="shuffle2" style="display:none;  width: 40px; height:40px" fill="currentColor" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                                         <path d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" fill-rule="evenodd"/>
                                         <path d="m3.8678 8.0246a4.1662 4.3644 0 1 1 8.3325 0 4.1662 4.3644 0 0 1 -8.3325 0zm3.9059-3.7768c-0.34892 0.11129-0.69524 0.44735-0.98271 1.012-0.07447 0.14621-0.14374 0.30551-0.20571 0.47572 0.36715 0.08565 0.76659 0.1402 1.1884 0.15657zm-1.6931 1.3431c0.07395-0.20949 0.15832-0.40589 0.2505-0.5881a3.4892 3.6552 0 0 1 0.31091 -0.509 3.6507 3.8243 0 0 0 -1.1853 0.83032c0.18852 0.10038 0.39736 0.1904 0.6239 0.26732zm-0.38538 2.1609c0.01875-0.58373 0.09791-1.1386 0.22706-1.641a4.7516 4.9776 0 0 1 -0.81502 -0.36388 3.6267 3.7992 0 0 0 -0.7093 2.0049h1.2967zm0.72909-1.4953a6.4285 6.7342 0 0 0 -0.20831 1.4953h1.5577v-1.3142c-0.47391-0.01637-0.92855-0.0791-1.3493-0.18112zm1.8701 0.18058v1.3148h1.5571a6.4275 6.7331 0 0 0 -0.20779 -1.4953c-0.42079 0.10202-0.87543 0.16421-1.3493 0.18112zm-2.0779 1.8603c0.01823 0.53845 0.09166 1.0442 0.20779 1.4953a7.0889 7.426 0 0 1 1.3493 -0.18058v-1.3148zm2.0779 0v1.3142c0.47391 0.01637 0.92855 0.0791 1.3493 0.18112 0.11613-0.45117 0.18956-0.95689 0.20831-1.4953zm-1.7092 2.0163c0.06249 0.17021 0.13124 0.32951 0.20571 0.47572 0.28747 0.56464 0.63431 0.90015 0.98271 1.012v-1.6437c-0.42183 0.01637-0.82127 0.07092-1.1884 0.15657zm0.05729 1.2417a3.4871 3.653 0 0 1 -0.31143 -0.509 4.6105 4.8297 0 0 1 -0.2505 -0.58864 4.3641 4.5717 0 0 0 -0.6239 0.26732 3.6507 3.8243 0 0 0 1.1853 0.83032zm-0.72024-1.617a6.9576 7.2885 0 0 1 -0.22758 -1.641h-1.2967a3.6262 3.7986 0 0 0 0.7093 2.0049c0.24477-0.14075 0.51818-0.26295 0.81502-0.36388zm3.5038 1.617a3.6501 3.8237 0 0 0 1.1848 -0.82978 4.3621 4.5695 0 0 0 -0.62337 -0.26732 4.6105 4.8297 0 0 1 -0.2505 0.5881 3.483 3.6486 0 0 1 -0.31091 0.509zm-1.1317-1.3982v1.6443c0.34892-0.11129 0.69524-0.44735 0.98271-1.012 0.07447-0.14621 0.14374-0.30551 0.20571-0.47572a6.5775 6.8902 0 0 0 -1.1884 -0.15603zm1.8514-0.21876c0.29684 0.10093 0.57025 0.22313 0.81502 0.36388a3.6262 3.7986 0 0 0 0.7093 -2.0049h-1.2967a6.9576 7.2885 0 0 1 -0.22758 1.641zm1.5243-2.1865a3.6262 3.7986 0 0 0 -0.7093 -2.0049c-0.24477 0.14075-0.51818 0.26295-0.81502 0.36388 0.12915 0.5019 0.20831 1.0573 0.22758 1.641zm-1.9331-2.749c0.09218 0.18221 0.17654 0.37861 0.25102 0.5881a4.3579 4.5651 0 0 0 0.62285 -0.26732 3.6507 3.8243 0 0 0 -1.1848 -0.82923c0.11353 0.15439 0.21769 0.32569 0.31091 0.50845zm-0.25414 0.73267a4.0439 4.2362 0 0 0 -0.20571 -0.47572c-0.28747-0.56464-0.63379-0.90015-0.98271-1.012v1.6437c0.42183-0.01637 0.82127-0.07092 1.1884-0.15657z" stroke-width=".53302"/>
                                     </svg>
-                                </div>
-                                <div id="prev-btn" class="audio-btn">
-                                    <svg style="width: 40px; height:40px" class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    </div>
+                                    <div id="prev-btn" class="audio-btn">
+                                        <svg style="width: 40px; height:40px" class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                         <path d="M4 5h3v10H4V5zm12 0v10l-9-5 9-5z" /></svg>
-                                </div>
-                                <div id="play-pause" class="audio-btn">
-                                    <svg id="play-btn" style=" width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    </div>
+                                    <div id="play-pause" class="audio-btn">
+                                        <svg id="play-btn" style=" width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                         <g transform="translate(0,-492)">
                                             <path
                                                 d="m10 492c-5.5269 0-10 4.4725-10 10 0 5.527 4.4725 10 10 10 5.527 0 10-4.4725 10-10 0-5.527-4.4725-10-10-10zm3.603 11.11-4.699 2.7151c-0.39641 0.22906-0.8852 0.22945-1.2823 3.5e-4 -0.3968-0.22898-0.64121-0.6523-0.64121-1.1104v-5.4303c0-0.45813 0.24445-0.88141 0.64121-1.1104 0.19828-0.11445 0.41957-0.17168 0.64086-0.17168 0.22148 0 0.44301 0.0574 0.64141 0.17195l4.699 2.7151c0.39644 0.22907 0.64062 0.65219 0.64062 1.1101 0 0.45793-0.24422 0.88101-0.64066 1.1101z"
@@ -317,39 +326,36 @@
                                         </g>
 
                                     </svg>
-                                    <svg id="pause-btn" style="display:none; width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <svg id="pause-btn" style="display:none; width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
 
                                         <path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z" />
 
                                     </svg>
-                                </div>
-                                <div style="display:none;" class="audio-btn play">
+                                    </div>
+                                    <div style="display:none;" class="audio-btn play">
 
-                                </div>
-                                <div id="next-btn" class="audio-btn">
-                                    <svg style="width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    </div>
+                                    <div id="next-btn" class="audio-btn">
+                                        <svg style="width: 40px; height:40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                         <path d="M13 5h3v10h-3V5zM4 5l9 5-9 5V5z" /></svg>
-                                </div>
-                                <div id="radio-link" class="audio-btn">
+                                    </div>
+                                    <div id="radio-link" class="audio-btn">
 
-                                    <svg xmlns="http://www.w3.org/2000/svg" style=" width: 2rem; height:2rem" fill="currentColor" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" style=" width: 2rem; height:2rem" fill="currentColor" viewBox="0 0 16 16">
                                         <path
                                             d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
                                     </svg>
+                                    </div>
+
+
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section style="height:100%; background-color: var(--primary-color);">
-            <marquee style="line-height: 2em;">
-                Work in Progress
-            </marquee>
-        </section>
+            </section>
+
+        </div>
     </footer>
 
     <!-- Main Audio Player -->
@@ -394,21 +400,28 @@
     <!-- END RADIO MODAL -->
 
     <!-- START Settings MODAL-->
-    <section id="settings-modal">
-        <div class="setting-modal-container">
-            <form action="/action_page.php">
+    <section id="settings-modal" class="modal">
+        <div id="settings-modal-container" class="modal-container">
+
+            <form style="z-index:5; position:absolute;  " action=" /action_page.php ">
                 <label for="wal">Wallpaper:</label>
-                <input type="text" id="wal" name="wal"><br><br>
+                <input type="text" id="wal" name="wal"><br>
                 <label for="dropdown">Visualization:</label>
                 <select name="dropdown">
-                <option value = "waveform" selected> waveform </option>
-                <option value = "none"> none </option> 
-            </select><br><br>
+                                <option value = "waveform" selected> waveform </option>
+                                <option value = "none"> none </option> 
+                            </select><br>
                 <label for="bumps">Bumps:</label>
                 <input type="checkbox" name="bumps" id="bumpscheckbox" checked="checked">
+                <!-- <label for="3d">3D Mode:</label>
+                <input type="checkbox" name="3dmode" id="3dmodecheckbox" checked="checked"> -->
 
             </form>
+            <img style="z-index:4;min-width:500px; position:absolute;width:75vw;max-width:800px; " src="./styles/modal.svg ">
+
         </div>
+
+
     </section>
     <!-- END CHAT MODAL -->
 
@@ -440,48 +453,42 @@
 
     <!-- TODO -->
     <!-- keyboard MODAL -->
-    <section id="keyboard-modal">
-        <div class="keyboard-modal-box-v">
-            <div id="keyboard-close-modal" class="keyboard-modal-box-h">
-                <div class="keyboard-modal-boarder">
-                    <div class="keyboard-modal-box-h">
-                        <div class="keyboard-modal-container" style="width:50vw;z-index:50">
-                            <!-- TODO add style to make it look like original JSR modal -->
-                            <!--<img class="grafitti_modal" src="styles/modal_img.png"/>-->
-                            <div class="center-modal-title">
-                                Keyboard Controls
-                            </div>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>Key</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Spacebar</td>
-                                        <td>Play / Pause Audio</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Left/Right Arrow</td>
-                                        <td>Skip 5 sec into song</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Up/Down Arrow</td>
-                                        <td>Change the Volume</td>
-                                    </tr>
-                                    <!-- <tr>
+    <section id="keyboard-modal" class="modal">
+        <div id="keyboard-modal-container" class="modal-container">
+            <div class="keyboard-modal-container" style="width:50vw;z-index:50">
+                <!-- TODO add style to make it look like original JSR modal -->
+                <!--<img class="grafitti_modal" src="styles/modal_img.png"/>-->
+                <div class="center-modal-title">
+                    Keyboard Controls
+                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Key</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>Spacebar</td>
+                            <td>Play / Pause Audio</td>
+                        </tr>
+                        <tr>
+                            <td>Left/Right Arrow</td>
+                            <td>Skip 5 sec into song</td>
+                        </tr>
+                        <tr>
+                            <td>Up/Down Arrow</td>
+                            <td>Change the Volume</td>
+                        </tr>
+                        <!-- <tr>
                             <td>S</td>
                             <td>Pause Music</td>
                         </tr> -->
-                                </tbody>
-                            </table>
+                    </tbody>
+                </table>
 
-                        </div>
-                        <img style="position:absolute;width:75vw;max-width:800px;" src="./styles/modal.svg">
-
-                    </div>
-                </div>
             </div>
+            <img style="min-width:500px;position:absolute;width:75vw;max-width:800px;" src="./styles/modal.svg">
+
         </div>
     </section>
     <!-- end keyboard Modal -->

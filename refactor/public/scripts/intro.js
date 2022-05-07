@@ -1,3 +1,20 @@
+var preloadStation = "ggs";
+if (window.location.hash) {
+    preloadStation = window.location.hash.substring(1);
+
+
+    console.log(`loading default station ${preloadStation}`);
+} else {
+    // No hash is found
+}
+
+//load inital settings
+getStationList()
+    .then((res) => getStationData(preloadStation))
+    .then((res) => setStation(res))
+    .catch((err) => console.log(err));
+
+
 //INTRO ANIMATION JS
 const welcomescreen = document.getElementById("welcomeScreen");
 
@@ -172,13 +189,3 @@ function loadWelcomScreen() {
     });
 }
 loadWelcomScreen();
-
-//load inital settings
-getStationList()
-    .then((res) => loadStationModal(res))
-    .catch((err) => console.log(err));
-
-//load inital settings
-getStationData("classic")
-    .then((res) => setStation(res))
-    .catch((err) => console.log(err));

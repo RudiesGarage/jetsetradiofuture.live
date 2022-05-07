@@ -1,15 +1,22 @@
 #wallpaper {
-    position: absolute;
+    flex: auto;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+#wallpaperSection {
+    position: absolute;
     opacity: 0.9;
     z-index: 0;
+    width: 100%;
+    height: 100%;
 }
 
 #welcomeScreen {
     position: absolute;
-    background-image: url('./welcomeImg.png');
-    background-size: cover;
+    background-size: contain;
     z-index: 0;
     z-index: 100;
     width: 100%;

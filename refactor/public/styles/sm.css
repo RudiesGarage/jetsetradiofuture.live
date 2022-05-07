@@ -16,4 +16,10 @@
     #keyboard-controls {
         display: none;
     }
+    #curtain {
+        height: 10%;
+    }
+    #track-name {
+        padding: 5px 5px;
+    }
 }

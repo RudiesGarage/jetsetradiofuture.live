@@ -1,6 +1,3 @@
-//Do not auto unclock
-Howler.autoUnlock = false;
-
 var currentHowl = null;
 
 // Volume / Gain
@@ -67,7 +64,10 @@ function getStationList() {
                 alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
             } else { // show the result
                 //alert(`Done, got ${xhr.response.length} bytes`); // response is the server response
-                stationListcache = xhr.response;
+
+                if (xhr.response !== null) {
+                    stationListcache = xhr.response;
+                }
                 console.log(xhr.response);
                 resolve(xhr.response);
             }
@@ -82,6 +82,26 @@ function getStationList() {
 
 //Load classic station initally
 function getStationData(stationselected) {
+
+
+    if (stationListcache === undefined && typeof stationListcache == 'undefined') {
+        stationselected = "classic";
+    } else {
+        var isValid = false;
+        console.log(stationListcache.stations)
+        for (var i = 0; i < stationListcache.stations.length; i++) {
+            if (stationselected == stationListcache.stations[i].name) {
+                isValid = true;
+                break;
+            }
+        }
+        if (!isValid) {
+            stationselected = "classic";
+        }
+    }
+
+
+
     return new Promise((resolve, reject) => {
         // 1. Create a new XMLHttpRequest object
         let xhr = new XMLHttpRequest();
@@ -114,6 +134,7 @@ function getStationData(stationselected) {
 function setStation(stationData) {
 
     if (currentHowl) {
+
         currentHowl.pause();
     }
 
@@ -162,15 +183,19 @@ function setStation(stationData) {
             console.log(e);
         });;
     }
+
+    window.location.hash = `#${currentStationData.stationName}`;
 }
 
 
 
 
 
-
 const settingsModal = document.getElementById('settings-modal');
+const settingsModalContainer = document.getElementById('settings-modal-container');
 const keyboardModal = document.getElementById('keyboard-modal');
+const keyboardModalContainer = document.getElementById('keyboard-modal-container');
+
 const radioModal = document.getElementById('radio-modal');
 const chatModal = document.getElementById('chat-modal');
 //const waveformLinearButton = document.getElementById('waveform-linear-button');
@@ -208,6 +233,8 @@ let analyser;
 let gain;
 
 const createContext = () => {
+    //TODO get this to work with 
+    // Howler.ctx;
     contextCreated = true;
     context = new AudioContext();
     analyser = context.createAnalyser();
@@ -382,20 +409,17 @@ document.getElementById('setting-controls').onclick = () => {
     settingsModal.style.display = "block";
 };
 
-document.getElementById('keyboard-close-modal').onclick = () => {
-    keyboardModal.style.display = "";
+
+settingsModalContainer.onclick = e => {
+    if (e.target === settingsModalContainer) settingsModal.style.display = "none";
 };
 
-settingsModal.onclick = e => {
-    if (e.target === settingsModal) settingsModal.style.display = "";
-};
-
-keyboardModal.onclick = e => {
-    if (e.target === keyboardModal) keyboardModal.style.display = "";
+keyboardModalContainer.onclick = e => {
+    if (e.target === keyboardModalContainer) keyboardModal.style.display = "none";
 };
 
 radioModal.onclick = e => {
-    if (e.target === radioModal) radioModal.style.display = "";
+    if (e.target === radioModal) radioModal.style.display = "none";
     //Save settings
     shuffleStations = []
     for (var i = 0; i < stationListcache.stations.length; i++) {
@@ -470,7 +494,13 @@ const nextColor = () => {
 };
 
 const updateDisplayTime = () => {
-    progressBar.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+    const dis = (audio.currentTime / audio.duration) * 100;
+    if (dis !== dis) {
+        progressBar.style.width = 0;
+    } else {
+
+        progressBar.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+    }
 };
 
 //TODO figure better way to manage static and live states
@@ -508,6 +538,30 @@ const switchPlayPause = () => {
             largePlayIcon.style.cursor = "pointer";
         } else {
             currentHowl.play();
+            if (Howler.ctx != null) {
+                console.log("hello?");
+                const mediaDest = Howler.ctx.createMediaStreamDestination();
+                Howler.masterGain.connect(mediaDest);
+
+                // set up media recorder to record output
+                const audioChunks = []
+                const mediaRecorder = new MediaRecorder(mediaDest.stream, { mimeType: 'audio/webm' });
+
+                mediaRecorder.onstart = (event) => { console.log('Started recording Howl output...') };
+                mediaRecorder.ondataavailable = (event) => {
+                    audioChunks.push(event.data);
+                    console.log(event.data)
+                };
+                mediaRecorder.onstop = (event) => { console.log('Completed Recording', new Blob(audioChunks)) };
+
+                mediaRecorder.start();
+
+                // setTimeout(() => {
+                //     mediaRecorder.stop();
+                //     sound.stop()
+                // }, 5000);
+
+            }
             pauseBtn.style.display = "";
             playBtn.style.display = "none";
             largePlayIcon.style.opacity = "";
@@ -761,7 +815,12 @@ audio.onpause = () => {
 audio.onplay = () => {
     var t = decodeURIComponent(audio.src.substr(audio.src.lastIndexOf('/') + 1, audio.src.lastIndexOf('.') - 1));
     var t = t.substring(0, t.lastIndexOf('.'));
-    document.getElementById('track-name').innerHTML = `<span>${t}</span>`;
+
+    var trackElem = document.getElementById('track-name');
+    trackElem.classList.remove('cssmarquee');
+    trackElem.innerHTML = `<span>${t}</span>`;
+
+
 
     songBar.classList.add("animation");
     songBar.style.display = "block";
@@ -769,12 +828,16 @@ audio.onplay = () => {
     playBtn.style.display = "none";
     largePlayIcon.style.opacity = 0;
     largePlayIcon.style.cursor = "";
+    if (document.getElementById('track-container').scrollWidth > document.getElementById('track-container').clientWidth) {
+        trackElem.classList.add('cssmarquee');
+        console.log("Song title is really long... put an animation on it");
+        trackElem.innerHTML = `<span>${t}</span><span>${t}</span><span>${t}</span>`;
+    }
+    document.title = '${t} | JetSetRadioFuture.live ';
+
 };
 
-//Check if track name is overflowing
-function isOverflown(element) {
-    return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-}
+
 
 
 // on end play next song in the playlist
@@ -828,18 +891,22 @@ window.onresize = () => {
     if (w < 640 && document.getElementById("mobileCSS") == null) {
         //Load Mobile CSS
         fileref.href = "./styles/sm.css";
+        fileref.id = "mobileCSS";
         document.getElementsByTagName("head")[0].appendChild(fileref);
     } else if (w < 768 && document.getElementById("tabletCSS") == null) {
         //Load Tablet CSS
         fileref.href = "./styles/md.css";
+        fileref.id = "tabletCSS";
         document.getElementsByTagName("head")[0].appendChild(fileref);
     } else if (w < 1025 && document.getElementById("normalCSS") == null) {
         //Load "normal" CSS
         fileref.href = "./styles/lg.css";
+        fileref.id = "normalCSS";
         document.getElementsByTagName("head")[0].appendChild(fileref);
     } else if (document.getElementById("largeCSS") == null) {
         //Load Large screen
         fileref.href = "./styles/xl.css";
+        fileref.id = "largeCSS";
         document.getElementsByTagName("head")[0].appendChild(fileref);
     }
 
@@ -859,6 +926,17 @@ lazyLoadInstance.update();
 
 const checkOnlineStatus = async() => {
     Offline.check();
+    // Create a reference for the Wake Lock.
+    let wakeLock = null;
+
+    // create an async function to request a wake lock
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        console.log('Wake Lock is active!');
+    } catch (err) {
+        // The Wake Lock request has failed - usually system related, such as battery.
+        console.log(err);
+    }
 };
 
 setInterval(async() => {

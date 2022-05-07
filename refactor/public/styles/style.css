@@ -130,10 +130,10 @@ body {
 }
 
 #topgraphic {
-    min-height: 8.333333%;
     width: 100%;
     position: absolute;
-    top: -5px;
+    z-index: 1;
+    height: 100%;
 }
 
 
@@ -196,13 +196,11 @@ a {
     background-color: var(--primary-color);
     min-height: 100vh;
     min-width: 100vw;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 
 #curtain {
-    position: absolute;
+    position: fixed;
+    top: -1px;
     z-index: 0;
     width: 100%;
     height: 15%;
@@ -224,6 +222,38 @@ a {
     justify-content: center;
     width: 100%;
     height: 100%;
+}
+
+.cssmarquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    --offset: 25vw;
+    display: flex;
+    flex-direction: row;
+    --move-initial: calc(-25% + var(--offset));
+    --move-final: calc(-132.5% + var(--offset));
+}
+
+.cssmarquee>span {
+    position: absolute;
+    width: fit-content;
+    height: 100%;
+    margin-left: 10%;
+    text-align: center;
+    position: relative;
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
 }
 
 
@@ -255,15 +285,22 @@ a {
     color: rgba(255, 255, 255, 0.8);
 }
 
+#footer-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 #song-name {
     position: absolute;
-    bottom: 20vh;
-    font-size: 16px;
-    font-size: 3vmin;
+    bottom: 15vh;
+    height: fit-content;
+    font-size: 24px;
     width: 100%;
-    font-weight: 300;
     display: none;
-    color: hsla(192, 56%, 69%, 1);
+    color: rgb(45, 68, 73);
 }
 
 .animation {
@@ -299,7 +336,7 @@ a {
 }
 
 .song-title {
-    top: 2px;
+    color: #51c8ec;
     padding-left: 10px;
     font-size: 1.5em;
     white-space: nowrap;
@@ -315,11 +352,12 @@ a {
 
 .song-subtitle {
     flex: 0 0 auto;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 5;
     letter-spacing: 0.1em;
     line-height: normal;
-    padding-left: 5vw;
+    min-height: 26px;
+    padding: 5px 0px 5px 5vw;
     white-space: nowrap;
     text-overflow: ellipsis;
     color: rgba(255, 255, 255, 1);
@@ -327,21 +365,6 @@ a {
     background-color: rgba( 64, 151, 155, 1);
     background-image: url('./dots.png');
     background-repeat: repeat;
-    /* CSS gradients */
-}
-
-.fadeAway {
-    min-width: 150px;
-    height: inherit;
-    background: transparent;
-    /* 40979b */
-    background: linear-gradient(to left, rgba( 255, 255, 255, 255) 0%, rgba( 64, 151, 155, 1) 100%);
-    background: -moz-linear-gradient(to left, rgba( 255, 255, 255, 0) 0%, rgba( 64, 151, 155, 1) 100%);
-    background: -ms-linear-gradient(to left, rgba( 255, 255, 255, 0) 0%, rgba(64, 151, 155, 1) 100%);
-    background: -o-linear-gradient(to left, rgba( 255, 255, 255, 0) 0%, rgba( 64, 151, 155, 1) 100%);
-    background: -webkit-linear-gradient(to left, rgba( 255, 255, 255, 0) 0%, rgba( 64, 151, 155, 1) 100%);
-    -ms-filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=rgba( 64, 151, 155, 1), endColorstr=rgba( 64, 151, 155, 0.0));
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=rgba( 64, 151, 155, 1), endColorstr=rgba( 64, 151, 155, 0.0));
 }
 
 .song-author {
@@ -357,148 +380,6 @@ a {
 
 #song-name a:hover {
     color: rgba(255, 255, 255, 0.9);
-}
-
-.background-color-header {
-    padding-left: 46px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 36px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-#background-color-header {
-    transition: 1s;
-}
-
-.background-color-header-container {
-    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
-    border-right: 2px solid rgba(0, 0, 0, 0.6);
-    border-left: 2px solid rgba(0, 0, 0, 0.6);
-    display: flex;
-    height: 36px;
-}
-
-.background-color-title-container {
-    border-right: 2px solid rgba(0, 0, 0, 0.6);
-    height: 36px;
-}
-
-.background-color-title {
-    text-transform: uppercase;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    padding: 11px 10px 0;
-    letter-spacing: 0.1em;
-    background-color: rgba(0, 0, 0, 0.4);
-    height: 25px;
-    transition: 0.2s;
-    position: relative;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.background-color-title:hover {
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-}
-
-.background-color-title:hover:after {
-    text-transform: none;
-    letter-spacing: normal;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    top: 42px;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 12px;
-    font-weight: 600;
-    content: "Set random background color gradient, or press [R]";
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    white-space: nowrap;
-    left: -2px;
-    padding: 4px 8px;
-    position: absolute;
-    z-index: 100;
-}
-
-.rotate-background-container {
-    border-right: 2px solid rgba(0, 0, 0, 0.4);
-    background-color: rgba(0, 0, 0, 0.4);
-    min-width: 64px;
-}
-
-.rotate-background-container:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-right: 2px solid rgba(0, 0, 0, 0.1) !important;
-}
-
-.rotate-background-container>* {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    font-size: 18px;
-    margin: 9px 8px 9px 8px;
-    color: rgba(255, 255, 255, 0.6);
-    cursor: pointer;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-}
-
-.rotate-background-container>*:hover {
-    color: rgba(255, 255, 255, 1);
-}
-
-.rotate-left {
-    margin-right: 6px !important;
-}
-
-.rotate-right {
-    margin-left: 0px !important;
-}
-
-.rotate-left:hover:after {
-    text-transform: none;
-    letter-spacing: normal;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    top: 42px;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 12px;
-    font-weight: 600;
-    content: "Rotate background left 45°, or press [Q]";
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    left: 350px;
-    padding: 4px 8px;
-    position: absolute;
-    z-index: 100;
-    text-align: center;
-    line-height: 16px;
-    width: 115px;
-}
-
-.rotate-right:hover:after {
-    text-transform: none;
-    letter-spacing: normal;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    top: 42px;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 12px;
-    font-weight: 600;
-    content: "Rotate background right 45°, or press [E]";
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    left: 377px;
-    padding: 4px 8px;
-    position: absolute;
-    z-index: 100;
-    text-align: center;
-    line-height: 16px;
-    width: 125px;
 }
 
 #color-picker-1,
@@ -960,7 +841,7 @@ a {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#settings-modal {
+.modal {
     display: none;
     position: absolute;
     z-index: 1000;
@@ -972,51 +853,10 @@ a {
     line-height: 20px;
 }
 
-.settings-modal-box-v {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    min-width: 100%;
-    height: 100%;
-    margin: auto;
-}
-
-.settings-modal-box-h {
+.modal-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 100%;
-    height: 100%;
-    margin: auto;
-}
-
-.settings-modal-boarder {
-    height: 100%;
-    min-height: 200px;
-    min-width: 300px;
-    max-height: 600px;
-    max-width: 900px;
-    width: 100%;
-    background-color: none;
-    background-image: url('modal.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.settings-modal-container {
-    /* background-color: #6cb36c; */
-    color: #ffffff;
-    height: 50%;
-    min-height: 200px;
-    min-width: 300px;
-    width: 75%;
-    cursor: initial;
-}
-
-#keyboard-modal {
-    display: none;
-    position: absolute;
     z-index: 1000;
     width: 100%;
     height: 100%;
@@ -1024,56 +864,13 @@ a {
     background-color: rgba(0, 0, 0, 0.6);
     text-shadow: 1px 1px #000000;
     line-height: 20px;
-}
-
-.keyboard-modal-box-v {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    min-width: 100%;
-    height: 100%;
-    margin: auto;
-}
-
-.keyboard-modal-box-h {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 100%;
-    height: 100%;
-    margin: auto;
-}
-
-.keyboard-modal-boarder {
-    height: 100%;
-    min-height: 200px;
-    min-width: 300px;
-    max-height: 600px;
-    max-width: 900px;
-    width: 100%;
-    /* border: 1px solid; */
-    background-color: none;
-    /* border-image-slice: 1 1 fill;
-    border-image-source: url('modal.svg'); */
-    /* background-image: url('modal.svg'); */
-    /* background-repeat: no-repeat; */
-    background-size: contain;
 }
 
 .keyboard-modal-container {
     /* background-color: #6cb36c; */
     color: #ffffff;
-    height: 50%;
     min-height: 200px;
     min-width: 300px;
-    width: 75%;
-    /* margin: auto; */
-    /* border: solid 2px rgba(255, 255, 255, 0.5); */
-    /* width: 80vw; */
-    /* border-radius: 24px;
-    
-    style="    "*/
     cursor: initial;
 }
 
@@ -1357,10 +1154,9 @@ footer {
     z-index: 9;
     opacity: 0;
     width: 100%;
-    height: 20%;
+    height: 15vh;
     bottom: 0;
-    position: absolute;
-    width: 100%;
+    position: fixed;
     color: #ffffff;
 }
 
@@ -1383,8 +1179,7 @@ footer {
 }
 
 #playbar-progress {
-    height: inherit;
-    top: 1px;
+    height: 100%;
     background-color: var(--secondary-color);
     border-radius: 5px;
     position: absolute;
@@ -1392,7 +1187,8 @@ footer {
 }
 
 #playbar-container {
-    height: 16%;
+    height: 20%;
+    position: relative;
 }
 
 .full-screen {
