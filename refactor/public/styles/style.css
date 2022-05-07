@@ -295,7 +295,7 @@ a {
 
 #song-name {
     position: absolute;
-    bottom: 15vh;
+    bottom: 20vh;
     height: fit-content;
     font-size: 24px;
     width: 100%;
@@ -1154,7 +1154,7 @@ footer {
     z-index: 9;
     opacity: 0;
     width: 100%;
-    height: 15vh;
+    height: 20vh;
     bottom: 0;
     position: fixed;
     color: #ffffff;
