@@ -833,7 +833,7 @@ audio.onplay = () => {
         console.log("Song title is really long... put an animation on it");
         trackElem.innerHTML = `<span>${t}</span><span>${t}</span><span>${t}</span>`;
     }
-    document.title = '${t} | JetSetRadioFuture.live ';
+    document.title = `${t} | JetSetRadioFuture.live `;
 
 };
 
