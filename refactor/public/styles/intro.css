@@ -46,4 +46,7 @@
 
 #clicktocont {
     opacity: 0;
+    text-align: center;
+    color: white;
+    font-size: 32px;
 }

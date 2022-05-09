@@ -1,4 +1,17 @@
-var stationListcache;
+var currentHowl = null;
+
+// Volume / Gain
+var currentVol = 0.5;
+Howler.volume(currentVol);
+// Current playlist (likely shuffled)
+var currentPlaylist = [];
+// currentstation Object
+var currentStationData = {};
+let stationListcache;
+
+// Current Song/Howl
+var currentSong = "";
+var currentSongIndex = 0;
 
 // Shuffle state
 // 0 = linear
@@ -8,6 +21,8 @@ var shuffleState = 1;
 
 //list of shuffle station names
 var shuffleStations = [];
+
+const audio = document.getElementById("audio");
 
 const graffitiSoul = document.getElementById("graffitiSoul");
 const playPause = document.getElementById("play-pause");
@@ -24,8 +39,12 @@ const progressBar = document.getElementById('playbar-progress');
 const largePlayIcon = document.getElementById("large-play-icon");
 
 const gainBarValue = document.getElementById("gain-bar");
+const projectName = document.getElementById("project-name");
 
 const wallpaper = document.getElementById("wallpaper");
+
+let baseurl = "https://jsrfl.us-east-1.linodeobjects.com/music/stations/";
+audio.src = './stations/static.mp3';
 
 
 function getStationList() {
@@ -55,7 +74,7 @@ function getStationList() {
         };
 
         xhr.onerror = function() {
-            console.error("FAILURE TO OBTAIN STATION LIST");
+            alert("Playlist Request failed");
             reject();
         };
     });
@@ -63,6 +82,7 @@ function getStationList() {
 
 //Load classic station initally
 function getStationData(stationselected) {
+
 
     if (stationListcache === undefined && typeof stationListcache == 'undefined') {
         stationselected = "classic";
@@ -113,47 +133,58 @@ function getStationData(stationselected) {
 // Set Station info locally
 function setStation(stationData) {
 
-    if (player) {
-        player.pause();
+    if (currentHowl) {
+
+        currentHowl.pause();
     }
 
-    Howler.unload();
-    player = new Player(stationData);
+    currentStationData = stationData;
     // document.getElementById('wallpaper').src = stationData.wallpaper;
     pauseBtn.style.display = "none";
     playBtn.style.display = "";
     var r = document.querySelector(':root');
-    r.style.setProperty('--primary-color', stationData.colorsObj.colors[0]);
+    r.style.setProperty('--primary-color', currentStationData.colorsObj.colors[0]);
 
-    r.style.setProperty('--primary-dark-color', stationData.colorsObj.colors[1]);
+    r.style.setProperty('--primary-dark-color', currentStationData.colorsObj.colors[1]);
 
-    r.style.setProperty('--secondary-color', stationData.colorsObj.colors[2]);
+    r.style.setProperty('--secondary-color', currentStationData.colorsObj.colors[2]);
 
-    r.style.setProperty('--border-color', stationData.colorsObj.colors[3]);
+    r.style.setProperty('--border-color', currentStationData.colorsObj.colors[3]);
 
-    r.style.setProperty('--border2-color', stationData.colorsObj.colors[4]);
+    r.style.setProperty('--border2-color', currentStationData.colorsObj.colors[4]);
 
-    r.style.setProperty('--outline-color', stationData.colorsObj.colors[5]);
+    r.style.setProperty('--outline-color', currentStationData.colorsObj.colors[5]);
 
-    graffitiSoul.src = "./stations/" + stationData.stationName + "/icon.png";
-    wallpaper.src = "./stations/" + stationData.stationName + "/wallpaper.jpg";
-
+    graffitiSoul.src = "./stations/" + currentStationData.stationName + "/icon.png";
+    wallpaper.src = "./stations/" + currentStationData.stationName + "/wallpaper.jpg";
+    currentPlaylist = currentStationData.songList;
 
     if (shuffleState != 0) {
-        player.shuffle()
+        shuffle(currentPlaylist)
     }
 
 
+    //get random  song index 
+    currentSongIndex = currentPlaylist.length * Math.random() | 0;
+    currentSong = currentPlaylist[currentSongIndex];
+    console.log(currentSong)
     songBar.classList.remove("animation");
     songBar.style.display = "none";
-
-    if (isUnlocked) {
-        player.play();
+    try {
+        setAudioSrc(currentSong);
+    } catch (e) {
+        console.log(e);
     }
 
 
-    //Set URL hash to be the urrent station playing
-    window.location.hash = `#${stationData.stationName}`;
+    if (shuffleState == 2 && currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
+        audio.play().catch((e) => {
+            /* error handler */
+            console.log(e);
+        });;
+    }
+
+    window.location.hash = `#${currentStationData.stationName}`;
 }
 
 
@@ -195,28 +226,46 @@ const colorObj = {
     },
 };
 
+let AudioContext = window.AudioContext || window.webkitAudioContext;
 let contextCreated = false;
 let context;
 let analyser;
 let gain;
 
 const createContext = () => {
+    //TODO get this to work with 
+    // Howler.ctx;
     contextCreated = true;
-    context = Howler.ctx;
+    context = new AudioContext();
     analyser = context.createAnalyser();
     analyser.minDecibels = -105;
     analyser.maxDecibels = -25;
     analyser.smoothingTimeConstant = 0.8;
-    gain = Howler.masterGain;
-    if (player.currentSong()) {
-        let src = context.createMediaElementSource(player.currentSong()._sounds[0]._node);
-        src.connect(gain);
-    }
+    gain = context.createGain();
+    let src = context.createMediaElementSource(audio);
+    // console.log(sound._sounds[0]._node)
+    src.connect(gain);
     gain.connect(analyser);
-    updateGain(Howler.volume());
+    updateGain(currentVol);
     analyser.connect(context.destination);
     createVisualizer();
 };
+
+
+/*
+    infoLink.onclick = () => {
+        informationModal.style.display = "";
+    };
+
+    document.getElementById('close-modal').onclick = () => {
+        informationModal.style.display = "none";
+    };
+
+    informationModal.onclick = e => {
+        if (e.target === informationModal) informationModal.style.display = "none";
+    };
+*/
+
 
 
 function loadStationModal(Stationresobj) {
@@ -253,7 +302,7 @@ function loadStationModal(Stationresobj) {
             stationicon.classList.add('station-grid-image');
             stationicon.classList.add('lazy');
             stationicon.setAttribute('title', stationobj.name);
-            // stationicon.setAttribute('alt', stationobj.name);
+            stationicon.setAttribute('alt', stationobj.name);
             stationicon.setAttribute('data-src', "stations/" + stationobj.name + "/icon.png");
             //desc
             let div11 = document.createElement('div');
@@ -389,6 +438,19 @@ chatModal.onclick = e => {
     if (e.target === chatModal) chatModal.style.display = "";
 };
 
+let timeOut;
+
+document.onmousemove = () => {
+    //showElements();
+    // clearTimeout(timeOut);
+    //timeOut = setTimeout(() => hideElements(), 3000);
+};
+
+document.onclick = () => {
+    // showElements();
+    // clearTimeout(timeOut);
+    // timeOut = setTimeout(() => hideElements(), 3000);
+};
 
 const createVisualizer = () => {
     if (contextCreated) {
@@ -401,7 +463,7 @@ const createVisualizer = () => {
             console.log("not supported in this browser")
         }
         const svg_ = document.getElementById('visualizer-svg');
-        svg_.style.width = "100vw";
+        svg_.style.width = "100%";
         svg_.style.height = "95vh";
         svg_.style.position = "absolute";
         svg_.style.zIndex = "1";
@@ -424,31 +486,112 @@ const nextVisualizer = () => {
     switchVisualizer(visualizerObj[selectedVisualizer].next);
 };
 
+const prevColor = () => {
+    switchColor(colorObj[selectedColor].prev);
+};
+const nextColor = () => {
+    switchColor(colorObj[selectedColor].next);
+};
 
 const updateDisplayTime = () => {
-    player.updateDisplayTime();
+    const dis = (audio.currentTime / audio.duration) * 100;
+    if (dis !== dis) {
+        progressBar.style.width = 0;
+    } else {
+
+        progressBar.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+    }
 };
 
 //TODO figure better way to manage static and live states
 const switchPlayPause = () => {
-
-    if (player.currentSong() !== null) {
-        if (!player.currentSong().playing()) {
-            player.play();
-            pauseBtn.style.display = "";
-            playBtn.style.display = "none";
-            largePlayIcon.style.opacity = "";
-            largePlayIcon.style.cursor = "";
-        } else {
-            player.pause();
+    if (!contextCreated) {
+        createContext();
+    }
+    if (currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
+        if (context && audio.src !== "") {
+            if (audio.paused) {
+                audio.play().catch((e) => {
+                    /* error handler */
+                    console.log(e);
+                });
+                //sound.play();
+                pauseBtn.style.display = "";
+                playBtn.style.display = "none";
+                largePlayIcon.style.opacity = "";
+                largePlayIcon.style.cursor = "";
+            } else {
+                audio.pause();
+                //sound.pause();
+                pauseBtn.style.display = "none";
+                playBtn.style.display = "";
+                largePlayIcon.style.opacity = 1;
+                largePlayIcon.style.cursor = "pointer";
+            }
+        }
+    } else {
+        if (currentHowl.playing()) {
+            currentHowl.pause();
             pauseBtn.style.display = "none";
             playBtn.style.display = "";
             largePlayIcon.style.opacity = 1;
             largePlayIcon.style.cursor = "pointer";
+        } else {
+            currentHowl.play();
+            if (Howler.ctx != null) {
+                console.log("hello?");
+                const mediaDest = Howler.ctx.createMediaStreamDestination();
+                Howler.masterGain.connect(mediaDest);
+
+                // set up media recorder to record output
+                const audioChunks = []
+                const mediaRecorder = new MediaRecorder(mediaDest.stream, { mimeType: 'audio/webm' });
+
+                mediaRecorder.onstart = (event) => { console.log('Started recording Howl output...') };
+                mediaRecorder.ondataavailable = (event) => {
+                    audioChunks.push(event.data);
+                    console.log(event.data)
+                };
+                mediaRecorder.onstop = (event) => { console.log('Completed Recording', new Blob(audioChunks)) };
+
+                mediaRecorder.start();
+
+                // setTimeout(() => {
+                //     mediaRecorder.stop();
+                //     sound.stop()
+                // }, 5000);
+
+            }
+            pauseBtn.style.display = "";
+            playBtn.style.display = "none";
+            largePlayIcon.style.opacity = "";
+            largePlayIcon.style.cursor = "";
         }
+
+
+
     }
 };
 
+function shuffle(array) {
+    let currentIndex = array.length,
+        randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]
+        ];
+    }
+
+    return array;
+}
 
 
 
@@ -467,7 +610,9 @@ shuffleBtn.onclick = () => {
         shuffleState++;
         document.getElementById('shuffle0').style.display = "none";
         document.getElementById('shuffle1').style.display = "block";
-        player.shuffle();
+        if (currentPlaylist) {
+            shuffle(currentPlaylist);
+        }
     }
     //current shuffle state is shuffle, make global
     else if (shuffleState == 1) {
@@ -481,7 +626,12 @@ shuffleBtn.onclick = () => {
         shuffleState = 0;
         document.getElementById('shuffle2').style.display = "none";
         document.getElementById('shuffle0').style.display = "block";
-        player.linear();
+        if (currentPlaylist) {
+            //use original order
+            // currentPlaylist = currentStationData.songList;
+            //Sort alphabetical
+            currentPlaylist.sort((a, b) => b.localeCompare(a));
+        }
     }
 }
 
@@ -493,14 +643,86 @@ nextBtn.onclick = () => {
         getStationData(item)
             .then((res) => setStation(res))
             .catch((err) => console.log(err));
+    }
+
+    if (!contextCreated) {
+        createContext();
+    }
+
+    if (currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
+        currentSongIndex++;
+        if (currentSongIndex > currentPlaylist.length - 1) {
+            currentSongIndex = 0;
+        }
+        currentSong = currentPlaylist[currentSongIndex];
+
+        setAudioSrc(currentSong);
+
+        audio.load();
+        var promise = audio.play();
+        if (promise !== undefined) {
+            promise.then(_ => {
+                // play started!
+            }).catch(error => {
+                // play was prevented.
+                // Show a "Play" button so that user can start playback.
+            });
+        }
+    }
+
+
+
+}
+
+function setAudioSrc(howl) {
+    console.log("NOW PLAYING: " + currentSong);
+    console.log(currentStationData);
+    if (currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
+        audio.src = baseurl + "/" + currentStationData.stationName + "/" + howl + '.mp3';
+        if (currentHowl) {
+            currentHowl.pause();
+            currentHowl = null;
+        }
+
     } else {
-        player.skip('next');
+        //if live use the url in the stream
+        currentHowl = new Howl({
+                src: [howl],
+                html5: true
+            })
+            //currentHowl.play();
+        audio.src = "";
+        //audio.src = howl;
     }
 }
 
-
 prevBtn.onclick = () => {
-    player.skip('prev');
+    if (!contextCreated) {
+        createContext();
+    }
+
+
+    if (currentStationData.isLive === undefined && typeof currentStationData.isLive == 'undefined') {
+        currentSongIndex--;
+        if (currentSongIndex < 0) {
+            currentSongIndex = currentPlaylist.length - 1;
+        }
+        //currentSong = currentPlaylist[currentPlaylist.length * Math.random() | 0];
+        currentSong = currentPlaylist[currentSongIndex];
+
+        setAudioSrc(currentSong);
+        audio.load();
+        var promise = audio.play();
+        if (promise !== undefined) {
+            promise.then(_ => {
+                // play started!
+            }).catch(error => {
+                // play was prevented.
+                // Show a "Play" button so that user can start playback.
+            });
+        }
+    }
+
 }
 
 playPause.onclick = () => {
@@ -511,89 +733,152 @@ document.getElementById('large-play').onclick = () => {
     switchPlayPause();
 };
 
-//TODO Change to CTRL+KEYCODE when chat exists
+
 document.onkeydown = (e) => {
-    console.log(e.keyCode);
     e.preventDefault();
-    if (player.currentSong !== null) {
+    if (audio.src !== "") {
 
         if (e.keyCode == 32) {
             switchPlayPause();
         }
         if (e.keyCode == 37) {
-            var currDur = player.currentSong().seek();
-
-            if (currDur < 5) {
-                player.skip('prev');
+            if (audio.currentTime < 5) {
+                audio.currentTime = 0;
             } else {
-                player.seek(currDur - 5);
+                audio.currentTime -= 5;
             }
             updateDisplayTime();
         }
         if (e.keyCode == 39) {
-            var currDur = player.currentSong().seek();
-            var finalDur = player.currentSong().duration();
-            if (finalDur - currDur < 5) {
-                player.skip('next');
+            if (audio.duration - audio.currentTime < 5) {
+                audio.currentTime = audio.duration;
             } else {
-                player.seek(currDur + 5);
+                audio.currentTime += 5;
             }
             updateDisplayTime();
         }
         if (e.keyCode === 38) {
-            if (Howler.volume() < 0.9) {
-                updateGain(Howler.volume() + 0.1);
-            } else if (Howler.volume() !== 1) {
+            if (gain.gain.value < 0.9) {
+                updateGain(gain.gain.value + 0.1);
+            } else if (gain.gain.value !== 1) {
                 updateGain(1);
             }
         }
 
         if (e.keyCode === 40) {
-            if (Howler.volume() > 0.1) {
-                updateGain(Howler.volume() - 0.1);
-            } else if (Howler.volume() !== 0) {
+            if (gain.gain.value > 0.1) {
+                updateGain(gain.gain.value - 0.1);
+            } else if (gain.gain.value !== 0) {
                 updateGain(0);
             }
-        }
-        if (e.keyCode === 188) {
-            player.skip('prev');
-        }
-        if (e.keyCode === 190) {
-            player.skip('next');
         }
     }
 };
 
 
+//TODO update volume
 const updateGain = (value) => {
-
-    //Keep dividing until the value is in proper units
+    if (!contextCreated) {
+        createContext();
+    }
     while (value > 1) {
         value = value / 10;
     }
+    gain.gain.value = value;
     gainBarValue.value = value * 10;
     Howler.volume(value);
 };
 
+// document.getElementById("gain-bar").onclick = (e) => {
+//     if (context) {
+//         const bounds = e.currentTarget.getBoundingClientRect();
+//         const percent = ((e.clientX - (bounds.left)) / bounds.width);
+//         updateGain(percent);
+//     }
+// };
 
+// document.getElementById("gain-title").onclick = () => {
+//     if (gain.gain.value !== 0) {
+//         updateGain(0);
+//     } else {
+//         updateGain(1);
+//     }
+// };
+
+audio.onpause = () => {
+    pauseBtn.style.display = "none";
+    playBtn.style.display = "";
+    largePlayIcon.style.opacity = 1;
+    largePlayIcon.style.cursor = "pointer";
+};
+
+audio.onplay = () => {
+    var t = decodeURIComponent(audio.src.substr(audio.src.lastIndexOf('/') + 1, audio.src.lastIndexOf('.') - 1));
+    var t = t.substring(0, t.lastIndexOf('.'));
+
+    var trackElem = document.getElementById('track-name');
+    trackElem.classList.remove('cssmarquee');
+    trackElem.innerHTML = `<span>${t}</span>`;
+
+
+
+    songBar.classList.add("animation");
+    songBar.style.display = "block";
+    pauseBtn.style.display = "";
+    playBtn.style.display = "none";
+    largePlayIcon.style.opacity = 0;
+    largePlayIcon.style.cursor = "";
+    if (document.getElementById('track-container').scrollWidth > document.getElementById('track-container').clientWidth) {
+        trackElem.classList.add('cssmarquee');
+        console.log("Song title is really long... put an animation on it");
+        trackElem.innerHTML = `<span>${t}</span><span>${t}</span><span>${t}</span>`;
+    }
+    document.title = `${t} | JetSetRadioFuture.live `;
+
+};
+
+
+
+
+// on end play next song in the playlist
+audio.onended = () => {
+    if (shuffleState == 2 && shuffleStations.length != 0) {
+        var item = shuffleStations[Math.floor(Math.random() * shuffleStations.length)];
+        //load inital settings
+        getStationData(item)
+            .then((res) => setStation(res))
+            .catch((err) => console.log(err));
+    }
+    currentSongIndex++;
+    if (currentSongIndex > currentPlaylist.length - 1) {
+        currentSongIndex = 0;
+    }
+    currentSong = currentPlaylist[currentSongIndex];
+    setAudioSrc(currentSong);
+    audio.play().catch((e) => {
+        /* error handler */
+        console.log(e);
+    });;
+    songBar.classList.remove("animation");
+    songBar.style.display = "none";
+};
 
 document.getElementById("playbar").onclick = (e) => {
-    if (player.currentSong() !== null) {
+    if (audio.src !== "") {
         const bounds = e.currentTarget.getBoundingClientRect();
         const percent = ((e.clientX - (bounds.left)) / bounds.width);
-        player.seekPer(percent);
+        audio.currentTime = (percent * audio.duration);
+        progressBar.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+        updateDisplayTime();
     }
 };
 
 setInterval(() => {
-    if (player) {
-        if (player.currentSong() !== null) {
-            updateDisplayTime();
-        } else {
-            progressBar.style.width = "0%";
-        }
+    if (audio.src !== "") {
+        updateDisplayTime();
+    } else {
+        progressBar.style.width = "0%";
     }
-
 }, 5000);
 
 window.onresize = () => {
@@ -624,6 +909,8 @@ window.onresize = () => {
         fileref.id = "largeCSS";
         document.getElementsByTagName("head")[0].appendChild(fileref);
     }
+
+
 };
 
 var lazyLoadInstance = new LazyLoad({
@@ -656,13 +943,11 @@ setInterval(async() => {
     await checkOnlineStatus();
 }, 60000); //60000 every minute
 
-
-//TODO 
 Offline.options = { // Should we check the connection status immediatly on page load.
     checkOnLoad: false,
 
     // Should we monitor AJAX requests to help decide if we have a connection.
-    interceptRequests: false,
+    interceptRequests: true,
 
     // Should we automatically retest periodically when the connection is down (set to false to disable).
     reconnect: {
@@ -680,7 +965,7 @@ Offline.options = { // Should we check the connection status immediatly on page 
     // It's not included in the normal build, you should bring in js/snake.js in addition to
     // offline.min.js.
     game: false,
-    checks: { xhr: { url: '/styles/dots.png' } } //Dots are a small 
+    checks: { xhr: { url: '/styles/dots.png' } }
 }
 
 Offline.on('up', function() {

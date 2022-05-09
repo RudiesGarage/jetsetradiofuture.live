@@ -1,4 +1,7 @@
+//Player Object
+var player;
 var preloadStation = "ggs";
+var isUnlocked = false;
 if (window.location.hash) {
     preloadStation = window.location.hash.substring(1);
 
@@ -19,34 +22,30 @@ getStationList()
 const welcomescreen = document.getElementById("welcomeScreen");
 
 welcomescreen.onclick = function() {
-
+    isUnlocked = true;
+    try {
+        player.play();
+        player.shuffle();
+    } catch (e) {
+        console.error("station was not loaded in time")
+    }
     var tl = gsap.timeline();
     tl.set("#curtain", {
-        zIndex: 100
-    });
-    tl.set("#topgraphic", {
-        y: -100,
-        display: "block"
-    });
-    tl.to("#topgraphic", { y: 0 });
-    tl.to("#topgraphic", { y: 0 });
-    tl.to(welcomescreen, 0.5, {
-        opacity: 0,
-        delay: -0.2
-    })
-    tl.to(["#main", "#footer"], 0.5, {
-        opacity: 1,
-        delay: -0.5
-    })
-    tl.to(welcomescreen, {
+            zIndex: 100
+        }).set("#topgraphic", {
+            y: -100,
+            display: "block"
+        }).to("#topgraphic", { y: 0 }).to(welcomescreen, 0.5, {
+            opacity: 0,
+            delay: -0.2
+        }).to(["#main", "#footer"], 0.5, {
+            opacity: 1,
+            delay: -0.5
+        }).to(welcomescreen, {
             display: "none",
         })
         // Stop endless animation
     gsap.killTweensOf("#clicktocont");
-    if (!contextCreated) {
-        createContext();
-    }
-    audio.play()
 };
 
 function loadWelcomScreen() {

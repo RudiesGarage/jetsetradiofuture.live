@@ -11,9 +11,9 @@ do
     # Get list of files in the station folder in the bucket, remove everyting before the last slash, remove .mp3,replace # with url encoding, surround with quotes and add a comma
     songList=$(s3cmd ls "s3://jsrfl/music/stations/"$output | sed 's:.*/::' | sed 's:\.mp3::g' | sed 's:#:%23:g' |awk '{ printf "\"%s\",", $0 }')
     #echo `s3cmd ls "s3://jsrfl/music/stations/"$output | sed 's:.*/::' | sed 's:\.mp3:,:g'`
-    colorObj=$(cat $stationName/colors.json)
+    colorObj=$(cat $stationName/metadata.json)
     
-    echo "{\"stationName\": \"$stationName\",\"colorsObj\": $colorObj ,\"songList\": [${songList%?}]}" > ./$stationName/$stationName.json
+    echo "{\"stationName\": \"$stationName\",\"metadata\": $colorObj ,\"songList\": [${songList%?}]}" > ./$stationName/$stationName.json
     
     chmod 777 ./$stationName/$stationName.json
 done

@@ -209,6 +209,15 @@ a {
 
 /* Grafitti soul  */
 
+#graffitiSoul {
+    width: 25vw;
+    height: 25vw;
+    max-width: 237px;
+    max-height: 237px;
+    min-width: 100px;
+    min-height: 100px;
+}
+
 #graffitiSoulFrame {
     position: absolute;
     z-index: 2;

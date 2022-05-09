@@ -48,9 +48,12 @@
         document.getElementsByTagName("head")[0].appendChild(fileref);
     </script>
 
-    <!-- TODO set Favicon -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon_32x32.png" sizes="32x32">
+    <link rel="icon" href="./favicon_48x48.png" sizes="48x48">
+    <link rel="icon" href="./favicon_96x96.png" sizes="96x96">
+    <link rel="icon" href="./favicon_144x144.png" sizes="144x144">
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="" sizes="32x32" id="favicon">
 </head>
 
 <body id="app">
@@ -160,7 +163,7 @@
         <!-- Grafitti Soul -->
         <section id="graffitiSoulFrame">
             <div id="graffitiSoul-container">
-                <img id="graffitiSoul" class="rotate3dAnimation" style=" height: 237px; width: 237px;" src="./stations/classic/icon.png">
+                <img id="graffitiSoul" class="rotate3dAnimation" src="./stations/classic/icon.png">
             </div>
         </section>
         <!-- END Grafitti Soul -->
@@ -361,7 +364,7 @@
     </footer>
 
     <!-- Main Audio Player -->
-    <audio id="audio" crossorigin="anonymous"></audio>
+    <!-- <audio id="audio" crossorigin="anonymous"></audio> -->
 
 
 
@@ -453,13 +456,10 @@
     </section>
     <!-- END CHAT MODAL -->
 
-    <!-- TODO -->
     <!-- keyboard MODAL -->
     <section id="keyboard-modal" class="modal">
         <div id="keyboard-modal-container" class="modal-container">
             <div class="keyboard-modal-container" style="width:50vw;z-index:50">
-                <!-- TODO add style to make it look like original JSR modal -->
-                <!--<img class="grafitti_modal" src="styles/modal_img.png"/>-->
                 <div class="center-modal-title">
                     Keyboard Controls
                 </div>
@@ -474,17 +474,17 @@
                             <td>Play / Pause Audio</td>
                         </tr>
                         <tr>
-                            <td>Left/Right Arrow</td>
+                            <td>Left / Right Arrow</td>
                             <td>Skip 5 sec into song</td>
                         </tr>
                         <tr>
-                            <td>Up/Down Arrow</td>
+                            <td>Up / Down Arrow</td>
                             <td>Change the Volume</td>
                         </tr>
-                        <!-- <tr>
-                            <td>S</td>
-                            <td>Pause Music</td>
-                        </tr> -->
+                        <tr>
+                            <td>Period / Comma</td>
+                            <td>Prev / Next Song</td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -506,7 +506,7 @@
 
 
     <!-- Livestream.js -->
-    <script src="./scripts/howler.min.js" type="application/javascript"></script>
+    <script src="./scripts/howler.core.js" type="application/javascript"></script>
 
     <!-- LazyLoad -->
     <script src="./scripts/lazyload.min.js" type="application/javascript"></script>
@@ -522,6 +522,8 @@
 
     <!-- Main scripts -->
     <script src="./scripts/index.js" type="application/javascript"></script>
+
+    <script src="./scripts/radio.js" type="application/javascript"></script>
     <script src="./scripts/intro.js" type="application/javascript"></script>
 
 
