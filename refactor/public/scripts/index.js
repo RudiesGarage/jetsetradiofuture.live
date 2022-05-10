@@ -511,10 +511,35 @@ document.getElementById('large-play').onclick = () => {
     switchPlayPause();
 };
 
+document.getElementById('submit').onclick = () => {
+
+    imageExists(document.getElementById('wal').value, function(exists) {
+        if (exists) {
+            wallpaper.src = document.getElementById('wal').value;
+        } else {
+            //TODO display error message 
+            console.log("BAD IMAGE");
+        }
+    })
+
+    //TODO validate Visualization 
+
+}
+
+
+
+// The "callback" argument is called with either true or false
+// depending on whether the image at "url" exists or not.
+function imageExists(url, callback) {
+    var img = new Image();
+    img.onload = function() { callback(true); };
+    img.onerror = function() { callback(false); };
+    img.src = url;
+}
+
 //TODO Change to CTRL+KEYCODE when chat exists
 document.onkeydown = (e) => {
-    console.log(e.keyCode);
-    e.preventDefault();
+    //e.preventDefault();
     if (player.currentSong !== null) {
 
         if (e.keyCode == 32) {
@@ -607,23 +632,20 @@ window.onresize = () => {
         //Load Mobile CSS
         fileref.href = "./styles/sm.css";
         fileref.id = "mobileCSS";
-        document.getElementsByTagName("head")[0].appendChild(fileref);
     } else if (w < 768 && document.getElementById("tabletCSS") == null) {
         //Load Tablet CSS
         fileref.href = "./styles/md.css";
         fileref.id = "tabletCSS";
-        document.getElementsByTagName("head")[0].appendChild(fileref);
     } else if (w < 1025 && document.getElementById("normalCSS") == null) {
         //Load "normal" CSS
         fileref.href = "./styles/lg.css";
         fileref.id = "normalCSS";
-        document.getElementsByTagName("head")[0].appendChild(fileref);
     } else if (document.getElementById("largeCSS") == null) {
         //Load Large screen
         fileref.href = "./styles/xl.css";
         fileref.id = "largeCSS";
-        document.getElementsByTagName("head")[0].appendChild(fileref);
     }
+    document.getElementsByTagName("head")[0].appendChild(fileref);
 };
 
 var lazyLoadInstance = new LazyLoad({

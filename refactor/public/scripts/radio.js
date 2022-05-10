@@ -218,7 +218,6 @@ class Player {
          * @param  {Number} val Volume between 0 and 1.
          */
     volume(val) {
-            let self = this;
 
             // Update the global volume (affecting all Howls).
             Howler.volume(val);

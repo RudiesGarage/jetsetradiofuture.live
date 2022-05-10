@@ -408,20 +408,18 @@
     <section id="settings-modal" class="modal">
         <div id="settings-modal-container" class="modal-container">
 
-            <form style="z-index:5; position:absolute;  " action=" /action_page.php ">
+            <div style="z-index:5; position:absolute;">
                 <label for="wal">Wallpaper:</label>
                 <input type="text" id="wal" name="wal"><br>
                 <label for="dropdown">Visualization:</label>
                 <select name="dropdown">
                                 <option value = "waveform" selected> waveform </option>
                                 <option value = "none"> none </option> 
-                            </select><br>
-                <label for="bumps">Bumps:</label>
-                <input type="checkbox" name="bumps" id="bumpscheckbox" checked="checked">
+                </select><br>
                 <!-- <label for="3d">3D Mode:</label>
                 <input type="checkbox" name="3dmode" id="3dmodecheckbox" checked="checked"> -->
-
-            </form>
+                <button id="submit" style="align-self: center;width: 100%;padding: 5px;margin-top: 10px;background-color: orange;">SUBMIT</button>
+            </div>
             <img style="z-index:4;min-width:500px; position:absolute;width:75vw;max-width:800px; " src="./styles/modal.svg ">
 
         </div>
