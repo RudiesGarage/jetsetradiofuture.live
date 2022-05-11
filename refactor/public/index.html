@@ -20,34 +20,6 @@
     <link href="./styles/style.css" type="text/css" rel="stylesheet">
     <link href="./styles/intro.css" type="text/css" rel="stylesheet">
 
-    <!-- Screen Size Specific Styles -->
-    <script type="application/javascript">
-        var w = window.innerWidth;
-        var fileref = document.createElement("link");
-
-        fileref.rel = "stylesheet";
-        fileref.type = "text/css";
-        if (w < 640) {
-            //Load Mobile CSS
-            fileref.id = "mobileCSS";
-            fileref.href = "./styles/sm.css";
-        } else if (w < 768) {
-            //Load Tablet CSS
-            fileref.id = "tabletCSS";
-            fileref.href = "./styles/md.css";
-        } else if (w < 1025) {
-            //Load "normal" CSS
-            fileref.id = "normalCSS";
-            fileref.href = "./styles/lg.css";
-        } else {
-            //Load Large screen
-            fileref.id = "largeCSS";
-            fileref.href = "./styles/xl.css";
-        }
-
-        document.getElementsByTagName("head")[0].appendChild(fileref);
-    </script>
-
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon_32x32.png" sizes="32x32">
     <link rel="icon" href="./favicon_48x48.png" sizes="48x48">
@@ -480,7 +452,7 @@
                             <td>Change the Volume</td>
                         </tr>
                         <tr>
-                            <td>Period / Comma</td>
+                            <td>Comma / Period</td>
                             <td>Prev / Next Song</td>
                         </tr>
                     </tbody>

@@ -366,7 +366,7 @@ a {
     letter-spacing: 0.1em;
     line-height: normal;
     min-height: 26px;
-    padding: 5px 0px 5px 5vw;
+    padding: 5px 10px 5px 5vw;
     white-space: nowrap;
     text-overflow: ellipsis;
     color: rgba(255, 255, 255, 1);

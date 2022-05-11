@@ -26,7 +26,41 @@ const largePlayIcon = document.getElementById("large-play-icon");
 const gainBarValue = document.getElementById("gain-bar");
 
 const wallpaper = document.getElementById("wallpaper");
+var isCustomWallpaper = false;
 
+// Screen mode Mobile = 0; Tablet = 1; Normal = 2; Large = 3;
+var screenMode = 0;
+
+// Load screen specific size styles
+var w = window.innerWidth;
+var fileref = document.createElement("link");
+
+fileref.rel = "stylesheet";
+fileref.type = "text/css";
+if (w < 640) {
+    //Load Mobile CSS
+    fileref.id = "mobileCSS";
+    fileref.href = "./styles/sm.css";
+    screenMode = 0;
+} else if (w < 768) {
+    //Load Tablet CSS
+    fileref.id = "tabletCSS";
+    fileref.href = "./styles/md.css";
+    screenMode = 1;
+} else if (w < 1025) {
+    //Load "normal" CSS
+    fileref.id = "normalCSS";
+    fileref.href = "./styles/lg.css";
+    screenMode = 2;
+} else {
+    //Load Large screen
+    fileref.id = "largeCSS";
+    fileref.href = "./styles/xl.css";
+    screenMode = 3;
+}
+
+document.getElementsByTagName("head")[0].appendChild(fileref);
+// end style loading
 
 function getStationList() {
     return new Promise((resolve, reject) => {
@@ -115,6 +149,7 @@ function setStation(stationData) {
 
     if (player) {
         player.pause();
+        createContext();
     }
 
     Howler.unload();
@@ -136,8 +171,10 @@ function setStation(stationData) {
     r.style.setProperty('--outline-color', stationData.colorsObj.colors[5]);
 
     graffitiSoul.src = "./stations/" + stationData.stationName + "/icon.png";
-    wallpaper.src = "./stations/" + stationData.stationName + "/wallpaper.jpg";
 
+    if (!isCustomWallpaper) {
+        wallpaper.src = "./stations/" + stationData.stationName + "/wallpaper.jpg";
+    }
 
     if (shuffleState != 0) {
         player.shuffle()
@@ -515,6 +552,7 @@ document.getElementById('submit').onclick = () => {
 
     imageExists(document.getElementById('wal').value, function(exists) {
         if (exists) {
+            isCustomWallpaper = true;
             wallpaper.src = document.getElementById('wal').value;
         } else {
             //TODO display error message 
@@ -664,14 +702,18 @@ const checkOnlineStatus = async() => {
     // Create a reference for the Wake Lock.
     let wakeLock = null;
 
-    // create an async function to request a wake lock
-    try {
-        wakeLock = await navigator.wakeLock.request('screen');
-        console.log('Wake Lock is active!');
-    } catch (err) {
-        // The Wake Lock request has failed - usually system related, such as battery.
-        console.log(err);
+    // only try to keep the screen alive if on mobile
+    if (screenMode == 0) {
+        // create an async function to request a wake lock
+        try {
+            wakeLock = await navigator.wakeLock.request('screen');
+            console.log('Wake Lock is active!');
+        } catch (err) {
+            // The Wake Lock request has failed - usually system related, such as battery.
+            console.log(err);
+        }
     }
+
 };
 
 setInterval(async() => {

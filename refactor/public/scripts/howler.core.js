@@ -1652,7 +1652,7 @@
 
                     // Update the seek position for HTML5 Audio.
                     if (!self._webAudio && sound._node && !isNaN(sound._node.duration)) {
-                        console.log(seek);
+                        //.log(seek);
                         sound._node.currentTime = seek;
                     }
 

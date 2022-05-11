@@ -92,8 +92,9 @@ class Player {
                         }
                         songBar.classList.remove("animation");
                         songBar.style.display = "none";
-
+                        Howler.stop(); //stops all songs globally
                         self.skip('next');
+
                     },
                     onpause: function() {
                         //Show to play button
@@ -104,6 +105,11 @@ class Player {
                         largePlayIcon.style.cursor = "pointer";
                     },
                     onstop: function() {
+                        pauseBtn.style.display = "none";
+                        playBtn.style.display = "";
+                        //Show large play button
+                        largePlayIcon.style.opacity = 1;
+                        largePlayIcon.style.cursor = "pointer";
                         // Stop the wave animation.
                         // wave.container.style.display = 'none';
                         // bar.style.display = 'block';
