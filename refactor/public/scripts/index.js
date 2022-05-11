@@ -149,7 +149,10 @@ function setStation(stationData) {
 
     if (player) {
         player.pause();
-        createContext();
+        if (!contextCreated) {
+            createContext();
+        }
+
     }
 
     Howler.unload();
