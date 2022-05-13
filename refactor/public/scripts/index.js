@@ -149,9 +149,7 @@ function setStation(stationData) {
 
     if (player) {
         player.pause();
-        if (!contextCreated) {
-            createContext();
-        }
+        createContext();
 
     }
 
@@ -562,8 +560,7 @@ document.getElementById('submit').onclick = () => {
             console.log("BAD IMAGE");
         }
     })
-
-    //TODO validate Visualization 
+    document.getElementById('settings-modal').style.display = "none";
 
 }
 

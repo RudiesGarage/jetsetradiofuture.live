@@ -79,9 +79,9 @@ class Player {
                     },
                     onload: function() {
                         // Start the animation.
-                        if (!contextCreated) {
-                            createContext();
-                        }
+                        //if (!contextCreated) {
+                        createContext();
+                        //}
 
                     },
                     onend: function() {

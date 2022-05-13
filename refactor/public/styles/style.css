@@ -212,8 +212,8 @@ a {
 #graffitiSoul {
     width: 25vw;
     height: 25vw;
-    max-width: 237px;
-    max-height: 237px;
+    max-width: 300px;
+    max-height: 300px;
     min-width: 100px;
     min-height: 100px;
 }
@@ -562,74 +562,31 @@ a {
 .side-link {
     width: 36px;
     height: 36px;
-}
-
-#keyboard-controls {
-    cursor: pointer;
-    font-size: 26px;
-}
-
-#info-link {
-    font-size: 24px;
-    position: relative;
-    transition: 1s;
-}
-
-#info-link:hover:after {
-    background: rgba(0, 0, 0, .6);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    top: 39px;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 12px;
-    font-weight: 600;
-    content: attr(data);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-    white-space: nowrap;
-    right: 0;
-    padding: 4px 8px;
-    position: absolute;
-    z-index: 100;
-    transition: text-shadow .1s;
-    font-family: 'Open Sans', sans-serif;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 12px;
-    font-weight: 700 !important;
-    text-transform: none;
-    letter-spacing: normal;
-}
-
-#info-link {
     cursor: pointer;
 }
 
-#information-modal {
-    display: block;
-    position: fixed;
-    z-index: 1000;
-    padding-top: 15vh;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.submit-button {
+    cursor: pointer;
+    align-self: center;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-    text-shadow: 1px 1px #ffffff;
-    line-height: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: orange;
+    border-color: orange;
+    border-width: 10px;
+    border-radius: 10px;
 }
 
-.information-modal-container {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #000000;
-    margin: auto auto 15vh auto;
-    padding: 20px;
-    border: solid 2px rgba(0, 0, 0, 0.5);
-    width: 80%;
-    max-width: 730px;
-    border-radius: 24px;
-    cursor: initial;
+.submit-button:hover {
+    cursor: pointer;
+    align-self: center;
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    border-color: black;
+    border-width: 2px;
+    background-color: rgba(238, 177, 45, 1);
+    border-radius: 10px;
 }
 
 .center-modal-title {
