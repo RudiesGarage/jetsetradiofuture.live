@@ -1,23 +1,11 @@
 {
-    // IRC server settings.
-    "server": {
-        // WebSocket URL or path to connect to (string).
-        "url": "wss://localhost:449",
-        // Channel(s) to auto-join (string or array of strings).
-        "autojoin": "#general",
-        // Controls how the password UI is presented to the user. Set to
-        // "mandatory" to require a password, "optional" to accept one but not
-        // require it, "disabled" to never ask for a password, or "external" to
-        // use SASL EXTERNAL. Defaults to "optional".
-        "auth": "optional",
-        // Default nickname (string).
-        "nick": "",
-        // Don't display the login UI, immediately connect to the server
-        // (boolean).
-        "autoconnect": true,
-        // Interval in seconds to send PING commands (number). Set to 0 to
-        // disable. Enabling PINGs can have an impact on client power usage and
-        // should only be enabled if necessary.
-        "ping": 60
-    }
+        "server": {
+                "url": "wss://demo.jetsetradiofuture.live:449",
+                "autojoin": "#test",
+                "auth": "optional",
+                "nick": "",
+                "autoconnect": false,
+                "ping": 60
+        }
 }
+
