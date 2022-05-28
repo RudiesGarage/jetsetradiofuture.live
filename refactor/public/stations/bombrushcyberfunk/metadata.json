@@ -1,6 +1,7 @@
 {
+"name":"bombrushcyberfunk",
 "wallpaper":"wallpaper.jpg",
 "description":"BombRushCyberFunk Ost",
-"supportLink":"",
-"colors":["#54940c","#24590c","#ecc605","#e20f47","#e20f47","#040404"]
+"supportLink": "https://store.steampowered.com/app/1353230/Bomb_Rush_Cyberfunk/",
+"isLive": "false"
 }

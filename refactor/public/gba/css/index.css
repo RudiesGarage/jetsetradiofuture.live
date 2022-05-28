@@ -1,0 +1,162 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: arial, sans-serif;
+  color: #ccc;
+  background: #191919;
+  font-size: 13px;
+}
+canvas {
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  top: 0px;
+  position: absolute;
+  width: 480px;
+  height: 320px;
+}
+.ui {
+  color: #4d2990;
+}
+.ui-border-1 {
+  float: left;
+}
+.ui-border-2 {
+  padding: 20px;
+  background-color: white;
+  float: left;
+  position: relative;
+}
+section {
+  margin: 23px 0px;
+}
+h2 {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  text-decoration: underline;
+}
+table {
+  margin: 0;
+}
+p,
+label {
+  margin: 0;
+  font-size: 14px;
+}
+.gap {
+  margin-top: 10px;
+}
+input[type="file"] {
+  position: absolute;
+  left: -1000000px;
+}
+#load-rom-from-url {
+  height: 23px;
+  border-radius: 3px;
+  border: solid 2px black;
+  margin-left: 16px;
+  padding: 3px 13px;
+}
+.btn {
+  display: inline-block;
+  border: 1px #9b69b7 solid;
+  border-width: 4px 2px;
+  padding: 5px 13px;
+  background-color: #3a3a3a;
+  color: #ece6ff;
+  font-weight: 600;
+  font-size: 13px;
+  min-width: 60px;
+  text-align: center;
+}
+.btn:hover {
+  cursor: pointer;
+  border-color: #b09cbb;
+  background-color: #7a7994;
+}
+.empty-table {
+  font-size: 11px;
+}
+table {
+  border-collapse: collapse;
+  font-size: 11px;
+}
+td {
+  padding: 3px 11px;
+  border: 2px solid #aa17fe;
+  border-top: none;
+  border-bottom: none;
+}
+a {
+  color: #a89be8;
+}
+.report-bug-button {
+  font-size: 11px;
+}
+.modal {
+  display: none;
+}
+.modal-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+  background-color: black;
+}
+.modal-body {
+  width: 400px;
+  margin: 0 auto;
+  position: absolute;
+  border: 1px solid #aa17fe;
+  background-color: white;
+  border-left-width: 3px;
+  border-right-width: 3px;
+
+  left: 50%;
+  margin-left: -218px; /* =(400 + 2*15 + 2*3) / 2 */
+  margin-top: 60px;
+  padding: 15px;
+}
+.modal-title {
+  font-size: 16px;
+}
+.modal-buttons {
+  text-align: center;
+}
+.modal-button-left,
+.modal-button-right {
+  margin: 6px 4px 3px 4px;
+}
+.modal-progress {
+  height: 4px;
+  margin-bottom: 10px;
+  background-color: #9b69b7;
+}
+.modal-input {
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+  margin: 10px 0;
+  border: 2px solid #9b69b7;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #4d2990;
+}
+.perf {
+  position: fixed;
+  bottom: 0;
+  color: white;
+  padding: 4px;
+  margin: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.perf-left {
+  display: inline-block;
+  width: 200px;
+}

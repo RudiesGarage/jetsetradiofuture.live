@@ -1,6 +1,7 @@
 {
+"name":"brcconcept",
 "wallpaper":"wallpaper.jpg",
 "description":"BombRushCyberFunk Concept Music",
-"supportLink":"https://cold92.bandcamp.com/",
-"colors":["#54940c","#24590c","#ecc605","#e20f47","#e20f47","#040404"]
+"supportLink":"https://cold92.bandcamp.com/", 
+"isLive": "false"
 }

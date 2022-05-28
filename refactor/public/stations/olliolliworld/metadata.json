@@ -1,6 +1,7 @@
 {
+"name":"olliolliworld",
 "wallpaper":"wallpaper.jpg",
-"description":"BombRushCyberFunk Ost",
-"supportLink":"",
-"colors":["#54940c","#24590c","#ecc605","#e20f47","#e20f47","#040404"]
+"description":"Olli Olli World Ost",
+"supportLink":"https://store.steampowered.com/app/1190170/OlliOlli_World/", 
+"isLive":"false"
 }

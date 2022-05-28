@@ -1,6 +1,7 @@
 {
+"name":"chiptunes",
 "wallpaper":"wallpaper.jpg",
 "description":"Chiptunes",
-"supportLink":"",
-"colors":["#54940c","#24590c","#ecc605","#e20f47","#e20f47","#040404"]
+"supportLink":"", 
+"isLive":"false"
 }

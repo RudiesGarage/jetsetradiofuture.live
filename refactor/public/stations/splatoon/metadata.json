@@ -1,6 +1,7 @@
 {
+"name":"splatoon",
 "wallpaper":"wallpaper.jpg",
 "description":"Splatoon Series Ost",
 "supportLink":"",
-"colors":["#54940c","#24590c","#ecc605","#e20f47","#e20f47","#040404"]
+"isLive":"false"
 }

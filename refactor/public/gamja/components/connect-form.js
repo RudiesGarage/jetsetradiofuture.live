@@ -58,7 +58,7 @@ export default class ConnectForm extends Component {
             username: this.state.username,
             realname: this.state.realname,
             saslPlain: null,
-            autojoin: ["#test"],
+            autojoin: ["#general"],
             welcomePhrase: item
         };
 
@@ -72,7 +72,7 @@ export default class ConnectForm extends Component {
         }
 
         if (this.state.autojoin) {
-            params.autojoin = ["#test"]; //|| [];
+            params.autojoin = ["#general"]; //|| [];
         }
 
 

@@ -1,6 +1,7 @@
 {
+"name":"crazytaxi",
 "wallpaper":"wallpaper.jpg",
-"description":"BombRushCyberFunk Ost",
-"supportLink":"",
-"colors":["#54940c","#24590c","#ecc605","#e20f47","#e20f47","#040404"]
+"description":"CrazyTaxi Series Ost",
+"supportLink":"https://store.steampowered.com/app/71230/crazy_taxi", 
+"isLive":"false"
 }

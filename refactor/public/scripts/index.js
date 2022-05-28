@@ -68,7 +68,7 @@ function getStationList() {
         let xhr = new XMLHttpRequest();
 
         // 2. Configure it: GET-request for the URL /article/.../load
-        xhr.open('GET', './stations/stations.json');
+        xhr.open('GET', './stations/stationsList.json');
         xhr.responseType = 'json';
         // 3. Send the request over the network
         xhr.send();
@@ -239,21 +239,23 @@ let analyser;
 let gain;
 
 const createContext = () => {
-    contextCreated = true;
-    context = Howler.ctx;
-    analyser = context.createAnalyser();
-    analyser.minDecibels = -105;
-    analyser.maxDecibels = -25;
-    analyser.smoothingTimeConstant = 0.8;
-    gain = Howler.masterGain;
-    if (player.currentSong()) {
-        let src = context.createMediaElementSource(player.currentSong()._sounds[0]._node);
-        src.connect(gain);
-    }
-    gain.connect(analyser);
-    updateGain(Howler.volume());
-    analyser.connect(context.destination);
-    createVisualizer();
+
+    // contextCreated = true;
+    // context = Howler.ctx;
+    // analyser = context.createAnalyser();
+    // analyser.minDecibels = -105;
+    // analyser.maxDecibels = -25;
+    // analyser.smoothingTimeConstant = 0.8;
+    // gain = Howler.masterGain;
+    // if (player.currentSong()) {
+    //     let src = context.createMediaElementSource(player.currentSong()._sounds[0]._node);
+    //     src.connect(gain);
+    // }
+    // gain.connect(analyser);
+    // updateGain(Howler.volume());
+    // analyser.connect(context.destination);
+    // createVisualizer();
+
 };
 
 
@@ -304,7 +306,7 @@ function loadStationModal(Stationresobj) {
             div2.classList.add('stationShuffle');
 
             //shuffle checkbox if not live
-            if (stationobj.isLive === undefined && typeof stationobj.isLive == 'undefined') {
+            if (stationobj.isLive == "false") {
                 let shuffinput = document.createElement('input');
                 shuffinput.setAttribute('type', "checkbox");
                 shuffinput.setAttribute('id', "shuffleCheckBox_" + stationobj.name);

@@ -2,6 +2,8 @@
 The future is one big blank slate, it up to you to decide whats goes on in it.
 This is offical repo of [jetsetradiofuture.live](https://jetsetradiofuture.live) 
 
+## System Structure
+
 
 
 ### Issues & Requests

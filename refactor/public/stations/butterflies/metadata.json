@@ -1,6 +1,7 @@
 {
+"name":"butterflies",
 "wallpaper":"wallpaper.jpg",
 "description":"Butterflies Series Ost",
-"supportLink":"",
-"colors":["#54940c","#24590c","#ecc605","#e20f47","#e20f47","#040404"]
+"supportLink":"https://le-capitaine.itch.io/butterflies-episode-1", 
+"isLive":"false"
 }

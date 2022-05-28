@@ -89,8 +89,7 @@ function splitHostPort(str) {
 }
 
 function fillConnectParams(params) {
-    // let host = window.location.host || "localhost:8080";
-    let host = "localhost";
+    let host = window.location.host || "localhost";
     let proto = "wss:";
     if (window.location.protocol != "https:") {
         proto = "ws:";

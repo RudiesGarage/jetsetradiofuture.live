@@ -1,6 +1,7 @@
 {
+"name":"garage",
 "wallpaper":"wallpaper.jpg",
-"description":"BombRushCyberFunk Ost",
-"supportLink":"",
-"colors":["#54940c","#24590c","#ecc605","#e20f47","#e20f47","#040404"]
+"description":"Chillhop",
+"supportLink":"", 
+"isLive":"false"
 }

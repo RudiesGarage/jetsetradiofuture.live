@@ -1,6 +1,7 @@
 {
+"name":"cyberia",
 "wallpaper":"wallpaper.jpg",
-"description":"BombRushCyberFunk Ost",
-"supportLink":"",
-"colors":["#54940c","#24590c","#ecc605","#e20f47","#e20f47","#040404"]
+"description":"Cyberia Radio",
+"supportLink":"https://lainchan.org/radiora",
+"isLive":"true"
 }
