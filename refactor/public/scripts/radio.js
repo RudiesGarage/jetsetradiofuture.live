@@ -247,7 +247,7 @@ class Player {
             let sound = self.playlist[self.index].howl;
 
             // Convert the percent into a seek position.
-            if (sound.playing()) {
+            if (sound) {
                 sound.seek(inc);
             }
             self.updateDisplayTime();
@@ -263,7 +263,7 @@ class Player {
             let sound = self.playlist[self.index].howl;
 
             // Convert the percent into a seek position.
-            if (sound.playing()) {
+            if (sound) {
                 sound.seek(sound.duration() * per);
             }
             self.updateDisplayTime();

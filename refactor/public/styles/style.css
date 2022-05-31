@@ -539,7 +539,7 @@ a {
     display: flex;
     flex-direction: column;
     max-height: 50vh;
-    min-height: 25vh;
+    min-height: 30vh;
     justify-content: space-evenly;
     align-items: center;
     border: 1px solid #000000;

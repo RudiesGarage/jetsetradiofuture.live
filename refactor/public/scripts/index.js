@@ -209,11 +209,11 @@ const chatModal = document.getElementById('chat-modal');
 
 //const rainbowButton = document.getElementById('rainbow-button');
 
-let selectedVisualizer = "waveformLinear";
-let selectedColor = "rainbowD3";
-let selectedBackgroundDirection = "45deg";
+// let selectedVisualizer = "waveformLinear";
+// let selectedColor = "rainbowD3";
+// let selectedBackgroundDirection = "45deg";
 
-
+/*
 const visualizerObj = {
 
     waveformLinear: {
@@ -232,6 +232,7 @@ const colorObj = {
         next: "plasmaD3",
     },
 };
+*/
 
 let contextCreated = false;
 let context;
@@ -320,7 +321,7 @@ function loadStationModal(Stationresobj) {
             let div3 = document.createElement('div');
             div3.classList.add('stationShuffle');
             //add Support link if it exists
-            if (stationobj.supportLink !== undefined && typeof stationobj.supportLink != 'undefined') {
+            if (stationobj.supportLink.length != 0) {
                 let supportLink = document.createElement('a');
                 supportLink.style.color = "#eee";
                 supportLink.style.textDecoration = "underline";
@@ -640,10 +641,10 @@ const updateGain = (value) => {
     Howler.volume(value);
 };
 
-
-
 document.getElementById("playbar").onclick = (e) => {
+
     if (player.currentSong() !== null) {
+        console.log(e)
         const bounds = e.currentTarget.getBoundingClientRect();
         const percent = ((e.clientX - (bounds.left)) / bounds.width);
         player.seekPer(percent);
