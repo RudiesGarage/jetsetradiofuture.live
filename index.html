@@ -44,15 +44,8 @@
     <div id="titleScreenDiv" class="objectSettings touchableOn" style="z-index:898;">
         
 
-
-
-
         <div id="titleScreenOverlay" class="objectSettings touchableOff" style="z-index:406;"> </div>
-
-        <div id="titleScreen" class="objectSettings touchableOff" style="z-index:406;display: flex;
-        align-items: center;
-        justify-content: center;">
-            
+        <div id="titleScreen" class="objectSettings touchableOff" style="z-index:406;display: flex;align-items: center;justify-content: center;">
             <img class="face"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_antennas.svg#svgView(preserveAspectRatio(none))"></img>
             <img class="face"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_crown.svg#svgView(preserveAspectRatio(none))"></img>
             <img class="face"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_earphones.svg#svgView(preserveAspectRatio(none))"></img>
@@ -68,11 +61,7 @@
             <img class="set" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_set.svg"></img>
             <img class="radio" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_radio.svg"></img>
             <img class="future" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_future.svg"></img>
-            
          </div>
-
-         
-
 
         <img id="titleScreen" class="objectSettings touchableOff" style="z-index:401;" src="titlescreen/images/titleScreen_JSRF.jpg">
         <img id="playButton" class="objectSettings touchableOff pulseAnimation" style="z-index:405;" src="titlescreen/images/playButton.png">
@@ -87,23 +76,43 @@
     <!--===================================-->
     <script>
         let tl= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl0= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl1= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl2= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl3= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl4= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl5= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl6= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl7= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl8= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl9= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        
         var currentDelay = tl.delay(); 
+
        tl.delay(5); 
-
-        tl.from('.head ',{x:(-1000),duration:4,'width':'200%','height':'50%' })
-            .from('.face',{duration:1, 'transform': 'translate(0%,-10%) scale(0)', })
-            .from('.eyes',{duration:.2, 'transform': 'translate(0%,-10%) scale(0)', },"-=.5")
-            .from('.line',{duration:1,'width':'500%','height':'50%' })
-            .from('.J',{y:(-3500),duration:4,'height':'2000%' })
-            .from('.S',{duration:3,'width':'2000%' })
-            .from('.R',{x:(-10000),duration:3,'width':'2000%' })
-            .from('.F',{x:(-10000),duration:3,'width':'2000%' })
-            .from('.jet',{duration:3,y:(-10000),'width':'2000%'})
-            .from('.set',{duration:3,x:(10000),'width':'2000%' })
-            .from('.radio',{x:(-5000),duration:3,'width':'2000%' })
-            .from('.future',{x:(1000),y:(-10000),duration:3,'width':'2000%' })
-
-            
+       tl0.delay(6); 
+       tl1.delay(6); 
+       tl2.delay(6); 
+       tl3.delay(6); 
+       tl4.delay(6); 
+       tl5.delay(6); 
+       tl6.delay(6); 
+       tl7.delay(6); 
+       tl8.delay(6); 
+      
+    
+            tl.from('.head ',{x:(-1000),duration:5,'width':'200%','height':'50%' },)
+            .from('.face',{duration:2, 'transform': 'translate(0%,-10%) scale(0)', })
+            .from('.eyes',{duration:.5, 'transform': 'translate(0%,-10%) scale(0)', },"-=.5")
+            tl0.from('.line',{duration:5,'width':'500%','height':'50%' })
+            tl1.from('.J',{y:(-3500),duration:5,'height':'2000%' },)
+            tl2.from('.S',{duration:5,'width':'2000%' })
+            tl3.from('.R',{x:(-10000),duration:5,'width':'2000%' })
+            tl4.from('.F',{x:(-10000),duration:5,'width':'2000%' })
+            tl5.from('.jet',{duration:5,y:(-10000),'width':'2000%'})
+            tl6.from('.set',{duration:5,x:(10000),'width':'2000%' })
+            tl7.from('.radio',{x:(-5000),duration:5,'width':'2000%' })
+            tl8.from('.future',{x:(1000),y:(-10000),duration:5,'width':'2000%' })
             </script>
     <!--============================================ RADIO =================================================-->
 
