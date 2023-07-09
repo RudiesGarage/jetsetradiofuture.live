@@ -59,11 +59,11 @@
             <img class="head" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_head.svg#svgView(preserveAspectRatio(none))"></img>
             <img class="face" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_speakers.svg#svgView(preserveAspectRatio(none))"></img>
             <img class="eyes"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_eyes.svg#svgView(preserveAspectRatio(none))"></img>
-            <img style="position:  absolute;width: 50%;;" src="titlescreen/svg/JSRF_typo_line.svg"></img>
+            <img class="line" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_line.svg#svgView(preserveAspectRatio(none))"></img>
             <img class="J" style="position:  absolute;width: 50%;height: auto;" src="titlescreen/svg/JSRF_typo_J.svg#svgView(preserveAspectRatio(none))"></img>
             <img class="S" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_S.svg"></img>
-            <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_R.svg"></img>
-            <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_F.svg"></img>
+            <img class="R" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_R.svg"></img>
+            <img class="F" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_F.svg"></img>
             <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_jet.svg"></img>
             <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_set.svg"></img>
             <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_radio.svg"></img>
@@ -93,8 +93,11 @@
         tl.from('.head ',{x:(-1000),duration:4,'width':'200%','height':'50%' })
             .from('.face',{duration:1, 'transform': 'translate(0%,-10%) scale(0)', })
             .from('.eyes',{duration:.2, 'transform': 'translate(0%,-10%) scale(0)', },"-=.5")
+            .from('.line',{duration:1,'width':'500%','height':'50%' })
             .from('.J',{y:(-3500),duration:4,'height':'2000%' })
-            .from('.S',{y:(100),x:(-1000),duration:1,'width':'200%' })
+            .from('.S',{duration:3,'width':'2000%' })
+            .from('.R',{x:(-10000),duration:3,'width':'2000%' })
+            .from('.F',{x:(-10000),duration:3,'width':'2000%' })
 
             
             </script>
