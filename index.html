@@ -53,15 +53,15 @@
         align-items: center;
         justify-content: center;">
             
-            <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_antennas.svg"></img>
-            <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_crown.svg"></img>
-            <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_earphones.svg"></img>
-            <img class="head" style="width: 50%;" src="titlescreen/svg/JSRF_logo_head.svg#svgView(preserveAspectRatio(none))"></img>
-            <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_speakers.svg"></img>
-            <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_eyes.svg"></img>
+            <img class="face"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_antennas.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="face"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_crown.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="face"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_earphones.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="head" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_head.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="face" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_speakers.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="eyes"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_eyes.svg#svgView(preserveAspectRatio(none))"></img>
             <img style="position:  absolute;width: 50%;;" src="titlescreen/svg/JSRF_typo_line.svg"></img>
-            <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_J.svg"></img>
-            <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_S.svg"></img>
+            <img class="J" style="position:  absolute;width: 50%;height: auto;" src="titlescreen/svg/JSRF_typo_J.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="S" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_S.svg"></img>
             <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_R.svg"></img>
             <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_F.svg"></img>
             <img style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_jet.svg"></img>
@@ -91,6 +91,11 @@
        tl.delay(5); 
 
         tl.from('.head ',{x:(-1000),duration:4,'width':'200%','height':'50%' })
+            .from('.face',{duration:1, 'transform': 'translate(0%,-10%) scale(0)', })
+            .from('.eyes',{duration:.2, 'transform': 'translate(0%,-10%) scale(0)', },"-=.5")
+            .from('.J',{y:(-3500),duration:4,'height':'2000%' })
+            .from('.S',{y:(100),x:(-1000),duration:1,'width':'200%' })
+
             
             </script>
     <!--============================================ RADIO =================================================-->
