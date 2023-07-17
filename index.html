@@ -42,16 +42,78 @@
     <!--========================================== TITLE SCREEN =============================================-->
 
     <div id="titleScreenDiv" class="objectSettings touchableOn" style="z-index:898;">
-        <img id="titleScreenOverlay" class="objectSettings touchableOff" style="z-index:405;" src="titlescreen/images/titleScreenOverlay.png">
-        <img id="titleScreen" class="objectSettings touchableOff" style="z-index:401;" src="titlescreen/images/titleScreen.jpg">
+        
+
+        <div id="titleScreenOverlay" class="objectSettings touchableOff" style="z-index:406;"> </div>
+        <div id="titleScreen" class="objectSettings touchableOff" style="z-index:406;display: flex;align-items: center;justify-content: center;">
+            <img class="face"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_antennas.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="face"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_crown.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="face"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_earphones.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="head" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_head.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="face" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_speakers.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="eyes"style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_logo_eyes.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="line" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_line.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="J" style="position:  absolute;width: 50%;height: auto;" src="titlescreen/svg/JSRF_typo_J.svg#svgView(preserveAspectRatio(none))"></img>
+            <img class="S" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_S.svg"></img>
+            <img class="R" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_R.svg"></img>
+            <img class="F" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_F.svg"></img>
+            <img class="jet" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_jet.svg"></img>
+            <img class="set" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_set.svg"></img>
+            <img class="radio" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_radio.svg"></img>
+            <img class="future" style="position:  absolute;width: 50%;" src="titlescreen/svg/JSRF_typo_future.svg"></img>
+         </div>
+
+        <img id="titleScreen" class="objectSettings touchableOff" style="z-index:401;" src="titlescreen/images/titleScreen_JSRF.jpg">
         <img id="playButton" class="objectSettings touchableOff pulseAnimation" style="z-index:405;" src="titlescreen/images/playButton.png">
     </div>
 
 
     <!--===================================-->
     <script type="application/javascript" src="titlescreen/javascript.js"></script>
+    <script type="application/javascript" src="titlescreen/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--===================================-->
+    <script>
+        let tl= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl0= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl1= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl2= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl3= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl4= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl5= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl6= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl7= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl8= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        let tl9= gsap.timeline({ defaults:{ease: "power1.inOut", duration: 6}})
+        
+        var currentDelay = tl.delay(); 
 
+       tl.delay(5); 
+       tl0.delay(6); 
+       tl1.delay(6); 
+       tl2.delay(6); 
+       tl3.delay(6); 
+       tl4.delay(6); 
+       tl5.delay(6); 
+       tl6.delay(6); 
+       tl7.delay(6); 
+       tl8.delay(6); 
+      
+    
+            tl.from('.head ',{x:(-1000),duration:5,'width':'200%','height':'50%' },)
+            .from('.face',{duration:2, 'transform': 'translate(0%,-10%) scale(0)', })
+            .from('.eyes',{duration:.5, 'transform': 'translate(0%,-10%) scale(0)', },"-=.5")
+            tl0.from('.line',{duration:5,'width':'500%','height':'50%' })
+            tl1.from('.J',{y:(-3500),duration:5,'height':'2000%' },)
+            tl2.from('.S',{duration:5,'width':'2000%' })
+            tl3.from('.R',{x:(-10000),duration:5,'width':'2000%' })
+            tl4.from('.F',{x:(-10000),duration:5,'width':'2000%' })
+            tl5.from('.jet',{duration:5,y:(-10000),'width':'2000%'})
+            tl6.from('.set',{duration:5,x:(10000),'width':'2000%' })
+            tl7.from('.radio',{x:(-5000),duration:5,'width':'2000%' })
+            tl8.from('.future',{x:(1000),y:(-10000),duration:5,'width':'2000%' })
+            </script>
     <!--============================================ RADIO =================================================-->
 
     <audio id="staticPlayer" class="objectSettings touchableOff" style="z-index:104;" preload="auto">
