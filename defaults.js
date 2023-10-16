@@ -8,10 +8,8 @@ function allSizeAndPosition() {
 }
 
 function retrieveMousePositions(e) {
-    if (null != e.touches) {
-        var t = e.touches[0];
-        mouseX = t.pageX, mouseY = t.pageY
-    } else mouseX = e.pageX, mouseY = e.pageY
+    var t;
+    mouseY = null != e.touches ? (t = e.touches[0], mouseX = t.pageX, t.pageY) : (mouseX = e.pageX, e.pageY)
 }
 
 function detectMousePositionsAndGestures() {
@@ -49,7 +47,7 @@ function queryValue(e) {
 }
 
 function shuffleArray(e) {
-    for (var t = e.length, n = 0, s = 0; 0 !== t;) s = Math.floor(Math.random() * t), n = e[--t], e[t] = e[s], e[s] = n
+    for (var t, n, s = e.length; 0 !== s;) n = Math.floor(Math.random() * s), t = e[--s], e[s] = e[n], e[n] = t
 }
 allRuntimeFunctionsList = new Array, magnification = 0, allSizeAndPositionFunctionsList = new Array, window.addEventListener("resize", function() {
     allSizeAndPosition()

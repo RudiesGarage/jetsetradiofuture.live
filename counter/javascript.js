@@ -3,45 +3,27 @@ function xmlString(e) {
 }
 
 function saveCounterXML() {
-
-
-    chatpassword = queryValue("p"), counterPostMessage = { "chatpassword": chatpassword };
+    chatpassword = queryValue("p"), counterPostMessage = "chatpassword=" + chatpassword;
     var e = new XMLHttpRequest;
-    e.open("POST", "counter/counter.php", !0);
-    e.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    e.responseType = 'json';
-    e.send(JSON.stringify(counterPostMessage));
-    e.onreadystatechange = function() {
-        4 == e.readyState;
+    e.open("POST", "counter/counter.php", !0), e.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), e.send(counterPostMessage), e.onreadystatechange = function() {
+        4 == e.readyState && loadCounterXML()
     }
-    // the response is {"message": "Hello, world!"}
-	e.onload = function() {
-	  let responseObj = e.response;
-	  console.log(responseObj); // Hello, world!
-	  totalListeners = responseObj.listeners;
-	};
-     
 }
 
 function loadCounterXML() {
-saveCounterXML();
-/*
     randomCacheNumber = Math.floor(999999999 * Math.random() + 1), counterLoadRequest = new XMLHttpRequest, counterLoadRequest.open("GET", "counter/listeners.xml?" + randomCacheNumber, !0), counterLoadRequest.send(), counterLoadRequest.onreadystatechange = function() {
         4 == counterLoadRequest.readyState && (void 0 === counterLoadRequest.responseXML || null === counterLoadRequest.responseXML || (counterXMLDocument = counterLoadRequest.responseXML, void 0 !== counterXMLDocument.getElementsByTagName("user")[0] && (totalListeners = counterXMLDocument.getElementsByTagName("user").length)))
     }
-*/
 }
 
 function dateSizeAndPosition() {
-    var e = "worldIcon",
-        t = 190 / 209;
-    document.getElementById(e).style.height = 1.3 * parseInt(document.getElementById("radioButton").style.height) + "px", document.getElementById(e).style.width = Math.round(parseInt(document.getElementById(e).style.height) * t) + "px", document.getElementById(e).style.left = "0px", document.getElementById(e).style.top = "0px";
-    e = "dateTextField", t = 20;
-    document.getElementById(e).style.height = Math.round(.99 * parseInt(document.getElementById("worldIcon").style.height)) + "px", document.getElementById(e).style.width = stageWidth + "px", document.getElementById(e).style.left = Math.round(.9 * parseInt(document.getElementById("worldIcon").style.height)) + "px", document.getElementById(e).style.top = Math.round(.27 * parseInt(document.getElementById("worldIcon").style.height)) + "px", document.getElementById(e).style.fontSize = Math.round(.35 * parseInt(document.getElementById("dateTextField").style.height)) + "px", document.getElementById(e).style.color = "#FFFFFF", document.getElementById(e).style.textAlign = "left", document.getElementById(e).style.lineHeight = "1", document.getElementById(e).style.opacity = .9
+    document.getElementById("worldIcon").style.height = 1.3 * parseInt(document.getElementById("radioButton").style.height) + "px", document.getElementById("worldIcon").style.width = Math.round(parseInt(document.getElementById("worldIcon").style.height) * (190 / 209)) + "px", document.getElementById("worldIcon").style.left = "0px", document.getElementById("worldIcon").style.top = "0px";
+    var e = "dateTextField";
+    document.getElementById(e).style.height = Math.round(.99 * parseInt(document.getElementById("worldIcon").style.height)) + "px", document.getElementById(e).style.width = stageWidth + "px", document.getElementById(e).style.left = Math.round(.9 * parseInt(document.getElementById("worldIcon").style.height)) + "px", document.getElementById(e).style.top = Math.round(.28 * parseInt(document.getElementById("worldIcon").style.height)) + "px", document.getElementById(e).style.fontSize = Math.round(.32 * parseInt(document.getElementById("dateTextField").style.height)) + "px", document.getElementById(e).style.color = "#FFFFFF", document.getElementById(e).style.textAlign = "left", document.getElementById(e).style.lineHeight = "1", document.getElementById(e).style.opacity = .9
 }
 
 function updateDisplay() {
-    1 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>JetSetRadioFuture</regularText><transparentText>.Live</transparentText>"), 2 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>On Air</regularText><transparentText> Tokyo-to</transparentText>"), 3 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>Listening Now</regularText><transparentText> " + totalListeners + "</transparentText>")
+    1 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>JetSetRadio</regularText><transparentText>.Live</transparentText>"), 2 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>On Air</regularText><transparentText> Tokyo-to</transparentText>"), 3 == displayData && (document.getElementById("dateTextField").innerHTML = "<regularText>Listening Now</regularText><transparentText> " + totalListeners + "</transparentText>")
 }
 var s1, s2, s3;
 

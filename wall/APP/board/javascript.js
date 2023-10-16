@@ -1,282 +1,71 @@
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-//Defaults
-totalThumbnails = 0;
-newDocumentValue = "";
-oldDocumentValue = "";
-lastTotal = 0;
-
-
-
 function loadXML() {
-
-    //1) Generate a random number to prevent loading the cached XML
-    randomCacheNumber = Math.floor((Math.random() * 999999999) + 1);
-
-
-    //2) Load the XML document
-    xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "editor/items.xml?" + randomCacheNumber, true);
-    xhttp.send();
-
-
-    //3) When the XML document loads 
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4) {
-
-
-            //A) The document can be now be used         
-            xmlDocument = xhttp.responseXML;
-            newDocumentValue = xmlString(xmlDocument);
-
-
-            //B) Setup and duplicate items if it is new data
-            if (newDocumentValue !== oldDocumentValue) {
-                oldDocumentValue = xmlString(xmlDocument);
-
-
-                //1) Define the total number of items
-                lastTotal = totalThumbnails;
-                totalThumbnails = xmlDocument.getElementsByTagName("item").length - (1);
-
-
-                //2) Remove all the thumbnails using the lastTotal
-                for (d = 1; d <= lastTotal; d++) {
-                    document.getElementById("thumbnail" + d).parentNode.removeChild(document.getElementById("thumbnail" + d));
-                }
-
-
-                //3) Clone and duplicate the thumbnails (start at 1 because the first item 0 already exists)
-                for (d = 1; d <= totalThumbnails; d++) {
-
-                    //1) Select the object you want to clone
-                    var selectedObject = document.getElementById("thumbnail0");
-
-
-                    //2) Store the clone & give it an ID
-                    var clonedObject = selectedObject.cloneNode(true);
-                    clonedObject.id = "thumbnail" + d;
-                    //clonedObject.setAttribute("id","thumbnail"+d);
-
-
-                    //3) Now add it to the document
-                    document.getElementById("board").appendChild(clonedObject);
-                    //document.body.appendChild(clonedObject);
-
-                }
-
-
-                //4) Set the thumbnail image
-                for (d = 0; d <= totalThumbnails; d++) {
-
-                    //1) Reverse all the z depths so the newest is on top
-                    document.getElementById("thumbnail" + d).style.zIndex = 500 - d;
-
-
-                    //2) Define the XML item variables
-                    document.getElementById("thumbnail" + d).imageLink = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("image")[0].childNodes[0].nodeValue;
-                    document.getElementById("thumbnail" + d).size = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("size")[0].childNodes[0].nodeValue;
-                    document.getElementById("thumbnail" + d).xPos = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("xPos")[0].childNodes[0].nodeValue;
-                    document.getElementById("thumbnail" + d).yPos = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("yPos")[0].childNodes[0].nodeValue;
-                    document.getElementById("thumbnail" + d).rotation = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("rotation")[0].childNodes[0].nodeValue;
-
-                    document.getElementById("thumbnail" + d).myID = d;
-
-
-                    //3) Set the thumbnail images
-                    document.getElementById("thumbnail" + d).style.display = "none";
-                    document.getElementById("thumbnail" + d).src = "";
-                    document.getElementById("thumbnail" + d).src = document.getElementById("thumbnail" + d).imageLink;
-
-                    document.getElementById("thumbnail" + d).onload = function() {
-                        console.log("Loaded Image: " + this.myID);
-                        document.getElementById("thumbnail" + this.myID).style.display = "block";
-                    };
-
-                }
-
-
-                //5) Now launch size and position function so it sizes and positions all the items
-                boardSizeAndPosition();
-
+    console.log("Loading WALL..."), randomCacheNumber = Math.floor(999999999 * Math.random() + 1), xhttp = new XMLHttpRequest, xhttp.open("GET", "editor/items.xml?" + randomCacheNumber, !0), xhttp.send(), xhttp.onreadystatechange = function() {
+        if (4 == xhttp.readyState && (console.log("Data Loaded..."), xmlDocument = xhttp.responseXML, newDocumentValue = xmlString(xmlDocument), newDocumentValue !== oldDocumentValue)) {
+            for (oldDocumentValue = xmlString(xmlDocument), console.log("Preparing NEW IMAGES..."), lastTotal = totalThumbnails, totalThumbnails = xmlDocument.getElementsByTagName("item").length - 1, d = 1; d <= lastTotal; d++) document.getElementById("thumbnail" + d).parentNode.removeChild(document.getElementById("thumbnail" + d));
+            for (d = 1; d <= totalThumbnails; d++) {
+                var e = document.getElementById("thumbnail0").cloneNode(!0);
+                e.id = "thumbnail" + d, document.getElementById("board").appendChild(e)
             }
-
-
+            for (d = 0; d <= totalThumbnails; d++) document.getElementById("thumbnail" + d).style.zIndex = 500 - d, document.getElementById("thumbnail" + d).imageLink = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("image")[0].childNodes[0].nodeValue, document.getElementById("thumbnail" + d).size = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("size")[0].childNodes[0].nodeValue, document.getElementById("thumbnail" + d).xPos = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("xPos")[0].childNodes[0].nodeValue, document.getElementById("thumbnail" + d).yPos = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("yPos")[0].childNodes[0].nodeValue, document.getElementById("thumbnail" + d).rotation = xmlDocument.getElementsByTagName("item")[totalThumbnails - d].getElementsByTagName("rotation")[0].childNodes[0].nodeValue, document.getElementById("thumbnail" + d).myID = d, document.getElementById("thumbnail" + d).style.display = "none", document.getElementById("thumbnail" + d).src = "", document.getElementById("thumbnail" + d).src = document.getElementById("thumbnail" + d).imageLink, document.getElementById("thumbnail" + d).onload = function() {
+                document.getElementById("thumbnail" + this.myID).style.display = "block"
+            };
+            boardSizeAndPosition()
         }
     }
 }
 
-
-
-//---------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-
-
-function xmlString(doc) {
-
-    if (window.ActiveXObject) {
-        return doc.xml;
-    } else {
-        return (new XMLSerializer()).serializeToString(doc);
-    }
-
+function xmlString(e) {
+    return window.ActiveXObject ? e.xml : (new XMLSerializer).serializeToString(e)
 }
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                             // 
-//        BOARD        //
-//                             //
-/////////////////////////////////
-
-
 
 function boardSizeAndPosition() {
-
-    ///////////////////////////////////
-    // OBJECT /////////////////////////
-
-    var objectName = "board";
-    var objectRatio = 100 / 100;
-
-    document.getElementById(objectName).style.height = stageHeight + "px";
-    document.getElementById(objectName).style.width = stageWidth + "px";
-    document.getElementById(objectName).style.top = 0 + "px";
-    document.getElementById(objectName).style.left = 0 + "px";
-
-    document.getElementById(objectName).style.overflow = "hidden";
-
-    ///////////////////////////////////
-    // OBJECT /////////////////////////
-
-    var objectName = "boardBackground";
-    var objectRatio = 1280 / 720;
-
-    document.getElementById(objectName).style.height = stageHeight + "px";
-    document.getElementById(objectName).style.width = Math.round(parseInt(document.getElementById(objectName).style.height) * objectRatio) + "px";
-    document.getElementById(objectName).style.left = -((parseInt(document.getElementById(objectName).style.width) - stageWidth) / 2) + "px";
-    document.getElementById(objectName).style.top = -((parseInt(document.getElementById(objectName).style.height) - stageHeight) / 2) + "px";
-
-    if (parseInt(document.getElementById(objectName).style.width) < stageWidth) {
-        document.getElementById(objectName).style.width = stageWidth + "px";
-        document.getElementById(objectName).style.height = Math.round(parseInt(document.getElementById(objectName).style.width) / objectRatio) + "px";
-        document.getElementById(objectName).style.left = -((parseInt(document.getElementById(objectName).style.width) - stageWidth) / 2) + "px";
-        document.getElementById(objectName).style.top = -((parseInt(document.getElementById(objectName).style.height) - stageHeight) / 2) + "px";
+    var e = "board",
+        n = 1;
+    document.getElementById(e).style.height = stageHeight + "px", document.getElementById(e).style.width = stageWidth + "px", document.getElementById(e).style.top = "0px", document.getElementById(e).style.left = "0px", document.getElementById(e).style.overflow = "hidden";
+    e = "boardBackground", n = 1280 / 720;
+    for (document.getElementById(e).style.height = stageHeight + "px", document.getElementById(e).style.width = Math.round(parseInt(document.getElementById(e).style.height) * n) + "px", document.getElementById(e).style.left = -(parseInt(document.getElementById(e).style.width) - stageWidth) / 2 + "px", document.getElementById(e).style.top = -(parseInt(document.getElementById(e).style.height) - stageHeight) / 2 + "px", parseInt(document.getElementById(e).style.width) < stageWidth && (document.getElementById(e).style.width = stageWidth + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById(e).style.width) / n) + "px", document.getElementById(e).style.left = -(parseInt(document.getElementById(e).style.width) - stageWidth) / 2 + "px", document.getElementById(e).style.top = -(parseInt(document.getElementById(e).style.height) - stageHeight) / 2 + "px"), t = 0; t <= totalThumbnails; t++) {
+        e = "thumbnail" + t, n = 1;
+        document.getElementById(e).style.width = parseInt(document.getElementById("boardBackground").style.width) * document.getElementById(e).size + "px", document.getElementById(e).style.top = parseInt(document.getElementById("boardBackground").style.top) + parseInt(document.getElementById("boardBackground").style.height) * document.getElementById(e).yPos + "px", document.getElementById(e).style.left = parseInt(document.getElementById("boardBackground").style.left) + parseInt(document.getElementById("boardBackground").style.width) * document.getElementById(e).xPos + "px", document.getElementById(e).style.WebkitPerspectiveOrigin = "50% 50%", document.getElementById(e).style.MozPerspectiveOrigin = "50% 50%", document.getElementById(e).style.perspectiveOrigin = "50% 50%", document.getElementById(e).style.WebkitTransformOrigin = "50% 50%", document.getElementById(e).style.MozTransformOrigin = "50% 50%", document.getElementById(e).style.transformOrigin = "50% 50%", document.getElementById(e).style.WebkitTransformStyle = "preserve-3d", document.getElementById(e).style.MozTransformStyle = "preserve-3d", document.getElementById(e).style.transformStyle = "preserve-3d", document.getElementById(e).style.WebkitTransform = "perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(" + document.getElementById(e).rotation + "deg)", document.getElementById(e).style.MozTransform = "perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(" + document.getElementById(e).rotation + "deg)", document.getElementById(e).style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(" + document.getElementById(e).rotation + "deg)"
     }
-
-    ///////////////////////////////////
-    // THUMBNAILS /////////////////////
-
-    for (t = 0; t <= totalThumbnails; t++) {
-
-        ///////////////////////////////////
-        // OBJECT /////////////////////////
-
-        var objectName = "thumbnail" + t;
-        var objectRatio = 100 / 100;
-
-        document.getElementById(objectName).style.width = (parseInt(document.getElementById("boardBackground").style.width) * document.getElementById(objectName).size) + "px";
-        //document.getElementById(objectName).style.height = parseInt(document.getElementById(objectName).style.width)+"px";
-        document.getElementById(objectName).style.top = parseInt(document.getElementById("boardBackground").style.top) + (parseInt(document.getElementById("boardBackground").style.height) * document.getElementById(objectName).yPos) + "px";
-        document.getElementById(objectName).style.left = parseInt(document.getElementById("boardBackground").style.left) + (parseInt(document.getElementById("boardBackground").style.width) * document.getElementById(objectName).xPos) + "px";
-
-        ///////////////////////////////////
-
-        //Rotate thumbnail
-        document.getElementById(objectName).style.WebkitPerspectiveOrigin = "50% 50%";
-        document.getElementById(objectName).style.MozPerspectiveOrigin = "50% 50%";
-        document.getElementById(objectName).style.perspectiveOrigin = "50% 50%";
-
-        document.getElementById(objectName).style.WebkitTransformOrigin = "50% 50%";
-        document.getElementById(objectName).style.MozTransformOrigin = "50% 50%";
-        document.getElementById(objectName).style.transformOrigin = "50% 50%";
-
-        document.getElementById(objectName).style.WebkitTransformStyle = "preserve-3d";
-        document.getElementById(objectName).style.MozTransformStyle = "preserve-3d";
-        document.getElementById(objectName).style.transformStyle = "preserve-3d";
-
-        document.getElementById(objectName).style.WebkitTransform = "perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(" + document.getElementById(objectName).rotation + "deg)";
-        document.getElementById(objectName).style.MozTransform = "perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(" + document.getElementById(objectName).rotation + "deg)";
-        document.getElementById(objectName).style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(" + document.getElementById(objectName).rotation + "deg)";
-
-        ///////////////////////////////////
-
-    }
-
-    ///////////////////////////////////
-    ///////////////////////////////////
-
 }
-
-
-
-//---------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-
 
 function defineBoardButton() {
-
-    ///////////////////////////////////
-    // BUTTON /////////////////////////
-
-    var objectName = "board";
-
-    //'TOUCH' Actions
-    if ("ontouchmove" in document.documentElement) {
-        document.getElementById(objectName).ontouchstart = function(event) {
-            editorSwitch();
-            event.preventDefault();
-        }
-
-        //'MOUSE' Actions
-    } else {
-        document.getElementById(objectName).onmousedown = function(event) {
-            editorSwitch();
-            event.preventDefault();
-        }
+    var e = "board";
+    "ontouchmove" in document.documentElement ? document.getElementById(e).ontouchstart = function(e) {
+        (0 == localStorage.canCountValue ? displayEmptyNotice : editorSwitch)(), e.preventDefault()
+    } : document.getElementById(e).onmousedown = function(e) {
+        (0 == localStorage.canCountValue ? displayEmptyNotice : editorSwitch)(), e.preventDefault()
     }
-
-    ///////////////////////////////////
-    ///////////////////////////////////
-
 }
 
+function canCountSizeAndPosition() {
+    document.getElementById("canCount").style.height = 2.8 * Math.ceil(32 * magnification) + "px", document.getElementById("canCount").style.width = Math.round(parseInt(document.getElementById("canCount").style.height) / (100 / 150)) + "px", document.getElementById("canCount").style.left = "0px", document.getElementById("canCount").style.top = stageHeight - parseInt(document.getElementById("canCount").style.height) - Math.round(2.8 * Math.ceil(32 * magnification) * .25) + "px";
+    document.getElementById("canIcon").style.height = parseInt(document.getElementById("canCount").style.height) + "px", document.getElementById("canIcon").style.width = Math.round(+parseInt(document.getElementById("canIcon").style.height)) + "px", document.getElementById("canIcon").style.left = "0px", document.getElementById("canIcon").style.top = "0px";
+    document.getElementById("canCountText").style.height = Math.round(.33 * parseInt(document.getElementById("canCount").style.height)) + "px", document.getElementById("canCountText").style.width = parseInt(document.getElementById("canCount").style.width) + "px", document.getElementById("canCountText").style.left = Math.round(.74 * parseInt(document.getElementById("canCount").style.height)) + "px", document.getElementById("canCountText").style.top = Math.round(.48 * parseInt(document.getElementById("canCount").style.height)) + "px", document.getElementById("canCountText").style.fontFamily = "jetsetfont", document.getElementById("canCountText").style.fontSize = Math.round(.9 * parseInt(document.getElementById("canCountText").style.height)) + "px", document.getElementById("canCountText").style.color = "#FF0000", document.getElementById("canCountText").style.textAlign = "left", document.getElementById("canCountText").style.lineHeight = "1.1", document.getElementById("canCountText").style.whiteSpace = "nowrap", document.getElementById("canCountText").style.textTransform = "uppercase", document.getElementById("canCountText").style.webkitTextStroke = "1px black";
+    var e = "emptyNotice";
+    document.getElementById(e).style.width = .75 * stageWidth + "px", document.getElementById(e).style.height = Math.round(+parseInt(document.getElementById(e).style.width)) + "px", document.getElementById(e).style.top = Math.round(stageHeight / 2) - Math.round(parseInt(document.getElementById(e).style.height) / 2) + "px", document.getElementById(e).style.left = Math.round(stageWidth / 2) - Math.round(parseInt(document.getElementById(e).style.width) / 2) + "px", parseInt(document.getElementById(e).style.height) > .75 * stageHeight && (document.getElementById(e).style.height = .75 * stageHeight + "px", document.getElementById(e).style.width = Math.round(+parseInt(document.getElementById(e).style.height)) + "px", document.getElementById(e).style.top = Math.round(stageHeight / 2) - Math.round(parseInt(document.getElementById(e).style.height) / 2) + "px", document.getElementById(e).style.left = Math.round(stageWidth / 2) - Math.round(parseInt(document.getElementById(e).style.width) / 2) + "px"), 500 < parseInt(document.getElementById(e).style.width) && (document.getElementById(e).style.width = "500px", document.getElementById(e).style.height = Math.round(+parseInt(document.getElementById(e).style.width)) + "px", document.getElementById(e).style.top = Math.round(stageHeight / 2) - Math.round(parseInt(document.getElementById(e).style.height) / 2) + "px", document.getElementById(e).style.left = Math.round(stageWidth / 2) - Math.round(parseInt(document.getElementById(e).style.width) / 2) + "px")
+}
 
+function updateCanCount() {
+    null == localStorage.canCountValue && (localStorage.canCountValue = 3), localStorage.canCountValue < 0 && (localStorage.canCountValue = 0), 99 < localStorage.canCountValue && (localStorage.canCountValue = 99), document.getElementById("canCountText").innerHTML = localStorage.canCountValue
+}
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function checkCanCount() {
+    setInterval(function() {
+        updateCanCount()
+    }, 6e4)
+}
+var displayEmptyTimeout;
 
-
+function displayEmptyNotice() {
+    clearTimeout(displayEmptyTimeout), document.getElementById("emptyNotice").style.visibility = "visible", displayEmptyTimeout = setTimeout(function() {
+        document.getElementById("emptyNotice").style.visibility = "hidden"
+    }, 3200)
+}
 
 function boardRuntime() {
-
-    loadXML();
-    setInterval(function() {
-        loadXML();
-    }, 7000);
-
-
-    //BOARD
-    allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length] = boardSizeAndPosition;
-    allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length - 1]();
-    defineBoardButton();
-
+    loadXML(), setInterval(function() {
+        loadXML()
+    }, 7e3), allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length] = boardSizeAndPosition, allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length - 1](), defineBoardButton(), allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length] = canCountSizeAndPosition, allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length - 1](), updateCanCount(), checkCanCount()
 }
-
-
-
-allRuntimeFunctionsList[allRuntimeFunctionsList.length] = boardRuntime;
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+totalThumbnails = 0, newDocumentValue = "", oldDocumentValue = "", lastTotal = 0, document.getElementById("emptyNotice").style.visibility = "hidden", allRuntimeFunctionsList[allRuntimeFunctionsList.length] = boardRuntime;

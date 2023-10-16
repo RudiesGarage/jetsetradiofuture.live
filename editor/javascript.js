@@ -25,11 +25,11 @@ function editorSizeAndPosition() {
     e = "saveTickerButton", t = 300 / 90;
     document.getElementById(e).style.width = Math.round(.25 * parseInt(document.getElementById("tickerEditorTextField").style.width)) + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById(e).style.width) / t) + "px", document.getElementById(e).style.left = parseInt(document.getElementById("editor").style.width) - parseInt(document.getElementById(e).style.width) + "px", document.getElementById(e).style.top = parseInt(document.getElementById("tickerEditorTextField").style.top) + parseInt(document.getElementById("tickerEditorTextField").style.height) + "px";
     e = "defaultEditorButton", t = 1;
-    document.getElementById(e).style.width = Math.round(.25 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById(e).style.width) / t) + "px", document.getElementById(e).style.left = Math.round(.35 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.top = 1.1 * -parseInt(document.getElementById(e).style.height) + "px";
-    e = "loadEditorButton", t = 1;
-    document.getElementById(e).style.width = Math.round(.25 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById(e).style.width) / t) + "px", document.getElementById(e).style.left = Math.round(.55 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.top = 1.1 * -parseInt(document.getElementById(e).style.height) + "px";
-    e = "saveEditorButton", t = 1;
     document.getElementById(e).style.width = Math.round(.25 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById(e).style.width) / t) + "px", document.getElementById(e).style.left = Math.round(.75 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.top = 1.1 * -parseInt(document.getElementById(e).style.height) + "px";
+    e = "loadEditorButton", t = 1;
+    document.getElementById(e).style.width = Math.round(.25 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById(e).style.width) / t) + "px", document.getElementById(e).style.left = Math.round(.26 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.top = 1.1 * -parseInt(document.getElementById(e).style.height) + "px";
+    e = "saveEditorButton", t = 1;
+    document.getElementById(e).style.width = Math.round(.25 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.height = Math.round(parseInt(document.getElementById(e).style.width) / t) + "px", document.getElementById(e).style.left = Math.round(.45 * parseInt(document.getElementById("editor").style.width)) + "px", document.getElementById(e).style.top = 1.1 * -parseInt(document.getElementById(e).style.height) + "px";
     e = "editorExterior", t = 1;
     document.getElementById(e).style.height = stageHeight + "px", document.getElementById(e).style.width = stageWidth + "px", document.getElementById(e).style.top = "0px", document.getElementById(e).style.left = "0px", document.getElementById(e).style.backgroundColor = "#000000", document.getElementById(e).style.opacity = .65
 }
@@ -47,11 +47,15 @@ function defaultEditor() {
 }
 
 function saveEditor() {
-    localStorage.storedType = document.getElementById("eventTypeTextField").value, localStorage.storedVar1 = document.getElementById("eventVar1TextField").value, localStorage.storedVar2 = document.getElementById("eventVar2TextField").value
+    scriptPassword = queryValue("p"), postMessage = "scriptPassword=" + scriptPassword;
+    var e = new XMLHttpRequest;
+    e.open("POST", "wall/APP/editor/saveBACKUP.php", !0), e.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), e.send(postMessage)
 }
 
 function loadEditor() {
-    document.getElementById("eventTypeTextField").value = localStorage.storedType, document.getElementById("eventVar1TextField").value = localStorage.storedVar1, document.getElementById("eventVar2TextField").value = localStorage.storedVar2
+    scriptPassword = queryValue("p"), postMessage = "scriptPassword=" + scriptPassword;
+    var e = new XMLHttpRequest;
+    e.open("POST", "wall/APP/editor/loadBACKUP.php", !0), e.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), e.send(postMessage)
 }
 
 function searchForTrackNext() {
@@ -171,10 +175,7 @@ function xmlString(e) {
 }
 
 function loadTickerData() {
-    document.getElementById("tickerEditorTextField").value = "", editortickerxmlhttp = new XMLHttpRequest, randomCacheNumber = Math.floor(999999999 * Math.random() + 1);
-    editortickerxmlhttp.open("GET", "ticker/messages.xml?" + randomCacheNumber, !0);
-    editortickerxmlhttp.send();
-    editortickerxmlhttp.onreadystatechange = function() {
+    document.getElementById("tickerEditorTextField").value = "", editortickerxmlhttp = new XMLHttpRequest, randomCacheNumber = Math.floor(999999999 * Math.random() + 1), editortickerxmlhttp.open("GET", "ticker/messages.xml?" + randomCacheNumber, !0), editortickerxmlhttp.send(), editortickerxmlhttp.onreadystatechange = function() {
         4 == editortickerxmlhttp.readyState && (xmlDocument = editortickerxmlhttp.responseXML, newMessage = xmlDocument.getElementsByTagName("message")[0].childNodes[0].nodeValue, document.getElementById("tickerEditorTextField").value = newMessage)
     }
 }

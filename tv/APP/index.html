@@ -1,116 +1,72 @@
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
-
+ 
 <title>JSRLTV</title>
-
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="robots" content="noodp,noydir">
-
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="robots" content="noodp,noydir" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-
-<link href="styles.css" rel="stylesheet" type="text/css">
+<link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
+<body style="position:fixed;margin:0;visibility:hidden;-webkit-user-select:none;height:100%;width:100%;background-color:#00178c;" onunload="if (!window.__cfRLUnblockHandlers) return false; " data-cf-modified-5421ca477b77dad4558a85b8->
+
+<script src="defaults.js" ></script>
 
 
+<div id="previewScreen" class="objectSettings touchableOff" style="z-index:400;">
+<img id="previewLogo" class="objectSettings touchableOff" style="z-index:405;" src="videoplayer/images/previewLogo.png">
+<img id="playButton" class="objectSettings touchableOff pulseAnimation" style="z-index:405;" src="videoplayer/images/playButton.png">
+<img id="playButtonBackground" class="objectSettings touchableOff" style="z-index:404;" src="videoplayer/images/playButtonBackground.png">
+<img id="previewWallpaper" class="objectSettings touchableOn" style="z-index:401;" src="videoplayer/images/previewWallpaper.jpg">
+</div>
+<div id="videoFrame" class="objectSettings touchableOn" style="z-index:103;">
+<video id="videoPlayer" class="objectSettings touchableOff" style="z-index:103;" preload="auto" playsinline>
+<source id="videoPlayerMP4" src type="video/mp4">
+</video>
+</div>
+<div id="remote" class="objectSettings touchableOff" style="z-index:200;">
+<img id="remoteBackground" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/remoteBackground.png">
+<img id="nextChannelButton" class="objectSettings touchableOn" style="z-index:201;cursor:pointer;" src="videoplayer/images/nextChannelButton.png">
+<img id="prevChannelButton" class="objectSettings touchableOn" style="z-index:201;cursor:pointer;" src="videoplayer/images/prevChannelButton.png">
+</div>
+<img id="skipVideoButton" class="objectSettings touchableOn" style="z-index:200;cursor:pointer;" src="videoplayer/images/skipVideoButton.png">
+<img id="zoomButton" class="objectSettings touchableOn" style="z-index:200;cursor:pointer;" src="videoplayer/images/zoomButton.png">
+<img id="channel1Graphic" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/channel1Graphic.png">
+<img id="channel2Graphic" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/channel2Graphic.png">
+<img id="channel3Graphic" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/channel3Graphic.png">
+<img id="channel4Graphic" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/channel4Graphic.png">
+<img id="channel5Graphic" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/channel5Graphic.png">
+<img id="channel6Graphic" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/channel6Graphic.png">
+<img id="channel7Graphic" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/channel7Graphic.png">
+<img id="channel8Graphic" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/channel8Graphic.png">
+<img id="channel9Graphic" class="objectSettings touchableOff" style="z-index:200;" src="videoplayer/images/channel9Graphic.png">
 
-<body style="position: fixed; margin: 0px; visibility: visible; user-select: none; height: 100%; width: 100%; background-color: rgb(0, 23, 140);" onunload="">
+<script src="videoplayer/javascript.js" ></script>
 
 
-<!--============================-->
-<script src="defaults.js"></script>
-<!--============================-->
-
-<!--============================================ VIDEOPLAYER =============================================-->
-
-<div id="previewScreen" class="objectSettings touchableOff" style="z-index: 400; transition: opacity 0.7s ease-out 0s; width: 1310px; height: 890px; left: 0px; top: 0px;">
-
-	<img id="previewLogo" class="objectSettings touchableOff" style="z-index: 405; width: 400px; height: 379px; top: 255px; left: 455px;" src="videoplayer/images/previewLogo.png">
-	<img id="playButton" class="objectSettings touchableOff pulseAnimation" style="z-index: 405; width: 260px; height: 98px; left: 525px; top: 489.98px;" src="videoplayer/images/playButton.png">
-	<img id="previewWallpaper" class="objectSettings touchableOn" style="z-index: 401; opacity: 0; height: 890px; width: 1582px; left: -136px; top: 0px;" src="videoplayer/images/previewWallpaper.jpg">
-
+<img id="loadingCircle" class="objectSettings touchableOff rotateAnimation" style="z-index:101;" src="wallpaper/images/loadingCircle.png">
+<div id="wallpaper" class="objectSettings touchableOff" style="z-index:100;">
+<img id="wallpaper1" class="objectSettings touchableOn" style="z-index:100;" src="wallpaper/images/wallpaper1.jpg">
+<img id="wallpaper2" class="objectSettings touchableOn" style="z-index:100;" src="wallpaper/images/wallpaper2.jpg">
+<img id="wallpaper3" class="objectSettings touchableOn" style="z-index:100;" src="wallpaper/images/wallpaper3.jpg">
+<img id="wallpaper4" class="objectSettings touchableOn" style="z-index:100;" src="wallpaper/images/wallpaper4.jpg">
 </div>
 
+<script src="wallpaper/javascript.js" ></script>
 
-<div id="videoFrame" class="objectSettings touchableOn" style="z-index: 103; background-color: rgb(0, 0, 0); opacity: 0; height: 890px; width: 1310px; left: 0px; top: 0px;">
 
-	<video id="videoPlayer" class="objectSettings touchableOff" style="z-index: 103; background-color: rgb(0, 0, 0); width: 1310px; height: 737px; left: 0px; top: 76.5px;" preload="auto" playsinline="">
-	<source id="videoPlayerMP4" src="/" type="video/mp4">
-	</video>
-
+<div id="loadingScreen" class="objectSettings touchableOff" style="z-index:900;">
+<img id="loadingLogo" class="objectSettings touchableOff" style="z-index:903;" src="preloader/images/logo.png">
+<img id="loadingStatus" class="objectSettings touchableOff rotateAnimation" style="z-index:901;" src="preloader/images/status.png">
 </div>
 
-
-<div id="remote" class="objectSettings touchableOff" style="z-index: 200; visibility: hidden; width: 40px; height: 77px; left: 1256px; top: 795.29px;">
-
-	<img id="remoteBackground" class="objectSettings touchableOff" style="z-index: 200; height: 77px; width: 40px; left: 0px; top: 0px;" src="videoplayer/images/remoteBackground.png">
-	<img id="nextChannelButton" class="objectSettings touchableOn" style="z-index: 201; cursor: pointer; width: 40px; height: 38px; left: 0px; top: 0px;" src="videoplayer/images/nextChannelButton.png">
-	<img id="prevChannelButton" class="objectSettings touchableOn" style="z-index: 201; cursor: pointer; width: 40px; height: 38px; left: 0px; top: 38.5px;" src="videoplayer/images/prevChannelButton.png">
-
-</div>
-
-<img id="zoomButton" class="objectSettings touchableOn" style="z-index: 200; cursor: pointer; visibility: hidden; width: 40px; height: 38px; left: 12px; top: 840.6px;" src="videoplayer/images/zoomButton.png">
+<script src="preloader/javascript.js" ></script>
 
 
-<img id="channel1Graphic" class="objectSettings touchableOff" style="z-index: 200; opacity: 0; height: 115.5px; width: 217px; left: 0px; top: 0px;" src="videoplayer/images/channel1Graphic.png">
-<img id="channel2Graphic" class="objectSettings touchableOff" style="z-index: 200; opacity: 0; height: 115px; width: 217px; left: 0px; top: 0px;" src="videoplayer/images/channel2Graphic.png">
-<img id="channel3Graphic" class="objectSettings touchableOff" style="z-index: 200; opacity: 0; height: 115px; width: 217px; left: 0px; top: 0px;" src="videoplayer/images/channel3Graphic.png">
-<img id="channel4Graphic" class="objectSettings touchableOff" style="z-index: 200; opacity: 0; height: 115px; width: 217px; left: 0px; top: 0px;" src="videoplayer/images/channel4Graphic.png">
-<img id="channel5Graphic" class="objectSettings touchableOff" style="z-index: 200; opacity: 0; height: 115px; width: 217px; left: 0px; top: 0px;" src="videoplayer/images/channel5Graphic.png">
-<img id="channel6Graphic" class="objectSettings touchableOff" style="z-index: 200; opacity: 0; height: 115px; width: 217px; left: 0px; top: 0px;" src="videoplayer/images/channel6Graphic.png">
-<img id="channel7Graphic" class="objectSettings touchableOff" style="z-index: 200; opacity: 0; height: 115px; width: 217px; left: 0px; top: 0px;" src="videoplayer/images/channel7Graphic.png">
-<img id="channel8Graphic" class="objectSettings touchableOff" style="z-index: 200; opacity: 0; height: 115px; width: 217px; left: 0px; top: 0px;" src="videoplayer/images/channel8Graphic.png">
-<img id="channel9Graphic" class="objectSettings touchableOff" style="z-index: 200; opacity: 0; height: 115px; width: 217px; left: 0px; top: 0px;" src="videoplayer/images/channel9Graphic.png">
-
-
-<!--===================================-->
-<script src="videoplayer/javascript.js"></script>
-<!--===================================-->
-
-<!--============================================== WALLPAPER ============================================-->
-
-<img id="loadingCircle" class="objectSettings touchableOff rotateAnimation" style="z-index: 101; opacity: 0; width: 32px; height: 32px; left: 639px; top: 429px;" src="wallpaper/images/loadingCircle.png">
-
-<div id="wallpaper" class="objectSettings touchableOff" style="z-index: 100; height: 890px; width: 1582px; left: -136px; top: 0px; transform: scale(1, -1);">
-	<img id="wallpaper1" class="objectSettings touchableOn" style="z-index: 100; visibility: hidden; width: 1582px; height: 890px; left: 0px; top: 0px;" src="wallpaper/images/wallpaper1.jpg">
-	<img id="wallpaper2" class="objectSettings touchableOn" style="z-index: 100; visibility: hidden; width: 1582px; height: 890px; left: 0px; top: 0px;" src="wallpaper/images/wallpaper2.jpg">
-	<img id="wallpaper3" class="objectSettings touchableOn" style="z-index: 100; visibility: hidden; width: 1582px; height: 890px; left: 0px; top: 0px;" src="wallpaper/images/wallpaper3.jpg">
-	<img id="wallpaper4" class="objectSettings touchableOn" style="z-index: 100; visibility: visible; width: 1582px; height: 890px; left: 0px; top: 0px;" src="wallpaper/images/wallpaper4.jpg">
-</div>
-
-
-<!--====================================-->
-<script src="wallpaper/javascript.js"></script>
-<!--====================================-->
-
-<!--============================================== PRELOADER ============================================-->
-
-<div id="loadingScreen" class="objectSettings touchableOff" style="z-index: 110; background-color: rgb(0, 23, 140); height: 890px; width: 1310px; left: 0px; top: 0px; visibility: hidden; transition: all 0s ease-out 0s; opacity: 1;">
-	<img id="loadingLogo" class="objectSettings touchableOff" style="z-index: 903; width: 576px; height: 576px; top: 157px; left: 367px; transition: opacity 1.2s ease-in 0s; opacity: 1; visibility: hidden;" src="preloader/images/logo.png">
-	<img id="loadingStatus" class="objectSettings touchableOff rotateAnimation pulseAnimation" style="z-index: 901; width: 80px; height: 80px; left: 1230px; top: 810px; transition: opacity 1s ease-out 0s; opacity: 1; visibility: hidden;" src="preloader/images/status.png">
-</div>
-
-
-<!--========================================-->
-<script src="preloader/javascript.js"></script>
-<!--========================================-->
-
-<!--=====================================================================================================-->
-
-
-
-<script>selectedChannel = 1;</script>
-
-
-
-<!--=====================================================================================================-->
-
-
-
-
-
-</body></html>
+<script >selectedChannel = 1;</script>
+ </body>
+</html>

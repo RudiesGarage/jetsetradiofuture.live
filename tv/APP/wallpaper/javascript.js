@@ -13,6 +13,7 @@ function wallpaperSizeAndPosition() {
     e = "loadingCircle", t = 59 / 110;
     document.getElementById(e).style.width = Math.ceil(32 * magnification) + "px", document.getElementById(e).style.height = Math.ceil(32 * magnification) + "px", document.getElementById(e).style.left = Math.round(stageWidth / 2) - Math.round(parseInt(document.getElementById(e).style.width) / 2) + "px", document.getElementById(e).style.top = Math.round(stageHeight / 2) - Math.round(parseInt(document.getElementById(e).style.height) / 2) + "px"
 }
+
 function animateStatic() {
     requestAnimationFrame(animateStatic), animationStep += .2, 4 < animationStep && (animationStep = 1), selectedFrame = Math.round(animationStep), 1 == selectedFrame && (document.getElementById("wallpaper").style.transform = "scale(1, 1)", document.getElementById("wallpaper").style.MozTransform = "scale(1, 1)", document.getElementById("wallpaper").style.WebkitTransform = "scale(1, 1)"), 2 == selectedFrame && (document.getElementById("wallpaper").style.transform = "scale(1, -1)", document.getElementById("wallpaper").style.MozTransform = "scale(1, -1)", document.getElementById("wallpaper").style.WebkitTransform = "scale(1, -1)"), 3 == selectedFrame && (document.getElementById("wallpaper").style.transform = "scale(-1, 1)", document.getElementById("wallpaper").style.MozTransform = "scale(-1, 1)", document.getElementById("wallpaper").style.WebkitTransform = "scale(-1, 1)"), 4 == selectedFrame && (document.getElementById("wallpaper").style.transform = "scale(-1, -1)", document.getElementById("wallpaper").style.MozTransform = "scale(-1, -1)", document.getElementById("wallpaper").style.WebkitTransform = "scale(-1, -1)")
 }
@@ -22,6 +23,7 @@ var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAni
 function changeStaticColor() {
     selectedStatic++, 4 < selectedStatic && (selectedStatic = 1), document.getElementById("wallpaper1").style.visibility = "hidden", document.getElementById("wallpaper2").style.visibility = "hidden", document.getElementById("wallpaper3").style.visibility = "hidden", document.getElementById("wallpaper4").style.visibility = "hidden", 1 == selectedStatic && (document.getElementById("wallpaper1").style.visibility = "visible"), 2 == selectedStatic && (document.getElementById("wallpaper2").style.visibility = "visible"), 3 == selectedStatic && (document.getElementById("wallpaper3").style.visibility = "visible"), 4 == selectedStatic && (document.getElementById("wallpaper4").style.visibility = "visible")
 }
+
 function wallpaperRuntime() {
     allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length] = wallpaperSizeAndPosition, allSizeAndPositionFunctionsList[allSizeAndPositionFunctionsList.length - 1](), animateStatic(), changeStaticColor()
 }

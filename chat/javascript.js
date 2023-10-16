@@ -13,6 +13,8 @@ function chatSizeAndPosition() {
     document.getElementById(e).style.width = 1.05 * parseInt(document.getElementById("radioButton").style.height) + "px", document.getElementById(e).style.height = Math.round(+parseInt(document.getElementById(e).style.width)) + "px", document.getElementById(e).style.left = parseInt(document.getElementById("chat").style.width) - 1.1 * parseInt(document.getElementById(e).style.width) + "px", document.getElementById(e).style.top = parseInt(document.getElementById("chat").style.height) - 1.7 * parseInt(document.getElementById(e).style.height) + "px";
     e = "fontSizeButton";
     document.getElementById(e).style.width = 1.25 * parseInt(document.getElementById("radioButton").style.height) + "px", document.getElementById(e).style.height = Math.round(+parseInt(document.getElementById(e).style.width)) + "px", document.getElementById(e).style.left = parseInt(document.getElementById("chat").style.width) - 1.03 * parseInt(document.getElementById(e).style.width) + "px", document.getElementById(e).style.top = parseInt(document.getElementById("chat").style.height) - 2.1 * parseInt(document.getElementById(e).style.height) + "px";
+    e = "chatDimmerButton";
+    document.getElementById(e).style.width = 1.25 * parseInt(document.getElementById("radioButton").style.height) + "px", document.getElementById(e).style.height = Math.round(+parseInt(document.getElementById(e).style.width)) + "px", document.getElementById(e).style.left = parseInt(document.getElementById("chat").style.width) - 1.03 * parseInt(document.getElementById(e).style.width) + "px", document.getElementById(e).style.top = parseInt(document.getElementById("chat").style.height) - 3.55 * parseInt(document.getElementById(e).style.height) + "px";
     e = "chatImagesButton";
     document.getElementById(e).style.width = 1.25 * parseInt(document.getElementById("radioButton").style.height) + "px", document.getElementById(e).style.height = Math.round(+parseInt(document.getElementById(e).style.width)) + "px", document.getElementById(e).style.left = parseInt(document.getElementById("chat").style.width) - 1.03 * parseInt(document.getElementById(e).style.width) + "px", document.getElementById(e).style.top = parseInt(document.getElementById("chat").style.height) - 2.75 * parseInt(document.getElementById(e).style.height) + "px";
     e = "timestampTextField";
@@ -20,16 +22,22 @@ function chatSizeAndPosition() {
 }
 
 function chatSwitch() {
-    chatSizeAndPosition(), null == this.chat_switchStatus ? (document.getElementById("chatButton").style.opacity = .55, document.getElementById("chat").style.transition = "all 0s ease-out", document.getElementById("chat").style.MozTransition = "all 0s ease-out", document.getElementById("chat").style.WebkitTransition = "all 0s ease-out", document.getElementById("chat").style.opacity = 0, document.getElementById("chat").style.visibility = "hidden", chat_switchStatus = "OFF") : "OFF" == chat_switchStatus ? (document.getElementById("chatButton").style.opacity = 1, document.getElementById("closeChatButton").style.opacity = 1, document.getElementById("worldIcon").style.visibility = "visible", document.getElementById("dateTextField").style.visibility = "visible", document.getElementById("chat").style.top = "0px", document.getElementById("chat").style.visibility = "visible", document.getElementById("chat").style.transition = "opacity .4s ease-out", document.getElementById("chat").style.MozTransition = "opacity .4s ease-out", document.getElementById("chat").style.WebkitTransition = "opacity .4s ease-out", document.getElementById("chat").style.opacity = 1, 0 == savedUsername && (document.getElementById("messageTextField").style.color = "#ffe60c", document.getElementById("messageTextField").value = defaultLoginInstructions), chat_switchStatus = "TRANSITIONING", setTimeout(function() {
+    chatSizeAndPosition(), null == this.chat_switchStatus ? (document.getElementById("chatButton").style.opacity = .55, document.getElementById("chat").style.transition = "all 0s ease-out", document.getElementById("chat").style.MozTransition = "all 0s ease-out", document.getElementById("chat").style.WebkitTransition = "all 0s ease-out", document.getElementById("chat").style.opacity = 0, document.getElementById("chat").style.visibility = "hidden", chat_switchStatus = "OFF") : "OFF" == chat_switchStatus ? (document.getElementById("chatButton").style.opacity = 1, document.getElementById("closeChatButton").style.opacity = 1, "ON" == tvFrame_switchStatus && "function" == typeof document.getElementById("tvFrame").contentWindow.hideRemote && document.getElementById("tvFrame").contentWindow.hideRemote(), 1 == chatOpacity_Value && changeChatOpacity(), document.getElementById("worldIcon").style.visibility = "visible", document.getElementById("dateTextField").style.visibility = "visible", document.getElementById("chat").style.top = "0px", document.getElementById("chat").style.visibility = "visible", document.getElementById("chat").style.transition = "opacity .4s ease-out", document.getElementById("chat").style.MozTransition = "opacity .4s ease-out", document.getElementById("chat").style.WebkitTransition = "opacity .4s ease-out", document.getElementById("chat").style.opacity = 1, 0 == savedUsername && (document.getElementById("messageTextField").style.color = "#ffe60c", document.getElementById("messageTextField").value = defaultLoginInstructions), chat_switchStatus = "TRANSITIONING", setTimeout(function() {
         1 == savedUsername && document.getElementById("messageTextField").focus(), chat_switchStatus = "ON", run_chat()
-    }, 500)) : "ON" == chat_switchStatus && (document.getElementById("messageTextField").blur(), document.getElementById("chatButton").style.opacity = .55, document.getElementById("closeChatButton").style.opacity = 0, "OFF" == radio_switchStatus && (document.getElementById("worldIcon").style.visibility = "hidden", document.getElementById("dateTextField").style.visibility = "hidden"), radio_switchStatus, document.getElementById("chat").style.transition = "opacity .4s ease-out", document.getElementById("chat").style.MozTransition = "opacity .4s ease-out", document.getElementById("chat").style.WebkitTransition = "opacity .4s ease-out", document.getElementById("chat").style.opacity = 0, chat_switchStatus = "TRANSITIONING", setTimeout(function() {
+    }, 500)) : "ON" == chat_switchStatus && (document.getElementById("messageTextField").blur(), document.getElementById("chatButton").style.opacity = .55, document.getElementById("closeChatButton").style.opacity = 0, "ON" == tvFrame_switchStatus && "function" == typeof document.getElementById("tvFrame").contentWindow.showRemote && document.getElementById("tvFrame").contentWindow.showRemote(), "OFF" == radio_switchStatus && (document.getElementById("worldIcon").style.visibility = "hidden", document.getElementById("dateTextField").style.visibility = "hidden"), radio_switchStatus, document.getElementById("chat").style.transition = "opacity .4s ease-out", document.getElementById("chat").style.MozTransition = "opacity .4s ease-out", document.getElementById("chat").style.WebkitTransition = "opacity .4s ease-out", document.getElementById("chat").style.opacity = 0, chat_switchStatus = "TRANSITIONING", setTimeout(function() {
         document.getElementById("chat").style.top = stageHeight + "px", document.getElementById("chat").style.visibility = "hidden", chat_switchStatus = "OFF", stop_chat()
     }, 500))
 }
+var resetSize;
 
 function defineTextFieldFocus() {
-    document.getElementById("messageTextField").onfocus = function() {
-        0 == savedUsername && (document.getElementById(this.id).value = "")
+    var e = "messageTextField";
+    document.getElementById(e).onfocus = function() {
+        0 == savedUsername && (document.getElementById(this.id).value = "", clearTimeout(resetSize))
+    }, document.getElementById(e).onblur = function() {
+        clearTimeout(resetSize), resetSize = setTimeout(function() {
+            allSizeAndPosition()
+        }, 150)
     }
 }
 
@@ -57,7 +65,7 @@ function chatImages_SWITCH() {
 }
 
 function changeChatOpacity() {
-    0 == chatOpacity_Value ? (document.getElementById("chat").style.backgroundColor = "rgba(0, 0, 0, 0.00)", chatOpacity_Value = !0) : 1 == chatOpacity_Value && (document.getElementById("chat").style.backgroundColor = "rgba(0, 0, 0, 0.80)", chatOpacity_Value = !1), 1 == chatImagesStatus ? document.getElementById("chatImagesButton").style.opacity = 1 : 0 == chatImagesStatus && (document.getElementById("chatImagesButton").style.opacity = .55)
+    0 == chatOpacity_Value ? (document.getElementById("chat").style.backgroundColor = "rgba(0, 0, 0, 0.00)", document.getElementById("chatDimmerButton").style.opacity = .55, chatOpacity_Value = !0) : 1 == chatOpacity_Value && (document.getElementById("chat").style.backgroundColor = "rgba(0, 0, 0, 0.80)", document.getElementById("chatDimmerButton").style.opacity = 1, chatOpacity_Value = !1), 1 == chatImagesStatus ? document.getElementById("chatImagesButton").style.opacity = 1 : 0 == chatImagesStatus && (document.getElementById("chatImagesButton").style.opacity = .55)
 }
 
 function defineChatButtons() {
@@ -66,6 +74,12 @@ function defineChatButtons() {
         chatSwitch(), e.preventDefault()
     } : document.getElementById(e).onmousedown = function(e) {
         chatSwitch(), e.preventDefault()
+    };
+    e = "chatDimmerButton";
+    "ontouchmove" in document.documentElement ? document.getElementById(e).ontouchstart = function(e) {
+        changeChatOpacity(), e.preventDefault()
+    } : document.getElementById(e).onmousedown = function(e) {
+        changeChatOpacity(), e.preventDefault()
     };
     e = "fontSizeButton";
     "ontouchmove" in document.documentElement ? document.getElementById(e).ontouchstart = function(e) {
@@ -125,9 +139,9 @@ document.getElementById("messageTextField").maxLength = "255", document.getEleme
     }, 150)
 }, chatImagesStatus = !0, chatOpacity_Value = !1, scrollTouch = !1, document.getElementById("sendButton").style.pointerEvents = "all", document.onkeydown = function(e) {
     e = (e = e || window.event).keyCode;
-    return "ON" == chat_switchStatus && 13 == e && "all" == document.getElementById("sendButton").style.pointerEvents && saveChatXML(), 220 == e ? ("ON" == tvFrame_switchStatus ? -1 == document.getElementById("tvFrame").contentWindow.mediaPosition1 ? document.getElementById("tvFrame").contentWindow.hidePreviewScreen() : document.getElementById("tvFrame").contentWindow.playVideoPlayer() : (document.getElementById("nextTrackButton").style.opacity = .3, document.getElementById("nextTrackButton2").style.opacity = .3, setTimeout(function() {
-        document.getElementById("nextTrackButton").style.opacity = 1, document.getElementById("nextTrackButton2").style.opacity = 1
-    }, 250), skipTrack()), !1) : 38 == e && "ON" == tvFrame_switchStatus ? (-1 == document.getElementById("tvFrame").contentWindow.mediaPosition1 ? document.getElementById("tvFrame").contentWindow.hidePreviewScreen() : document.getElementById("tvFrame").contentWindow.gotoNextChannel(), !1) : 40 == e && "ON" == tvFrame_switchStatus ? (-1 == document.getElementById("tvFrame").contentWindow.mediaPosition1 ? document.getElementById("tvFrame").contentWindow.hidePreviewScreen() : document.getElementById("tvFrame").contentWindow.gotoPrevChannel(), !1) : void 0
+    return "ON" == chat_switchStatus && 13 == e && "all" == document.getElementById("sendButton").style.pointerEvents && saveChatXML(), 220 == e ? ("ON" == tvFrame_switchStatus ? -1 == document.getElementById("tvFrame").contentWindow.mediaPosition1 ? document.getElementById("tvFrame").contentWindow.hidePreviewScreen() : document.getElementById("tvFrame").contentWindow.playVideoPlayer() : (document.getElementById("nextTrackButton").style.opacity = .3, setTimeout(function() {
+        document.getElementById("nextTrackButton").style.opacity = 1
+    }, 250), skipTrack()), !1) : 187 == e && "ON" == radio_switchStatus ? ((1 == document.getElementById("pauseTrackButton").style.opacity ? pauseRadio : continueRadio)(), !1) : 38 == e && "ON" == tvFrame_switchStatus ? (-1 == document.getElementById("tvFrame").contentWindow.mediaPosition1 ? document.getElementById("tvFrame").contentWindow.hidePreviewScreen() : document.getElementById("tvFrame").contentWindow.gotoNextChannel(), !1) : 40 == e && "ON" == tvFrame_switchStatus ? (-1 == document.getElementById("tvFrame").contentWindow.mediaPosition1 ? document.getElementById("tvFrame").contentWindow.hidePreviewScreen() : document.getElementById("tvFrame").contentWindow.gotoPrevChannel(), !1) : void 0
 };
 var myimage = document.getElementById("chatTextField");
 
@@ -150,7 +164,7 @@ function saveChatXML() {
     var e, t;
     0 == savedUsername && "" !== document.getElementById("messageTextField").value && document.getElementById("messageTextField").value !== defaultLoginInstructions ? (username = document.getElementById("messageTextField").value, "djk" == username && (username = "DJProfessorK"), document.getElementById("messageTextField").style.color = "#20e537", document.getElementById("messageTextField").value = "You have JOINED the chat!!!", document.getElementById("messageTextField").focus(), document.getElementById("messageTextField").maxLength = "255", savedUsername = !0, console.log("You have JOINED the chat!!!"), setTimeout(function() {
         document.getElementById("messageTextField").style.color = "#FFFFFF", document.getElementById("messageTextField").value = ""
-    }, 1e3)) : 1 == savedUsername && "" !== document.getElementById("messageTextField").value && (document.getElementById("messageTextField").style.opacity = .3, document.getElementById("sendButton").style.opacity = .1, document.getElementById("sendButton").style.pointerEvents = "none", tmpStr = document.getElementById("messageTextField").value, searchThis = tmpStr.substring(0, 5), "/join" == searchThis && (console.log("SAVING USERNAME"), usernameToSave = tmpStr.slice(6), "djk" == usernameToSave && (usernameToSave = "DJProfessorK"), localStorage.savedUsername = usernameToSave, username = usernameToSave, document.getElementById("messageTextField").value = "Joined!"), e = document.getElementById("messageTextField").value, chatpassword = queryValue("p"), postMessage = JSON.stringify({ chatmessage: e, "username": username, chatpassword: chatpassword, color: attachedColorPickerString }), (t = new XMLHttpRequest).open("POST", "chat/save.php", !0), t.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), t.send(postMessage), console.log("SENDING Chat Message..."), t.onreadystatechange = function() {
+    }, 1e3)) : 1 == savedUsername && "" !== document.getElementById("messageTextField").value && (document.getElementById("messageTextField").style.opacity = .3, document.getElementById("sendButton").style.opacity = .1, document.getElementById("sendButton").style.pointerEvents = "none", tmpStr = document.getElementById("messageTextField").value, searchThis = tmpStr.substring(0, 5), "/join" == searchThis && (console.log("SAVING USERNAME"), usernameToSave = tmpStr.slice(6), "djk" == usernameToSave && (usernameToSave = "DJProfessorK"), localStorage.savedUsername = usernameToSave, username = usernameToSave, document.getElementById("messageTextField").value = "Joined!"), e = document.getElementById("messageTextField").value, e = attachedColorPickerString + e, chatpassword = queryValue("p"), postMessage = "chatmessage=" + e + "&username=" + username + "&chatpassword=" + chatpassword, (t = new XMLHttpRequest).open("POST", "chat/saveChat.php", !0), t.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), t.send(postMessage), console.log("SENDING Chat Message..."), t.onreadystatechange = function() {
         4 == t.readyState && (console.log("Chat Message SENT!"), "none" == document.getElementById("sendButton").style.pointerEvents && (document.getElementById("messageTextField").value = "", document.getElementById("messageTextField").focus(), document.getElementById("messageTextField").style.opacity = 1, document.getElementById("sendButton").style.opacity = 1, document.getElementById("sendButton").style.pointerEvents = "all"), clearTimeout(continuousChatLoading), loadChatXML())
     }, document.getElementById("chatTextField").scrollTop = document.getElementById("chatTextField").scrollHeight)
 }
@@ -169,10 +183,9 @@ var chatDefault = savedUsername = !1,
     loadingInsert = ":";
 
 function loadChatXML() {
-    1 == navigator.onLine && (xmlDocument = "", chatLoadRequest = new XMLHttpRequest, randomCacheNumber = Math.floor(999999999 * Math.random() + 1), chatLoadRequest.open("GET", "chat/messages.xml?" + randomCacheNumber, !0), chatLoadRequest.send(), console.log("Chat Messages - Loading..."), 0 == navigator.onLine && chatLoadRequest.abort(), chatLoadRequest.onreadystatechange = function() {
+    xmlDocument = "", chatLoadRequest = new XMLHttpRequest, randomCacheNumber = Math.floor(999999999 * Math.random() + 1), chatLoadRequest.open("GET", "chat/messages.xml?" + randomCacheNumber, !0), chatLoadRequest.send(), console.log("Chat Messages - Loading..."), chatLoadRequest.onreadystatechange = function() {
         if (4 == chatLoadRequest.readyState && void 0 !== chatLoadRequest.responseXML && null !== chatLoadRequest.responseXML) {
-            console.log("Chat Messages - LOADED!");
-            loadingInsert = "<regularText>LAST MESSAGE</regularText><transparentText>: </transparentText>", setTimeout(function() {
+            console.log("Chat Messages - LOADED!"), loadingInsert = "<regularText>LAST MESSAGE</regularText><transparentText>: </transparentText>", setTimeout(function() {
                 loadingInsert = "<regularText>LAST MESSAGE: </regularText>"
             }, 1e3);
             var e = chatLoadRequest.responseXML;
@@ -183,15 +196,7 @@ function loadChatXML() {
                         constructStartingPoint = m + 1;
                         break
                     } if (newChatDocumentValue !== oldChatDocumentValue) {
-                for (oldXMLDocumentData = newXMLDocumentData, oldChatDocumentValue = newChatDocumentValue, composedMessage = "", m = constructStartingPoint; m < newXMLDocumentData.getElementsByTagName("message").length; m++) {
-                    outputUsername = void 0 !== newXMLDocumentData.getElementsByTagName("username")[m].childNodes[0] ? newXMLDocumentData.getElementsByTagName("username")[m].childNodes[0].nodeValue : "ERROR";
-                    outputMessage = void 0 !== newXMLDocumentData.getElementsByTagName("text")[m].childNodes[0] ? newXMLDocumentData.getElementsByTagName("text")[m].childNodes[0].nodeValue : "ERROR";
-                    // outputColor = void 0 !== newXMLDocumentData.getElementsByTagName("color")[m].childNodes[0] ? newXMLDocumentData.getElementsByTagName("color")[m].childNodes[0].nodeValue : "#ffffff";
-
-                    "ERROR" !== outputUsername && "ERROR" !== outputMessage && (composedMessage = composedMessage + "<font style='color:#006d90;font-family:regularfont;font-weight:bold;pointer-events:none;'>" + outputUsername + "</font><font style='color:#ffffff;'>: " + outputMessage + "</font><br>");
-
-                }
-
+                for (oldXMLDocumentData = newXMLDocumentData, oldChatDocumentValue = newChatDocumentValue, composedMessage = "", m = constructStartingPoint; m < newXMLDocumentData.getElementsByTagName("message").length; m++) outputUsername = newXMLDocumentData.getElementsByTagName("username")[m].childNodes[0].nodeValue, outputMessage = newXMLDocumentData.getElementsByTagName("text")[m].childNodes[0].nodeValue, composedMessage = composedMessage + "<font style='color:#006d90;font-family:regularfont;font-weight:bold;pointer-events:none;'>" + outputUsername + "</font><font style='color:#f2f2f2;'>: " + outputMessage + "</font><br>";
                 var t = document.createElement("div");
                 for (t.innerHTML = composedMessage; t.firstChild;) document.getElementById("chatTextField").appendChild(t.firstChild);
                 if (0 == chatImagesStatus) {
@@ -204,22 +209,12 @@ function loadChatXML() {
                 loadChatXML()
             }, 4500)
         }
-    })
+    }
 }
 var continuousChatLoading, continuousServerDateLoading, continuousRunTime, serverTime = Math.round((new Date).getTime() / 1e3);
 
 function runTime() {
-    timeSinceLastMessage = (serverTime += 1) - lastTimestampValue, formattedTime = Math.floor(timeSinceLastMessage / 60000);
-    if (0 < lastTimestampValue && 0 < formattedTime) {
-        if (formattedTime > 60) {
-            document.getElementById("timestampTextField").innerHTML = loadingInsert + "60+ min ago";
-        } else {
-            document.getElementById("timestampTextField").innerHTML = loadingInsert + formattedTime + " min ago";
-
-        }
-    } else {
-        document.getElementById("timestampTextField").innerHTML = loadingInsert + "< 1 min ago";
-    }
+    timeSinceLastMessage = (serverTime += 1) - lastTimestampValue, formattedTime = Math.floor(timeSinceLastMessage / 60), 0 < lastTimestampValue ? 0 < formattedTime ? document.getElementById("timestampTextField").innerHTML = loadingInsert + formattedTime + " min ago" : document.getElementById("timestampTextField").innerHTML = loadingInsert + "< 1 min ago" : document.getElementById("timestampTextField").innerHTML = "LAST MESSAGE: "
 }
 
 function retrieveServerDate() {
